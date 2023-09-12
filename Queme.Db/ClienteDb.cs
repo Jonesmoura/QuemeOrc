@@ -43,7 +43,7 @@ namespace Queme.Db
 
         public void Excluir(int id)
         {
-            string sql = @"DELETE clientes WHERE id=@ID";
+            string sql = @"DELETE FROM clientes WHERE id=@ID";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@ID", id);

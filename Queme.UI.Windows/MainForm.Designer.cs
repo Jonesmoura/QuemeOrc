@@ -34,8 +34,6 @@
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             serviçosToolStripMenuItem = new ToolStripMenuItem();
             orçamentosToolStripMenuItem = new ToolStripMenuItem();
-            TesteBDBtn = new Button();
-            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,54 +56,33 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(145, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // serviçosToolStripMenuItem
             // 
             serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            serviçosToolStripMenuItem.Size = new Size(145, 22);
+            serviçosToolStripMenuItem.Size = new Size(180, 22);
             serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // orçamentosToolStripMenuItem
             // 
             orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
-            orçamentosToolStripMenuItem.Size = new Size(145, 22);
+            orçamentosToolStripMenuItem.Size = new Size(180, 22);
             orçamentosToolStripMenuItem.Text = "Orçamentos";
-            // 
-            // TesteBDBtn
-            // 
-            TesteBDBtn.Location = new Point(255, 119);
-            TesteBDBtn.Name = "TesteBDBtn";
-            TesteBDBtn.Size = new Size(138, 23);
-            TesteBDBtn.TabIndex = 1;
-            TesteBDBtn.Text = "Teste Banco de dados";
-            TesteBDBtn.UseVisualStyleBackColor = true;
-            TesteBDBtn.Click += TesteBDBtn_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(280, 173);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(TesteBDBtn);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
@@ -125,7 +102,5 @@
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem serviçosToolStripMenuItem;
         private ToolStripMenuItem orçamentosToolStripMenuItem;
-        private Button TesteBDBtn;
-        private Label label1;
     }
 }

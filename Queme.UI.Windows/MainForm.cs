@@ -16,14 +16,8 @@ namespace Queme.UI.Windows
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientAddForm form = new ClientAddForm();
+            ClientesForm form = new ClientesForm();
             form.ShowDialog();
-        }
-
-        private void TesteBDBtn_Click(object sender, EventArgs e)
-        {
-            ClienteDb clienteDb = new ClienteDb();
-            clienteDb.teste();
         }
     }
 }
