@@ -59,7 +59,8 @@ namespace Queme.UI.Windows
             ConfirmarExcluirButton.Visible = false;
             ConfirmarInclusaoButton.Visible = true;
             VoltarButton.Visible = true;
-
+            PFradioButton.Visible = false;
+            PJradioButton.Visible = false;
 
         }
 
@@ -86,6 +87,8 @@ namespace Queme.UI.Windows
             confirmarAlterarButton.Visible = false;
             ConfirmarExcluirButton.Visible = false;
             ConfirmarInclusaoButton.Visible = true;
+            PFradioButton.Visible = true;
+            PJradioButton.Visible = true;
             LimparFicha();
         }
 
@@ -122,6 +125,8 @@ namespace Queme.UI.Windows
             confirmarAlterarButton.Visible = true;
             ConfirmarExcluirButton.Visible = false;
             ConfirmarInclusaoButton.Visible = false;
+            PFradioButton.Visible = false;
+            PJradioButton.Visible = false;
         }
 
         private void confirmarAlterarButton_Click(object sender, EventArgs e)
@@ -151,6 +156,8 @@ namespace Queme.UI.Windows
             confirmarAlterarButton.Visible = false;
             ConfirmarExcluirButton.Visible = true;
             ConfirmarInclusaoButton.Visible = false;
+            PFradioButton.Visible = false;
+            PJradioButton.Visible = false;
         }
 
         private void ConfirmarExcluirButton_Click(object sender, EventArgs e)
@@ -171,6 +178,68 @@ namespace Queme.UI.Windows
         private void SairButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PJradioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ExibirFicha();
+            confirmarAlterarButton.Visible = false;
+            ConfirmarExcluirButton.Visible = false;
+            ConfirmarInclusaoButton.Visible = true;
+            CNPJPanel.Visible = true;
+            CPFPanel.Visible = false;
+            RazaoSocialPanel.Visible = true;
+            PFradioButton.Visible = true;
+            PJradioButton.Visible = true;
+
+        }
+
+        private void PFradioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ExibirFicha();
+            confirmarAlterarButton.Visible = false;
+            ConfirmarExcluirButton.Visible = false;
+            ConfirmarInclusaoButton.Visible = true;
+            CNPJPanel.Visible = false;
+            CPFPanel.Visible = true;
+            RazaoSocialPanel.Visible = false;
+            PFradioButton.Visible = true;
+            PJradioButton.Visible = true;
+
+        }
+
+        private void RazaoSocialTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IDtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RazaoSocialTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+        }
+
+        private void CNPJtextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void TelTextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void CPFtextBox_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

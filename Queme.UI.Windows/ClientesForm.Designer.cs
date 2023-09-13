@@ -40,19 +40,43 @@
             VoltarButton = new Button();
             ConteudoPanel = new Panel();
             FichaPanel = new Panel();
-            TelTextBox = new TextBox();
-            label4 = new Label();
-            EmailTextBox = new TextBox();
-            label3 = new Label();
-            NameTextBox = new TextBox();
-            NomeLabel = new Label();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            IDPanel = new Panel();
             IDtextBox = new TextBox();
             IDlabel = new Label();
+            NamePanel = new Panel();
+            NameTextBox = new TextBox();
+            NomeLabel = new Label();
+            RazaoSocialPanel = new Panel();
+            RazaoSocialTextBox = new TextBox();
+            RazaoSocialLabel = new Label();
+            CNPJPanel = new Panel();
+            CNPJtextBox = new TextBox();
+            CNPJlabel = new Label();
+            CPFPanel = new Panel();
+            CPFtextBox = new TextBox();
+            CPFlabel = new Label();
+            EmailPanel = new Panel();
+            EmailTextBox = new TextBox();
+            label3 = new Label();
+            TelPanel = new Panel();
+            TelTextBox = new TextBox();
+            label4 = new Label();
+            PFradioButton = new RadioButton();
+            PJradioButton = new RadioButton();
             listaDataGridView = new DataGridView();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             ConteudoPanel.SuspendLayout();
             FichaPanel.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
+            IDPanel.SuspendLayout();
+            NamePanel.SuspendLayout();
+            RazaoSocialPanel.SuspendLayout();
+            CNPJPanel.SuspendLayout();
+            CPFPanel.SuspendLayout();
+            EmailPanel.SuspendLayout();
+            TelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)listaDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -175,82 +199,229 @@
             // 
             // FichaPanel
             // 
-            FichaPanel.Controls.Add(TelTextBox);
-            FichaPanel.Controls.Add(label4);
-            FichaPanel.Controls.Add(EmailTextBox);
-            FichaPanel.Controls.Add(label3);
-            FichaPanel.Controls.Add(NameTextBox);
-            FichaPanel.Controls.Add(NomeLabel);
-            FichaPanel.Controls.Add(IDtextBox);
-            FichaPanel.Controls.Add(IDlabel);
-            FichaPanel.Location = new Point(31, 28);
+            FichaPanel.Controls.Add(flowLayoutPanel2);
+            FichaPanel.Controls.Add(PFradioButton);
+            FichaPanel.Controls.Add(PJradioButton);
+            FichaPanel.Location = new Point(13, 28);
             FichaPanel.Name = "FichaPanel";
-            FichaPanel.Size = new Size(353, 319);
+            FichaPanel.Size = new Size(380, 350);
             FichaPanel.TabIndex = 1;
             // 
-            // TelTextBox
+            // flowLayoutPanel2
             // 
-            TelTextBox.Location = new Point(113, 136);
-            TelTextBox.Name = "TelTextBox";
-            TelTextBox.Size = new Size(194, 23);
-            TelTextBox.TabIndex = 6;
+            flowLayoutPanel2.Controls.Add(IDPanel);
+            flowLayoutPanel2.Controls.Add(NamePanel);
+            flowLayoutPanel2.Controls.Add(RazaoSocialPanel);
+            flowLayoutPanel2.Controls.Add(CNPJPanel);
+            flowLayoutPanel2.Controls.Add(CPFPanel);
+            flowLayoutPanel2.Controls.Add(EmailPanel);
+            flowLayoutPanel2.Controls.Add(TelPanel);
+            flowLayoutPanel2.Dock = DockStyle.Bottom;
+            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel2.Location = new Point(0, 47);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Padding = new Padding(40, 0, 40, 0);
+            flowLayoutPanel2.Size = new Size(380, 303);
+            flowLayoutPanel2.TabIndex = 1;
             // 
-            // label4
+            // IDPanel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(47, 139);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 15);
-            label4.TabIndex = 2;
-            label4.Text = "Telefone:";
-            // 
-            // EmailTextBox
-            // 
-            EmailTextBox.Location = new Point(113, 98);
-            EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(194, 23);
-            EmailTextBox.TabIndex = 7;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(47, 101);
-            label3.Name = "label3";
-            label3.Size = new Size(44, 15);
-            label3.TabIndex = 3;
-            label3.Text = "E-mail:";
-            // 
-            // NameTextBox
-            // 
-            NameTextBox.Location = new Point(113, 57);
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(194, 23);
-            NameTextBox.TabIndex = 8;
-            // 
-            // NomeLabel
-            // 
-            NomeLabel.AutoSize = true;
-            NomeLabel.Location = new Point(47, 60);
-            NomeLabel.Name = "NomeLabel";
-            NomeLabel.Size = new Size(43, 15);
-            NomeLabel.TabIndex = 4;
-            NomeLabel.Text = "Nome:";
+            IDPanel.Controls.Add(IDtextBox);
+            IDPanel.Controls.Add(IDlabel);
+            IDPanel.Location = new Point(43, 3);
+            IDPanel.Name = "IDPanel";
+            IDPanel.Size = new Size(287, 30);
+            IDPanel.TabIndex = 11;
             // 
             // IDtextBox
             // 
-            IDtextBox.Location = new Point(113, 17);
+            IDtextBox.Location = new Point(106, 5);
             IDtextBox.Name = "IDtextBox";
-            IDtextBox.Size = new Size(194, 23);
+            IDtextBox.Size = new Size(178, 23);
             IDtextBox.TabIndex = 9;
             // 
             // IDlabel
             // 
             IDlabel.AutoSize = true;
-            IDlabel.Location = new Point(47, 20);
+            IDlabel.Location = new Point(3, 8);
             IDlabel.Name = "IDlabel";
             IDlabel.Size = new Size(18, 15);
             IDlabel.TabIndex = 5;
             IDlabel.Text = "ID";
+            // 
+            // NamePanel
+            // 
+            NamePanel.Controls.Add(NameTextBox);
+            NamePanel.Controls.Add(NomeLabel);
+            NamePanel.Location = new Point(43, 39);
+            NamePanel.Name = "NamePanel";
+            NamePanel.Size = new Size(287, 30);
+            NamePanel.TabIndex = 17;
+            // 
+            // NameTextBox
+            // 
+            NameTextBox.Location = new Point(107, 4);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(179, 23);
+            NameTextBox.TabIndex = 8;
+            // 
+            // NomeLabel
+            // 
+            NomeLabel.AutoSize = true;
+            NomeLabel.Location = new Point(3, 7);
+            NomeLabel.Name = "NomeLabel";
+            NomeLabel.Size = new Size(89, 15);
+            NomeLabel.TabIndex = 4;
+            NomeLabel.Text = "Nome Contato:";
+            // 
+            // RazaoSocialPanel
+            // 
+            RazaoSocialPanel.Controls.Add(RazaoSocialTextBox);
+            RazaoSocialPanel.Controls.Add(RazaoSocialLabel);
+            RazaoSocialPanel.Location = new Point(43, 75);
+            RazaoSocialPanel.Name = "RazaoSocialPanel";
+            RazaoSocialPanel.Size = new Size(287, 30);
+            RazaoSocialPanel.TabIndex = 13;
+            // 
+            // RazaoSocialTextBox
+            // 
+            RazaoSocialTextBox.Location = new Point(106, 3);
+            RazaoSocialTextBox.Name = "RazaoSocialTextBox";
+            RazaoSocialTextBox.Size = new Size(179, 23);
+            RazaoSocialTextBox.TabIndex = 6;
+            // 
+            // RazaoSocialLabel
+            // 
+            RazaoSocialLabel.AutoSize = true;
+            RazaoSocialLabel.Location = new Point(3, 9);
+            RazaoSocialLabel.Name = "RazaoSocialLabel";
+            RazaoSocialLabel.Size = new Size(75, 15);
+            RazaoSocialLabel.TabIndex = 2;
+            RazaoSocialLabel.Text = "Razão Social:";
+            // 
+            // CNPJPanel
+            // 
+            CNPJPanel.Controls.Add(CNPJtextBox);
+            CNPJPanel.Controls.Add(CNPJlabel);
+            CNPJPanel.Location = new Point(43, 111);
+            CNPJPanel.Name = "CNPJPanel";
+            CNPJPanel.Size = new Size(287, 30);
+            CNPJPanel.TabIndex = 14;
+            // 
+            // CNPJtextBox
+            // 
+            CNPJtextBox.Location = new Point(106, 3);
+            CNPJtextBox.Name = "CNPJtextBox";
+            CNPJtextBox.Size = new Size(179, 23);
+            CNPJtextBox.TabIndex = 6;
+            // 
+            // CNPJlabel
+            // 
+            CNPJlabel.AutoSize = true;
+            CNPJlabel.Location = new Point(3, 6);
+            CNPJlabel.Name = "CNPJlabel";
+            CNPJlabel.Size = new Size(37, 15);
+            CNPJlabel.TabIndex = 2;
+            CNPJlabel.Text = "CNPJ:";
+            // 
+            // CPFPanel
+            // 
+            CPFPanel.Controls.Add(CPFtextBox);
+            CPFPanel.Controls.Add(CPFlabel);
+            CPFPanel.Location = new Point(43, 147);
+            CPFPanel.Name = "CPFPanel";
+            CPFPanel.Size = new Size(287, 30);
+            CPFPanel.TabIndex = 12;
+            // 
+            // CPFtextBox
+            // 
+            CPFtextBox.Location = new Point(106, 3);
+            CPFtextBox.Name = "CPFtextBox";
+            CPFtextBox.Size = new Size(179, 23);
+            CPFtextBox.TabIndex = 6;
+            // 
+            // CPFlabel
+            // 
+            CPFlabel.AutoSize = true;
+            CPFlabel.Location = new Point(3, 8);
+            CPFlabel.Name = "CPFlabel";
+            CPFlabel.Size = new Size(31, 15);
+            CPFlabel.TabIndex = 2;
+            CPFlabel.Text = "CPF:";
+            // 
+            // EmailPanel
+            // 
+            EmailPanel.Controls.Add(EmailTextBox);
+            EmailPanel.Controls.Add(label3);
+            EmailPanel.Location = new Point(43, 183);
+            EmailPanel.Name = "EmailPanel";
+            EmailPanel.Size = new Size(287, 30);
+            EmailPanel.TabIndex = 16;
+            // 
+            // EmailTextBox
+            // 
+            EmailTextBox.Location = new Point(106, 4);
+            EmailTextBox.Name = "EmailTextBox";
+            EmailTextBox.Size = new Size(179, 23);
+            EmailTextBox.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(4, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(44, 15);
+            label3.TabIndex = 3;
+            label3.Text = "E-mail:";
+            // 
+            // TelPanel
+            // 
+            TelPanel.Controls.Add(TelTextBox);
+            TelPanel.Controls.Add(label4);
+            TelPanel.Location = new Point(43, 219);
+            TelPanel.Name = "TelPanel";
+            TelPanel.Size = new Size(287, 30);
+            TelPanel.TabIndex = 15;
+            // 
+            // TelTextBox
+            // 
+            TelTextBox.Location = new Point(107, 3);
+            TelTextBox.Name = "TelTextBox";
+            TelTextBox.Size = new Size(179, 23);
+            TelTextBox.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 6);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 15);
+            label4.TabIndex = 2;
+            label4.Text = "Telefone:";
+            // 
+            // PFradioButton
+            // 
+            PFradioButton.AutoSize = true;
+            PFradioButton.Location = new Point(207, 15);
+            PFradioButton.Name = "PFradioButton";
+            PFradioButton.Size = new Size(93, 19);
+            PFradioButton.TabIndex = 10;
+            PFradioButton.TabStop = true;
+            PFradioButton.Text = "Pessoa Física";
+            PFradioButton.UseVisualStyleBackColor = true;
+            PFradioButton.CheckedChanged += PFradioButton_CheckedChanged;
+            // 
+            // PJradioButton
+            // 
+            PJradioButton.AutoSize = true;
+            PJradioButton.Location = new Point(86, 15);
+            PJradioButton.Name = "PJradioButton";
+            PJradioButton.Size = new Size(104, 19);
+            PJradioButton.TabIndex = 10;
+            PJradioButton.TabStop = true;
+            PJradioButton.Text = "Pessoa Jurídica";
+            PJradioButton.UseVisualStyleBackColor = true;
+            PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
             // 
             // listaDataGridView
             // 
@@ -276,6 +447,21 @@
             ConteudoPanel.ResumeLayout(false);
             FichaPanel.ResumeLayout(false);
             FichaPanel.PerformLayout();
+            flowLayoutPanel2.ResumeLayout(false);
+            IDPanel.ResumeLayout(false);
+            IDPanel.PerformLayout();
+            NamePanel.ResumeLayout(false);
+            NamePanel.PerformLayout();
+            RazaoSocialPanel.ResumeLayout(false);
+            RazaoSocialPanel.PerformLayout();
+            CNPJPanel.ResumeLayout(false);
+            CNPJPanel.PerformLayout();
+            CPFPanel.ResumeLayout(false);
+            CPFPanel.PerformLayout();
+            EmailPanel.ResumeLayout(false);
+            EmailPanel.PerformLayout();
+            TelPanel.ResumeLayout(false);
+            TelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)listaDataGridView).EndInit();
             ResumeLayout(false);
         }
@@ -294,6 +480,15 @@
         private Panel ConteudoPanel;
         private Panel FichaPanel;
         private DataGridView listaDataGridView;
+        private Button VoltarButton;
+        private RadioButton PFradioButton;
+        private RadioButton PJradioButton;
+        private TextBox CPFtextBox;
+        private Label CPFlabel;
+        private TextBox RazaoSocialTextBox;
+        private TextBox CNPJtextBox;
+        private Label RazaoSocialLabel;
+        private Label CNPJlabel;
         private TextBox TelTextBox;
         private Label label4;
         private TextBox EmailTextBox;
@@ -302,6 +497,13 @@
         private Label NomeLabel;
         private TextBox IDtextBox;
         private Label IDlabel;
-        private Button VoltarButton;
+        private Panel CNPJPanel;
+        private Panel RazaoSocialPanel;
+        private Panel CPFPanel;
+        private Panel IDPanel;
+        private Panel NamePanel;
+        private Panel EmailPanel;
+        private Panel TelPanel;
+        private FlowLayoutPanel flowLayoutPanel2;
     }
 }
