@@ -90,6 +90,8 @@ namespace Queme.UI.Windows
             PFradioButton.Visible = true;
             PJradioButton.Visible = true;
             LimparFicha();
+            PJradioButton.Checked = true;
+            
         }
 
         private void VoltarButton_Click(object sender, EventArgs e)
