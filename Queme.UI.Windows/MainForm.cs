@@ -16,7 +16,7 @@ namespace Queme.UI.Windows
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientesForm form = new ClientesForm();
+            var form = new ClientesForm();
             form.ShowDialog();
         }
     }
