@@ -40,6 +40,8 @@
             VoltarButton = new Button();
             ConteudoPanel = new Panel();
             FichaPanel = new Panel();
+            PJradioButton = new RadioButton();
+            PFradioButton = new RadioButton();
             flowLayoutPanel2 = new FlowLayoutPanel();
             IDPanel = new Panel();
             IDtextBox = new TextBox();
@@ -62,8 +64,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             label4 = new Label();
-            PFradioButton = new RadioButton();
-            PJradioButton = new RadioButton();
             listaDataGridView = new DataGridView();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -199,13 +199,35 @@
             // 
             // FichaPanel
             // 
-            FichaPanel.Controls.Add(flowLayoutPanel2);
             FichaPanel.Controls.Add(PFradioButton);
             FichaPanel.Controls.Add(PJradioButton);
+            FichaPanel.Controls.Add(flowLayoutPanel2);
             FichaPanel.Location = new Point(13, 28);
             FichaPanel.Name = "FichaPanel";
             FichaPanel.Size = new Size(380, 350);
             FichaPanel.TabIndex = 1;
+            // 
+            // PJradioButton
+            // 
+            PJradioButton.AutoSize = true;
+            PJradioButton.Location = new Point(103, 13);
+            PJradioButton.Name = "PJradioButton";
+            PJradioButton.Size = new Size(104, 19);
+            PJradioButton.TabIndex = 10;
+            PJradioButton.Text = "Pessoa Jurídica";
+            PJradioButton.UseVisualStyleBackColor = true;
+            PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
+            // 
+            // PFradioButton
+            // 
+            PFradioButton.AutoSize = true;
+            PFradioButton.Location = new Point(213, 13);
+            PFradioButton.Name = "PFradioButton";
+            PFradioButton.Size = new Size(93, 19);
+            PFradioButton.TabIndex = 10;
+            PFradioButton.Text = "Pessoa Física";
+            PFradioButton.UseVisualStyleBackColor = true;
+            PFradioButton.CheckedChanged += PFradioButton_CheckedChanged;
             // 
             // flowLayoutPanel2
             // 
@@ -237,6 +259,7 @@
             // 
             IDtextBox.Location = new Point(106, 5);
             IDtextBox.Name = "IDtextBox";
+            IDtextBox.ReadOnly = true;
             IDtextBox.Size = new Size(178, 23);
             IDtextBox.TabIndex = 9;
             // 
@@ -399,30 +422,6 @@
             label4.TabIndex = 2;
             label4.Text = "Telefone:";
             // 
-            // PFradioButton
-            // 
-            PFradioButton.AutoSize = true;
-            PFradioButton.Location = new Point(207, 15);
-            PFradioButton.Name = "PFradioButton";
-            PFradioButton.Size = new Size(93, 19);
-            PFradioButton.TabIndex = 10;
-            PFradioButton.TabStop = true;
-            PFradioButton.Text = "Pessoa Física";
-            PFradioButton.UseVisualStyleBackColor = true;
-            PFradioButton.CheckedChanged += PFradioButton_CheckedChanged;
-            // 
-            // PJradioButton
-            // 
-            PJradioButton.AutoSize = true;
-            PJradioButton.Location = new Point(86, 15);
-            PJradioButton.Name = "PJradioButton";
-            PJradioButton.Size = new Size(104, 19);
-            PJradioButton.TabIndex = 10;
-            PJradioButton.TabStop = true;
-            PJradioButton.Text = "Pessoa Jurídica";
-            PJradioButton.UseVisualStyleBackColor = true;
-            PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
-            // 
             // listaDataGridView
             // 
             listaDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -431,6 +430,7 @@
             listaDataGridView.RowTemplate.Height = 25;
             listaDataGridView.Size = new Size(388, 319);
             listaDataGridView.TabIndex = 0;
+            listaDataGridView.CellContentClick += listaDataGridView_CellContentClick;
             // 
             // ClientesForm
             // 

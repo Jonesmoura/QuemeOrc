@@ -13,12 +13,17 @@ namespace Queme.Db
     {
         public void Incluir(Cliente cliente)
         {
-            string sql = "INSERT INTO clientes(name,email,tel) Values(@Name,@Email, @Tel)";
+
+            string sql = "INSERT INTO clientes(name,email,tel,razaoSocial,CNPJ,CPF) Values(@Name,@Email, @Tel, @razaoSocial, @CNPJ, @CPF)";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@Name", cliente.Name);
             cmd.Parameters.AddWithValue("@Tel", cliente.Tel);
             cmd.Parameters.AddWithValue("@Email", cliente.Email);
+            cmd.Parameters.AddWithValue("@razaoSocial", cliente.razaoSocial);
+            cmd.Parameters.AddWithValue("@CNPJ", cliente.CNPJ);
+            cmd.Parameters.AddWithValue("@CPF", cliente.CPF);
+
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
@@ -56,7 +61,7 @@ namespace Queme.Db
 
         public List<Cliente> Listar() 
         {
-            string sql = "SELECT id, name, tel, email FROM clientes";
+            string sql = "SELECT id, name,razaoSocial,CNPJ,CPF, tel, email FROM clientes";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
 
@@ -71,8 +76,12 @@ namespace Queme.Db
                 var cliente = new Cliente();
                 cliente.ID = Convert.ToInt32(reader["ID"]);
                 cliente.Name = reader["Name"].ToString();
+                cliente.razaoSocial = reader["razaoSocial"].ToString();
+                cliente.CNPJ = reader["CNPJ"].ToString();
+                cliente.CPF = reader["CPF"].ToString();
                 cliente.Tel = reader["Tel"].ToString();
                 cliente.Email = reader["Email"].ToString();
+
 
                 lista.Add(cliente);
 

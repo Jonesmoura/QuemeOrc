@@ -11,7 +11,6 @@ using MySqlX.XDevAPI;
 using Queme.Db;
 using Queme.Models;
 
-
 namespace Queme.UI.Windows
 {
     public partial class ClientesForm : Form
@@ -61,6 +60,7 @@ namespace Queme.UI.Windows
             VoltarButton.Visible = true;
             PFradioButton.Visible = false;
             PJradioButton.Visible = false;
+            NameTextBox.Focus();
 
         }
 
@@ -71,8 +71,9 @@ namespace Queme.UI.Windows
             NameTextBox.Clear();
             EmailTextBox.Clear();
             TelTextBox.Clear();
-
-            IDtextBox.Focus();
+            CNPJtextBox.Clear();
+            CPFtextBox.Clear();
+            RazaoSocialTextBox.Clear();
 
         }
 
@@ -90,8 +91,9 @@ namespace Queme.UI.Windows
             PFradioButton.Visible = true;
             PJradioButton.Visible = true;
             LimparFicha();
+            IDPanel.Visible = false;
             PJradioButton.Checked = true;
-            
+
         }
 
         private void VoltarButton_Click(object sender, EventArgs e)
@@ -103,15 +105,29 @@ namespace Queme.UI.Windows
         {
             var cliente = new Cliente();
 
-            cliente.ID = int.Parse(IDtextBox.Text);
             cliente.Name = NameTextBox.Text;
             cliente.Email = EmailTextBox.Text;
             cliente.Tel = TelTextBox.Text;
+            cliente.razaoSocial = RazaoSocialTextBox.Text;
+            cliente.CNPJ = CNPJtextBox.Text;
+            cliente.CPF = CPFtextBox.Text;
 
             var db = new ClienteDb();
-            db.Incluir(cliente);
 
-            ExibirGrid();
+            if (PJradioButton.Checked == true && CNPJtextBox.Text == "")
+            {
+                MessageBox.Show("O CNPJ deve ser preenchido");
+
+            }
+            else if (PFradioButton.Checked == true && CPFtextBox.Text == "")
+            {
+                MessageBox.Show("O CPF deve ser preenchido");
+            }
+            else
+            {
+                db.Incluir(cliente);
+                ExibirGrid();
+            }
 
         }
 
@@ -120,10 +136,14 @@ namespace Queme.UI.Windows
             var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
             IDtextBox.Text = cliente.ID.ToString();
             NameTextBox.Text = cliente.Name.ToString();
+            RazaoSocialTextBox.Text = cliente.razaoSocial.ToString();
+            CNPJtextBox.Text = cliente.CNPJ.ToString();
+            CPFtextBox.Text = cliente.CPF.ToString();
             EmailTextBox.Text = cliente.Email.ToString();
             TelTextBox.Text = cliente.Tel.ToString();
             ExibirFicha();
 
+            IDPanel.Visible = true;
             confirmarAlterarButton.Visible = true;
             ConfirmarExcluirButton.Visible = false;
             ConfirmarInclusaoButton.Visible = false;
@@ -139,6 +159,9 @@ namespace Queme.UI.Windows
             cliente.Name = NameTextBox.Text;
             cliente.Email = EmailTextBox.Text;
             cliente.Tel = TelTextBox.Text;
+            cliente.razaoSocial = RazaoSocialTextBox.Text;
+            cliente.CNPJ = CNPJtextBox.Text;
+            cliente.CPF = CPFtextBox.Text;
 
             var db = new ClienteDb();
             db.Alterar(cliente);
@@ -151,10 +174,14 @@ namespace Queme.UI.Windows
             var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
             IDtextBox.Text = cliente.ID.ToString();
             NameTextBox.Text = cliente.Name.ToString();
+            RazaoSocialTextBox.Text = cliente.razaoSocial.ToString();
+            CNPJtextBox.Text = cliente.CNPJ.ToString();
+            CPFtextBox.Text = cliente.CPF.ToString();
             EmailTextBox.Text = cliente.Email.ToString();
             TelTextBox.Text = cliente.Tel.ToString();
             ExibirFicha();
 
+            IDPanel.Visible = true;
             confirmarAlterarButton.Visible = false;
             ConfirmarExcluirButton.Visible = true;
             ConfirmarInclusaoButton.Visible = false;
@@ -170,6 +197,9 @@ namespace Queme.UI.Windows
             cliente.Name = NameTextBox.Text;
             cliente.Email = EmailTextBox.Text;
             cliente.Tel = TelTextBox.Text;
+            cliente.razaoSocial = RazaoSocialTextBox.Text;
+            cliente.CNPJ = CNPJtextBox.Text;
+            cliente.CPF = CPFtextBox.Text;
 
             var db = new ClienteDb();
             db.Excluir(cliente.ID);
@@ -184,6 +214,7 @@ namespace Queme.UI.Windows
 
         private void PJradioButton_CheckedChanged(object sender, EventArgs e)
         {
+
             ExibirFicha();
             confirmarAlterarButton.Visible = false;
             ConfirmarExcluirButton.Visible = false;
@@ -198,6 +229,7 @@ namespace Queme.UI.Windows
 
         private void PFradioButton_CheckedChanged(object sender, EventArgs e)
         {
+
             ExibirFicha();
             confirmarAlterarButton.Visible = false;
             ConfirmarExcluirButton.Visible = false;
@@ -242,6 +274,11 @@ namespace Queme.UI.Windows
 
         private void CPFtextBox_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void listaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

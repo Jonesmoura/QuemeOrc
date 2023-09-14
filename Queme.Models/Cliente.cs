@@ -13,6 +13,9 @@ namespace Queme.Models
         public string Name { get; set; }
         public String Email { get; set; }
         public string Tel { get; set; }
+        public string razaoSocial { get; set; }
+        public string CNPJ { get; set; }
+        public string CPF { get; set; }
 
     }
 }
