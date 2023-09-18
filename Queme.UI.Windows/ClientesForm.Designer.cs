@@ -40,8 +40,8 @@
             VoltarButton = new Button();
             ConteudoPanel = new Panel();
             FichaPanel = new Panel();
-            PJradioButton = new RadioButton();
             PFradioButton = new RadioButton();
+            PJradioButton = new RadioButton();
             flowLayoutPanel2 = new FlowLayoutPanel();
             IDPanel = new Panel();
             IDtextBox = new TextBox();
@@ -53,16 +53,16 @@
             RazaoSocialTextBox = new TextBox();
             RazaoSocialLabel = new Label();
             CNPJPanel = new Panel();
-            CNPJtextBox = new TextBox();
+            CNPJtextBox = new MaskedTextBox();
             CNPJlabel = new Label();
             CPFPanel = new Panel();
-            CPFtextBox = new TextBox();
+            CPFtextBox = new MaskedTextBox();
             CPFlabel = new Label();
             EmailPanel = new Panel();
             EmailTextBox = new TextBox();
             label3 = new Label();
             TelPanel = new Panel();
-            TelTextBox = new TextBox();
+            TelTextBox = new MaskedTextBox();
             label4 = new Label();
             listaDataGridView = new DataGridView();
             panel1.SuspendLayout();
@@ -104,14 +104,14 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(30, 20, 0, 0);
             flowLayoutPanel1.Size = new Size(800, 66);
-            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.TabIndex = 23;
             // 
             // NovoButton
             // 
             NovoButton.Location = new Point(33, 23);
             NovoButton.Name = "NovoButton";
             NovoButton.Size = new Size(97, 23);
-            NovoButton.TabIndex = 0;
+            NovoButton.TabIndex = 13;
             NovoButton.Text = "Novo Cliente";
             NovoButton.UseVisualStyleBackColor = true;
             NovoButton.Click += NovoButton_Click;
@@ -121,7 +121,7 @@
             AlterarButton.Location = new Point(136, 23);
             AlterarButton.Name = "AlterarButton";
             AlterarButton.Size = new Size(75, 23);
-            AlterarButton.TabIndex = 1;
+            AlterarButton.TabIndex = 6;
             AlterarButton.Text = "Alterar";
             AlterarButton.UseVisualStyleBackColor = true;
             AlterarButton.Click += AlterarButton_Click;
@@ -131,7 +131,7 @@
             ExcluirButton.Location = new Point(217, 23);
             ExcluirButton.Name = "ExcluirButton";
             ExcluirButton.Size = new Size(75, 23);
-            ExcluirButton.TabIndex = 2;
+            ExcluirButton.TabIndex = 7;
             ExcluirButton.Text = "Excluir";
             ExcluirButton.UseVisualStyleBackColor = true;
             ExcluirButton.Click += ExcluirButton_Click;
@@ -141,7 +141,7 @@
             SairButton.Location = new Point(298, 23);
             SairButton.Name = "SairButton";
             SairButton.Size = new Size(75, 23);
-            SairButton.TabIndex = 3;
+            SairButton.TabIndex = 8;
             SairButton.Text = "Sair";
             SairButton.UseVisualStyleBackColor = true;
             SairButton.Click += SairButton_Click;
@@ -151,7 +151,7 @@
             ConfirmarInclusaoButton.Location = new Point(379, 23);
             ConfirmarInclusaoButton.Name = "ConfirmarInclusaoButton";
             ConfirmarInclusaoButton.Size = new Size(75, 23);
-            ConfirmarInclusaoButton.TabIndex = 4;
+            ConfirmarInclusaoButton.TabIndex = 9;
             ConfirmarInclusaoButton.Text = "Gravar";
             ConfirmarInclusaoButton.UseVisualStyleBackColor = true;
             ConfirmarInclusaoButton.Click += ConfirmarInclusaoButton_Click;
@@ -161,7 +161,7 @@
             confirmarAlterarButton.Location = new Point(460, 23);
             confirmarAlterarButton.Name = "confirmarAlterarButton";
             confirmarAlterarButton.Size = new Size(75, 23);
-            confirmarAlterarButton.TabIndex = 5;
+            confirmarAlterarButton.TabIndex = 10;
             confirmarAlterarButton.Text = "Alterar";
             confirmarAlterarButton.UseVisualStyleBackColor = true;
             confirmarAlterarButton.Click += confirmarAlterarButton_Click;
@@ -171,7 +171,7 @@
             ConfirmarExcluirButton.Location = new Point(541, 23);
             ConfirmarExcluirButton.Name = "ConfirmarExcluirButton";
             ConfirmarExcluirButton.Size = new Size(157, 23);
-            ConfirmarExcluirButton.TabIndex = 6;
+            ConfirmarExcluirButton.TabIndex = 11;
             ConfirmarExcluirButton.Text = "Confirmar Exclusão";
             ConfirmarExcluirButton.UseVisualStyleBackColor = true;
             ConfirmarExcluirButton.Click += ConfirmarExcluirButton_Click;
@@ -181,7 +181,7 @@
             VoltarButton.Location = new Point(704, 23);
             VoltarButton.Name = "VoltarButton";
             VoltarButton.Size = new Size(75, 23);
-            VoltarButton.TabIndex = 7;
+            VoltarButton.TabIndex = 12;
             VoltarButton.Text = "Voltar";
             VoltarButton.UseVisualStyleBackColor = true;
             VoltarButton.Click += VoltarButton_Click;
@@ -195,7 +195,7 @@
             ConteudoPanel.Name = "ConteudoPanel";
             ConteudoPanel.Padding = new Padding(10);
             ConteudoPanel.Size = new Size(800, 384);
-            ConteudoPanel.TabIndex = 1;
+            ConteudoPanel.TabIndex = 25;
             // 
             // FichaPanel
             // 
@@ -205,18 +205,7 @@
             FichaPanel.Location = new Point(13, 28);
             FichaPanel.Name = "FichaPanel";
             FichaPanel.Size = new Size(380, 350);
-            FichaPanel.TabIndex = 1;
-            // 
-            // PJradioButton
-            // 
-            PJradioButton.AutoSize = true;
-            PJradioButton.Location = new Point(103, 13);
-            PJradioButton.Name = "PJradioButton";
-            PJradioButton.Size = new Size(104, 19);
-            PJradioButton.TabIndex = 10;
-            PJradioButton.Text = "Pessoa Jurídica";
-            PJradioButton.UseVisualStyleBackColor = true;
-            PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
+            FichaPanel.TabIndex = 20;
             // 
             // PFradioButton
             // 
@@ -224,10 +213,21 @@
             PFradioButton.Location = new Point(213, 13);
             PFradioButton.Name = "PFradioButton";
             PFradioButton.Size = new Size(93, 19);
-            PFradioButton.TabIndex = 10;
+            PFradioButton.TabIndex = 14;
             PFradioButton.Text = "Pessoa Física";
             PFradioButton.UseVisualStyleBackColor = true;
             PFradioButton.CheckedChanged += PFradioButton_CheckedChanged;
+            // 
+            // PJradioButton
+            // 
+            PJradioButton.AutoSize = true;
+            PJradioButton.Location = new Point(103, 13);
+            PJradioButton.Name = "PJradioButton";
+            PJradioButton.Size = new Size(104, 19);
+            PJradioButton.TabIndex = 13;
+            PJradioButton.Text = "Pessoa Jurídica";
+            PJradioButton.UseVisualStyleBackColor = true;
+            PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
             // 
             // flowLayoutPanel2
             // 
@@ -244,7 +244,7 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Padding = new Padding(40, 0, 40, 0);
             flowLayoutPanel2.Size = new Size(380, 303);
-            flowLayoutPanel2.TabIndex = 1;
+            flowLayoutPanel2.TabIndex = 21;
             // 
             // IDPanel
             // 
@@ -261,7 +261,7 @@
             IDtextBox.Name = "IDtextBox";
             IDtextBox.ReadOnly = true;
             IDtextBox.Size = new Size(178, 23);
-            IDtextBox.TabIndex = 9;
+            IDtextBox.TabIndex = 15;
             // 
             // IDlabel
             // 
@@ -286,7 +286,7 @@
             NameTextBox.Location = new Point(107, 4);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(179, 23);
-            NameTextBox.TabIndex = 8;
+            NameTextBox.TabIndex = 0;
             // 
             // NomeLabel
             // 
@@ -294,7 +294,7 @@
             NomeLabel.Location = new Point(3, 7);
             NomeLabel.Name = "NomeLabel";
             NomeLabel.Size = new Size(89, 15);
-            NomeLabel.TabIndex = 4;
+            NomeLabel.TabIndex = 22;
             NomeLabel.Text = "Nome Contato:";
             // 
             // RazaoSocialPanel
@@ -311,7 +311,7 @@
             RazaoSocialTextBox.Location = new Point(106, 3);
             RazaoSocialTextBox.Name = "RazaoSocialTextBox";
             RazaoSocialTextBox.Size = new Size(179, 23);
-            RazaoSocialTextBox.TabIndex = 6;
+            RazaoSocialTextBox.TabIndex = 1;
             // 
             // RazaoSocialLabel
             // 
@@ -333,10 +333,12 @@
             // 
             // CNPJtextBox
             // 
-            CNPJtextBox.Location = new Point(106, 3);
+            CNPJtextBox.Location = new Point(107, 4);
+            CNPJtextBox.Mask = "00,000,000/0000-00";
             CNPJtextBox.Name = "CNPJtextBox";
             CNPJtextBox.Size = new Size(179, 23);
-            CNPJtextBox.TabIndex = 6;
+            CNPJtextBox.TabIndex = 3;
+            CNPJtextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // CNPJlabel
             // 
@@ -358,10 +360,12 @@
             // 
             // CPFtextBox
             // 
-            CPFtextBox.Location = new Point(106, 3);
+            CPFtextBox.Location = new Point(107, 4);
+            CPFtextBox.Mask = "000,000,000-00";
             CPFtextBox.Name = "CPFtextBox";
             CPFtextBox.Size = new Size(179, 23);
-            CPFtextBox.TabIndex = 6;
+            CPFtextBox.TabIndex = 3;
+            CPFtextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // CPFlabel
             // 
@@ -386,7 +390,7 @@
             EmailTextBox.Location = new Point(106, 4);
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(179, 23);
-            EmailTextBox.TabIndex = 7;
+            EmailTextBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -408,10 +412,12 @@
             // 
             // TelTextBox
             // 
-            TelTextBox.Location = new Point(107, 3);
+            TelTextBox.Location = new Point(107, 4);
+            TelTextBox.Mask = "(00) 00000-0000";
             TelTextBox.Name = "TelTextBox";
             TelTextBox.Size = new Size(179, 23);
-            TelTextBox.TabIndex = 6;
+            TelTextBox.TabIndex = 3;
+            TelTextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // label4
             // 
@@ -483,13 +489,10 @@
         private Button VoltarButton;
         private RadioButton PFradioButton;
         private RadioButton PJradioButton;
-        private TextBox CPFtextBox;
         private Label CPFlabel;
         private TextBox RazaoSocialTextBox;
-        private TextBox CNPJtextBox;
         private Label RazaoSocialLabel;
         private Label CNPJlabel;
-        private TextBox TelTextBox;
         private Label label4;
         private TextBox EmailTextBox;
         private Label label3;
@@ -505,5 +508,8 @@
         private Panel EmailPanel;
         private Panel TelPanel;
         private FlowLayoutPanel flowLayoutPanel2;
+        private MaskedTextBox CNPJtextBox;
+        private MaskedTextBox CPFtextBox;
+        private MaskedTextBox TelTextBox;
     }
 }

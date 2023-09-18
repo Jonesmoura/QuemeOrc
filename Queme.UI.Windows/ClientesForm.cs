@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlX.XDevAPI;
@@ -18,6 +19,41 @@ namespace Queme.UI.Windows
         public ClientesForm()
         {
             InitializeComponent();
+        }
+
+        private bool isEmail(string email)
+        {
+            string emailRegEx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            return Regex.IsMatch(email, emailRegEx);
+
+        }
+
+        private bool VerificaDadosNovoCliente(Cliente cliente)
+        {
+            if (cliente.CNPJ == "")
+            {
+                // logica para verificação de dados PF
+                if (!isEmail(cliente.Email))
+                {
+                    MessageBox.Show("E-mail inválido.");
+                    return false;
+                }
+                // caso necessário, implementar outras validações
+                return true;
+            }
+            else
+            {
+                // logica para verificação de dados PJ
+
+                if (!isEmail(cliente.Email))
+                {
+                    MessageBox.Show("E-mail inválido.");
+                    return false;
+                }
+                // caso necessário, implementar outras validações
+                return true;
+            }
         }
 
         private void ExibirGrid()
@@ -125,14 +161,18 @@ namespace Queme.UI.Windows
             }
             else
             {
-                db.Incluir(cliente);
-                ExibirGrid();
+                if (VerificaDadosNovoCliente(cliente))
+                {
+                    db.Incluir(cliente);
+                    ExibirGrid();
+                };
             }
 
         }
 
         private void AlterarButton_Click(object sender, EventArgs e)
         {
+
             var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
             IDtextBox.Text = cliente.ID.ToString();
             NameTextBox.Text = cliente.Name.ToString();
@@ -142,6 +182,21 @@ namespace Queme.UI.Windows
             EmailTextBox.Text = cliente.Email.ToString();
             TelTextBox.Text = cliente.Tel.ToString();
             ExibirFicha();
+
+            //Teste layout alterar.
+
+            if (CNPJtextBox.Text == "")
+            {
+                CPFPanel.Visible = true;
+                CNPJPanel.Visible = false;
+                RazaoSocialPanel.Visible = false;
+            }
+            else
+            {
+                CPFPanel.Visible = false;
+                CNPJPanel.Visible = true;
+                RazaoSocialPanel.Visible = true;
+            }
 
             IDPanel.Visible = true;
             confirmarAlterarButton.Visible = true;
@@ -277,6 +332,11 @@ namespace Queme.UI.Windows
         }
 
         private void listaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CNPJtextBox_TextChanged_1(object sender, EventArgs e)
         {
 
         }
