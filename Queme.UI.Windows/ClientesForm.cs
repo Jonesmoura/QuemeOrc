@@ -79,6 +79,13 @@ namespace Queme.UI.Windows
             listaDataGridView.EnableHeadersVisualStyles = false;
             listaDataGridView.Columns["ID"].Width = 50;
 
+            listaDataGridView.Columns["Complemento"].Visible = false;
+            listaDataGridView.Columns["CEP"].Visible = false;
+            listaDataGridView.Columns["Numero"].Visible = false;
+            listaDataGridView.Columns["Bairro"].Visible = false;
+            listaDataGridView.Columns["Logradouro"].Visible = false;
+            listaDataGridView.Columns["UF"].Visible = false;
+
         }
 
         private void ExibirFicha()

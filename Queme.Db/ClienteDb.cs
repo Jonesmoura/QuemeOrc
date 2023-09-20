@@ -14,7 +14,7 @@ namespace Queme.Db
         public void Incluir(Cliente cliente)
         {
 
-            string sql = "INSERT INTO clientes(name,email,tel,razaoSocial,CNPJ,CPF) Values(@Name,@Email, @Tel, @razaoSocial, @CNPJ, @CPF)";
+            string sql = "INSERT INTO clientes(name,email,tel,razaoSocial,CNPJ,CPF) Values(@Name,@Email, @Tel, @razaoSocial, @CNPJ, @CPF);";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@Name", cliente.Name);
@@ -27,6 +27,36 @@ namespace Queme.Db
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
+
+            IncluirEnderecoCliente(cliente);
+
+        }
+
+        public void IncluirEnderecoCliente(Cliente cliente)
+        {
+            string sql = "INSERT INTO endereco_cliente (id_cliente, CEP,logradouro, bairro, UF, numero, complemento) VALUES((SELECT MAX(id) from clientes), @CEP, @logradouro, @bairro, @UF, @numero, @complemento);";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            // parametros do endereço
+            //cmd.Parameters.AddWithValue("@CEP", cliente.CEP);
+            //cmd.Parameters.AddWithValue("@logradouro", cliente.Logradouro);
+            //cmd.Parameters.AddWithValue("@bairro", cliente.Bairro);
+            //cmd.Parameters.AddWithValue("@UF", cliente.UF);
+            //cmd.Parameters.AddWithValue("@numero", cliente.Numero);
+            //cmd.Parameters.AddWithValue("@complemento", cliente.Complemento);
+
+            // teste hardCoded, remover apos criar campos no formulário:
+            cmd.Parameters.AddWithValue("@CEP", "09350550");
+            cmd.Parameters.AddWithValue("@logradouro", "Rua Argentina");
+            cmd.Parameters.AddWithValue("@bairro", "Parque das Américas");
+            cmd.Parameters.AddWithValue("@UF", "SP");
+            cmd.Parameters.AddWithValue("@numero", 201);
+            cmd.Parameters.AddWithValue("@complemento", "Casa Rosa");
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
 
         }
 
