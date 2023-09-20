@@ -42,6 +42,28 @@
             FichaPanel = new Panel();
             PFradioButton = new RadioButton();
             PJradioButton = new RadioButton();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            CEPPanel = new Panel();
+            CEPTextBox = new TextBox();
+            CEPLabel = new Label();
+            logradouroPanel = new Panel();
+            logradouroTextBox = new TextBox();
+            logradouroLabel = new Label();
+            bairroPanel = new Panel();
+            bairroTextBox = new TextBox();
+            bairroLabel = new Label();
+            cidadePanel = new Panel();
+            cidadeTextBox = new TextBox();
+            cidadeLabel = new Label();
+            UFpanel = new Panel();
+            UFTextBox = new TextBox();
+            UFLabel = new Label();
+            numeroPanel = new Panel();
+            numeroTextBox = new TextBox();
+            numeroLabel = new Label();
+            complementoPanel = new Panel();
+            complementoTextBox = new TextBox();
+            complementoLabel = new Label();
             flowLayoutPanel2 = new FlowLayoutPanel();
             IDPanel = new Panel();
             IDtextBox = new TextBox();
@@ -69,6 +91,14 @@
             flowLayoutPanel1.SuspendLayout();
             ConteudoPanel.SuspendLayout();
             FichaPanel.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            CEPPanel.SuspendLayout();
+            logradouroPanel.SuspendLayout();
+            bairroPanel.SuspendLayout();
+            cidadePanel.SuspendLayout();
+            UFpanel.SuspendLayout();
+            numeroPanel.SuspendLayout();
+            complementoPanel.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             IDPanel.SuspendLayout();
             NamePanel.SuspendLayout();
@@ -86,7 +116,7 @@
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 384);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 66);
+            panel1.Size = new Size(1157, 66);
             panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -103,7 +133,7 @@
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(30, 20, 0, 0);
-            flowLayoutPanel1.Size = new Size(800, 66);
+            flowLayoutPanel1.Size = new Size(1157, 66);
             flowLayoutPanel1.TabIndex = 23;
             // 
             // NovoButton
@@ -194,17 +224,18 @@
             ConteudoPanel.Location = new Point(0, 0);
             ConteudoPanel.Name = "ConteudoPanel";
             ConteudoPanel.Padding = new Padding(10);
-            ConteudoPanel.Size = new Size(800, 384);
+            ConteudoPanel.Size = new Size(1157, 384);
             ConteudoPanel.TabIndex = 25;
             // 
             // FichaPanel
             // 
             FichaPanel.Controls.Add(PFradioButton);
             FichaPanel.Controls.Add(PJradioButton);
+            FichaPanel.Controls.Add(flowLayoutPanel3);
             FichaPanel.Controls.Add(flowLayoutPanel2);
             FichaPanel.Location = new Point(13, 28);
             FichaPanel.Name = "FichaPanel";
-            FichaPanel.Size = new Size(380, 350);
+            FichaPanel.Size = new Size(724, 350);
             FichaPanel.TabIndex = 20;
             // 
             // PFradioButton
@@ -229,6 +260,198 @@
             PJradioButton.UseVisualStyleBackColor = true;
             PJradioButton.CheckedChanged += PJradioButton_CheckedChanged;
             // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Controls.Add(CEPPanel);
+            flowLayoutPanel3.Controls.Add(logradouroPanel);
+            flowLayoutPanel3.Controls.Add(bairroPanel);
+            flowLayoutPanel3.Controls.Add(cidadePanel);
+            flowLayoutPanel3.Controls.Add(UFpanel);
+            flowLayoutPanel3.Controls.Add(numeroPanel);
+            flowLayoutPanel3.Controls.Add(complementoPanel);
+            flowLayoutPanel3.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel3.Location = new Point(376, 50);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Padding = new Padding(20, 0, 40, 0);
+            flowLayoutPanel3.Size = new Size(336, 269);
+            flowLayoutPanel3.TabIndex = 21;
+            // 
+            // CEPPanel
+            // 
+            CEPPanel.Controls.Add(CEPTextBox);
+            CEPPanel.Controls.Add(CEPLabel);
+            CEPPanel.Location = new Point(23, 3);
+            CEPPanel.Name = "CEPPanel";
+            CEPPanel.Size = new Size(287, 30);
+            CEPPanel.TabIndex = 17;
+            // 
+            // CEPTextBox
+            // 
+            CEPTextBox.Location = new Point(107, 4);
+            CEPTextBox.Name = "CEPTextBox";
+            CEPTextBox.Size = new Size(179, 23);
+            CEPTextBox.TabIndex = 0;
+            CEPTextBox.TextChanged += CEPTextBox_TextChanged;
+            // 
+            // CEPLabel
+            // 
+            CEPLabel.AutoSize = true;
+            CEPLabel.Location = new Point(3, 7);
+            CEPLabel.Name = "CEPLabel";
+            CEPLabel.Size = new Size(31, 15);
+            CEPLabel.TabIndex = 22;
+            CEPLabel.Text = "CEP:";
+            // 
+            // logradouroPanel
+            // 
+            logradouroPanel.Controls.Add(logradouroTextBox);
+            logradouroPanel.Controls.Add(logradouroLabel);
+            logradouroPanel.Location = new Point(23, 39);
+            logradouroPanel.Name = "logradouroPanel";
+            logradouroPanel.Size = new Size(287, 30);
+            logradouroPanel.TabIndex = 13;
+            // 
+            // logradouroTextBox
+            // 
+            logradouroTextBox.Location = new Point(106, 3);
+            logradouroTextBox.Name = "logradouroTextBox";
+            logradouroTextBox.Size = new Size(179, 23);
+            logradouroTextBox.TabIndex = 1;
+            // 
+            // logradouroLabel
+            // 
+            logradouroLabel.AutoSize = true;
+            logradouroLabel.Location = new Point(3, 9);
+            logradouroLabel.Name = "logradouroLabel";
+            logradouroLabel.Size = new Size(72, 15);
+            logradouroLabel.TabIndex = 2;
+            logradouroLabel.Text = "Logradouro:";
+            // 
+            // bairroPanel
+            // 
+            bairroPanel.Controls.Add(bairroTextBox);
+            bairroPanel.Controls.Add(bairroLabel);
+            bairroPanel.Location = new Point(23, 75);
+            bairroPanel.Name = "bairroPanel";
+            bairroPanel.Size = new Size(287, 30);
+            bairroPanel.TabIndex = 16;
+            // 
+            // bairroTextBox
+            // 
+            bairroTextBox.Location = new Point(106, 4);
+            bairroTextBox.Name = "bairroTextBox";
+            bairroTextBox.Size = new Size(179, 23);
+            bairroTextBox.TabIndex = 4;
+            // 
+            // bairroLabel
+            // 
+            bairroLabel.AutoSize = true;
+            bairroLabel.Location = new Point(4, 7);
+            bairroLabel.Name = "bairroLabel";
+            bairroLabel.Size = new Size(41, 15);
+            bairroLabel.TabIndex = 3;
+            bairroLabel.Text = "Bairro:";
+            // 
+            // cidadePanel
+            // 
+            cidadePanel.Controls.Add(cidadeTextBox);
+            cidadePanel.Controls.Add(cidadeLabel);
+            cidadePanel.Location = new Point(23, 111);
+            cidadePanel.Name = "cidadePanel";
+            cidadePanel.Size = new Size(287, 30);
+            cidadePanel.TabIndex = 16;
+            // 
+            // cidadeTextBox
+            // 
+            cidadeTextBox.Location = new Point(106, 4);
+            cidadeTextBox.Name = "cidadeTextBox";
+            cidadeTextBox.Size = new Size(179, 23);
+            cidadeTextBox.TabIndex = 4;
+            // 
+            // cidadeLabel
+            // 
+            cidadeLabel.AutoSize = true;
+            cidadeLabel.Location = new Point(4, 7);
+            cidadeLabel.Name = "cidadeLabel";
+            cidadeLabel.Size = new Size(47, 15);
+            cidadeLabel.TabIndex = 3;
+            cidadeLabel.Text = "Cidade:";
+            // 
+            // UFpanel
+            // 
+            UFpanel.Controls.Add(UFTextBox);
+            UFpanel.Controls.Add(UFLabel);
+            UFpanel.Location = new Point(23, 147);
+            UFpanel.Name = "UFpanel";
+            UFpanel.Size = new Size(287, 30);
+            UFpanel.TabIndex = 16;
+            // 
+            // UFTextBox
+            // 
+            UFTextBox.Location = new Point(106, 4);
+            UFTextBox.Name = "UFTextBox";
+            UFTextBox.Size = new Size(179, 23);
+            UFTextBox.TabIndex = 4;
+            // 
+            // UFLabel
+            // 
+            UFLabel.AutoSize = true;
+            UFLabel.Location = new Point(4, 7);
+            UFLabel.Name = "UFLabel";
+            UFLabel.Size = new Size(24, 15);
+            UFLabel.TabIndex = 3;
+            UFLabel.Text = "UF:";
+            // 
+            // numeroPanel
+            // 
+            numeroPanel.Controls.Add(numeroTextBox);
+            numeroPanel.Controls.Add(numeroLabel);
+            numeroPanel.Location = new Point(23, 183);
+            numeroPanel.Name = "numeroPanel";
+            numeroPanel.Size = new Size(287, 30);
+            numeroPanel.TabIndex = 16;
+            // 
+            // numeroTextBox
+            // 
+            numeroTextBox.Location = new Point(106, 4);
+            numeroTextBox.Name = "numeroTextBox";
+            numeroTextBox.Size = new Size(179, 23);
+            numeroTextBox.TabIndex = 4;
+            // 
+            // numeroLabel
+            // 
+            numeroLabel.AutoSize = true;
+            numeroLabel.Location = new Point(4, 7);
+            numeroLabel.Name = "numeroLabel";
+            numeroLabel.Size = new Size(54, 15);
+            numeroLabel.TabIndex = 3;
+            numeroLabel.Text = "Numero:";
+            // 
+            // complementoPanel
+            // 
+            complementoPanel.Controls.Add(complementoTextBox);
+            complementoPanel.Controls.Add(complementoLabel);
+            complementoPanel.Location = new Point(23, 219);
+            complementoPanel.Name = "complementoPanel";
+            complementoPanel.Size = new Size(287, 30);
+            complementoPanel.TabIndex = 16;
+            // 
+            // complementoTextBox
+            // 
+            complementoTextBox.Location = new Point(106, 4);
+            complementoTextBox.Name = "complementoTextBox";
+            complementoTextBox.Size = new Size(179, 23);
+            complementoTextBox.TabIndex = 4;
+            // 
+            // complementoLabel
+            // 
+            complementoLabel.AutoSize = true;
+            complementoLabel.Location = new Point(4, 7);
+            complementoLabel.Name = "complementoLabel";
+            complementoLabel.Size = new Size(87, 15);
+            complementoLabel.TabIndex = 3;
+            complementoLabel.Text = "Complemento:";
+            // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Controls.Add(IDPanel);
@@ -238,12 +461,11 @@
             flowLayoutPanel2.Controls.Add(CPFPanel);
             flowLayoutPanel2.Controls.Add(EmailPanel);
             flowLayoutPanel2.Controls.Add(TelPanel);
-            flowLayoutPanel2.Dock = DockStyle.Bottom;
             flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel2.Location = new Point(0, 47);
+            flowLayoutPanel2.Location = new Point(3, 50);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Padding = new Padding(40, 0, 40, 0);
-            flowLayoutPanel2.Size = new Size(380, 303);
+            flowLayoutPanel2.Size = new Size(357, 269);
             flowLayoutPanel2.TabIndex = 21;
             // 
             // IDPanel
@@ -431,7 +653,7 @@
             // listaDataGridView
             // 
             listaDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaDataGridView.Location = new Point(399, 28);
+            listaDataGridView.Location = new Point(756, 28);
             listaDataGridView.Name = "listaDataGridView";
             listaDataGridView.RowTemplate.Height = 25;
             listaDataGridView.Size = new Size(388, 319);
@@ -442,7 +664,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1157, 450);
             Controls.Add(ConteudoPanel);
             Controls.Add(panel1);
             Name = "ClientesForm";
@@ -453,6 +675,21 @@
             ConteudoPanel.ResumeLayout(false);
             FichaPanel.ResumeLayout(false);
             FichaPanel.PerformLayout();
+            flowLayoutPanel3.ResumeLayout(false);
+            CEPPanel.ResumeLayout(false);
+            CEPPanel.PerformLayout();
+            logradouroPanel.ResumeLayout(false);
+            logradouroPanel.PerformLayout();
+            bairroPanel.ResumeLayout(false);
+            bairroPanel.PerformLayout();
+            cidadePanel.ResumeLayout(false);
+            cidadePanel.PerformLayout();
+            UFpanel.ResumeLayout(false);
+            UFpanel.PerformLayout();
+            numeroPanel.ResumeLayout(false);
+            numeroPanel.PerformLayout();
+            complementoPanel.ResumeLayout(false);
+            complementoPanel.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             IDPanel.ResumeLayout(false);
             IDPanel.PerformLayout();
@@ -511,5 +748,27 @@
         private MaskedTextBox CNPJtextBox;
         private MaskedTextBox CPFtextBox;
         private MaskedTextBox TelTextBox;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Panel CEPPanel;
+        private TextBox CEPTextBox;
+        private Label CEPLabel;
+        private Panel logradouroPanel;
+        private TextBox logradouroTextBox;
+        private Label logradouroLabel;
+        private Panel bairroPanel;
+        private TextBox bairroTextBox;
+        private Label bairroLabel;
+        private Panel UFpanel;
+        private TextBox UFTextBox;
+        private Label UFLabel;
+        private Panel numeroPanel;
+        private TextBox numeroTextBox;
+        private Label numeroLabel;
+        private Panel complementoPanel;
+        private TextBox complementoTextBox;
+        private Label complementoLabel;
+        private Panel cidadePanel;
+        private TextBox cidadeTextBox;
+        private Label cidadeLabel;
     }
 }

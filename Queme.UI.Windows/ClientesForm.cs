@@ -11,6 +11,10 @@ using System.Windows.Forms;
 using MySqlX.XDevAPI;
 using Queme.Db;
 using Queme.Models;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Runtime.ConstrainedExecution;
+using Newtonsoft.Json;
 
 namespace Queme.UI.Windows
 {
@@ -85,6 +89,8 @@ namespace Queme.UI.Windows
             listaDataGridView.Columns["Bairro"].Visible = false;
             listaDataGridView.Columns["Logradouro"].Visible = false;
             listaDataGridView.Columns["UF"].Visible = false;
+            listaDataGridView.Columns["localidade"].Visible = false;
+
 
         }
 
@@ -154,6 +160,13 @@ namespace Queme.UI.Windows
             cliente.razaoSocial = RazaoSocialTextBox.Text;
             cliente.CNPJ = CNPJtextBox.Text;
             cliente.CPF = CPFtextBox.Text;
+            cliente.CEP = CEPTextBox.Text;
+            cliente.Bairro = bairroTextBox.Text;
+            cliente.Numero = int.Parse(numeroTextBox.Text);
+            cliente.Logradouro = logradouroTextBox.Text;
+            cliente.localidade = cidadeTextBox.Text;
+            cliente.UF = UFTextBox.Text;
+            cliente.Complemento = complementoTextBox.Text;
 
             var db = new ClienteDb();
 
@@ -346,6 +359,58 @@ namespace Queme.UI.Windows
         private void CNPJtextBox_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private async void CEPTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string cep = CEPTextBox.Text.ToString();
+            DadosViaCEP dados = await VerificaCEP(cep);
+
+            if (dados != null && dados.Logradouro != null)
+            {
+                logradouroTextBox.Text = dados.Logradouro.ToString();
+                bairroTextBox.Text = dados.Bairro.ToString();
+                cidadeTextBox.Text = dados.Localidade.ToString();
+                UFTextBox.Text = dados.UF.ToString();
+            }
+        }
+
+        static async Task<DadosViaCEP> VerificaCEP(string CEP)
+        {
+            string url = "https://viacep.com.br/ws/" + CEP + "/json/";
+
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                HttpResponseMessage response = await httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    DadosViaCEP dadosViaCEP = JsonConvert.DeserializeObject<DadosViaCEP>(json);
+                    return dadosViaCEP;
+
+                }
+                else
+                {
+                    throw new Exception("Erro ao buscar CEP");
+                }
+
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+        public class DadosViaCEP
+        {
+            public string Cep { get; set; }
+            public string Logradouro { get; set; }
+            public string Bairro { get; set; }
+            public string Localidade { get; set; }
+            public string UF { get; set; }
         }
     }
 }

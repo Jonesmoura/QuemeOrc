@@ -34,7 +34,7 @@ namespace Queme.Db
 
         public void IncluirEnderecoCliente(Cliente cliente)
         {
-            string sql = "INSERT INTO endereco_cliente (id_cliente, CEP,logradouro, bairro, UF, numero, complemento) VALUES((SELECT MAX(id) from clientes), @CEP, @logradouro, @bairro, @UF, @numero, @complemento);";
+            string sql = "INSERT INTO endereco_cliente (id_cliente, CEP,logradouro, bairro, localidade, UF, numero, complemento) VALUES((SELECT MAX(id) from clientes), @CEP, @logradouro, @bairro, @localidade, @UF, @numero, @complemento);";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             // parametros do endereço
@@ -46,12 +46,13 @@ namespace Queme.Db
             //cmd.Parameters.AddWithValue("@complemento", cliente.Complemento);
 
             // teste hardCoded, remover apos criar campos no formulário:
-            cmd.Parameters.AddWithValue("@CEP", "09350550");
-            cmd.Parameters.AddWithValue("@logradouro", "Rua Argentina");
-            cmd.Parameters.AddWithValue("@bairro", "Parque das Américas");
-            cmd.Parameters.AddWithValue("@UF", "SP");
-            cmd.Parameters.AddWithValue("@numero", 201);
-            cmd.Parameters.AddWithValue("@complemento", "Casa Rosa");
+            cmd.Parameters.AddWithValue("@CEP", cliente.CEP);
+            cmd.Parameters.AddWithValue("@logradouro", cliente.Logradouro);
+            cmd.Parameters.AddWithValue("@bairro", cliente.Bairro);
+            cmd.Parameters.AddWithValue("@localidade", cliente.localidade);
+            cmd.Parameters.AddWithValue("@UF", cliente.UF);
+            cmd.Parameters.AddWithValue("@numero", cliente.Numero);
+            cmd.Parameters.AddWithValue("@complemento", cliente.Complemento);
 
             cn.Open();
             cmd.ExecuteNonQuery();
