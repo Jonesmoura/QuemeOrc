@@ -91,7 +91,6 @@ namespace Queme.UI.Windows
             listaDataGridView.Columns["UF"].Visible = false;
             listaDataGridView.Columns["localidade"].Visible = false;
 
-
         }
 
         private void ExibirFicha()

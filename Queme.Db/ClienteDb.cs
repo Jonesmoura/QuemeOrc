@@ -37,15 +37,6 @@ namespace Queme.Db
             string sql = "INSERT INTO endereco_cliente (id_cliente, CEP,logradouro, bairro, localidade, UF, numero, complemento) VALUES((SELECT MAX(id) from clientes), @CEP, @logradouro, @bairro, @localidade, @UF, @numero, @complemento);";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
-            // parametros do endereço
-            //cmd.Parameters.AddWithValue("@CEP", cliente.CEP);
-            //cmd.Parameters.AddWithValue("@logradouro", cliente.Logradouro);
-            //cmd.Parameters.AddWithValue("@bairro", cliente.Bairro);
-            //cmd.Parameters.AddWithValue("@UF", cliente.UF);
-            //cmd.Parameters.AddWithValue("@numero", cliente.Numero);
-            //cmd.Parameters.AddWithValue("@complemento", cliente.Complemento);
-
-            // teste hardCoded, remover apos criar campos no formulário:
             cmd.Parameters.AddWithValue("@CEP", cliente.CEP);
             cmd.Parameters.AddWithValue("@logradouro", cliente.Logradouro);
             cmd.Parameters.AddWithValue("@bairro", cliente.Bairro);

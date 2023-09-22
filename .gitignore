@@ -363,5 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # file to configure database connection
-Db.cs
 /Queme.Db/Db.cs
