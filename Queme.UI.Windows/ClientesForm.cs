@@ -191,8 +191,16 @@ namespace Queme.UI.Windows
 
         private void AlterarButton_Click(object sender, EventArgs e)
         {
+            var db = new ClienteDb();
 
-            var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
+            //var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
+
+            int id = int.Parse(listaDataGridView.SelectedRows[0].Cells["ID"].Value.ToString());
+
+            //int id = int.Parse(IDtextBox.Text);
+
+            var cliente = db.buscarInfoCliente(id);
+
             IDtextBox.Text = cliente.ID.ToString();
             NameTextBox.Text = cliente.Name.ToString();
             RazaoSocialTextBox.Text = cliente.razaoSocial.ToString();
@@ -200,6 +208,14 @@ namespace Queme.UI.Windows
             CPFtextBox.Text = cliente.CPF.ToString();
             EmailTextBox.Text = cliente.Email.ToString();
             TelTextBox.Text = cliente.Tel.ToString();
+            CEPTextBox.Text = cliente.CEP.ToString();
+            logradouroTextBox.Text = cliente.Logradouro.ToString();
+            bairroTextBox.Text = cliente.Bairro.ToString();
+            cidadeTextBox.Text = cliente.localidade.ToString();
+            UFTextBox.Text = cliente.UF.ToString();
+            numeroTextBox.Text = cliente.Numero.ToString();
+            complementoTextBox.Text = cliente.Complemento.ToString();
+
             ExibirFicha();
 
             //Teste layout alterar.

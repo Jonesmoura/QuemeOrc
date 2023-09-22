@@ -49,7 +49,6 @@ namespace Queme.Db
             cmd.ExecuteNonQuery();
             cn.Close();
 
-
         }
 
         public void Alterar(Cliente cliente)
@@ -78,6 +77,45 @@ namespace Queme.Db
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
+
+        }
+
+        //testar método de busca de cliente
+        public Cliente buscarInfoCliente(int id)
+        {
+            var cliente = new Cliente();
+            string sql = "SELECT * FROM clientes INNER JOIN endereco_cliente ON clientes.id = endereco_cliente.id_cliente WHERE clientes.id = @ID";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@ID", id);
+            cn.Open();
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+
+                cliente.ID = Convert.ToInt32(reader["ID"]);
+                cliente.Name = reader["Name"].ToString();
+                cliente.razaoSocial = reader["razaoSocial"].ToString();
+                cliente.CNPJ = reader["CNPJ"].ToString();
+                cliente.CPF = reader["CPF"].ToString();
+                cliente.Tel = reader["Tel"].ToString();
+                cliente.Email = reader["Email"].ToString();
+                cliente.CEP = reader["CEP"].ToString();
+                cliente.Logradouro = reader["logradouro"].ToString();
+                cliente.Bairro = reader["bairro"].ToString();
+                cliente.localidade = reader["localidade"].ToString();
+                cliente.UF = reader["UF"].ToString();
+                cliente.Numero =  Convert.ToInt32(reader["numero"]);
+                cliente.Complemento = reader["complemento"].ToString();
+
+            }
+
+            reader.Close();
+            cn.Close();
+
+            return cliente;
 
         }
 
@@ -115,19 +153,5 @@ namespace Queme.Db
             return lista;
 
         }
-
-        public void teste() // método para teste de conexão com o DB
-        {
-            string sql = @"DELETE FROM clientes WHERE id=@ID";
-            var cn = new MySqlConnection(Db.connect);
-            var cmd = new MySqlCommand(sql, cn);
-            cmd.Parameters.AddWithValue("@ID", 3);
-
-            cn.Open();
-            cmd.ExecuteNonQuery();
-            cn.Close(); 
-
-        }
-
     }
 }
