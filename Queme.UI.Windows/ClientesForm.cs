@@ -28,14 +28,25 @@ namespace Queme.UI.Windows
         private bool isEmail(string email)
         {
             string emailRegEx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
             return Regex.IsMatch(email, emailRegEx);
 
         }
 
+        private bool isCnpj(string cnpj)
+        {
+            string cnpjRegEx = @"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$";
+            return Regex.IsMatch(cnpj, cnpjRegEx);
+        }
+
+        private bool isCpf(string cpf)
+        {
+            string cpfRegEx = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
+            return Regex.IsMatch(cpf, cpfRegEx);
+        }
+
         private bool VerificaDadosNovoCliente(Cliente cliente)
         {
-            if (cliente.CNPJ == "")
+            if (PFradioButton.Checked == true)
             {
                 // logica para verificação de dados PF
                 if (!isEmail(cliente.Email))
@@ -122,6 +133,14 @@ namespace Queme.UI.Windows
             CNPJtextBox.Clear();
             CPFtextBox.Clear();
             RazaoSocialTextBox.Clear();
+            CEPTextBox.Clear();
+            logradouroTextBox.Clear();
+            bairroTextBox.Clear();
+            cidadeTextBox.Clear();
+            numeroTextBox.Clear();
+            UFTextBox.Clear();
+            complementoTextBox.Clear();
+
 
         }
 
@@ -152,36 +171,49 @@ namespace Queme.UI.Windows
         private void ConfirmarInclusaoButton_Click(object sender, EventArgs e)
         {
             var cliente = new Cliente();
+            string cnpj = CNPJtextBox.Text;
+            string cpf = CPFtextBox.Text;
 
-            cliente.Name = NameTextBox.Text;
-            cliente.Email = EmailTextBox.Text;
-            cliente.Tel = TelTextBox.Text;
-            cliente.razaoSocial = RazaoSocialTextBox.Text;
-            cliente.CNPJ = CNPJtextBox.Text;
-            cliente.CPF = CPFtextBox.Text;
-            cliente.CEP = CEPTextBox.Text;
-            cliente.Bairro = bairroTextBox.Text;
-            cliente.Numero = int.Parse(numeroTextBox.Text);
-            cliente.Logradouro = logradouroTextBox.Text;
-            cliente.localidade = cidadeTextBox.Text;
-            cliente.UF = UFTextBox.Text;
-            cliente.Complemento = complementoTextBox.Text;
+            // to-do: função com regex para verificação do cnpj, caso esteja ok, o CPF será null, caso false o proprio cnpj será null
 
-            var db = new ClienteDb();
-
-            if (PJradioButton.Checked == true && CNPJtextBox.Text == "")
+            if (PJradioButton.Checked == true && !isCnpj(cnpj))
             {
-                MessageBox.Show("O CNPJ deve ser preenchido");
+                MessageBox.Show("CNPJ inválido");
 
             }
-            else if (PFradioButton.Checked == true && CPFtextBox.Text == "")
+            else if (PFradioButton.Checked == true && !isCpf(cpf))
             {
-                MessageBox.Show("O CPF deve ser preenchido");
+                MessageBox.Show("CPF inválido");
             }
             else
             {
+                if (isCnpj(cnpj))
+                {
+                    cliente.CNPJ = cnpj;
+                    cliente.razaoSocial = RazaoSocialTextBox.Text;
+                    cliente.CPF = null;
+                }
+                else if (isCpf(cpf))
+                {
+                    cliente.razaoSocial = null;
+                    cliente.CNPJ = null;
+                    cliente.CPF = cpf;
+                }
+
+                cliente.Name = NameTextBox.Text;
+                cliente.Email = EmailTextBox.Text;
+                cliente.Tel = TelTextBox.Text;
+                cliente.CEP = CEPTextBox.Text;
+                cliente.Bairro = bairroTextBox.Text;
+                cliente.Numero = int.Parse(numeroTextBox.Text);
+                cliente.Logradouro = logradouroTextBox.Text;
+                cliente.localidade = cidadeTextBox.Text;
+                cliente.UF = UFTextBox.Text;
+                cliente.Complemento = complementoTextBox.Text;
+
                 if (VerificaDadosNovoCliente(cliente))
                 {
+                    var db = new ClienteDb();
                     db.Incluir(cliente);
                     ExibirGrid();
                 };
@@ -252,6 +284,13 @@ namespace Queme.UI.Windows
             cliente.razaoSocial = RazaoSocialTextBox.Text;
             cliente.CNPJ = CNPJtextBox.Text;
             cliente.CPF = CPFtextBox.Text;
+            cliente.Logradouro = logradouroTextBox.Text;
+            cliente.Bairro = bairroTextBox.Text;
+            cliente.Numero = int.Parse(numeroTextBox.Text);
+            cliente.UF = UFTextBox.Text;
+            cliente.CEP = CEPTextBox.Text;
+            cliente.localidade = cidadeTextBox.Text;
+            cliente.Complemento = complementoTextBox.Text;
 
             var db = new ClienteDb();
             db.Alterar(cliente);

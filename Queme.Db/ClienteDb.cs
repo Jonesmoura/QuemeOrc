@@ -65,10 +65,47 @@ namespace Queme.Db
             cmd.ExecuteNonQuery();
             cn.Close();
 
+            AlterarEndereco(cliente);
+
+        }
+
+        public void AlterarEndereco(Cliente cliente)
+        {
+            string sql = @"UPDATE endereco_cliente SET CEP=@CEP,logradouro=@logradouro, bairro=@bairro, localidade=@localidade, UF=@UF, numero=@numero, complemento=@complemento WHERE id_cliente=@ID;";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@ID", cliente.ID);
+            cmd.Parameters.AddWithValue("@CEP", cliente.CEP);
+            cmd.Parameters.AddWithValue("@logradouro", cliente.Logradouro);
+            cmd.Parameters.AddWithValue("@bairro", cliente.Bairro);
+            cmd.Parameters.AddWithValue("@localidade", cliente.localidade);
+            cmd.Parameters.AddWithValue("@UF", cliente.UF);
+            cmd.Parameters.AddWithValue("@numero", cliente.Numero);
+            cmd.Parameters.AddWithValue("@complemento", cliente.Complemento);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
+        }
+
+        public void ExcluirEnderecoCliente( int id)
+        {
+            string sql = @"DELETE FROM endereco_cliente WHERE id_cliente=@ID";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@ID", id);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
         }
 
         public void Excluir(int id)
         {
+            // excluir seu cadastro de endereço antes
+            ExcluirEnderecoCliente(id);
             string sql = @"DELETE FROM clientes WHERE id=@ID";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);

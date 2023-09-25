@@ -560,7 +560,7 @@
             CNPJtextBox.Name = "CNPJtextBox";
             CNPJtextBox.Size = new Size(179, 23);
             CNPJtextBox.TabIndex = 3;
-            CNPJtextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            CNPJtextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // CNPJlabel
             // 
@@ -587,7 +587,7 @@
             CPFtextBox.Name = "CPFtextBox";
             CPFtextBox.Size = new Size(179, 23);
             CPFtextBox.TabIndex = 3;
-            CPFtextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            CPFtextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // CPFlabel
             // 
