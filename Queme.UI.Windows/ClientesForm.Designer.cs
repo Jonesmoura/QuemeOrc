@@ -84,6 +84,8 @@
             EmailTextBox = new TextBox();
             label3 = new Label();
             TelPanel = new Panel();
+            TelradioButton = new RadioButton();
+            CelRadioButton = new RadioButton();
             TelTextBox = new MaskedTextBox();
             label4 = new Label();
             listaDataGridView = new DataGridView();
@@ -273,7 +275,7 @@
             flowLayoutPanel3.Location = new Point(376, 50);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Padding = new Padding(20, 0, 40, 0);
-            flowLayoutPanel3.Size = new Size(336, 269);
+            flowLayoutPanel3.Size = new Size(336, 281);
             flowLayoutPanel3.TabIndex = 21;
             // 
             // CEPPanel
@@ -465,7 +467,7 @@
             flowLayoutPanel2.Location = new Point(3, 50);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Padding = new Padding(40, 0, 40, 0);
-            flowLayoutPanel2.Size = new Size(357, 269);
+            flowLayoutPanel2.Size = new Size(357, 281);
             flowLayoutPanel2.TabIndex = 21;
             // 
             // IDPanel
@@ -625,26 +627,53 @@
             // 
             // TelPanel
             // 
+            TelPanel.Controls.Add(TelradioButton);
+            TelPanel.Controls.Add(CelRadioButton);
             TelPanel.Controls.Add(TelTextBox);
             TelPanel.Controls.Add(label4);
             TelPanel.Location = new Point(43, 219);
             TelPanel.Name = "TelPanel";
-            TelPanel.Size = new Size(287, 30);
+            TelPanel.Size = new Size(287, 50);
             TelPanel.TabIndex = 15;
+            // 
+            // TelradioButton
+            // 
+            TelradioButton.AutoSize = true;
+            TelradioButton.Location = new Point(196, 4);
+            TelradioButton.Name = "TelradioButton";
+            TelradioButton.Size = new Size(64, 19);
+            TelradioButton.TabIndex = 4;
+            TelradioButton.TabStop = true;
+            TelradioButton.Text = "Tel Fixo";
+            TelradioButton.UseVisualStyleBackColor = true;
+            TelradioButton.CheckedChanged += TelradioButton_CheckedChanged;
+            // 
+            // CelRadioButton
+            // 
+            CelRadioButton.AutoSize = true;
+            CelRadioButton.Location = new Point(128, 4);
+            CelRadioButton.Name = "CelRadioButton";
+            CelRadioButton.Size = new Size(62, 19);
+            CelRadioButton.TabIndex = 4;
+            CelRadioButton.TabStop = true;
+            CelRadioButton.Text = "Celular";
+            CelRadioButton.UseVisualStyleBackColor = true;
+            CelRadioButton.CheckedChanged += CelRadioButton_CheckedChanged;
             // 
             // TelTextBox
             // 
-            TelTextBox.Location = new Point(107, 4);
+            TelTextBox.Location = new Point(106, 24);
             TelTextBox.Mask = "(00) 00000-0000";
             TelTextBox.Name = "TelTextBox";
             TelTextBox.Size = new Size(179, 23);
             TelTextBox.TabIndex = 3;
             TelTextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            TelTextBox.MaskInputRejected += TelTextBox_MaskInputRejected;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 6);
+            label4.Location = new Point(4, 15);
             label4.Name = "label4";
             label4.Size = new Size(54, 15);
             label4.TabIndex = 2;
@@ -770,5 +799,7 @@
         private Panel cidadePanel;
         private TextBox cidadeTextBox;
         private Label cidadeLabel;
+        private RadioButton TelradioButton;
+        private RadioButton CelRadioButton;
     }
 }

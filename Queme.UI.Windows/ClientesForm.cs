@@ -225,11 +225,8 @@ namespace Queme.UI.Windows
         {
             var db = new ClienteDb();
 
-            //var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
-
             int id = int.Parse(listaDataGridView.SelectedRows[0].Cells["ID"].Value.ToString());
 
-            //int id = int.Parse(IDtextBox.Text);
 
             var cliente = db.buscarInfoCliente(id);
 
@@ -252,7 +249,7 @@ namespace Queme.UI.Windows
 
             //Teste layout alterar.
 
-            if (CNPJtextBox.Text == "")
+            if (isCpf(CPFtextBox.Text))
             {
                 CPFPanel.Visible = true;
                 CNPJPanel.Visible = false;
@@ -265,6 +262,20 @@ namespace Queme.UI.Windows
                 RazaoSocialPanel.Visible = true;
             }
 
+            char[] tel = (TelTextBox.Text).ToCharArray();
+            
+            if (tel[2] != char.Parse("9"))
+            {
+                TelradioButton.Checked = true;
+                TelTextBox.Text = cliente.Tel.ToString();
+
+            }
+            else
+            {
+                CelRadioButton.Checked = true;
+                TelTextBox.Text = cliente.Tel.ToString();
+
+            }
             IDPanel.Visible = true;
             confirmarAlterarButton.Visible = true;
             ConfirmarExcluirButton.Visible = false;
@@ -465,6 +476,21 @@ namespace Queme.UI.Windows
             public string Bairro { get; set; }
             public string Localidade { get; set; }
             public string UF { get; set; }
+        }
+
+        private void TelTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void CelRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            TelTextBox.Mask = "(00) 00000-0000";
+        }
+
+        private void TelradioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            TelTextBox.Mask = "(00) 0000-0000";
         }
     }
 }
