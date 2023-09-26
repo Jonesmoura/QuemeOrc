@@ -56,26 +56,26 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(145, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // serviçosToolStripMenuItem
             // 
             serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            serviçosToolStripMenuItem.Size = new Size(180, 22);
+            serviçosToolStripMenuItem.Size = new Size(145, 22);
             serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // orçamentosToolStripMenuItem
             // 
             orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
-            orçamentosToolStripMenuItem.Size = new Size(180, 22);
+            orçamentosToolStripMenuItem.Size = new Size(145, 22);
             orçamentosToolStripMenuItem.Text = "Orçamentos";
             // 
             // MainForm
@@ -86,6 +86,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);

@@ -141,6 +141,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ClientAddForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inclusão de Cliente";
             ResumeLayout(false);
             PerformLayout();

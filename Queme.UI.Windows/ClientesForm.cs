@@ -73,6 +73,10 @@ namespace Queme.UI.Windows
 
         private void ExibirGrid()
         {
+            this.Width = 1173;
+            this.Height = 489;
+            this.CenterToScreen();
+
             listaDataGridView.Visible = true;
             listaDataGridView.Dock = DockStyle.Fill;
             FichaPanel.Visible = false;
@@ -119,6 +123,8 @@ namespace Queme.UI.Windows
             VoltarButton.Visible = true;
             PFradioButton.Visible = false;
             PJradioButton.Visible = false;
+            flowLayoutPanel3.Visible = true;
+            TelPanel.Visible = true;
             NameTextBox.Focus();
 
         }
@@ -263,7 +269,7 @@ namespace Queme.UI.Windows
             }
 
             char[] tel = (TelTextBox.Text).ToCharArray();
-            
+
             if (tel[2] != char.Parse("9"))
             {
                 TelradioButton.Checked = true;
@@ -311,6 +317,10 @@ namespace Queme.UI.Windows
 
         private void ExcluirButton_Click(object sender, EventArgs e)
         {
+            this.Width = 500;
+            this.Height = 489;
+            this.CenterToScreen();
+
             var cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem;
             IDtextBox.Text = cliente.ID.ToString();
             NameTextBox.Text = cliente.Name.ToString();
@@ -327,6 +337,22 @@ namespace Queme.UI.Windows
             ConfirmarInclusaoButton.Visible = false;
             PFradioButton.Visible = false;
             PJradioButton.Visible = false;
+            flowLayoutPanel3.Visible = false;
+            TelPanel.Visible = false;
+
+            if(cliente.CPF  != "")
+            {
+                CPFPanel.Visible = true;
+                CNPJPanel.Visible = false;
+                RazaoSocialPanel.Visible = false;
+            }
+            else
+            {
+                CPFPanel.Visible = false;
+                CNPJPanel.Visible = true;
+                RazaoSocialPanel.Visible = true;
+
+            }
         }
 
         private void ConfirmarExcluirButton_Click(object sender, EventArgs e)

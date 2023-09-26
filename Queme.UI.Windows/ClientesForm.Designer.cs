@@ -697,6 +697,7 @@
             Controls.Add(ConteudoPanel);
             Controls.Add(panel1);
             Name = "ClientesForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ClientesForm";
             Load += ClientesForm_Load;
             panel1.ResumeLayout(false);
