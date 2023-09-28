@@ -19,5 +19,11 @@ namespace Queme.UI.Windows
             var form = new ClientesForm();
             form.ShowDialog();
         }
+
+        private void novoOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new NovoOrcamentoForm();
+            form.ShowDialog();
+        }
     }
 }

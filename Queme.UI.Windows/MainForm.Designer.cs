@@ -34,6 +34,7 @@
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             serviçosToolStripMenuItem = new ToolStripMenuItem();
             orçamentosToolStripMenuItem = new ToolStripMenuItem();
+            novoOrçamentoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,27 +57,35 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(145, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // fornecedoresToolStripMenuItem
             // 
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            fornecedoresToolStripMenuItem.Size = new Size(145, 22);
+            fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
             // 
             // serviçosToolStripMenuItem
             // 
             serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            serviçosToolStripMenuItem.Size = new Size(145, 22);
+            serviçosToolStripMenuItem.Size = new Size(180, 22);
             serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // orçamentosToolStripMenuItem
             // 
+            orçamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoOrçamentoToolStripMenuItem });
             orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
-            orçamentosToolStripMenuItem.Size = new Size(145, 22);
+            orçamentosToolStripMenuItem.Size = new Size(180, 22);
             orçamentosToolStripMenuItem.Text = "Orçamentos";
+            // 
+            // novoOrçamentoToolStripMenuItem
+            // 
+            novoOrçamentoToolStripMenuItem.Name = "novoOrçamentoToolStripMenuItem";
+            novoOrçamentoToolStripMenuItem.Size = new Size(180, 22);
+            novoOrçamentoToolStripMenuItem.Text = "Novo Orçamento";
+            novoOrçamentoToolStripMenuItem.Click += novoOrçamentoToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -103,5 +112,6 @@
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem serviçosToolStripMenuItem;
         private ToolStripMenuItem orçamentosToolStripMenuItem;
+        private ToolStripMenuItem novoOrçamentoToolStripMenuItem;
     }
 }
