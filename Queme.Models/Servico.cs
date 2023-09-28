@@ -13,6 +13,7 @@ namespace Queme.Models
         public int Id_cliente { get; set; }
         public int Qtd_horas { get; set; }
         public TipoServico TipoServico { get; set; }
+        public EtapasServico Etapa {get; set; }
         public double ValorHora { get; set; }
 
     }

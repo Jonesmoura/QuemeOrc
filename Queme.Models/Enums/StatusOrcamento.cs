@@ -8,6 +8,9 @@ namespace Queme.Models.Enums
 {
     public enum StatusOrcamento : int
     {
-
+        Pendente = 0,
+        Enviado = 1,
+        Aprovado = 2,
+        Concluido = 3
     }
 }
