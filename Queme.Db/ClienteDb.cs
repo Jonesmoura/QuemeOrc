@@ -190,5 +190,72 @@ namespace Queme.Db
             return lista;
 
         }
+
+        public List <Cliente> BuscarClientesOrc(string razao, string nome) 
+        {
+
+            List<Cliente> lista = new List<Cliente>();
+
+            if (razao != "")
+            {
+                string sql = @"SELECT id, razaoSocial,name, CNPJ, email,tel FROM clientes WHERE razaoSocial LIKE @RazaoBusca";
+                var cn = new MySqlConnection(Db.connect);
+                var cmd = new MySqlCommand(sql, cn);
+                cmd.Parameters.AddWithValue("@RazaoBusca", "%" + razao + "%");
+
+                cn.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    var cliente = new Cliente();
+                    cliente.ID = Convert.ToInt32(reader["ID"]);
+                    cliente.razaoSocial = reader["razaoSocial"].ToString();
+                    cliente.Name = reader["Name"].ToString();
+                    cliente.CNPJ = reader["CNPJ"].ToString();
+                    cliente.Tel = reader["Tel"].ToString();
+                    cliente.Email = reader["Email"].ToString();
+
+                    lista.Add(cliente);
+
+                }
+
+                reader.Close();
+                cn.Close();
+
+            }
+            else if(nome != "")
+            {
+                string sql = @"SELECT id, name, CPF, email,tel FROM clientes WHERE name LIKE @NomeBusca";
+                var cn = new MySqlConnection(Db.connect);
+                var cmd = new MySqlCommand(sql, cn);
+                cmd.Parameters.AddWithValue("@NomeBusca", "%" + nome + "%");
+
+                cn.Open();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var cliente = new Cliente();
+                    cliente.ID = Convert.ToInt32(reader["ID"]);
+                    cliente.Name = reader["Name"].ToString();
+                    cliente.CPF = reader["CPF"].ToString();
+                    cliente.Tel = reader["Tel"].ToString();
+                    cliente.Email = reader["Email"].ToString();
+
+                    lista.Add(cliente);
+
+                }
+
+                reader.Close();
+                cn.Close();
+
+            }
+
+            return lista;
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Queme.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

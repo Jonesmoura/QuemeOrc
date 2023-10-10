@@ -22,8 +22,11 @@ namespace Queme.UI.Windows
 
         private void novoOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new NovoOrcamentoForm();
-            form.ShowDialog();
+            // Inicialização do form de orçamento será realizada após a seleção do cliente, no método de selecionar cliente
+            //var form = new NovoOrcamentoForm();
+            //form.ShowDialog();
+            var formBuscaCliente = new BuscaClienteForm();
+            formBuscaCliente.ShowDialog();
         }
     }
 }

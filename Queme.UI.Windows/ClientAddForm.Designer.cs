@@ -112,6 +112,7 @@
             AddBtn.TabIndex = 2;
             AddBtn.Text = "Incluir";
             AddBtn.UseVisualStyleBackColor = true;
+            AddBtn.Click += AddBtn_Click;
             // 
             // TurnBtn
             // 
