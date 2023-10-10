@@ -71,6 +71,7 @@ namespace Queme.UI.Windows
             {
                 ClientesEncontradosDataGridView.Columns["razaoSocial"].Visible = false;
                 ClientesEncontradosDataGridView.Columns["CNPJ"].Visible = false;
+                ClientesEncontradosDataGridView.Columns["CPF"].Visible = true;
             }
         }
 

@@ -198,7 +198,7 @@ namespace Queme.Db
 
             if (razao != "")
             {
-                string sql = @"SELECT id, razaoSocial,name, CNPJ, email,tel FROM clientes WHERE razaoSocial LIKE @RazaoBusca";
+                string sql = @"SELECT id, razaoSocial,name, CNPJ, email,tel FROM clientes WHERE razaoSocial LIKE @RazaoBusca;";
                 var cn = new MySqlConnection(Db.connect);
                 var cmd = new MySqlCommand(sql, cn);
                 cmd.Parameters.AddWithValue("@RazaoBusca", "%" + razao + "%");
@@ -227,7 +227,7 @@ namespace Queme.Db
             }
             else if(nome != "")
             {
-                string sql = @"SELECT id, name, CPF, email,tel FROM clientes WHERE name LIKE @NomeBusca";
+                string sql = @"SELECT id, name, CNPJ, CPF, email,tel FROM clientes WHERE name LIKE @NomeBusca AND CNPJ IS NULL;";
                 var cn = new MySqlConnection(Db.connect);
                 var cmd = new MySqlCommand(sql, cn);
                 cmd.Parameters.AddWithValue("@NomeBusca", "%" + nome + "%");
