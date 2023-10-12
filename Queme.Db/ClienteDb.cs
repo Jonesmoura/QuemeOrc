@@ -117,7 +117,8 @@ namespace Queme.Db
 
         }
 
-        //testar método de busca de cliente
+        //O método não funcionará se o cliente não tem endereço cadastrado (Obrigatoriamente o cliente deve ter um endereço cadastrado)
+        //to-do: Regra para obrigatoriedade de cadastro de endereço de cliente
         public Cliente buscarInfoCliente(int id)
         {
             var cliente = new Cliente();

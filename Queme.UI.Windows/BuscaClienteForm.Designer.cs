@@ -189,6 +189,7 @@
             SelecionarClienteButton.TabIndex = 4;
             SelecionarClienteButton.Text = "Selecionar Cliente";
             SelecionarClienteButton.UseVisualStyleBackColor = true;
+            SelecionarClienteButton.Click += SelecionarClienteButton_Click;
             // 
             // BuscaClienteForm
             // 

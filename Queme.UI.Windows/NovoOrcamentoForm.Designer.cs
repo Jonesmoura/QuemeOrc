@@ -29,8 +29,20 @@
         private void InitializeComponent()
         {
             ConteudoOrcPanel = new Panel();
+            panel1 = new Panel();
+            DadosOrcamentoLabel = new Label();
+            tabControl1 = new TabControl();
+            ServicosTabPage = new TabPage();
+            TituloPainelServicosLabel = new Label();
+            CustosAddTabPage = new TabPage();
+            CustosAddLabel = new Label();
+            PagementoTabPage = new TabPage();
+            CondicoesLabel = new Label();
+            ObsTabPage = new TabPage();
+            label1 = new Label();
+            AlterarCliente = new Button();
             ClientePanel = new Panel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            EnderecoFlowLayoutPanel = new FlowLayoutPanel();
             CepPanel = new Panel();
             CepTextBox = new TextBox();
             CepLabel = new Label();
@@ -42,7 +54,7 @@
             ComplementoLabel = new Label();
             DadosCLienteLabel = new Label();
             EnderecoServicoLabel = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            InfoClienteFlowLayoutPanel = new FlowLayoutPanel();
             NomePanel = new Panel();
             NomeTextBox = new TextBox();
             NomeLabel = new Label();
@@ -57,41 +69,29 @@
             CnpjLabel = new Label();
             CpfPanel = new Panel();
             CpfTextBox = new TextBox();
-            CpfPabel = new Label();
+            Cpflabel = new Label();
             TelPanel = new Panel();
-            textBox1 = new TextBox();
+            TelTextBox = new TextBox();
             TelLabel = new Label();
-            AlterarCliente = new Button();
-            panel1 = new Panel();
-            tabControl1 = new TabControl();
-            ServicosTabPage = new TabPage();
-            CustosAddTabPage = new TabPage();
-            TituloPainelServicosLabel = new Label();
-            DadosOrcamentoLabel = new Label();
-            PagementoTabPage = new TabPage();
-            ObsTabPage = new TabPage();
-            CustosAddLabel = new Label();
-            CondicoesLabel = new Label();
-            label1 = new Label();
             ConteudoOrcPanel.SuspendLayout();
-            ClientePanel.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
-            CepPanel.SuspendLayout();
-            NumeroPanel.SuspendLayout();
-            ComplementoPanel.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            NomePanel.SuspendLayout();
-            RazaoPanel.SuspendLayout();
-            EmailPanel.SuspendLayout();
-            CnpjPanel.SuspendLayout();
-            CpfPanel.SuspendLayout();
-            TelPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             ServicosTabPage.SuspendLayout();
             CustosAddTabPage.SuspendLayout();
             PagementoTabPage.SuspendLayout();
             ObsTabPage.SuspendLayout();
+            ClientePanel.SuspendLayout();
+            EnderecoFlowLayoutPanel.SuspendLayout();
+            CepPanel.SuspendLayout();
+            NumeroPanel.SuspendLayout();
+            ComplementoPanel.SuspendLayout();
+            InfoClienteFlowLayoutPanel.SuspendLayout();
+            NomePanel.SuspendLayout();
+            RazaoPanel.SuspendLayout();
+            EmailPanel.SuspendLayout();
+            CnpjPanel.SuspendLayout();
+            CpfPanel.SuspendLayout();
+            TelPanel.SuspendLayout();
             SuspendLayout();
             // 
             // ConteudoOrcPanel
@@ -104,26 +104,150 @@
             ConteudoOrcPanel.Size = new Size(1119, 777);
             ConteudoOrcPanel.TabIndex = 0;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(DadosOrcamentoLabel);
+            panel1.Controls.Add(tabControl1);
+            panel1.Location = new Point(6, 161);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1110, 552);
+            panel1.TabIndex = 2;
+            // 
+            // DadosOrcamentoLabel
+            // 
+            DadosOrcamentoLabel.AutoSize = true;
+            DadosOrcamentoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DadosOrcamentoLabel.Location = new Point(458, 9);
+            DadosOrcamentoLabel.Name = "DadosOrcamentoLabel";
+            DadosOrcamentoLabel.Size = new Size(158, 21);
+            DadosOrcamentoLabel.TabIndex = 2;
+            DadosOrcamentoLabel.Text = "Dados do Orçamento";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(ServicosTabPage);
+            tabControl1.Controls.Add(CustosAddTabPage);
+            tabControl1.Controls.Add(PagementoTabPage);
+            tabControl1.Controls.Add(ObsTabPage);
+            tabControl1.Location = new Point(9, 43);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1098, 506);
+            tabControl1.TabIndex = 0;
+            // 
+            // ServicosTabPage
+            // 
+            ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
+            ServicosTabPage.Location = new Point(4, 24);
+            ServicosTabPage.Name = "ServicosTabPage";
+            ServicosTabPage.Padding = new Padding(3);
+            ServicosTabPage.Size = new Size(1090, 478);
+            ServicosTabPage.TabIndex = 0;
+            ServicosTabPage.Text = "Serviços";
+            ServicosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // TituloPainelServicosLabel
+            // 
+            TituloPainelServicosLabel.AutoSize = true;
+            TituloPainelServicosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TituloPainelServicosLabel.Location = new Point(411, 3);
+            TituloPainelServicosLabel.Name = "TituloPainelServicosLabel";
+            TituloPainelServicosLabel.Size = new Size(241, 21);
+            TituloPainelServicosLabel.TabIndex = 1;
+            TituloPainelServicosLabel.Text = "Adicionar Serviços ao Orçamento";
+            // 
+            // CustosAddTabPage
+            // 
+            CustosAddTabPage.Controls.Add(CustosAddLabel);
+            CustosAddTabPage.Location = new Point(4, 24);
+            CustosAddTabPage.Name = "CustosAddTabPage";
+            CustosAddTabPage.Padding = new Padding(3);
+            CustosAddTabPage.Size = new Size(1090, 478);
+            CustosAddTabPage.TabIndex = 1;
+            CustosAddTabPage.Text = "Custos Adicionais";
+            CustosAddTabPage.UseVisualStyleBackColor = true;
+            // 
+            // CustosAddLabel
+            // 
+            CustosAddLabel.AutoSize = true;
+            CustosAddLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CustosAddLabel.Location = new Point(484, 3);
+            CustosAddLabel.Name = "CustosAddLabel";
+            CustosAddLabel.Size = new Size(132, 21);
+            CustosAddLabel.TabIndex = 0;
+            CustosAddLabel.Text = "Custos Adicionais";
+            // 
+            // PagementoTabPage
+            // 
+            PagementoTabPage.Controls.Add(CondicoesLabel);
+            PagementoTabPage.Location = new Point(4, 24);
+            PagementoTabPage.Name = "PagementoTabPage";
+            PagementoTabPage.Padding = new Padding(3);
+            PagementoTabPage.Size = new Size(1090, 478);
+            PagementoTabPage.TabIndex = 2;
+            PagementoTabPage.Text = "Pagamento";
+            PagementoTabPage.UseVisualStyleBackColor = true;
+            // 
+            // CondicoesLabel
+            // 
+            CondicoesLabel.AutoSize = true;
+            CondicoesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CondicoesLabel.Location = new Point(435, 3);
+            CondicoesLabel.Name = "CondicoesLabel";
+            CondicoesLabel.Size = new Size(185, 21);
+            CondicoesLabel.TabIndex = 0;
+            CondicoesLabel.Text = "Condições de Pagamento";
+            // 
+            // ObsTabPage
+            // 
+            ObsTabPage.Controls.Add(label1);
+            ObsTabPage.Location = new Point(4, 24);
+            ObsTabPage.Name = "ObsTabPage";
+            ObsTabPage.Padding = new Padding(3);
+            ObsTabPage.Size = new Size(1090, 478);
+            ObsTabPage.TabIndex = 4;
+            ObsTabPage.Text = "Observações";
+            ObsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(435, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(186, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Observações da Proposta";
+            // 
+            // AlterarCliente
+            // 
+            AlterarCliente.Location = new Point(980, 13);
+            AlterarCliente.Name = "AlterarCliente";
+            AlterarCliente.Size = new Size(98, 28);
+            AlterarCliente.TabIndex = 1;
+            AlterarCliente.Text = "Alterar Cliente";
+            AlterarCliente.UseVisualStyleBackColor = true;
+            // 
             // ClientePanel
             // 
-            ClientePanel.Controls.Add(flowLayoutPanel2);
+            ClientePanel.Controls.Add(EnderecoFlowLayoutPanel);
             ClientePanel.Controls.Add(DadosCLienteLabel);
             ClientePanel.Controls.Add(EnderecoServicoLabel);
-            ClientePanel.Controls.Add(flowLayoutPanel1);
+            ClientePanel.Controls.Add(InfoClienteFlowLayoutPanel);
             ClientePanel.Location = new Point(3, 3);
             ClientePanel.Name = "ClientePanel";
             ClientePanel.Size = new Size(940, 148);
             ClientePanel.TabIndex = 0;
             // 
-            // flowLayoutPanel2
+            // EnderecoFlowLayoutPanel
             // 
-            flowLayoutPanel2.Controls.Add(CepPanel);
-            flowLayoutPanel2.Controls.Add(NumeroPanel);
-            flowLayoutPanel2.Controls.Add(ComplementoPanel);
-            flowLayoutPanel2.Location = new Point(618, 29);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(311, 106);
-            flowLayoutPanel2.TabIndex = 3;
+            EnderecoFlowLayoutPanel.Controls.Add(CepPanel);
+            EnderecoFlowLayoutPanel.Controls.Add(NumeroPanel);
+            EnderecoFlowLayoutPanel.Controls.Add(ComplementoPanel);
+            EnderecoFlowLayoutPanel.Location = new Point(618, 29);
+            EnderecoFlowLayoutPanel.Name = "EnderecoFlowLayoutPanel";
+            EnderecoFlowLayoutPanel.Size = new Size(311, 106);
+            EnderecoFlowLayoutPanel.TabIndex = 3;
             // 
             // CepPanel
             // 
@@ -220,19 +344,19 @@
             EnderecoServicoLabel.TabIndex = 1;
             EnderecoServicoLabel.Text = "Endereço da Obra";
             // 
-            // flowLayoutPanel1
+            // InfoClienteFlowLayoutPanel
             // 
-            flowLayoutPanel1.Controls.Add(NomePanel);
-            flowLayoutPanel1.Controls.Add(RazaoPanel);
-            flowLayoutPanel1.Controls.Add(EmailPanel);
-            flowLayoutPanel1.Controls.Add(CnpjPanel);
-            flowLayoutPanel1.Controls.Add(CpfPanel);
-            flowLayoutPanel1.Controls.Add(TelPanel);
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(3, 29);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(609, 106);
-            flowLayoutPanel1.TabIndex = 0;
+            InfoClienteFlowLayoutPanel.Controls.Add(NomePanel);
+            InfoClienteFlowLayoutPanel.Controls.Add(RazaoPanel);
+            InfoClienteFlowLayoutPanel.Controls.Add(EmailPanel);
+            InfoClienteFlowLayoutPanel.Controls.Add(CnpjPanel);
+            InfoClienteFlowLayoutPanel.Controls.Add(CpfPanel);
+            InfoClienteFlowLayoutPanel.Controls.Add(TelPanel);
+            InfoClienteFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            InfoClienteFlowLayoutPanel.Location = new Point(3, 29);
+            InfoClienteFlowLayoutPanel.Name = "InfoClienteFlowLayoutPanel";
+            InfoClienteFlowLayoutPanel.Size = new Size(609, 106);
+            InfoClienteFlowLayoutPanel.TabIndex = 0;
             // 
             // NomePanel
             // 
@@ -338,7 +462,7 @@
             // CpfPanel
             // 
             CpfPanel.Controls.Add(CpfTextBox);
-            CpfPanel.Controls.Add(CpfPabel);
+            CpfPanel.Controls.Add(Cpflabel);
             CpfPanel.Location = new Point(302, 37);
             CpfPanel.Name = "CpfPanel";
             CpfPanel.Size = new Size(293, 28);
@@ -351,30 +475,30 @@
             CpfTextBox.Size = new Size(189, 23);
             CpfTextBox.TabIndex = 1;
             // 
-            // CpfPabel
+            // Cpflabel
             // 
-            CpfPabel.AutoSize = true;
-            CpfPabel.Location = new Point(6, 6);
-            CpfPabel.Name = "CpfPabel";
-            CpfPabel.Size = new Size(34, 15);
-            CpfPabel.TabIndex = 0;
-            CpfPabel.Text = "CPF: ";
+            Cpflabel.AutoSize = true;
+            Cpflabel.Location = new Point(6, 6);
+            Cpflabel.Name = "Cpflabel";
+            Cpflabel.Size = new Size(34, 15);
+            Cpflabel.TabIndex = 0;
+            Cpflabel.Text = "CPF: ";
             // 
             // TelPanel
             // 
-            TelPanel.Controls.Add(textBox1);
+            TelPanel.Controls.Add(TelTextBox);
             TelPanel.Controls.Add(TelLabel);
             TelPanel.Location = new Point(302, 71);
             TelPanel.Name = "TelPanel";
             TelPanel.Size = new Size(293, 28);
             TelPanel.TabIndex = 5;
             // 
-            // textBox1
+            // TelTextBox
             // 
-            textBox1.Location = new Point(101, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 23);
-            textBox1.TabIndex = 1;
+            TelTextBox.Location = new Point(101, 3);
+            TelTextBox.Name = "TelTextBox";
+            TelTextBox.Size = new Size(189, 23);
+            TelTextBox.TabIndex = 1;
             // 
             // TelLabel
             // 
@@ -384,130 +508,6 @@
             TelLabel.Size = new Size(31, 15);
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
-            // 
-            // AlterarCliente
-            // 
-            AlterarCliente.Location = new Point(980, 13);
-            AlterarCliente.Name = "AlterarCliente";
-            AlterarCliente.Size = new Size(98, 28);
-            AlterarCliente.TabIndex = 1;
-            AlterarCliente.Text = "Alterar Cliente";
-            AlterarCliente.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(DadosOrcamentoLabel);
-            panel1.Controls.Add(tabControl1);
-            panel1.Location = new Point(6, 161);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1110, 552);
-            panel1.TabIndex = 2;
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(ServicosTabPage);
-            tabControl1.Controls.Add(CustosAddTabPage);
-            tabControl1.Controls.Add(PagementoTabPage);
-            tabControl1.Controls.Add(ObsTabPage);
-            tabControl1.Location = new Point(9, 43);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1098, 506);
-            tabControl1.TabIndex = 0;
-            // 
-            // ServicosTabPage
-            // 
-            ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
-            ServicosTabPage.Location = new Point(4, 24);
-            ServicosTabPage.Name = "ServicosTabPage";
-            ServicosTabPage.Padding = new Padding(3);
-            ServicosTabPage.Size = new Size(1090, 478);
-            ServicosTabPage.TabIndex = 0;
-            ServicosTabPage.Text = "Serviços";
-            ServicosTabPage.UseVisualStyleBackColor = true;
-            // 
-            // CustosAddTabPage
-            // 
-            CustosAddTabPage.Controls.Add(CustosAddLabel);
-            CustosAddTabPage.Location = new Point(4, 24);
-            CustosAddTabPage.Name = "CustosAddTabPage";
-            CustosAddTabPage.Padding = new Padding(3);
-            CustosAddTabPage.Size = new Size(1090, 478);
-            CustosAddTabPage.TabIndex = 1;
-            CustosAddTabPage.Text = "Custos Adicionais";
-            CustosAddTabPage.UseVisualStyleBackColor = true;
-            // 
-            // TituloPainelServicosLabel
-            // 
-            TituloPainelServicosLabel.AutoSize = true;
-            TituloPainelServicosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TituloPainelServicosLabel.Location = new Point(411, 3);
-            TituloPainelServicosLabel.Name = "TituloPainelServicosLabel";
-            TituloPainelServicosLabel.Size = new Size(241, 21);
-            TituloPainelServicosLabel.TabIndex = 1;
-            TituloPainelServicosLabel.Text = "Adicionar Serviços ao Orçamento";
-            // 
-            // DadosOrcamentoLabel
-            // 
-            DadosOrcamentoLabel.AutoSize = true;
-            DadosOrcamentoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DadosOrcamentoLabel.Location = new Point(458, 9);
-            DadosOrcamentoLabel.Name = "DadosOrcamentoLabel";
-            DadosOrcamentoLabel.Size = new Size(158, 21);
-            DadosOrcamentoLabel.TabIndex = 2;
-            DadosOrcamentoLabel.Text = "Dados do Orçamento";
-            // 
-            // PagementoTabPage
-            // 
-            PagementoTabPage.Controls.Add(CondicoesLabel);
-            PagementoTabPage.Location = new Point(4, 24);
-            PagementoTabPage.Name = "PagementoTabPage";
-            PagementoTabPage.Padding = new Padding(3);
-            PagementoTabPage.Size = new Size(1090, 478);
-            PagementoTabPage.TabIndex = 2;
-            PagementoTabPage.Text = "Pagamento";
-            PagementoTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ObsTabPage
-            // 
-            ObsTabPage.Controls.Add(label1);
-            ObsTabPage.Location = new Point(4, 24);
-            ObsTabPage.Name = "ObsTabPage";
-            ObsTabPage.Padding = new Padding(3);
-            ObsTabPage.Size = new Size(1090, 478);
-            ObsTabPage.TabIndex = 4;
-            ObsTabPage.Text = "Observações";
-            ObsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // CustosAddLabel
-            // 
-            CustosAddLabel.AutoSize = true;
-            CustosAddLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CustosAddLabel.Location = new Point(484, 3);
-            CustosAddLabel.Name = "CustosAddLabel";
-            CustosAddLabel.Size = new Size(132, 21);
-            CustosAddLabel.TabIndex = 0;
-            CustosAddLabel.Text = "Custos Adicionais";
-            // 
-            // CondicoesLabel
-            // 
-            CondicoesLabel.AutoSize = true;
-            CondicoesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CondicoesLabel.Location = new Point(435, 3);
-            CondicoesLabel.Name = "CondicoesLabel";
-            CondicoesLabel.Size = new Size(185, 21);
-            CondicoesLabel.TabIndex = 0;
-            CondicoesLabel.Text = "Condições de Pagamento";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(435, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(186, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Observações da Proposta";
             // 
             // NovoOrcamentoForm
             // 
@@ -520,16 +520,27 @@
             Text = "NovoOrcamentoForm";
             Load += NovoOrcamentoForm_Load;
             ConteudoOrcPanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            ServicosTabPage.ResumeLayout(false);
+            ServicosTabPage.PerformLayout();
+            CustosAddTabPage.ResumeLayout(false);
+            CustosAddTabPage.PerformLayout();
+            PagementoTabPage.ResumeLayout(false);
+            PagementoTabPage.PerformLayout();
+            ObsTabPage.ResumeLayout(false);
+            ObsTabPage.PerformLayout();
             ClientePanel.ResumeLayout(false);
             ClientePanel.PerformLayout();
-            flowLayoutPanel2.ResumeLayout(false);
+            EnderecoFlowLayoutPanel.ResumeLayout(false);
             CepPanel.ResumeLayout(false);
             CepPanel.PerformLayout();
             NumeroPanel.ResumeLayout(false);
             NumeroPanel.PerformLayout();
             ComplementoPanel.ResumeLayout(false);
             ComplementoPanel.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
+            InfoClienteFlowLayoutPanel.ResumeLayout(false);
             NomePanel.ResumeLayout(false);
             NomePanel.PerformLayout();
             RazaoPanel.ResumeLayout(false);
@@ -542,17 +553,6 @@
             CpfPanel.PerformLayout();
             TelPanel.ResumeLayout(false);
             TelPanel.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tabControl1.ResumeLayout(false);
-            ServicosTabPage.ResumeLayout(false);
-            ServicosTabPage.PerformLayout();
-            CustosAddTabPage.ResumeLayout(false);
-            CustosAddTabPage.PerformLayout();
-            PagementoTabPage.ResumeLayout(false);
-            PagementoTabPage.PerformLayout();
-            ObsTabPage.ResumeLayout(false);
-            ObsTabPage.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -560,7 +560,7 @@
 
         private Panel ConteudoOrcPanel;
         private Panel ClientePanel;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel InfoClienteFlowLayoutPanel;
         private Panel NomePanel;
         private Label NomeLabel;
         private TextBox NomeTextBox;
@@ -572,16 +572,16 @@
         private Label CnpjLabel;
         private Panel CpfPanel;
         private TextBox CpfTextBox;
-        private Label CpfPabel;
+        private Label Cpflabel;
         private Panel TelPanel;
-        private TextBox textBox1;
+        private TextBox TelTextBox;
         private Label TelLabel;
         private Panel EmailPanel;
         private TextBox EmailTextBox;
         private Label EmailLabel;
         private Label DadosCLienteLabel;
         private Label EnderecoServicoLabel;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel EnderecoFlowLayoutPanel;
         private Panel CepPanel;
         private TextBox CepTextBox;
         private Label CepLabel;
