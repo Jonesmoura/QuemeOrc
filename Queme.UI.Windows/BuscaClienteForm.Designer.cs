@@ -43,12 +43,16 @@
             ClientesEncontradosPanel = new Panel();
             ClientesEncontradosDataGridView = new DataGridView();
             SelecionarClienteButton = new Button();
+            botoesSelecaoPanel = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             InfoBuscaPanel.SuspendLayout();
             BuscaFlowLayoutPanel.SuspendLayout();
             BuscaRazaoPanel.SuspendLayout();
             BuscaNomePanel.SuspendLayout();
             ClientesEncontradosPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ClientesEncontradosDataGridView).BeginInit();
+            botoesSelecaoPanel.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // TitleLabel
@@ -183,7 +187,7 @@
             // 
             // SelecionarClienteButton
             // 
-            SelecionarClienteButton.Location = new Point(328, 365);
+            SelecionarClienteButton.Location = new Point(3, 3);
             SelecionarClienteButton.Name = "SelecionarClienteButton";
             SelecionarClienteButton.Size = new Size(118, 23);
             SelecionarClienteButton.TabIndex = 4;
@@ -191,12 +195,28 @@
             SelecionarClienteButton.UseVisualStyleBackColor = true;
             SelecionarClienteButton.Click += SelecionarClienteButton_Click;
             // 
+            // botoesSelecaoPanel
+            // 
+            botoesSelecaoPanel.Controls.Add(flowLayoutPanel1);
+            botoesSelecaoPanel.Location = new Point(5, 348);
+            botoesSelecaoPanel.Name = "botoesSelecaoPanel";
+            botoesSelecaoPanel.Size = new Size(254, 37);
+            botoesSelecaoPanel.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(SelecionarClienteButton);
+            flowLayoutPanel1.Location = new Point(3, 4);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(251, 30);
+            flowLayoutPanel1.TabIndex = 6;
+            // 
             // BuscaClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(766, 450);
-            Controls.Add(SelecionarClienteButton);
+            Controls.Add(botoesSelecaoPanel);
             Controls.Add(ClientesEncontradosPanel);
             Controls.Add(PJRadioButton);
             Controls.Add(PFRadioButton);
@@ -214,6 +234,8 @@
             BuscaNomePanel.PerformLayout();
             ClientesEncontradosPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ClientesEncontradosDataGridView).EndInit();
+            botoesSelecaoPanel.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,5 +257,7 @@
         private Panel ClientesEncontradosPanel;
         private DataGridView ClientesEncontradosDataGridView;
         private Button SelecionarClienteButton;
+        private Panel botoesSelecaoPanel;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -98,10 +98,55 @@ namespace Queme.UI.Windows
             else
             {
                 Close();
-                var orcamentoForm = new NovoOrcamentoForm(cliente);
-                orcamentoForm.ShowDialog();
+                Form orcamentoForm = Application.OpenForms["NovoOrcamentoForm"];
+
+                if(orcamentoForm != null)
+                {
+                    // testar, caso funcionar alterar os demais dados do formulário
+                    NovoOrcamentoForm formAberto = (NovoOrcamentoForm)orcamentoForm;
+                    Panel clientePanel = formAberto.Controls["ConteudoOrcPanel"].Controls["ClientePanel"].Controls["InfoClienteFlowLayoutPanel"] as Panel;
+                    
+                    clientePanel.Controls["NomePanel"].Controls["NomeTextBox"].Text = cliente.Name.ToString();
+                    clientePanel.Controls["EmailPanel"].Controls["EmailTextBox"].Text = cliente.Email.ToString();
+                    clientePanel.Controls["TelPanel"].Controls["TelTextBox"].Text = cliente.Tel.ToString();
+
+                    if(cliente.CNPJ != "")
+                    {
+
+                        clientePanel.Controls["CnpjPanel"].Controls["CnpjTextBox"].Text = cliente.CNPJ.ToString();
+                        clientePanel.Controls["RazaoPanel"].Controls["RazaoTextBox"].Text = cliente.razaoSocial.ToString();
+                        clientePanel.Controls["CnpjPanel"].Visible = true;
+                        clientePanel.Controls["RazaoPanel"].Visible = true;
+                        clientePanel.Controls["CpfPanel"].Visible = false;
+
+                    }
+                    else if(cliente.CPF != "")
+                    {
+                        clientePanel.Controls["CpfPanel"].Controls["CpfTextBox"].Text = cliente.CPF.ToString();
+                        clientePanel.Controls["CnpjPanel"].Visible = false;
+                        clientePanel.Controls["RazaoPanel"].Visible = false;
+                        clientePanel.Controls["CpfPanel"].Visible = true;
+
+                    }
+                }
+                else
+                {
+                    var novoOrcamentoForm = new NovoOrcamentoForm(cliente);
+                    novoOrcamentoForm.ShowDialog();
+
+                }
+
             }
-            
+
         }
+
+        public static void AlterarClienteOrc()
+        {
+            var buscarClienteForm = new BuscaClienteForm();
+
+            buscarClienteForm.ShowDialog();
+
+        }
+
     }
 }

@@ -227,6 +227,7 @@
             AlterarCliente.TabIndex = 1;
             AlterarCliente.Text = "Alterar Cliente";
             AlterarCliente.UseVisualStyleBackColor = true;
+            AlterarCliente.Click += AlterarCliente_Click;
             // 
             // ClientePanel
             // 

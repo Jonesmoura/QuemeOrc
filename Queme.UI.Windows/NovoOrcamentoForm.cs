@@ -56,5 +56,11 @@ namespace Queme.UI.Windows
         {
 
         }
+
+        private void AlterarCliente_Click(object sender, EventArgs e)
+        {
+            BuscaClienteForm.AlterarClienteOrc();
+
+        }
     }
 }
