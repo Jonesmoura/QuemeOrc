@@ -33,6 +33,21 @@
             DadosOrcamentoLabel = new Label();
             tabControl1 = new TabControl();
             ServicosTabPage = new TabPage();
+            servicosPanel = new Panel();
+            dataGridView1 = new DataGridView();
+            infoServicoGroupBox = new GroupBox();
+            panel2 = new Panel();
+            adicionarServicoButton = new Button();
+            valorTotalEtapaTextBox = new TextBox();
+            custoPorHoraTextBox = new TextBox();
+            estimativaHorasTextBox = new TextBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            totalEtapaLabel = new Label();
+            valorPorHoraLabel = new Label();
+            qtdHorasLabel = new Label();
+            etapaLabel = new Label();
+            disciplinaLabel = new Label();
             TituloPainelServicosLabel = new Label();
             CustosAddTabPage = new TabPage();
             CustosAddLabel = new Label();
@@ -73,10 +88,18 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
+            nOrcLabel = new Label();
+            nOrcTextBox = new TextBox();
+            tbPrecosLabel = new Label();
+            comboBox3 = new ComboBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             ServicosTabPage.SuspendLayout();
+            servicosPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            infoServicoGroupBox.SuspendLayout();
+            panel2.SuspendLayout();
             CustosAddTabPage.SuspendLayout();
             PagementoTabPage.SuspendLayout();
             ObsTabPage.SuspendLayout();
@@ -96,6 +119,10 @@
             // 
             // ConteudoOrcPanel
             // 
+            ConteudoOrcPanel.Controls.Add(comboBox3);
+            ConteudoOrcPanel.Controls.Add(nOrcTextBox);
+            ConteudoOrcPanel.Controls.Add(tbPrecosLabel);
+            ConteudoOrcPanel.Controls.Add(nOrcLabel);
             ConteudoOrcPanel.Controls.Add(panel1);
             ConteudoOrcPanel.Controls.Add(AlterarCliente);
             ConteudoOrcPanel.Controls.Add(ClientePanel);
@@ -137,6 +164,8 @@
             // 
             // ServicosTabPage
             // 
+            ServicosTabPage.Controls.Add(servicosPanel);
+            ServicosTabPage.Controls.Add(infoServicoGroupBox);
             ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
             ServicosTabPage.Location = new Point(4, 24);
             ServicosTabPage.Name = "ServicosTabPage";
@@ -145,6 +174,146 @@
             ServicosTabPage.TabIndex = 0;
             ServicosTabPage.Text = "Serviços";
             ServicosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // servicosPanel
+            // 
+            servicosPanel.Controls.Add(dataGridView1);
+            servicosPanel.Location = new Point(0, 125);
+            servicosPanel.Name = "servicosPanel";
+            servicosPanel.Size = new Size(1090, 350);
+            servicosPanel.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1084, 343);
+            dataGridView1.TabIndex = 0;
+            // 
+            // infoServicoGroupBox
+            // 
+            infoServicoGroupBox.Controls.Add(panel2);
+            infoServicoGroupBox.Location = new Point(3, 40);
+            infoServicoGroupBox.Name = "infoServicoGroupBox";
+            infoServicoGroupBox.Size = new Size(1084, 83);
+            infoServicoGroupBox.TabIndex = 6;
+            infoServicoGroupBox.TabStop = false;
+            infoServicoGroupBox.Text = "Informações do Serviço";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(adicionarServicoButton);
+            panel2.Controls.Add(valorTotalEtapaTextBox);
+            panel2.Controls.Add(custoPorHoraTextBox);
+            panel2.Controls.Add(estimativaHorasTextBox);
+            panel2.Controls.Add(comboBox2);
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(totalEtapaLabel);
+            panel2.Controls.Add(valorPorHoraLabel);
+            panel2.Controls.Add(qtdHorasLabel);
+            panel2.Controls.Add(etapaLabel);
+            panel2.Controls.Add(disciplinaLabel);
+            panel2.Location = new Point(3, 22);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1078, 53);
+            panel2.TabIndex = 2;
+            // 
+            // adicionarServicoButton
+            // 
+            adicionarServicoButton.Location = new Point(986, 15);
+            adicionarServicoButton.Name = "adicionarServicoButton";
+            adicionarServicoButton.Size = new Size(75, 23);
+            adicionarServicoButton.TabIndex = 7;
+            adicionarServicoButton.Text = "Adicionar";
+            adicionarServicoButton.UseVisualStyleBackColor = true;
+            // 
+            // valorTotalEtapaTextBox
+            // 
+            valorTotalEtapaTextBox.Location = new Point(857, 15);
+            valorTotalEtapaTextBox.Name = "valorTotalEtapaTextBox";
+            valorTotalEtapaTextBox.ReadOnly = true;
+            valorTotalEtapaTextBox.Size = new Size(103, 23);
+            valorTotalEtapaTextBox.TabIndex = 6;
+            // 
+            // custoPorHoraTextBox
+            // 
+            custoPorHoraTextBox.Location = new Point(666, 15);
+            custoPorHoraTextBox.Name = "custoPorHoraTextBox";
+            custoPorHoraTextBox.ReadOnly = true;
+            custoPorHoraTextBox.Size = new Size(85, 23);
+            custoPorHoraTextBox.TabIndex = 4;
+            // 
+            // estimativaHorasTextBox
+            // 
+            estimativaHorasTextBox.Location = new Point(486, 15);
+            estimativaHorasTextBox.Name = "estimativaHorasTextBox";
+            estimativaHorasTextBox.Size = new Size(85, 23);
+            estimativaHorasTextBox.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
+            comboBox2.Location = new Point(235, 15);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Consultoria", "Estrutural", "Arquitetura", "Elétrico", "Hidrossanitário", "HVAC" });
+            comboBox1.Location = new Point(67, 15);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 1;
+            // 
+            // totalEtapaLabel
+            // 
+            totalEtapaLabel.AutoSize = true;
+            totalEtapaLabel.Location = new Point(761, 18);
+            totalEtapaLabel.Name = "totalEtapaLabel";
+            totalEtapaLabel.Size = new Size(87, 15);
+            totalEtapaLabel.TabIndex = 0;
+            totalEtapaLabel.Text = "Valor da Etapa: ";
+            // 
+            // valorPorHoraLabel
+            // 
+            valorPorHoraLabel.AutoSize = true;
+            valorPorHoraLabel.Location = new Point(575, 18);
+            valorPorHoraLabel.Name = "valorPorHoraLabel";
+            valorPorHoraLabel.Size = new Size(89, 15);
+            valorPorHoraLabel.TabIndex = 0;
+            valorPorHoraLabel.Text = "Valor por Hora: ";
+            // 
+            // qtdHorasLabel
+            // 
+            qtdHorasLabel.AutoSize = true;
+            qtdHorasLabel.Location = new Point(363, 18);
+            qtdHorasLabel.Name = "qtdHorasLabel";
+            qtdHorasLabel.Size = new Size(117, 15);
+            qtdHorasLabel.TabIndex = 0;
+            qtdHorasLabel.Text = "Estimativa de Horas: ";
+            // 
+            // etapaLabel
+            // 
+            etapaLabel.AutoSize = true;
+            etapaLabel.Location = new Point(194, 18);
+            etapaLabel.Name = "etapaLabel";
+            etapaLabel.Size = new Size(42, 15);
+            etapaLabel.TabIndex = 0;
+            etapaLabel.Text = "Etapa: ";
+            // 
+            // disciplinaLabel
+            // 
+            disciplinaLabel.AutoSize = true;
+            disciplinaLabel.Location = new Point(5, 18);
+            disciplinaLabel.Name = "disciplinaLabel";
+            disciplinaLabel.Size = new Size(64, 15);
+            disciplinaLabel.TabIndex = 0;
+            disciplinaLabel.Text = "Disciplina: ";
             // 
             // TituloPainelServicosLabel
             // 
@@ -221,9 +390,9 @@
             // 
             // AlterarCliente
             // 
-            AlterarCliente.Location = new Point(980, 13);
+            AlterarCliente.Location = new Point(971, 13);
             AlterarCliente.Name = "AlterarCliente";
-            AlterarCliente.Size = new Size(98, 28);
+            AlterarCliente.Size = new Size(117, 28);
             AlterarCliente.TabIndex = 1;
             AlterarCliente.Text = "Alterar Cliente";
             AlterarCliente.UseVisualStyleBackColor = true;
@@ -510,6 +679,40 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
+            // nOrcLabel
+            // 
+            nOrcLabel.AutoSize = true;
+            nOrcLabel.Location = new Point(964, 106);
+            nOrcLabel.Name = "nOrcLabel";
+            nOrcLabel.Size = new Size(134, 15);
+            nOrcLabel.TabIndex = 3;
+            nOrcLabel.Text = "Numero do Orçamento:";
+            // 
+            // nOrcTextBox
+            // 
+            nOrcTextBox.Location = new Point(971, 127);
+            nOrcTextBox.Name = "nOrcTextBox";
+            nOrcTextBox.ReadOnly = true;
+            nOrcTextBox.Size = new Size(117, 23);
+            nOrcTextBox.TabIndex = 4;
+            // 
+            // tbPrecosLabel
+            // 
+            tbPrecosLabel.AutoSize = true;
+            tbPrecosLabel.Location = new Point(981, 51);
+            tbPrecosLabel.Name = "tbPrecosLabel";
+            tbPrecosLabel.Size = new Size(97, 15);
+            tbPrecosLabel.TabIndex = 3;
+            tbPrecosLabel.Text = "Tabela de Preços:";
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(971, 76);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(117, 23);
+            comboBox3.TabIndex = 5;
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -521,11 +724,17 @@
             Text = "NovoOrcamentoForm";
             Load += NovoOrcamentoForm_Load;
             ConteudoOrcPanel.ResumeLayout(false);
+            ConteudoOrcPanel.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tabControl1.ResumeLayout(false);
             ServicosTabPage.ResumeLayout(false);
             ServicosTabPage.PerformLayout();
+            servicosPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            infoServicoGroupBox.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             CustosAddTabPage.ResumeLayout(false);
             CustosAddTabPage.PerformLayout();
             PagementoTabPage.ResumeLayout(false);
@@ -604,5 +813,24 @@
         private Label CustosAddLabel;
         private Label CondicoesLabel;
         private Label label1;
+        private Panel panel2;
+        private Label disciplinaLabel;
+        private Label etapaLabel;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label qtdHorasLabel;
+        private GroupBox infoServicoGroupBox;
+        private TextBox estimativaHorasTextBox;
+        private TextBox custoPorHoraTextBox;
+        private Label valorPorHoraLabel;
+        private TextBox valorTotalEtapaTextBox;
+        private Label totalEtapaLabel;
+        private Button adicionarServicoButton;
+        private Panel servicosPanel;
+        private DataGridView dataGridView1;
+        private TextBox nOrcTextBox;
+        private Label nOrcLabel;
+        private ComboBox comboBox3;
+        private Label tbPrecosLabel;
     }
 }

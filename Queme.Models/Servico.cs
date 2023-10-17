@@ -16,5 +16,18 @@ namespace Queme.Models
         public EtapasServico Etapa {get; set; }
         public double ValorHora { get; set; }
 
+        public Servico()
+        {
+        }
+
+        public Servico(int id_orcamento, int id_cliente, int qtd_horas, TipoServico tipoServico, EtapasServico etapa, double valorHora)
+        {
+            Id_orcamento = id_orcamento;
+            Id_cliente = id_cliente;
+            Qtd_horas = qtd_horas;
+            TipoServico = tipoServico;
+            Etapa = etapa;
+            ValorHora = valorHora;
+        }
     }
 }
