@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             cadastroPrecosPanel = new Panel();
-            tituloCadastrolabel = new Label();
-            nomeTabelaLabel = new Label();
-            textBox1 = new TextBox();
-            ConsultoriaLabel = new Label();
-            EstruturalLabel = new Label();
-            arquiteturaLabel = new Label();
+            maskedTextBox6 = new MaskedTextBox();
+            maskedTextBox5 = new MaskedTextBox();
+            maskedTextBox4 = new MaskedTextBox();
+            maskedTextBox3 = new MaskedTextBox();
+            maskedTextBox2 = new MaskedTextBox();
+            maskedTextBox1 = new MaskedTextBox();
+            CadastrarTabelaButton = new Button();
+            HVACLabel = new Label();
             EletricoLabel = new Label();
             hidrossanitarioLabel = new Label();
-            HVACLabel = new Label();
-            CadastrarTabelaButton = new Button();
-            maskedTextBox1 = new MaskedTextBox();
-            maskedTextBox2 = new MaskedTextBox();
-            maskedTextBox3 = new MaskedTextBox();
-            maskedTextBox4 = new MaskedTextBox();
-            maskedTextBox5 = new MaskedTextBox();
-            maskedTextBox6 = new MaskedTextBox();
+            arquiteturaLabel = new Label();
+            EstruturalLabel = new Label();
+            ConsultoriaLabel = new Label();
+            textBox1 = new TextBox();
+            nomeTabelaLabel = new Label();
+            tituloCadastrolabel = new Label();
+            ObsLabel = new Label();
+            textBox2 = new TextBox();
             cadastroPrecosPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +65,8 @@
             cadastroPrecosPanel.Controls.Add(arquiteturaLabel);
             cadastroPrecosPanel.Controls.Add(EstruturalLabel);
             cadastroPrecosPanel.Controls.Add(ConsultoriaLabel);
+            cadastroPrecosPanel.Controls.Add(textBox2);
+            cadastroPrecosPanel.Controls.Add(ObsLabel);
             cadastroPrecosPanel.Controls.Add(textBox1);
             cadastroPrecosPanel.Controls.Add(nomeTabelaLabel);
             cadastroPrecosPanel.Controls.Add(tituloCadastrolabel);
@@ -70,6 +74,140 @@
             cadastroPrecosPanel.Name = "cadastroPrecosPanel";
             cadastroPrecosPanel.Size = new Size(378, 419);
             cadastroPrecosPanel.TabIndex = 0;
+            // 
+            // maskedTextBox6
+            // 
+            maskedTextBox6.Location = new Point(274, 120);
+            maskedTextBox6.Mask = "000,00";
+            maskedTextBox6.Name = "maskedTextBox6";
+            maskedTextBox6.Size = new Size(57, 23);
+            maskedTextBox6.TabIndex = 4;
+            maskedTextBox6.TextAlign = HorizontalAlignment.Right;
+            // 
+            // maskedTextBox5
+            // 
+            maskedTextBox5.Location = new Point(274, 150);
+            maskedTextBox5.Mask = "000,00";
+            maskedTextBox5.Name = "maskedTextBox5";
+            maskedTextBox5.Size = new Size(57, 23);
+            maskedTextBox5.TabIndex = 4;
+            maskedTextBox5.TextAlign = HorizontalAlignment.Right;
+            // 
+            // maskedTextBox4
+            // 
+            maskedTextBox4.Location = new Point(274, 179);
+            maskedTextBox4.Mask = "000,00";
+            maskedTextBox4.Name = "maskedTextBox4";
+            maskedTextBox4.Size = new Size(57, 23);
+            maskedTextBox4.TabIndex = 4;
+            maskedTextBox4.TextAlign = HorizontalAlignment.Right;
+            // 
+            // maskedTextBox3
+            // 
+            maskedTextBox3.Location = new Point(274, 209);
+            maskedTextBox3.Mask = "000,00";
+            maskedTextBox3.Name = "maskedTextBox3";
+            maskedTextBox3.Size = new Size(57, 23);
+            maskedTextBox3.TabIndex = 4;
+            maskedTextBox3.TextAlign = HorizontalAlignment.Right;
+            // 
+            // maskedTextBox2
+            // 
+            maskedTextBox2.Location = new Point(274, 238);
+            maskedTextBox2.Mask = "000,00";
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.Size = new Size(57, 23);
+            maskedTextBox2.TabIndex = 4;
+            maskedTextBox2.TextAlign = HorizontalAlignment.Right;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(274, 268);
+            maskedTextBox1.Mask = "000,00";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(57, 23);
+            maskedTextBox1.TabIndex = 4;
+            maskedTextBox1.TextAlign = HorizontalAlignment.Right;
+            // 
+            // CadastrarTabelaButton
+            // 
+            CadastrarTabelaButton.Location = new Point(145, 318);
+            CadastrarTabelaButton.Name = "CadastrarTabelaButton";
+            CadastrarTabelaButton.Size = new Size(89, 31);
+            CadastrarTabelaButton.TabIndex = 3;
+            CadastrarTabelaButton.Text = "Cadastrar";
+            CadastrarTabelaButton.UseVisualStyleBackColor = true;
+            CadastrarTabelaButton.Click += CadastrarTabelaButton_Click;
+            // 
+            // HVACLabel
+            // 
+            HVACLabel.AutoSize = true;
+            HVACLabel.Location = new Point(50, 271);
+            HVACLabel.Name = "HVACLabel";
+            HVACLabel.Size = new Size(41, 15);
+            HVACLabel.TabIndex = 1;
+            HVACLabel.Text = "HVAC:";
+            // 
+            // EletricoLabel
+            // 
+            EletricoLabel.AutoSize = true;
+            EletricoLabel.Location = new Point(50, 212);
+            EletricoLabel.Name = "EletricoLabel";
+            EletricoLabel.Size = new Size(49, 15);
+            EletricoLabel.TabIndex = 1;
+            EletricoLabel.Text = "Elétrico:";
+            // 
+            // hidrossanitarioLabel
+            // 
+            hidrossanitarioLabel.AutoSize = true;
+            hidrossanitarioLabel.Location = new Point(50, 241);
+            hidrossanitarioLabel.Name = "hidrossanitarioLabel";
+            hidrossanitarioLabel.Size = new Size(90, 15);
+            hidrossanitarioLabel.TabIndex = 1;
+            hidrossanitarioLabel.Text = "Hidrossanitário:";
+            // 
+            // arquiteturaLabel
+            // 
+            arquiteturaLabel.AutoSize = true;
+            arquiteturaLabel.Location = new Point(50, 182);
+            arquiteturaLabel.Name = "arquiteturaLabel";
+            arquiteturaLabel.Size = new Size(70, 15);
+            arquiteturaLabel.TabIndex = 1;
+            arquiteturaLabel.Text = "Arquiterura:";
+            // 
+            // EstruturalLabel
+            // 
+            EstruturalLabel.AutoSize = true;
+            EstruturalLabel.Location = new Point(50, 153);
+            EstruturalLabel.Name = "EstruturalLabel";
+            EstruturalLabel.Size = new Size(60, 15);
+            EstruturalLabel.TabIndex = 1;
+            EstruturalLabel.Text = "Estrutural:";
+            // 
+            // ConsultoriaLabel
+            // 
+            ConsultoriaLabel.AutoSize = true;
+            ConsultoriaLabel.Location = new Point(50, 123);
+            ConsultoriaLabel.Name = "ConsultoriaLabel";
+            ConsultoriaLabel.Size = new Size(71, 15);
+            ConsultoriaLabel.TabIndex = 1;
+            ConsultoriaLabel.Text = "Consultoria:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(151, 58);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(180, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // nomeTabelaLabel
+            // 
+            nomeTabelaLabel.AutoSize = true;
+            nomeTabelaLabel.Location = new Point(50, 61);
+            nomeTabelaLabel.Name = "nomeTabelaLabel";
+            nomeTabelaLabel.Size = new Size(95, 15);
+            nomeTabelaLabel.TabIndex = 1;
+            nomeTabelaLabel.Text = "Nome da Tabela:";
             // 
             // tituloCadastrolabel
             // 
@@ -81,138 +219,21 @@
             tituloCadastrolabel.TabIndex = 0;
             tituloCadastrolabel.Text = "Cadastro de Tabela de Preços";
             // 
-            // nomeTabelaLabel
+            // ObsLabel
             // 
-            nomeTabelaLabel.AutoSize = true;
-            nomeTabelaLabel.Location = new Point(50, 61);
-            nomeTabelaLabel.Name = "nomeTabelaLabel";
-            nomeTabelaLabel.Size = new Size(95, 15);
-            nomeTabelaLabel.TabIndex = 1;
-            nomeTabelaLabel.Text = "Nome da Tabela:";
+            ObsLabel.AutoSize = true;
+            ObsLabel.Location = new Point(50, 90);
+            ObsLabel.Name = "ObsLabel";
+            ObsLabel.Size = new Size(93, 15);
+            ObsLabel.TabIndex = 1;
+            ObsLabel.Text = "Obs. (Opcional):";
             // 
-            // textBox1
+            // textBox2
             // 
-            textBox1.Location = new Point(151, 58);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // ConsultoriaLabel
-            // 
-            ConsultoriaLabel.AutoSize = true;
-            ConsultoriaLabel.Location = new Point(50, 90);
-            ConsultoriaLabel.Name = "ConsultoriaLabel";
-            ConsultoriaLabel.Size = new Size(71, 15);
-            ConsultoriaLabel.TabIndex = 1;
-            ConsultoriaLabel.Text = "Consultoria:";
-            // 
-            // EstruturalLabel
-            // 
-            EstruturalLabel.AutoSize = true;
-            EstruturalLabel.Location = new Point(50, 120);
-            EstruturalLabel.Name = "EstruturalLabel";
-            EstruturalLabel.Size = new Size(60, 15);
-            EstruturalLabel.TabIndex = 1;
-            EstruturalLabel.Text = "Estrutural:";
-            // 
-            // arquiteturaLabel
-            // 
-            arquiteturaLabel.AutoSize = true;
-            arquiteturaLabel.Location = new Point(50, 149);
-            arquiteturaLabel.Name = "arquiteturaLabel";
-            arquiteturaLabel.Size = new Size(70, 15);
-            arquiteturaLabel.TabIndex = 1;
-            arquiteturaLabel.Text = "Arquiterura:";
-            // 
-            // EletricoLabel
-            // 
-            EletricoLabel.AutoSize = true;
-            EletricoLabel.Location = new Point(50, 179);
-            EletricoLabel.Name = "EletricoLabel";
-            EletricoLabel.Size = new Size(49, 15);
-            EletricoLabel.TabIndex = 1;
-            EletricoLabel.Text = "Elétrico:";
-            // 
-            // hidrossanitarioLabel
-            // 
-            hidrossanitarioLabel.AutoSize = true;
-            hidrossanitarioLabel.Location = new Point(50, 208);
-            hidrossanitarioLabel.Name = "hidrossanitarioLabel";
-            hidrossanitarioLabel.Size = new Size(90, 15);
-            hidrossanitarioLabel.TabIndex = 1;
-            hidrossanitarioLabel.Text = "Hidrossanitário:";
-            // 
-            // HVACLabel
-            // 
-            HVACLabel.AutoSize = true;
-            HVACLabel.Location = new Point(50, 238);
-            HVACLabel.Name = "HVACLabel";
-            HVACLabel.Size = new Size(41, 15);
-            HVACLabel.TabIndex = 1;
-            HVACLabel.Text = "HVAC:";
-            // 
-            // CadastrarTabelaButton
-            // 
-            CadastrarTabelaButton.Location = new Point(145, 284);
-            CadastrarTabelaButton.Name = "CadastrarTabelaButton";
-            CadastrarTabelaButton.Size = new Size(89, 31);
-            CadastrarTabelaButton.TabIndex = 3;
-            CadastrarTabelaButton.Text = "Cadastrar";
-            CadastrarTabelaButton.UseVisualStyleBackColor = true;
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(274, 235);
-            maskedTextBox1.Mask = "000,00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(57, 23);
-            maskedTextBox1.TabIndex = 4;
-            maskedTextBox1.TextAlign = HorizontalAlignment.Right;
-            // 
-            // maskedTextBox2
-            // 
-            maskedTextBox2.Location = new Point(274, 205);
-            maskedTextBox2.Mask = "000,00";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(57, 23);
-            maskedTextBox2.TabIndex = 4;
-            maskedTextBox2.TextAlign = HorizontalAlignment.Right;
-            // 
-            // maskedTextBox3
-            // 
-            maskedTextBox3.Location = new Point(274, 176);
-            maskedTextBox3.Mask = "000,00";
-            maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(57, 23);
-            maskedTextBox3.TabIndex = 4;
-            maskedTextBox3.TextAlign = HorizontalAlignment.Right;
-            // 
-            // maskedTextBox4
-            // 
-            maskedTextBox4.Location = new Point(274, 146);
-            maskedTextBox4.Mask = "000,00";
-            maskedTextBox4.Name = "maskedTextBox4";
-            maskedTextBox4.Size = new Size(57, 23);
-            maskedTextBox4.TabIndex = 4;
-            maskedTextBox4.TextAlign = HorizontalAlignment.Right;
-            // 
-            // maskedTextBox5
-            // 
-            maskedTextBox5.Location = new Point(274, 117);
-            maskedTextBox5.Mask = "000,00";
-            maskedTextBox5.Name = "maskedTextBox5";
-            maskedTextBox5.Size = new Size(57, 23);
-            maskedTextBox5.TabIndex = 4;
-            maskedTextBox5.TextAlign = HorizontalAlignment.Right;
-            // 
-            // maskedTextBox6
-            // 
-            maskedTextBox6.Location = new Point(274, 87);
-            maskedTextBox6.Mask = "000,00";
-            maskedTextBox6.Name = "maskedTextBox6";
-            maskedTextBox6.Size = new Size(57, 23);
-            maskedTextBox6.TabIndex = 4;
-            maskedTextBox6.TextAlign = HorizontalAlignment.Right;
+            textBox2.Location = new Point(151, 87);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(180, 23);
+            textBox2.TabIndex = 2;
             // 
             // TabelaDePrecosForm
             // 
@@ -246,5 +267,7 @@
         private MaskedTextBox maskedTextBox2;
         private MaskedTextBox maskedTextBox1;
         private Button CadastrarTabelaButton;
+        private TextBox textBox2;
+        private Label ObsLabel;
     }
 }
