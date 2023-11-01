@@ -25,7 +25,7 @@ namespace Queme.Db
             cn.Close();
         }
 
-        public int CapturarId(string DescricaoTabela)
+        public static int CapturarId(string DescricaoTabela)    
         {
             int Id = 0;
             string sql = @"SELECT idTabelaDePreco FROM tabelasDePrecos WHERE DescricaoTabela = @DescricaoTabela";

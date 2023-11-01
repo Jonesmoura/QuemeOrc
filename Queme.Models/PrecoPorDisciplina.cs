@@ -16,6 +16,11 @@ namespace Queme.Models
 
         public PrecoPorDisciplina() { }
 
+        public PrecoPorDisciplina(TipoServico tipoServico, double valorHora)
+        {
+            TipoServico = tipoServico;
+            ValorHora = valorHora;
+        }
         public PrecoPorDisciplina(TipoServico tipoServico, int idTabelaDePreco, double valorHora)
         {
             TipoServico = tipoServico;

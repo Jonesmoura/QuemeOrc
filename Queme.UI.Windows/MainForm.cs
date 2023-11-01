@@ -28,5 +28,11 @@ namespace Queme.UI.Windows
             var formBuscaCliente = new BuscaClienteForm();
             formBuscaCliente.ShowDialog();
         }
+
+        private void tabelasDePreçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formTabelaPrecos = new TabelaDePrecosForm();
+            formTabelaPrecos.ShowDialog();
+        }
     }
 }

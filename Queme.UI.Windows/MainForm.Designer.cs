@@ -35,9 +35,9 @@
             serviçosToolStripMenuItem = new ToolStripMenuItem();
             orçamentosToolStripMenuItem = new ToolStripMenuItem();
             novoOrçamentoToolStripMenuItem = new ToolStripMenuItem();
+            tabelasDePreçosToolStripMenuItem = new ToolStripMenuItem();
             VersaoLabel = new Label();
             QuemeLogoPictureBox = new PictureBox();
-            tabelasDePreçosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QuemeLogoPictureBox).BeginInit();
             SuspendLayout();
@@ -91,6 +91,13 @@
             novoOrçamentoToolStripMenuItem.Text = "Novo Orçamento";
             novoOrçamentoToolStripMenuItem.Click += novoOrçamentoToolStripMenuItem_Click;
             // 
+            // tabelasDePreçosToolStripMenuItem
+            // 
+            tabelasDePreçosToolStripMenuItem.Name = "tabelasDePreçosToolStripMenuItem";
+            tabelasDePreçosToolStripMenuItem.Size = new Size(180, 22);
+            tabelasDePreçosToolStripMenuItem.Text = "Tabelas De Preços";
+            tabelasDePreçosToolStripMenuItem.Click += tabelasDePreçosToolStripMenuItem_Click;
+            // 
             // VersaoLabel
             // 
             VersaoLabel.AutoSize = true;
@@ -109,12 +116,6 @@
             QuemeLogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             QuemeLogoPictureBox.TabIndex = 2;
             QuemeLogoPictureBox.TabStop = false;
-            // 
-            // tabelasDePreçosToolStripMenuItem
-            // 
-            tabelasDePreçosToolStripMenuItem.Name = "tabelasDePreçosToolStripMenuItem";
-            tabelasDePreçosToolStripMenuItem.Size = new Size(180, 22);
-            tabelasDePreçosToolStripMenuItem.Text = "Tabelas De Preços";
             // 
             // MainForm
             // 
