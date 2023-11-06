@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             ConteudoOrcPanel = new Panel();
+            TabelaDePrecosComboBox = new ComboBox();
+            nOrcTextBox = new TextBox();
+            tbPrecosLabel = new Label();
+            nOrcLabel = new Label();
             panel1 = new Panel();
             DadosOrcamentoLabel = new Label();
             tabControl1 = new TabControl();
@@ -88,10 +92,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            nOrcLabel = new Label();
-            nOrcTextBox = new TextBox();
-            tbPrecosLabel = new Label();
-            comboBox3 = new ComboBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             // ConteudoOrcPanel
             // 
-            ConteudoOrcPanel.Controls.Add(comboBox3);
+            ConteudoOrcPanel.Controls.Add(TabelaDePrecosComboBox);
             ConteudoOrcPanel.Controls.Add(nOrcTextBox);
             ConteudoOrcPanel.Controls.Add(tbPrecosLabel);
             ConteudoOrcPanel.Controls.Add(nOrcLabel);
@@ -130,6 +130,42 @@
             ConteudoOrcPanel.Name = "ConteudoOrcPanel";
             ConteudoOrcPanel.Size = new Size(1119, 777);
             ConteudoOrcPanel.TabIndex = 0;
+            // 
+            // TabelaDePrecosComboBox
+            // 
+            TabelaDePrecosComboBox.FormattingEnabled = true;
+            TabelaDePrecosComboBox.Location = new Point(971, 76);
+            TabelaDePrecosComboBox.Name = "TabelaDePrecosComboBox";
+            TabelaDePrecosComboBox.Size = new Size(117, 23);
+            TabelaDePrecosComboBox.TabIndex = 5;
+            TabelaDePrecosComboBox.SelectedIndexChanged += TabelaDePrecosComboBox_SelectedIndexChanged;
+            TabelaDePrecosComboBox.MouseClick += TabelaDePrecosComboBox_SelectedIndexChanged;
+            // 
+            // nOrcTextBox
+            // 
+            nOrcTextBox.Location = new Point(971, 127);
+            nOrcTextBox.Name = "nOrcTextBox";
+            nOrcTextBox.ReadOnly = true;
+            nOrcTextBox.Size = new Size(117, 23);
+            nOrcTextBox.TabIndex = 4;
+            // 
+            // tbPrecosLabel
+            // 
+            tbPrecosLabel.AutoSize = true;
+            tbPrecosLabel.Location = new Point(981, 51);
+            tbPrecosLabel.Name = "tbPrecosLabel";
+            tbPrecosLabel.Size = new Size(97, 15);
+            tbPrecosLabel.TabIndex = 3;
+            tbPrecosLabel.Text = "Tabela de Preços:";
+            // 
+            // nOrcLabel
+            // 
+            nOrcLabel.AutoSize = true;
+            nOrcLabel.Location = new Point(964, 106);
+            nOrcLabel.Name = "nOrcLabel";
+            nOrcLabel.Size = new Size(134, 15);
+            nOrcLabel.TabIndex = 3;
+            nOrcLabel.Text = "Numero do Orçamento:";
             // 
             // panel1
             // 
@@ -679,40 +715,6 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // nOrcLabel
-            // 
-            nOrcLabel.AutoSize = true;
-            nOrcLabel.Location = new Point(964, 106);
-            nOrcLabel.Name = "nOrcLabel";
-            nOrcLabel.Size = new Size(134, 15);
-            nOrcLabel.TabIndex = 3;
-            nOrcLabel.Text = "Numero do Orçamento:";
-            // 
-            // nOrcTextBox
-            // 
-            nOrcTextBox.Location = new Point(971, 127);
-            nOrcTextBox.Name = "nOrcTextBox";
-            nOrcTextBox.ReadOnly = true;
-            nOrcTextBox.Size = new Size(117, 23);
-            nOrcTextBox.TabIndex = 4;
-            // 
-            // tbPrecosLabel
-            // 
-            tbPrecosLabel.AutoSize = true;
-            tbPrecosLabel.Location = new Point(981, 51);
-            tbPrecosLabel.Name = "tbPrecosLabel";
-            tbPrecosLabel.Size = new Size(97, 15);
-            tbPrecosLabel.TabIndex = 3;
-            tbPrecosLabel.Text = "Tabela de Preços:";
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(971, 76);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(117, 23);
-            comboBox3.TabIndex = 5;
-            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -830,7 +832,7 @@
         private DataGridView dataGridView1;
         private TextBox nOrcTextBox;
         private Label nOrcLabel;
-        private ComboBox comboBox3;
+        private ComboBox TabelaDePrecosComboBox;
         private Label tbPrecosLabel;
     }
 }

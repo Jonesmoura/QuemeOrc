@@ -1,4 +1,5 @@
-﻿using Queme.Models;
+﻿using Queme.Db;
+using Queme.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,13 @@ namespace Queme.UI.Windows
 
         private void NovoOrcamentoForm_Load(object sender, EventArgs e)
         {
+            // carregar tabelas de preços
+            TabelaDePrecosComboBox.Items.Clear();
+            List<string> tabelas = TabelaDePrecoDb.getTabelas();
+            foreach (string tabela in tabelas)
+            {
+                TabelaDePrecosComboBox.Items.Add(tabela);
+            }
 
         }
 
@@ -60,6 +68,16 @@ namespace Queme.UI.Windows
         private void AlterarCliente_Click(object sender, EventArgs e)
         {
             BuscaClienteForm.AlterarClienteOrc();
+
+        }
+
+        private void TabelaDePrecosComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabelaDePrecosComboBox_SelectedIndexChanged(object sender, MouseEventArgs e)
+        {
 
         }
     }

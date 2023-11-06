@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Queme.Db;
 using Queme.Models;
 using Queme.Models.Enums;
@@ -23,21 +24,42 @@ namespace Queme.UI.Windows
 
         private void CadastrarTabelaButton_Click(object sender, EventArgs e)
         {
-            var TabelaDePreco = new TabelaDePreco();
-            TabelaDePreco.DescricaoTabela = descricaoTabelaTextBox.Text;
-            TabelaDePreco.ObsDaTabela = ObsTabelaTextBox.Text;
-
-            var db = new TabelaDePrecoDb();
-            db.Incluir(TabelaDePreco);
-            //var consultoria = new PrecoPorDisciplina(TipoServico.Consultoria, double.Parse(consultoriaValorTextBox.Text));
+            var tabelaDePreco = new TabelaDePreco();
             Dictionary<TipoServico, double> custos = new Dictionary<TipoServico, double>();
+            tabelaDePreco.DescricaoTabela = descricaoTabelaTextBox.Text;
+            tabelaDePreco.ObsDaTabela = ObsTabelaTextBox.Text;
+
+            var dbTabela = new TabelaDePrecoDb();
+            try
+            {
+                dbTabela.Incluir(tabelaDePreco);
+
+            }catch(MySqlException ex)
+            {
+                MessageBox.Show("Erro ao gravar tabela de preço no banco de dados: " + ex.Message);
+                return;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
             custos[TipoServico.Consultoria] = double.Parse(consultoriaValorTextBox.Text);
             custos[TipoServico.Estrutural] = double.Parse(estruturalValorTextBox.Text);
             custos[TipoServico.Arquitetura] = double.Parse(arquiteturaValorTextBox.Text);
             custos[TipoServico.Elétrico] = double.Parse(eletricoValorTextBox.Text);
             custos[TipoServico.HVAC] = double.Parse(hvacValorTextBox.Text);
             custos[TipoServico.Hidrossanitário] = double.Parse(hidroValorTextBox.Text);
-            //to-do: método para persistir esses dados no banco
+            //to-do: try catch do metodo Incluir Custos
+            try
+            {
+                CustoPorTipoDb.IncluirCustos(tabelaDePreco, custos);
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gravar custos. "+ ex.Message);
+                return;
+            }
 
         }
 

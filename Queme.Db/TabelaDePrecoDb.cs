@@ -11,7 +11,6 @@ namespace Queme.Db
     public class TabelaDePrecoDb
     {
 
-        //to-do: testar os métodos Incluir e CapturarId
         public void Incluir(TabelaDePreco tabelaDePreco)
         {
             string sql = @"INSERT INTO tabelasDePrecos(DescricaoTabela,ObsDaTabela) values(@DescricaoTabela,@ObsDaTabela)";
@@ -38,9 +37,31 @@ namespace Queme.Db
 
             if (reader.Read())
             {
-                Id = Convert.ToInt32(reader["ID"]);
+                Id = Convert.ToInt32(reader["idTabelaDePreco"]);
             }
             return Id;
+
+        }
+
+        public static List<string> getTabelas()
+        {
+            string sql = @"SELECT DISTINCT DescricaoTabela FROM tabelasDePrecos;";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            List<string> tabelas = new List<string>();
+            cn.Open();
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string tabelaDePreco = reader["DescricaoTabela"].ToString();
+                tabelas.Add(tabelaDePreco);
+            }
+
+            reader.Close();
+            cn.Close();
+
+            return tabelas;
 
         }
     }
