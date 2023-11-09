@@ -16,6 +16,13 @@ namespace Queme.Models
         public List<Servico> Servicos = new List<Servico>();
         public EnderecoServico Endereco { get; set; } = new EnderecoServico();
 
+        public Orcamento()
+        {
+            Data = DateTime.Now;
+            Status = StatusOrcamento.Pendente;
+        }
+        
+
         //To-do: Métodos da classe, valorTotal(), 
 
     }

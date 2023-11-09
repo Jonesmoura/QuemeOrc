@@ -45,8 +45,8 @@
             valorTotalEtapaTextBox = new TextBox();
             custoPorHoraTextBox = new TextBox();
             estimativaHorasTextBox = new TextBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            etapaComboBox = new ComboBox();
+            disciplinaComboBox = new ComboBox();
             totalEtapaLabel = new Label();
             valorPorHoraLabel = new Label();
             qtdHorasLabel = new Label();
@@ -244,8 +244,8 @@
             panel2.Controls.Add(valorTotalEtapaTextBox);
             panel2.Controls.Add(custoPorHoraTextBox);
             panel2.Controls.Add(estimativaHorasTextBox);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(etapaComboBox);
+            panel2.Controls.Add(disciplinaComboBox);
             panel2.Controls.Add(totalEtapaLabel);
             panel2.Controls.Add(valorPorHoraLabel);
             panel2.Controls.Add(qtdHorasLabel);
@@ -264,6 +264,7 @@
             adicionarServicoButton.TabIndex = 7;
             adicionarServicoButton.Text = "Adicionar";
             adicionarServicoButton.UseVisualStyleBackColor = true;
+            adicionarServicoButton.Click += adicionarServicoButton_Click;
             // 
             // valorTotalEtapaTextBox
             // 
@@ -287,24 +288,27 @@
             estimativaHorasTextBox.Name = "estimativaHorasTextBox";
             estimativaHorasTextBox.Size = new Size(85, 23);
             estimativaHorasTextBox.TabIndex = 3;
+            estimativaHorasTextBox.TextChanged += estimativaHorasTextBox_TextChanged;
             // 
-            // comboBox2
+            // etapaComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
-            comboBox2.Location = new Point(235, 15);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 2;
+            etapaComboBox.FormattingEnabled = true;
+            etapaComboBox.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
+            etapaComboBox.Location = new Point(235, 15);
+            etapaComboBox.Name = "etapaComboBox";
+            etapaComboBox.Size = new Size(121, 23);
+            etapaComboBox.TabIndex = 2;
             // 
-            // comboBox1
+            // disciplinaComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Consultoria", "Estrutural", "Arquitetura", "Elétrico", "Hidrossanitário", "HVAC" });
-            comboBox1.Location = new Point(67, 15);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            disciplinaComboBox.FormattingEnabled = true;
+            disciplinaComboBox.Items.AddRange(new object[] { "Consultoria", "Estrutural", "Arquitetura", "Elétrico", "Hidrossanitário", "HVAC" });
+            disciplinaComboBox.Location = new Point(67, 15);
+            disciplinaComboBox.Name = "disciplinaComboBox";
+            disciplinaComboBox.Size = new Size(121, 23);
+            disciplinaComboBox.TabIndex = 1;
+            disciplinaComboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            disciplinaComboBox.SelectedValueChanged += comboBox1_SelectedValueChanged;
             // 
             // totalEtapaLabel
             // 
@@ -818,8 +822,8 @@
         private Panel panel2;
         private Label disciplinaLabel;
         private Label etapaLabel;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox disciplinaComboBox;
+        private ComboBox etapaComboBox;
         private Label qtdHorasLabel;
         private GroupBox infoServicoGroupBox;
         private TextBox estimativaHorasTextBox;

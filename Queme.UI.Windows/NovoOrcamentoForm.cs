@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Queme.UI.Windows
 {
@@ -79,6 +80,41 @@ namespace Queme.UI.Windows
         private void TabelaDePrecosComboBox_SelectedIndexChanged(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // método para consultar valor na tabela de PrecosPorDisciplina
+            custoPorHoraTextBox.Text = CustoPorTipoDb.getValorEtapa(TabelaDePrecosComboBox.Text, disciplinaComboBox.Text).ToString();
+        }
+
+        private void estimativaHorasTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //método para calcular total do serviço
+            if (estimativaHorasTextBox.Text != string.Empty)
+            {
+                double totalEtapa = Convert.ToDouble(estimativaHorasTextBox.Text) * Convert.ToDouble(custoPorHoraTextBox.Text);
+                valorTotalEtapaTextBox.Text = totalEtapa.ToString("F2", CultureInfo.InvariantCulture);
+            }
+        }
+
+        private void adicionarServicoButton_Click(object sender, EventArgs e)
+        {
+            if(nOrcTextBox.Text == string.Empty)
+            {
+                Orcamento orc = new Orcamento();
+                var db = new OrcamentoDb();
+                int id = db.Incluir(orc);
+                nOrcTextBox.Text = id.ToString();   
+            }
+            ServicosDb servicoDb = new ServicosDb();
+            //to:do método de incluir serviços 
+            //servicoDb.incluirServico();
         }
     }
 }
