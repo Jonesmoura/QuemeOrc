@@ -11,6 +11,7 @@ namespace Queme.Models
     {
         public StatusOrcamento Status { get; set; }
         public int Id { get; set; }
+        public int Id_cliente { get; set; }
         public DateTime Data { get; set; }
         public double TaxaImposto { get; set; }
         public List<Servico> Servicos = new List<Servico>();
@@ -20,6 +21,12 @@ namespace Queme.Models
         {
             Data = DateTime.Now;
             Status = StatusOrcamento.Pendente;
+        }
+        public Orcamento(int id_cliente)
+        {
+            Data = DateTime.Now;
+            Status = StatusOrcamento.Pendente;
+            Id_cliente = id_cliente;
         }
         
 

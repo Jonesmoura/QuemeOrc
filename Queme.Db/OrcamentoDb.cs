@@ -13,10 +13,11 @@ namespace Queme.Db
         public int Incluir(Orcamento orcamento)
         {
             int id=0;
-            string sql = @"INSERT INTO orcamentos(status, data_criacao) values(@status, @data_criacao)";
+            string sql = @"INSERT INTO orcamentos(status,id_cliente, data_criacao) values(@status,@id_cliente, @data_criacao)";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@status", orcamento.Status.ToString());
+            cmd.Parameters.AddWithValue("@id_cliente", orcamento.Id_cliente);
             cmd.Parameters.AddWithValue("@data_criacao", orcamento.Data.ToString("yyyy-MM-dd"));
             cn.Open();
             cmd.ExecuteNonQuery();

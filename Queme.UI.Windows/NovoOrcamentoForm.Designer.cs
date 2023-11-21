@@ -34,6 +34,7 @@
             tbPrecosLabel = new Label();
             nOrcLabel = new Label();
             panel1 = new Panel();
+            id_clienteLabel = new Label();
             DadosOrcamentoLabel = new Label();
             tabControl1 = new TabControl();
             ServicosTabPage = new TabPage();
@@ -169,12 +170,22 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(id_clienteLabel);
             panel1.Controls.Add(DadosOrcamentoLabel);
             panel1.Controls.Add(tabControl1);
             panel1.Location = new Point(6, 161);
             panel1.Name = "panel1";
             panel1.Size = new Size(1110, 552);
             panel1.TabIndex = 2;
+            // 
+            // id_clienteLabel
+            // 
+            id_clienteLabel.AutoSize = true;
+            id_clienteLabel.Location = new Point(24, 10);
+            id_clienteLabel.Name = "id_clienteLabel";
+            id_clienteLabel.Size = new Size(57, 15);
+            id_clienteLabel.TabIndex = 3;
+            id_clienteLabel.Text = "id_cliente";
             // 
             // DadosOrcamentoLabel
             // 
@@ -838,5 +849,6 @@
         private Label nOrcLabel;
         private ComboBox TabelaDePrecosComboBox;
         private Label tbPrecosLabel;
+        private Label id_clienteLabel;
     }
 }

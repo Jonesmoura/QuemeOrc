@@ -26,8 +26,8 @@ namespace Queme.UI.Windows
             NomeTextBox.Text = cliente.Name.ToString();
             EmailTextBox.Text = cliente.Email.ToString();
             TelTextBox.Text = cliente.Tel.ToString();
-
-
+            id_clienteLabel.Text = cliente.ID.ToString();
+            id_clienteLabel.Visible = false;
 
             if (cliente.CNPJ != "")
             {
@@ -105,12 +105,13 @@ namespace Queme.UI.Windows
 
         private void adicionarServicoButton_Click(object sender, EventArgs e)
         {
-            if(nOrcTextBox.Text == string.Empty)
+            if (nOrcTextBox.Text == string.Empty)
             {
-                Orcamento orc = new Orcamento();
+                int id_cliente = int.Parse(id_clienteLabel.Text);
+                Orcamento orc = new Orcamento(id_cliente);
                 var db = new OrcamentoDb();
                 int id = db.Incluir(orc);
-                nOrcTextBox.Text = id.ToString();   
+                nOrcTextBox.Text = id.ToString();
             }
             ServicosDb servicoDb = new ServicosDb();
             //to:do método de incluir serviços 
