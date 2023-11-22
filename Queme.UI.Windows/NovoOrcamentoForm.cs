@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using Queme.Models.Enums;
 
 namespace Queme.UI.Windows
 {
@@ -114,8 +115,13 @@ namespace Queme.UI.Windows
                 nOrcTextBox.Text = id.ToString();
             }
             ServicosDb servicoDb = new ServicosDb();
-            //to:do método de incluir serviços 
-            //servicoDb.incluirServico();
+            Servico servico = new Servico();
+            servico.Id_orcamento = int.Parse(nOrcTextBox.Text);
+            servico.Etapa = Enum.Parse<EtapasServico>(etapaComboBox.Text);
+            servico.TipoServico = Enum.Parse<TipoServico>(disciplinaComboBox.Text);
+            servico.Qtd_horas = int.Parse(estimativaHorasTextBox.Text);
+            servico.ValorHora = double.Parse(custoPorHoraTextBox.Text);
+            servicoDb.IncluirServico(servico);
         }
     }
 }

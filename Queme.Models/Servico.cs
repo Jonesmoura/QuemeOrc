@@ -10,7 +10,6 @@ namespace Queme.Models
     public class Servico
     {
         public int Id_orcamento { get; set; }
-        public int Id_cliente { get; set; }
         public int Qtd_horas { get; set; }
         public TipoServico TipoServico { get; set; }
         public EtapasServico Etapa {get; set; }
@@ -20,10 +19,9 @@ namespace Queme.Models
         {
         }
 
-        public Servico(int id_orcamento, int id_cliente, int qtd_horas, TipoServico tipoServico, EtapasServico etapa, double valorHora)
+        public Servico(int id_orcamento, int qtd_horas, TipoServico tipoServico, EtapasServico etapa, double valorHora)
         {
             Id_orcamento = id_orcamento;
-            Id_cliente = id_cliente;
             Qtd_horas = qtd_horas;
             TipoServico = tipoServico;
             Etapa = etapa;
