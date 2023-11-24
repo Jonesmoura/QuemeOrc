@@ -120,8 +120,32 @@ namespace Queme.UI.Windows
             servico.Etapa = Enum.Parse<EtapasServico>(etapaComboBox.Text);
             servico.TipoServico = Enum.Parse<TipoServico>(disciplinaComboBox.Text);
             servico.Qtd_horas = int.Parse(estimativaHorasTextBox.Text);
-            servico.ValorHora = double.Parse(custoPorHoraTextBox.Text);
+            servico.ValorHora = double.Parse(custoPorHoraTextBox.Text, CultureInfo.InvariantCulture);
+            servico.TotalServico = double.Parse(valorTotalEtapaTextBox.Text, CultureInfo.InvariantCulture);
             servicoDb.IncluirServico(servico);
+
+            // atualizar dataGridView a cada inserção
+
+            AtualizarViewServicos(servico.Id_orcamento);
+        }
+
+        public void AtualizarViewServicos(int id_orcamento)
+        {
+            ServicosDb servicoDb = new ServicosDb();
+            servicosDataGridView.DataSource = servicoDb.GetServicoList(id_orcamento);
+            servicosDataGridView.AutoGenerateColumns = true;
+            servicosDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            servicosDataGridView.ReadOnly = false;
+            servicosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            servicosDataGridView.RowHeadersVisible = false;
+            servicosDataGridView.EnableHeadersVisualStyles = false;
+            servicosDataGridView.Columns["id_orcamento"].Visible = false;
+
+            servicosDataGridView.Columns["TipoServico"].HeaderText = "Disciplina";
+            servicosDataGridView.Columns["Qtd_horas"].HeaderText = "Quantidade Horas";
+            servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora";
+            servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total";
+
         }
     }
 }

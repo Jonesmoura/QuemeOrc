@@ -39,7 +39,7 @@
             tabControl1 = new TabControl();
             ServicosTabPage = new TabPage();
             servicosPanel = new Panel();
-            dataGridView1 = new DataGridView();
+            servicosDataGridView = new DataGridView();
             infoServicoGroupBox = new GroupBox();
             panel2 = new Panel();
             adicionarServicoButton = new Button();
@@ -98,7 +98,7 @@
             tabControl1.SuspendLayout();
             ServicosTabPage.SuspendLayout();
             servicosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).BeginInit();
             infoServicoGroupBox.SuspendLayout();
             panel2.SuspendLayout();
             CustosAddTabPage.SuspendLayout();
@@ -224,20 +224,20 @@
             // 
             // servicosPanel
             // 
-            servicosPanel.Controls.Add(dataGridView1);
+            servicosPanel.Controls.Add(servicosDataGridView);
             servicosPanel.Location = new Point(0, 125);
             servicosPanel.Name = "servicosPanel";
             servicosPanel.Size = new Size(1090, 350);
             servicosPanel.TabIndex = 7;
             // 
-            // dataGridView1
+            // servicosDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1084, 343);
-            dataGridView1.TabIndex = 0;
+            servicosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            servicosDataGridView.Location = new Point(3, 4);
+            servicosDataGridView.Name = "servicosDataGridView";
+            servicosDataGridView.RowTemplate.Height = 25;
+            servicosDataGridView.Size = new Size(1084, 343);
+            servicosDataGridView.TabIndex = 0;
             // 
             // infoServicoGroupBox
             // 
@@ -748,7 +748,7 @@
             ServicosTabPage.ResumeLayout(false);
             ServicosTabPage.PerformLayout();
             servicosPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).EndInit();
             infoServicoGroupBox.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -844,7 +844,7 @@
         private Label totalEtapaLabel;
         private Button adicionarServicoButton;
         private Panel servicosPanel;
-        private DataGridView dataGridView1;
+        private DataGridView servicosDataGridView;
         private TextBox nOrcTextBox;
         private Label nOrcLabel;
         private ComboBox TabelaDePrecosComboBox;
