@@ -13,4 +13,5 @@ namespace Queme.Models.Enums
         Aprovado = 2,
         Concluido = 3
     }
+
 }

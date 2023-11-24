@@ -34,5 +34,11 @@ namespace Queme.UI.Windows
             var formTabelaPrecos = new TabelaDePrecosForm();
             formTabelaPrecos.ShowDialog();
         }
+
+        private void carregarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formBuscarOrc = new BuscaOrcamento();
+            formBuscarOrc.ShowDialog();
+        }
     }
 }

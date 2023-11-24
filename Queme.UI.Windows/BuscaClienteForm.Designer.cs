@@ -71,7 +71,7 @@
             InfoBuscaPanel.Controls.Add(BuscaFlowLayoutPanel);
             InfoBuscaPanel.Location = new Point(4, 67);
             InfoBuscaPanel.Name = "InfoBuscaPanel";
-            InfoBuscaPanel.Size = new Size(750, 39);
+            InfoBuscaPanel.Size = new Size(750, 40);
             InfoBuscaPanel.TabIndex = 1;
             // 
             // BuscarClienteButton

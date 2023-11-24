@@ -38,6 +38,7 @@
             tabelasDePreçosToolStripMenuItem = new ToolStripMenuItem();
             VersaoLabel = new Label();
             QuemeLogoPictureBox = new PictureBox();
+            carregarOrçamentoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)QuemeLogoPictureBox).BeginInit();
             SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             // orçamentosToolStripMenuItem
             // 
-            orçamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoOrçamentoToolStripMenuItem, tabelasDePreçosToolStripMenuItem });
+            orçamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoOrçamentoToolStripMenuItem, carregarOrçamentoToolStripMenuItem, tabelasDePreçosToolStripMenuItem });
             orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
             orçamentosToolStripMenuItem.Size = new Size(180, 22);
             orçamentosToolStripMenuItem.Text = "Orçamentos";
@@ -87,14 +88,14 @@
             // novoOrçamentoToolStripMenuItem
             // 
             novoOrçamentoToolStripMenuItem.Name = "novoOrçamentoToolStripMenuItem";
-            novoOrçamentoToolStripMenuItem.Size = new Size(180, 22);
+            novoOrçamentoToolStripMenuItem.Size = new Size(182, 22);
             novoOrçamentoToolStripMenuItem.Text = "Novo Orçamento";
             novoOrçamentoToolStripMenuItem.Click += novoOrçamentoToolStripMenuItem_Click;
             // 
             // tabelasDePreçosToolStripMenuItem
             // 
             tabelasDePreçosToolStripMenuItem.Name = "tabelasDePreçosToolStripMenuItem";
-            tabelasDePreçosToolStripMenuItem.Size = new Size(180, 22);
+            tabelasDePreçosToolStripMenuItem.Size = new Size(182, 22);
             tabelasDePreçosToolStripMenuItem.Text = "Tabelas De Preços";
             tabelasDePreçosToolStripMenuItem.Click += tabelasDePreçosToolStripMenuItem_Click;
             // 
@@ -116,6 +117,13 @@
             QuemeLogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             QuemeLogoPictureBox.TabIndex = 2;
             QuemeLogoPictureBox.TabStop = false;
+            // 
+            // carregarOrçamentoToolStripMenuItem
+            // 
+            carregarOrçamentoToolStripMenuItem.Name = "carregarOrçamentoToolStripMenuItem";
+            carregarOrçamentoToolStripMenuItem.Size = new Size(182, 22);
+            carregarOrçamentoToolStripMenuItem.Text = "Carregar Orçamento";
+            carregarOrçamentoToolStripMenuItem.Click += carregarOrçamentoToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -149,5 +157,6 @@
         private Label VersaoLabel;
         private PictureBox QuemeLogoPictureBox;
         private ToolStripMenuItem tabelasDePreçosToolStripMenuItem;
+        private ToolStripMenuItem carregarOrçamentoToolStripMenuItem;
     }
 }

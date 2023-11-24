@@ -100,17 +100,17 @@ namespace Queme.UI.Windows
                 Close();
                 Form orcamentoForm = Application.OpenForms["NovoOrcamentoForm"];
 
-                if(orcamentoForm != null)
+                if (orcamentoForm != null)
                 {
                     // testar, caso funcionar alterar os demais dados do formulário
                     NovoOrcamentoForm formAberto = (NovoOrcamentoForm)orcamentoForm;
                     Panel clientePanel = formAberto.Controls["ConteudoOrcPanel"].Controls["ClientePanel"].Controls["InfoClienteFlowLayoutPanel"] as Panel;
-                    
+
                     clientePanel.Controls["NomePanel"].Controls["NomeTextBox"].Text = cliente.Name.ToString();
                     clientePanel.Controls["EmailPanel"].Controls["EmailTextBox"].Text = cliente.Email.ToString();
                     clientePanel.Controls["TelPanel"].Controls["TelTextBox"].Text = cliente.Tel.ToString();
 
-                    if(cliente.CNPJ != "")
+                    if (cliente.CNPJ != "")
                     {
 
                         clientePanel.Controls["CnpjPanel"].Controls["CnpjTextBox"].Text = cliente.CNPJ.ToString();
@@ -120,7 +120,7 @@ namespace Queme.UI.Windows
                         clientePanel.Controls["CpfPanel"].Visible = false;
 
                     }
-                    else if(cliente.CPF != "")
+                    else if (cliente.CPF != "")
                     {
                         clientePanel.Controls["CpfPanel"].Controls["CpfTextBox"].Text = cliente.CPF.ToString();
                         clientePanel.Controls["CnpjPanel"].Visible = false;

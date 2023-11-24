@@ -269,7 +269,7 @@
             // 
             // adicionarServicoButton
             // 
-            adicionarServicoButton.Location = new Point(986, 15);
+            adicionarServicoButton.Location = new Point(994, 15);
             adicionarServicoButton.Name = "adicionarServicoButton";
             adicionarServicoButton.Size = new Size(75, 23);
             adicionarServicoButton.TabIndex = 7;
@@ -279,7 +279,7 @@
             // 
             // valorTotalEtapaTextBox
             // 
-            valorTotalEtapaTextBox.Location = new Point(857, 15);
+            valorTotalEtapaTextBox.Location = new Point(883, 15);
             valorTotalEtapaTextBox.Name = "valorTotalEtapaTextBox";
             valorTotalEtapaTextBox.ReadOnly = true;
             valorTotalEtapaTextBox.Size = new Size(103, 23);
@@ -287,7 +287,7 @@
             // 
             // custoPorHoraTextBox
             // 
-            custoPorHoraTextBox.Location = new Point(666, 15);
+            custoPorHoraTextBox.Location = new Point(683, 15);
             custoPorHoraTextBox.Name = "custoPorHoraTextBox";
             custoPorHoraTextBox.ReadOnly = true;
             custoPorHoraTextBox.Size = new Size(85, 23);
@@ -295,7 +295,7 @@
             // 
             // estimativaHorasTextBox
             // 
-            estimativaHorasTextBox.Location = new Point(486, 15);
+            estimativaHorasTextBox.Location = new Point(479, 15);
             estimativaHorasTextBox.Name = "estimativaHorasTextBox";
             estimativaHorasTextBox.Size = new Size(85, 23);
             estimativaHorasTextBox.TabIndex = 3;
@@ -305,7 +305,7 @@
             // 
             etapaComboBox.FormattingEnabled = true;
             etapaComboBox.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
-            etapaComboBox.Location = new Point(235, 15);
+            etapaComboBox.Location = new Point(233, 15);
             etapaComboBox.Name = "etapaComboBox";
             etapaComboBox.Size = new Size(121, 23);
             etapaComboBox.TabIndex = 2;
@@ -324,25 +324,25 @@
             // totalEtapaLabel
             // 
             totalEtapaLabel.AutoSize = true;
-            totalEtapaLabel.Location = new Point(761, 18);
+            totalEtapaLabel.Location = new Point(771, 18);
             totalEtapaLabel.Name = "totalEtapaLabel";
-            totalEtapaLabel.Size = new Size(87, 15);
+            totalEtapaLabel.Size = new Size(111, 15);
             totalEtapaLabel.TabIndex = 0;
-            totalEtapaLabel.Text = "Valor da Etapa: ";
+            totalEtapaLabel.Text = "Valor da Etapa (R$): ";
             // 
             // valorPorHoraLabel
             // 
             valorPorHoraLabel.AutoSize = true;
-            valorPorHoraLabel.Location = new Point(575, 18);
+            valorPorHoraLabel.Location = new Point(568, 18);
             valorPorHoraLabel.Name = "valorPorHoraLabel";
-            valorPorHoraLabel.Size = new Size(89, 15);
+            valorPorHoraLabel.Size = new Size(113, 15);
             valorPorHoraLabel.TabIndex = 0;
-            valorPorHoraLabel.Text = "Valor por Hora: ";
+            valorPorHoraLabel.Text = "Valor por Hora (R$): ";
             // 
             // qtdHorasLabel
             // 
             qtdHorasLabel.AutoSize = true;
-            qtdHorasLabel.Location = new Point(363, 18);
+            qtdHorasLabel.Location = new Point(361, 18);
             qtdHorasLabel.Name = "qtdHorasLabel";
             qtdHorasLabel.Size = new Size(117, 15);
             qtdHorasLabel.TabIndex = 0;
@@ -351,7 +351,7 @@
             // etapaLabel
             // 
             etapaLabel.AutoSize = true;
-            etapaLabel.Location = new Point(194, 18);
+            etapaLabel.Location = new Point(192, 18);
             etapaLabel.Name = "etapaLabel";
             etapaLabel.Size = new Size(42, 15);
             etapaLabel.TabIndex = 0;

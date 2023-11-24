@@ -143,8 +143,8 @@ namespace Queme.UI.Windows
 
             servicosDataGridView.Columns["TipoServico"].HeaderText = "Disciplina";
             servicosDataGridView.Columns["Qtd_horas"].HeaderText = "Quantidade Horas";
-            servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora";
-            servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total";
+            servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora (R$)";
+            servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total (R$)";
 
         }
     }
