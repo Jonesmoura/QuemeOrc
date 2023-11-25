@@ -54,8 +54,8 @@
             DatasBtn = new Button();
             ateDataLabel = new Label();
             apartirDataLabel = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            ateDateTimePicker = new DateTimePicker();
+            apartirDateTimePicker = new DateTimePicker();
             groupBox2 = new GroupBox();
             statusComboBox = new ComboBox();
             botoesSelecaoPanel.SuspendLayout();
@@ -280,8 +280,8 @@
             groupBox1.Controls.Add(DatasBtn);
             groupBox1.Controls.Add(ateDataLabel);
             groupBox1.Controls.Add(apartirDataLabel);
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(ateDateTimePicker);
+            groupBox1.Controls.Add(apartirDateTimePicker);
             groupBox1.Location = new Point(550, 53);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(190, 99);
@@ -297,6 +297,7 @@
             DatasBtn.TabIndex = 2;
             DatasBtn.Text = "Limpar Datas";
             DatasBtn.UseVisualStyleBackColor = true;
+            DatasBtn.Click += DatasBtn_Click;
             // 
             // ateDataLabel
             // 
@@ -316,21 +317,21 @@
             apartirDataLabel.TabIndex = 1;
             apartirDataLabel.Text = "Apartir:";
             // 
-            // dateTimePicker2
+            // ateDateTimePicker
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(61, 43);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(103, 23);
-            dateTimePicker2.TabIndex = 0;
+            ateDateTimePicker.Format = DateTimePickerFormat.Short;
+            ateDateTimePicker.Location = new Point(61, 43);
+            ateDateTimePicker.Name = "ateDateTimePicker";
+            ateDateTimePicker.Size = new Size(103, 23);
+            ateDateTimePicker.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // apartirDateTimePicker
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(61, 14);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(103, 23);
-            dateTimePicker1.TabIndex = 0;
+            apartirDateTimePicker.Format = DateTimePickerFormat.Short;
+            apartirDateTimePicker.Location = new Point(61, 14);
+            apartirDateTimePicker.Name = "apartirDateTimePicker";
+            apartirDateTimePicker.Size = new Size(103, 23);
+            apartirDateTimePicker.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -345,6 +346,7 @@
             // statusComboBox
             // 
             statusComboBox.FormattingEnabled = true;
+            statusComboBox.Items.AddRange(new object[] { "Todos" });
             statusComboBox.Location = new Point(34, 16);
             statusComboBox.Name = "statusComboBox";
             statusComboBox.Size = new Size(121, 23);
@@ -414,9 +416,9 @@
         private Panel IdPanel;
         private TextBox IdTextBox;
         private Label IdLabel;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker apartirDateTimePicker;
         private Label apartirDataLabel;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker ateDateTimePicker;
         private Label ateDataLabel;
         private ComboBox statusComboBox;
         private Button DatasBtn;

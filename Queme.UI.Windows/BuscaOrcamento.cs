@@ -32,7 +32,6 @@ namespace Queme.UI.Windows
             BuscaRazaoPanel.Visible = false;
             IdPanel.Visible = false;
 
-
         }
 
         private void BuscaOrcamento_Load(object sender, EventArgs e)
@@ -40,8 +39,10 @@ namespace Queme.UI.Windows
             PJRadioButton.Checked = true;
             StatusOrcamento[] listaStatus = (StatusOrcamento[])Enum.GetValues(typeof(StatusOrcamento));
 
-            //Alimentar comboBox de status com a listaStatus
-
+            foreach(var status in listaStatus)
+            {
+                statusComboBox.Items.Add(status);
+            }
 
         }
 
@@ -55,6 +56,12 @@ namespace Queme.UI.Windows
         private void statusComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DatasBtn_Click(object sender, EventArgs e)
+        {
+            apartirDateTimePicker.Value = DateTime.Parse("01/01/" + DateTime.Now.Year);
+            ateDateTimePicker.Value = DateTime.Now;
         }
     }
 }
