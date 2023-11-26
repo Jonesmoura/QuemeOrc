@@ -1,4 +1,5 @@
-﻿using Queme.Models.Enums;
+﻿using Queme.Db;
+using Queme.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace Queme.UI.Windows
             PJRadioButton.Checked = true;
             StatusOrcamento[] listaStatus = (StatusOrcamento[])Enum.GetValues(typeof(StatusOrcamento));
 
-            foreach(var status in listaStatus)
+            foreach (var status in listaStatus)
             {
                 statusComboBox.Items.Add(status);
             }
@@ -62,6 +63,27 @@ namespace Queme.UI.Windows
         {
             apartirDateTimePicker.Value = DateTime.Parse("01/01/" + DateTime.Now.Year);
             ateDateTimePicker.Value = DateTime.Now;
+        }
+
+        private void BuscarClienteButton_Click(object sender, EventArgs e)
+        {
+            // passagem de parâmetros para busca do orçamento
+            DateTime apartir = apartirDateTimePicker.Value;
+            DateTime ate = ateDateTimePicker.Value;
+            string parametroDePesquisa = PesquisaGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            string status = statusComboBox.Text;
+            string textoPesquisa = "";
+            if (parametroDePesquisa == "Número (ID)")
+            {
+                textoPesquisa = IdTextBox.Text;
+            }
+            // to-do: criar variações para nome e Razao Social
+
+            MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
+
+            OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
+
+
         }
     }
 }

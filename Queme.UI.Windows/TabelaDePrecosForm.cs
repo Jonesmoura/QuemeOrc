@@ -33,12 +33,15 @@ namespace Queme.UI.Windows
             try
             {
                 dbTabela.Incluir(tabelaDePreco);
+                MessageBox.Show($"A tabela de preços {tabelaDePreco.DescricaoTabela} foi salva na base de dados.");
 
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Erro ao gravar tabela de preço no banco de dados: " + ex.Message);
                 return;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
@@ -55,9 +58,10 @@ namespace Queme.UI.Windows
             {
                 CustoPorTipoDb.IncluirCustos(tabelaDePreco, custos);
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao gravar custos. "+ ex.Message);
+                MessageBox.Show("Erro ao gravar custos. " + ex.Message);
                 return;
             }
 

@@ -10,6 +10,33 @@ namespace Queme.Db
 {
     public class OrcamentoDb
     {
+        public static List<Orcamento> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
+        {
+            List<Orcamento> orcamentos = new List<Orcamento>();
+            string parte2StringSQL= "";
+            switch (parametroDePesquisa)
+            {
+                case "Razão Social":
+                    parte2StringSQL = "clientes.razaoSocial LIKE '%@textoPesquisa%'";
+                    break;
+                case "Nome (Pessoa Física)":
+                    parte2StringSQL = "clientes.name LIKE '%@textoPesquisa%'";
+                    break;
+                case "Número (ID)":
+                    int id = int.Parse(textoPesquisa);
+                    parte2StringSQL = "orcamentos.id_orcamento ="+id.ToString();
+                    break;
+
+            }
+            string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSQL;
+            //to:do conexão com o banco, leitura do data reader e salvar na lista orcamentos.
+
+            Console.WriteLine(sql);
+
+            return orcamentos;
+
+        }
+
         public int Incluir(Orcamento orcamento)
         {
             int id=0;

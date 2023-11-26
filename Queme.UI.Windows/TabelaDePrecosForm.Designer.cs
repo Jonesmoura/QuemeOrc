@@ -53,6 +53,7 @@
             descricaoTabelaTextBox = new TextBox();
             nomeTabelaLabel = new Label();
             tituloCadastrolabel = new Label();
+            CustosPorHoraLabel = new Label();
             cadastroPrecosPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             cadastroPrecosPanel.Controls.Add(ObsLabel);
             cadastroPrecosPanel.Controls.Add(descricaoTabelaTextBox);
             cadastroPrecosPanel.Controls.Add(nomeTabelaLabel);
+            cadastroPrecosPanel.Controls.Add(CustosPorHoraLabel);
             cadastroPrecosPanel.Controls.Add(tituloCadastrolabel);
             cadastroPrecosPanel.Location = new Point(2, 1);
             cadastroPrecosPanel.Name = "cadastroPrecosPanel";
@@ -89,7 +91,7 @@
             // 
             // hvacValorTextBox
             // 
-            hvacValorTextBox.Location = new Point(274, 268);
+            hvacValorTextBox.Location = new Point(274, 304);
             hvacValorTextBox.Name = "hvacValorTextBox";
             hvacValorTextBox.Size = new Size(57, 23);
             hvacValorTextBox.TabIndex = 6;
@@ -97,7 +99,7 @@
             // 
             // hidroValorTextBox
             // 
-            hidroValorTextBox.Location = new Point(274, 238);
+            hidroValorTextBox.Location = new Point(274, 274);
             hidroValorTextBox.Name = "hidroValorTextBox";
             hidroValorTextBox.Size = new Size(57, 23);
             hidroValorTextBox.TabIndex = 5;
@@ -105,7 +107,7 @@
             // 
             // eletricoValorTextBox
             // 
-            eletricoValorTextBox.Location = new Point(274, 209);
+            eletricoValorTextBox.Location = new Point(274, 245);
             eletricoValorTextBox.Name = "eletricoValorTextBox";
             eletricoValorTextBox.Size = new Size(57, 23);
             eletricoValorTextBox.TabIndex = 4;
@@ -113,7 +115,7 @@
             // 
             // arquiteturaValorTextBox
             // 
-            arquiteturaValorTextBox.Location = new Point(274, 179);
+            arquiteturaValorTextBox.Location = new Point(274, 215);
             arquiteturaValorTextBox.Name = "arquiteturaValorTextBox";
             arquiteturaValorTextBox.Size = new Size(57, 23);
             arquiteturaValorTextBox.TabIndex = 3;
@@ -121,7 +123,7 @@
             // 
             // estruturalValorTextBox
             // 
-            estruturalValorTextBox.Location = new Point(274, 150);
+            estruturalValorTextBox.Location = new Point(274, 186);
             estruturalValorTextBox.Name = "estruturalValorTextBox";
             estruturalValorTextBox.Size = new Size(57, 23);
             estruturalValorTextBox.TabIndex = 2;
@@ -129,7 +131,7 @@
             // 
             // consultoriaValorTextBox
             // 
-            consultoriaValorTextBox.Location = new Point(274, 121);
+            consultoriaValorTextBox.Location = new Point(274, 157);
             consultoriaValorTextBox.Name = "consultoriaValorTextBox";
             consultoriaValorTextBox.Size = new Size(57, 23);
             consultoriaValorTextBox.TabIndex = 1;
@@ -138,7 +140,7 @@
             // 
             // CadastrarTabelaButton
             // 
-            CadastrarTabelaButton.Location = new Point(145, 318);
+            CadastrarTabelaButton.Location = new Point(145, 354);
             CadastrarTabelaButton.Name = "CadastrarTabelaButton";
             CadastrarTabelaButton.Size = new Size(89, 31);
             CadastrarTabelaButton.TabIndex = 33;
@@ -149,7 +151,7 @@
             // HVACLabel
             // 
             HVACLabel.AutoSize = true;
-            HVACLabel.Location = new Point(50, 271);
+            HVACLabel.Location = new Point(50, 307);
             HVACLabel.Name = "HVACLabel";
             HVACLabel.Size = new Size(41, 15);
             HVACLabel.TabIndex = 1;
@@ -158,7 +160,7 @@
             // EletricoLabel
             // 
             EletricoLabel.AutoSize = true;
-            EletricoLabel.Location = new Point(50, 212);
+            EletricoLabel.Location = new Point(50, 248);
             EletricoLabel.Name = "EletricoLabel";
             EletricoLabel.Size = new Size(49, 15);
             EletricoLabel.TabIndex = 1;
@@ -167,7 +169,7 @@
             // hidrossanitarioLabel
             // 
             hidrossanitarioLabel.AutoSize = true;
-            hidrossanitarioLabel.Location = new Point(50, 241);
+            hidrossanitarioLabel.Location = new Point(50, 277);
             hidrossanitarioLabel.Name = "hidrossanitarioLabel";
             hidrossanitarioLabel.Size = new Size(90, 15);
             hidrossanitarioLabel.TabIndex = 1;
@@ -176,7 +178,7 @@
             // arquiteturaLabel
             // 
             arquiteturaLabel.AutoSize = true;
-            arquiteturaLabel.Location = new Point(50, 182);
+            arquiteturaLabel.Location = new Point(50, 218);
             arquiteturaLabel.Name = "arquiteturaLabel";
             arquiteturaLabel.Size = new Size(70, 15);
             arquiteturaLabel.TabIndex = 1;
@@ -185,7 +187,7 @@
             // EstruturalLabel
             // 
             EstruturalLabel.AutoSize = true;
-            EstruturalLabel.Location = new Point(50, 153);
+            EstruturalLabel.Location = new Point(50, 189);
             EstruturalLabel.Name = "EstruturalLabel";
             EstruturalLabel.Size = new Size(60, 15);
             EstruturalLabel.TabIndex = 1;
@@ -194,7 +196,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(242, 268);
+            label5.Location = new Point(242, 304);
             label5.Name = "label5";
             label5.Size = new Size(26, 15);
             label5.TabIndex = 1;
@@ -203,7 +205,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(242, 241);
+            label4.Location = new Point(242, 277);
             label4.Name = "label4";
             label4.Size = new Size(26, 15);
             label4.TabIndex = 1;
@@ -212,7 +214,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(242, 212);
+            label3.Location = new Point(242, 248);
             label3.Name = "label3";
             label3.Size = new Size(26, 15);
             label3.TabIndex = 1;
@@ -221,7 +223,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(242, 182);
+            label2.Location = new Point(242, 218);
             label2.Name = "label2";
             label2.Size = new Size(26, 15);
             label2.TabIndex = 1;
@@ -230,7 +232,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(242, 153);
+            label1.Location = new Point(242, 189);
             label1.Name = "label1";
             label1.Size = new Size(26, 15);
             label1.TabIndex = 1;
@@ -239,7 +241,7 @@
             // moedaLabel
             // 
             moedaLabel.AutoSize = true;
-            moedaLabel.Location = new Point(242, 124);
+            moedaLabel.Location = new Point(242, 160);
             moedaLabel.Name = "moedaLabel";
             moedaLabel.Size = new Size(26, 15);
             moedaLabel.TabIndex = 1;
@@ -248,7 +250,7 @@
             // ConsultoriaLabel
             // 
             ConsultoriaLabel.AutoSize = true;
-            ConsultoriaLabel.Location = new Point(50, 123);
+            ConsultoriaLabel.Location = new Point(50, 159);
             ConsultoriaLabel.Name = "ConsultoriaLabel";
             ConsultoriaLabel.Size = new Size(71, 15);
             ConsultoriaLabel.TabIndex = 1;
@@ -296,6 +298,16 @@
             tituloCadastrolabel.TabIndex = 0;
             tituloCadastrolabel.Text = "Cadastro de Tabela de Preços";
             // 
+            // CustosPorHoraLabel
+            // 
+            CustosPorHoraLabel.AutoSize = true;
+            CustosPorHoraLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CustosPorHoraLabel.Location = new Point(134, 123);
+            CustosPorHoraLabel.Name = "CustosPorHoraLabel";
+            CustosPorHoraLabel.Size = new Size(117, 20);
+            CustosPorHoraLabel.TabIndex = 0;
+            CustosPorHoraLabel.Text = "Custos Por Hora:";
+            // 
             // TabelaDePrecosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -339,5 +351,6 @@
         private Label label2;
         private Label label1;
         private Label moedaLabel;
+        private Label CustosPorHoraLabel;
     }
 }

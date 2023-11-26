@@ -36,10 +36,10 @@
             PJRadioButton = new RadioButton();
             nOrcRadioButton = new RadioButton();
             InfoBuscaPanel = new Panel();
-            BuscarClienteButton = new Button();
+            BuscarOrcButton = new Button();
             BuscaFlowLayoutPanel = new FlowLayoutPanel();
             BuscaRazaoPanel = new Panel();
-            RazaoTextBox = new TextBox();
+            pesquisaTextBox = new TextBox();
             RazaoLabel = new Label();
             BuscaNomePanel = new Panel();
             NomeTextBox = new TextBox();
@@ -140,21 +140,22 @@
             // 
             // InfoBuscaPanel
             // 
-            InfoBuscaPanel.Controls.Add(BuscarClienteButton);
+            InfoBuscaPanel.Controls.Add(BuscarOrcButton);
             InfoBuscaPanel.Controls.Add(BuscaFlowLayoutPanel);
             InfoBuscaPanel.Location = new Point(36, 104);
             InfoBuscaPanel.Name = "InfoBuscaPanel";
             InfoBuscaPanel.Size = new Size(499, 48);
             InfoBuscaPanel.TabIndex = 8;
             // 
-            // BuscarClienteButton
+            // BuscarOrcButton
             // 
-            BuscarClienteButton.Location = new Point(423, 6);
-            BuscarClienteButton.Name = "BuscarClienteButton";
-            BuscarClienteButton.Size = new Size(70, 27);
-            BuscarClienteButton.TabIndex = 1;
-            BuscarClienteButton.Text = "Buscar";
-            BuscarClienteButton.UseVisualStyleBackColor = true;
+            BuscarOrcButton.Location = new Point(423, 8);
+            BuscarOrcButton.Name = "BuscarOrcButton";
+            BuscarOrcButton.Size = new Size(70, 27);
+            BuscarOrcButton.TabIndex = 1;
+            BuscarOrcButton.Text = "Buscar";
+            BuscarOrcButton.UseVisualStyleBackColor = true;
+            BuscarOrcButton.Click += BuscarClienteButton_Click;
             // 
             // BuscaFlowLayoutPanel
             // 
@@ -168,19 +169,19 @@
             // 
             // BuscaRazaoPanel
             // 
-            BuscaRazaoPanel.Controls.Add(RazaoTextBox);
+            BuscaRazaoPanel.Controls.Add(pesquisaTextBox);
             BuscaRazaoPanel.Controls.Add(RazaoLabel);
             BuscaRazaoPanel.Location = new Point(3, 3);
             BuscaRazaoPanel.Name = "BuscaRazaoPanel";
             BuscaRazaoPanel.Size = new Size(385, 28);
             BuscaRazaoPanel.TabIndex = 0;
             // 
-            // RazaoTextBox
+            // pesquisaTextBox
             // 
-            RazaoTextBox.Location = new Point(92, 3);
-            RazaoTextBox.Name = "RazaoTextBox";
-            RazaoTextBox.Size = new Size(283, 23);
-            RazaoTextBox.TabIndex = 1;
+            pesquisaTextBox.Location = new Point(92, 3);
+            pesquisaTextBox.Name = "pesquisaTextBox";
+            pesquisaTextBox.Size = new Size(283, 23);
+            pesquisaTextBox.TabIndex = 1;
             // 
             // RazaoLabel
             // 
@@ -400,10 +401,10 @@
         private RadioButton PJRadioButton;
         private RadioButton nOrcRadioButton;
         private Panel InfoBuscaPanel;
-        private Button BuscarClienteButton;
+        private Button BuscarOrcButton;
         private FlowLayoutPanel BuscaFlowLayoutPanel;
         private Panel BuscaRazaoPanel;
-        private TextBox RazaoTextBox;
+        private TextBox pesquisaTextBox;
         private Label RazaoLabel;
         private Panel BuscaNomePanel;
         private TextBox NomeTextBox;
