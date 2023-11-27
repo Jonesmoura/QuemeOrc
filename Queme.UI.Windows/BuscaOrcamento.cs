@@ -37,6 +37,7 @@ namespace Queme.UI.Windows
 
         private void BuscaOrcamento_Load(object sender, EventArgs e)
         {
+
             PJRadioButton.Checked = true;
             StatusOrcamento[] listaStatus = (StatusOrcamento[])Enum.GetValues(typeof(StatusOrcamento));
 
@@ -73,16 +74,31 @@ namespace Queme.UI.Windows
             string parametroDePesquisa = PesquisaGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             string status = statusComboBox.Text;
             string textoPesquisa = "";
-            if (parametroDePesquisa == "Número (ID)")
+            switch (parametroDePesquisa)
             {
-                textoPesquisa = IdTextBox.Text;
+                case "Número (ID)":
+                    textoPesquisa = IdTextBox.Text;
+                    break;
+                case "Nome (Pessoa Física)":
+                    textoPesquisa = NomeTextBox.Text;
+                    break;
+                case "Razão Social":
+                    textoPesquisa = razaoTextBox.Text;
+                    break;
+
             }
+
             // to-do: criar variações para nome e Razao Social
 
             MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
 
             OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
 
+
+        }
+
+        private void apartirDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

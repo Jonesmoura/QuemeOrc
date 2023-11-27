@@ -24,7 +24,6 @@ namespace Queme.Db
             cmd.Parameters.AddWithValue("@valor_hora", servico.ValorHora);
             cmd.Parameters.AddWithValue("@totalServico", servico.TotalServico);
 
-
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();

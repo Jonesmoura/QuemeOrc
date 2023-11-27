@@ -39,7 +39,7 @@
             BuscarOrcButton = new Button();
             BuscaFlowLayoutPanel = new FlowLayoutPanel();
             BuscaRazaoPanel = new Panel();
-            pesquisaTextBox = new TextBox();
+            razaoTextBox = new TextBox();
             RazaoLabel = new Label();
             BuscaNomePanel = new Panel();
             NomeTextBox = new TextBox();
@@ -169,19 +169,19 @@
             // 
             // BuscaRazaoPanel
             // 
-            BuscaRazaoPanel.Controls.Add(pesquisaTextBox);
+            BuscaRazaoPanel.Controls.Add(razaoTextBox);
             BuscaRazaoPanel.Controls.Add(RazaoLabel);
             BuscaRazaoPanel.Location = new Point(3, 3);
             BuscaRazaoPanel.Name = "BuscaRazaoPanel";
             BuscaRazaoPanel.Size = new Size(385, 28);
             BuscaRazaoPanel.TabIndex = 0;
             // 
-            // pesquisaTextBox
+            // razaoTextBox
             // 
-            pesquisaTextBox.Location = new Point(92, 3);
-            pesquisaTextBox.Name = "pesquisaTextBox";
-            pesquisaTextBox.Size = new Size(283, 23);
-            pesquisaTextBox.TabIndex = 1;
+            razaoTextBox.Location = new Point(92, 3);
+            razaoTextBox.Name = "razaoTextBox";
+            razaoTextBox.Size = new Size(283, 23);
+            razaoTextBox.TabIndex = 1;
             // 
             // RazaoLabel
             // 
@@ -320,7 +320,8 @@
             // 
             // ateDateTimePicker
             // 
-            ateDateTimePicker.Format = DateTimePickerFormat.Short;
+            ateDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            ateDateTimePicker.Format = DateTimePickerFormat.Custom;
             ateDateTimePicker.Location = new Point(61, 43);
             ateDateTimePicker.Name = "ateDateTimePicker";
             ateDateTimePicker.Size = new Size(103, 23);
@@ -328,11 +329,13 @@
             // 
             // apartirDateTimePicker
             // 
-            apartirDateTimePicker.Format = DateTimePickerFormat.Short;
+            apartirDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            apartirDateTimePicker.Format = DateTimePickerFormat.Custom;
             apartirDateTimePicker.Location = new Point(61, 14);
             apartirDateTimePicker.Name = "apartirDateTimePicker";
             apartirDateTimePicker.Size = new Size(103, 23);
             apartirDateTimePicker.TabIndex = 0;
+            apartirDateTimePicker.ValueChanged += apartirDateTimePicker_ValueChanged;
             // 
             // groupBox2
             // 
@@ -404,7 +407,7 @@
         private Button BuscarOrcButton;
         private FlowLayoutPanel BuscaFlowLayoutPanel;
         private Panel BuscaRazaoPanel;
-        private TextBox pesquisaTextBox;
+        private TextBox razaoTextBox;
         private Label RazaoLabel;
         private Panel BuscaNomePanel;
         private TextBox NomeTextBox;

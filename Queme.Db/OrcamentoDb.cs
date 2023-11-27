@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Queme.Models;
+using Queme.Models.DTOs;
+using Queme.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,55 @@ namespace Queme.Db
 {
     public class OrcamentoDb
     {
-        public static List<Orcamento> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
+        public static List<ReadOrcamentoDto> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
         {
-            List<Orcamento> orcamentos = new List<Orcamento>();
-            string parte2StringSQL= "";
+            List<ReadOrcamentoDto> orcamentos = new List<ReadOrcamentoDto>();
+            string parte2StringSql= "";
             switch (parametroDePesquisa)
             {
                 case "Razão Social":
-                    parte2StringSQL = "clientes.razaoSocial LIKE '%@textoPesquisa%'";
+                    parte2StringSql = "clientes.razaoSocial LIKE '%"+textoPesquisa+"%'";
                     break;
                 case "Nome (Pessoa Física)":
-                    parte2StringSQL = "clientes.name LIKE '%@textoPesquisa%'";
+                    parte2StringSql = "clientes.name LIKE '%" + textoPesquisa + "%'";
                     break;
                 case "Número (ID)":
                     int id = int.Parse(textoPesquisa);
-                    parte2StringSQL = "orcamentos.id_orcamento ="+id.ToString();
+                    parte2StringSql = "orcamentos.id_orcamento ="+id.ToString();
                     break;
-
             }
-            string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSQL;
-            //to:do conexão com o banco, leitura do data reader e salvar na lista orcamentos.
+
+            if(status != string.Empty &&  status != "Todos")
+            {
+                parte2StringSql += " AND status ="+ "'"+status+"'";
+            }
+
+            // feat: implementar filtro por datas, utilizando os parametros apartir e ate
+
+            string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSql;
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cn.Open();
 
             Console.WriteLine(sql);
 
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadOrcamentoDto orcamento = new ReadOrcamentoDto();
+                orcamento.Id = int.Parse(reader["id_orcamento"].ToString());
+                orcamento.Status = Enum.Parse<StatusOrcamento>(reader["status"].ToString());
+                orcamento.DataCriacao = DateTime.Parse(reader["data_criacao"].ToString());
+                orcamento.RazaoSocial = reader["razaoSocial"].ToString();
+                orcamento.Nome = reader["name"].ToString();
+
+                orcamentos.Add(orcamento);
+
+            }
+
+            reader.Close();
+            cn.Close();
             return orcamentos;
 
         }
