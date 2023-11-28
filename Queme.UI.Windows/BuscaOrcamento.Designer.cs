@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             botoesSelecaoPanel = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            SelecionarOrcButton = new Button();
+            duplicarFlowLayoutPanel = new FlowLayoutPanel();
+            duplicarOrcBtn = new Button();
+            excluirFlowLayoutPanel = new FlowLayoutPanel();
+            excluirOrcBtn = new Button();
+            editarFlowLayoutPanel = new FlowLayoutPanel();
+            editarOrcButton = new Button();
             ClientesEncontradosPanel = new Panel();
-            ClientesEncontradosDataGridView = new DataGridView();
+            OrcamentosEncontradosDataGridView = new DataGridView();
             PJRadioButton = new RadioButton();
             nOrcRadioButton = new RadioButton();
             InfoBuscaPanel = new Panel();
@@ -50,7 +54,7 @@
             buscarOrcamentoLabel = new Label();
             PesquisaGroupBox = new GroupBox();
             PFRadioButton = new RadioButton();
-            groupBox1 = new GroupBox();
+            dataGroupBox = new GroupBox();
             DatasBtn = new Button();
             ateDataLabel = new Label();
             apartirDataLabel = new Label();
@@ -59,47 +63,86 @@
             groupBox2 = new GroupBox();
             statusComboBox = new ComboBox();
             botoesSelecaoPanel.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            duplicarFlowLayoutPanel.SuspendLayout();
+            excluirFlowLayoutPanel.SuspendLayout();
+            editarFlowLayoutPanel.SuspendLayout();
             ClientesEncontradosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ClientesEncontradosDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)OrcamentosEncontradosDataGridView).BeginInit();
             InfoBuscaPanel.SuspendLayout();
             BuscaFlowLayoutPanel.SuspendLayout();
             BuscaRazaoPanel.SuspendLayout();
             BuscaNomePanel.SuspendLayout();
             IdPanel.SuspendLayout();
             PesquisaGroupBox.SuspendLayout();
-            groupBox1.SuspendLayout();
+            dataGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // botoesSelecaoPanel
             // 
-            botoesSelecaoPanel.Controls.Add(flowLayoutPanel1);
+            botoesSelecaoPanel.Controls.Add(duplicarFlowLayoutPanel);
+            botoesSelecaoPanel.Controls.Add(excluirFlowLayoutPanel);
+            botoesSelecaoPanel.Controls.Add(editarFlowLayoutPanel);
             botoesSelecaoPanel.Location = new Point(6, 391);
             botoesSelecaoPanel.Name = "botoesSelecaoPanel";
-            botoesSelecaoPanel.Size = new Size(157, 37);
+            botoesSelecaoPanel.Size = new Size(468, 37);
             botoesSelecaoPanel.TabIndex = 12;
             // 
-            // flowLayoutPanel1
+            // duplicarFlowLayoutPanel
             // 
-            flowLayoutPanel1.Controls.Add(SelecionarOrcButton);
-            flowLayoutPanel1.Location = new Point(3, 4);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(146, 30);
-            flowLayoutPanel1.TabIndex = 6;
+            duplicarFlowLayoutPanel.Controls.Add(duplicarOrcBtn);
+            duplicarFlowLayoutPanel.Location = new Point(307, 4);
+            duplicarFlowLayoutPanel.Name = "duplicarFlowLayoutPanel";
+            duplicarFlowLayoutPanel.Size = new Size(146, 30);
+            duplicarFlowLayoutPanel.TabIndex = 6;
             // 
-            // SelecionarOrcButton
+            // duplicarOrcBtn
             // 
-            SelecionarOrcButton.Location = new Point(3, 3);
-            SelecionarOrcButton.Name = "SelecionarOrcButton";
-            SelecionarOrcButton.Size = new Size(142, 23);
-            SelecionarOrcButton.TabIndex = 4;
-            SelecionarOrcButton.Text = "Selecionar Orçamento";
-            SelecionarOrcButton.UseVisualStyleBackColor = true;
+            duplicarOrcBtn.Location = new Point(3, 3);
+            duplicarOrcBtn.Name = "duplicarOrcBtn";
+            duplicarOrcBtn.Size = new Size(142, 23);
+            duplicarOrcBtn.TabIndex = 4;
+            duplicarOrcBtn.Text = "Duplicar Orçamento";
+            duplicarOrcBtn.UseVisualStyleBackColor = true;
+            // 
+            // excluirFlowLayoutPanel
+            // 
+            excluirFlowLayoutPanel.Controls.Add(excluirOrcBtn);
+            excluirFlowLayoutPanel.Location = new Point(155, 4);
+            excluirFlowLayoutPanel.Name = "excluirFlowLayoutPanel";
+            excluirFlowLayoutPanel.Size = new Size(146, 30);
+            excluirFlowLayoutPanel.TabIndex = 6;
+            // 
+            // excluirOrcBtn
+            // 
+            excluirOrcBtn.Location = new Point(3, 3);
+            excluirOrcBtn.Name = "excluirOrcBtn";
+            excluirOrcBtn.Size = new Size(142, 23);
+            excluirOrcBtn.TabIndex = 4;
+            excluirOrcBtn.Text = "Excluir Orçamento";
+            excluirOrcBtn.UseVisualStyleBackColor = true;
+            // 
+            // editarFlowLayoutPanel
+            // 
+            editarFlowLayoutPanel.Controls.Add(editarOrcButton);
+            editarFlowLayoutPanel.Location = new Point(3, 4);
+            editarFlowLayoutPanel.Name = "editarFlowLayoutPanel";
+            editarFlowLayoutPanel.Size = new Size(146, 30);
+            editarFlowLayoutPanel.TabIndex = 6;
+            // 
+            // editarOrcButton
+            // 
+            editarOrcButton.Location = new Point(3, 3);
+            editarOrcButton.Name = "editarOrcButton";
+            editarOrcButton.Size = new Size(142, 23);
+            editarOrcButton.TabIndex = 4;
+            editarOrcButton.Text = "Editar Orçamento";
+            editarOrcButton.UseVisualStyleBackColor = true;
+            editarOrcButton.Click += editarOrcButton_Click;
             // 
             // ClientesEncontradosPanel
             // 
-            ClientesEncontradosPanel.Controls.Add(ClientesEncontradosDataGridView);
+            ClientesEncontradosPanel.Controls.Add(OrcamentosEncontradosDataGridView);
             ClientesEncontradosPanel.Location = new Point(6, 156);
             ClientesEncontradosPanel.Name = "ClientesEncontradosPanel";
             ClientesEncontradosPanel.Size = new Size(749, 229);
@@ -107,12 +150,12 @@
             // 
             // ClientesEncontradosDataGridView
             // 
-            ClientesEncontradosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ClientesEncontradosDataGridView.Location = new Point(3, 0);
-            ClientesEncontradosDataGridView.Name = "ClientesEncontradosDataGridView";
-            ClientesEncontradosDataGridView.RowTemplate.Height = 25;
-            ClientesEncontradosDataGridView.Size = new Size(743, 221);
-            ClientesEncontradosDataGridView.TabIndex = 0;
+            OrcamentosEncontradosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            OrcamentosEncontradosDataGridView.Location = new Point(3, 0);
+            OrcamentosEncontradosDataGridView.Name = "ClientesEncontradosDataGridView";
+            OrcamentosEncontradosDataGridView.RowTemplate.Height = 25;
+            OrcamentosEncontradosDataGridView.Size = new Size(743, 221);
+            OrcamentosEncontradosDataGridView.TabIndex = 0;
             // 
             // PJRadioButton
             // 
@@ -276,19 +319,19 @@
             PFRadioButton.UseVisualStyleBackColor = true;
             PFRadioButton.CheckedChanged += PFRadioButton_CheckedChanged;
             // 
-            // groupBox1
+            // dataGroupBox
             // 
-            groupBox1.Controls.Add(DatasBtn);
-            groupBox1.Controls.Add(ateDataLabel);
-            groupBox1.Controls.Add(apartirDataLabel);
-            groupBox1.Controls.Add(ateDateTimePicker);
-            groupBox1.Controls.Add(apartirDateTimePicker);
-            groupBox1.Location = new Point(550, 53);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(190, 99);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Data:";
+            dataGroupBox.Controls.Add(DatasBtn);
+            dataGroupBox.Controls.Add(ateDataLabel);
+            dataGroupBox.Controls.Add(apartirDataLabel);
+            dataGroupBox.Controls.Add(ateDateTimePicker);
+            dataGroupBox.Controls.Add(apartirDateTimePicker);
+            dataGroupBox.Location = new Point(550, 53);
+            dataGroupBox.Name = "dataGroupBox";
+            dataGroupBox.Size = new Size(190, 99);
+            dataGroupBox.TabIndex = 14;
+            dataGroupBox.TabStop = false;
+            dataGroupBox.Text = "Data de Criação:";
             // 
             // DatasBtn
             // 
@@ -363,7 +406,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(766, 450);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(dataGroupBox);
             Controls.Add(PesquisaGroupBox);
             Controls.Add(botoesSelecaoPanel);
             Controls.Add(ClientesEncontradosPanel);
@@ -374,9 +417,11 @@
             Text = "Buscar Orçamento";
             Load += BuscaOrcamento_Load;
             botoesSelecaoPanel.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
+            duplicarFlowLayoutPanel.ResumeLayout(false);
+            excluirFlowLayoutPanel.ResumeLayout(false);
+            editarFlowLayoutPanel.ResumeLayout(false);
             ClientesEncontradosPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ClientesEncontradosDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)OrcamentosEncontradosDataGridView).EndInit();
             InfoBuscaPanel.ResumeLayout(false);
             BuscaFlowLayoutPanel.ResumeLayout(false);
             BuscaRazaoPanel.ResumeLayout(false);
@@ -387,8 +432,8 @@
             IdPanel.PerformLayout();
             PesquisaGroupBox.ResumeLayout(false);
             PesquisaGroupBox.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            dataGroupBox.ResumeLayout(false);
+            dataGroupBox.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -397,10 +442,10 @@
         #endregion
 
         private Panel botoesSelecaoPanel;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Button SelecionarOrcButton;
+        private FlowLayoutPanel editarFlowLayoutPanel;
+        private Button editarOrcButton;
         private Panel ClientesEncontradosPanel;
-        private DataGridView ClientesEncontradosDataGridView;
+        private DataGridView OrcamentosEncontradosDataGridView;
         private RadioButton PJRadioButton;
         private RadioButton nOrcRadioButton;
         private Panel InfoBuscaPanel;
@@ -415,7 +460,7 @@
         private Label buscarOrcamentoLabel;
         private GroupBox PesquisaGroupBox;
         private RadioButton PFRadioButton;
-        private GroupBox groupBox1;
+        private GroupBox dataGroupBox;
         private GroupBox groupBox2;
         private Panel IdPanel;
         private TextBox IdTextBox;
@@ -426,5 +471,9 @@
         private Label ateDataLabel;
         private ComboBox statusComboBox;
         private Button DatasBtn;
+        private FlowLayoutPanel duplicarFlowLayoutPanel;
+        private Button duplicarOrcBtn;
+        private FlowLayoutPanel excluirFlowLayoutPanel;
+        private Button excluirOrcBtn;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Queme.Db;
+using Queme.Models.DTOs;
 using Queme.Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace Queme.UI.Windows
 
         private void BuscaOrcamento_Load(object sender, EventArgs e)
         {
-
+            apartirDateTimePicker.Value = DateTime.Parse("01/01/" + DateTime.Now.Year);
             PJRadioButton.Checked = true;
             StatusOrcamento[] listaStatus = (StatusOrcamento[])Enum.GetValues(typeof(StatusOrcamento));
 
@@ -88,18 +89,37 @@ namespace Queme.UI.Windows
 
             }
 
-            // to-do: criar variações para nome e Razao Social
-
             MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
 
-            OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
+            List<ReadOrcamentoDto> orcamentos = OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
 
+            AtualizarViewOrcamentos(orcamentos);
 
         }
 
         private void apartirDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AtualizarViewOrcamentos(List<ReadOrcamentoDto> orcamentos)
+        {
+            OrcamentosEncontradosDataGridView.DataSource = "";
+            OrcamentosEncontradosDataGridView.DataSource = orcamentos;
+            OrcamentosEncontradosDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            OrcamentosEncontradosDataGridView.ReadOnly = false;
+            OrcamentosEncontradosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            OrcamentosEncontradosDataGridView.RowHeadersVisible = false;
+            OrcamentosEncontradosDataGridView.EnableHeadersVisualStyles = false;
+            OrcamentosEncontradosDataGridView.Columns["ID"].Width = 20;
+
+
+        }
+
+        private void editarOrcButton_Click(object sender, EventArgs e)
+        {
+            //Carrega o orçamento selecionado no modelo de edição, preenche todos os campos.
+            int id = int.Parse(OrcamentosEncontradosDataGridView.SelectedRows[0].Cells["ID"].Value.ToString());
         }
     }
 }

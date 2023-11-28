@@ -19,10 +19,10 @@ namespace Queme.Db
             switch (parametroDePesquisa)
             {
                 case "Razão Social":
-                    parte2StringSql = "clientes.razaoSocial LIKE '%"+textoPesquisa+"%'";
+                    parte2StringSql = "clientes.razaoSocial LIKE '%"+textoPesquisa+ "%' AND clientes.razaoSocial IS NOT NULL";
                     break;
                 case "Nome (Pessoa Física)":
-                    parte2StringSql = "clientes.name LIKE '%" + textoPesquisa + "%'";
+                    parte2StringSql = "clientes.name LIKE '%" + textoPesquisa + "%' AND clientes.razaoSocial IS NULL";
                     break;
                 case "Número (ID)":
                     int id = int.Parse(textoPesquisa);
@@ -35,7 +35,7 @@ namespace Queme.Db
                 parte2StringSql += " AND status ="+ "'"+status+"'";
             }
 
-            // feat: implementar filtro por datas, utilizando os parametros apartir e ate
+            parte2StringSql += " AND orcamentos.data_criacao BETWEEN " + "'"+apartir.ToString("yyyy-MM-dd") + "'" + " AND " + "'" + ate.ToString("yyyy-MM-dd")+ "'" + ";";
 
             string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSql;
             var cn = new MySqlConnection(Db.connect);
