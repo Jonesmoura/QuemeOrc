@@ -42,7 +42,6 @@ namespace Queme.Db
             var cmd = new MySqlCommand(sql, cn);
             cn.Open();
 
-            Console.WriteLine(sql);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -94,9 +93,27 @@ namespace Queme.Db
                 }
             }
 
-
             cn.Close();
             return id;
+        }
+
+        public static int GetIdCliente(int idOrc)
+        {
+            int idCliente = 0;
+            string sql = @"SELECT id_cliente FROM orcamentos WHERE id_orcamento = @id_orcamento";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@id_orcamento", idOrc);
+            cn.Open();
+            
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                idCliente = int.Parse(reader["id_cliente"].ToString());
+            }
+
+            return idCliente != 0 ? idCliente : throw new Exception("Id não encontrado.");
         }
     }
 }

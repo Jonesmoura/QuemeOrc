@@ -14,5 +14,8 @@ namespace Queme.Models.DTOs
         public DateTime DataCriacao { get; set; }
         public string? RazaoSocial { get; set; }
         public string? Nome { get; set; }
+        public List<Servico> Servicos { get; set; } = new List<Servico>();
+
+
     }
 }

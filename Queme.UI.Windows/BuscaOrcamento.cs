@@ -1,4 +1,5 @@
 ﻿using Queme.Db;
+using Queme.Models;
 using Queme.Models.DTOs;
 using Queme.Models.Enums;
 using System;
@@ -120,6 +121,14 @@ namespace Queme.UI.Windows
         {
             //Carrega o orçamento selecionado no modelo de edição, preenche todos os campos.
             int id = int.Parse(OrcamentosEncontradosDataGridView.SelectedRows[0].Cells["ID"].Value.ToString());
+            ClienteDb clienteDb = new ClienteDb();
+            Cliente cliente = clienteDb.buscarInfoCliente(OrcamentoDb.GetIdCliente(id));
+            
+            // criar construtor para o NovoOrcamentoForm contendo todos os items do orçamento, carregados do db;
+            //to-do: método que preenche uma instância do ReadOrcamentoDto, para ser encaminhada ao NovoOrcamentoForm(cliente,orcamento);
+            //to-do: criar tabela de endereço da obra e vincular aos models necessários;
+            var formOrc = new NovoOrcamentoForm(cliente);
+            formOrc.ShowDialog();
         }
     }
 }

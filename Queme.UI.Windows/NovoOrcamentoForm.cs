@@ -50,6 +50,12 @@ namespace Queme.UI.Windows
 
         }
 
+        public NovoOrcamentoForm(Cliente cliente, Orcamento orcamento)
+        {
+            InitializeComponent();
+            //to:do método preenchimento do orçamento e cliente
+        }
+
         private void NovoOrcamentoForm_Load(object sender, EventArgs e)
         {
             // carregar tabelas de preços
