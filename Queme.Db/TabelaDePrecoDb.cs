@@ -43,6 +43,24 @@ namespace Queme.Db
 
         }
 
+        public static string CapturarDesc(int id)
+        {
+            string desc= string.Empty;
+            string sql = @"SELECT DescricaoTabela FROM tabelasDePrecos WHERE idTabelaDePreco =@id";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue(@"id",id);
+            cn.Open();
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                desc = reader["DescricaoTabela"].ToString();
+            }
+
+            return desc;
+        }
+
         public static List<string> getTabelas()
         {
             string sql = @"SELECT DISTINCT DescricaoTabela FROM tabelasDePrecos;";

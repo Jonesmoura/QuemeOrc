@@ -16,17 +16,19 @@ namespace Queme.Models
         public double TaxaImposto { get; set; }
         public List<Servico> Servicos = new List<Servico>();
         public EnderecoServico Endereco { get; set; } = new EnderecoServico();
+        public int IdTabelaDeCustos { get; set; }
 
         public Orcamento()
         {
             Data = DateTime.Now;
             Status = StatusOrcamento.Pendente;
         }
-        public Orcamento(int id_cliente)
+        public Orcamento(int id_cliente, int idTabelaDeCustos)
         {
             Data = DateTime.Now;
             Status = StatusOrcamento.Pendente;
             Id_cliente = id_cliente;
+            IdTabelaDeCustos = idTabelaDeCustos;
         }
         
 

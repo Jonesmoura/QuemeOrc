@@ -14,8 +14,10 @@ namespace Queme.Models.DTOs
         public DateTime DataCriacao { get; set; }
         public string? RazaoSocial { get; set; }
         public string? Nome { get; set; }
+        public double TaxaImposto { get; set; }
         public List<Servico> Servicos { get; set; } = new List<Servico>();
-
+        public Cliente? Cliente { get; set; }
+        public int IdTabelaDeCustos { get; set; }
 
     }
 }

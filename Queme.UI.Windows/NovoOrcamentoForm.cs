@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using Queme.Models.Enums;
+using Queme.Models.DTOs;
 
 namespace Queme.UI.Windows
 {
@@ -24,36 +25,19 @@ namespace Queme.UI.Windows
         {
             InitializeComponent();
             // Teste transferencia de dados do form de busca para o form de orçamentos
-            NomeTextBox.Text = cliente.Name.ToString();
-            EmailTextBox.Text = cliente.Email.ToString();
-            TelTextBox.Text = cliente.Tel.ToString();
-            id_clienteLabel.Text = cliente.ID.ToString();
-            id_clienteLabel.Visible = false;
-
-            if (cliente.CNPJ != "")
-            {
-                RazaoTextBox.Text = cliente.razaoSocial.ToString();
-                CnpjTextBox.Text = cliente.CNPJ.ToString();
-                CnpjPanel.Visible = true;
-                RazaoPanel.Visible = true;
-                CpfPanel.Visible = false;
-            }
-            else if (cliente.CPF != "")
-            {
-                CpfTextBox.Text = cliente.CPF.ToString();
-                CnpjPanel.Visible = false;
-                RazaoPanel.Visible = false;
-                CpfPanel.Visible = true;
-
-            }
-
+            PreenchimentoDeCamposDoCliente(cliente);
 
         }
 
-        public NovoOrcamentoForm(Cliente cliente, Orcamento orcamento)
+        public NovoOrcamentoForm(int idOrcamento)
         {
             InitializeComponent();
-            //to:do método preenchimento do orçamento e cliente
+            ReadOrcamentoDto orcamento = OrcamentoDb.GetOrcamentoById(idOrcamento);
+            PreenchimentoDeCamposDoCliente(orcamento.Cliente);
+            AtualizarViewServicos(orcamento.Id);
+            //to:do metodo para preencher informações referentes ao orçamento no form
+            PreenchimentoDeDadosDoOrc(orcamento);
+
         }
 
         private void NovoOrcamentoForm_Load(object sender, EventArgs e)
@@ -115,7 +99,8 @@ namespace Queme.UI.Windows
             if (nOrcTextBox.Text == string.Empty)
             {
                 int id_cliente = int.Parse(id_clienteLabel.Text);
-                Orcamento orc = new Orcamento(id_cliente);
+                int idTabelaDeCustos = TabelaDePrecoDb.CapturarId(TabelaDePrecosComboBox.Text);
+                Orcamento orc = new Orcamento(id_cliente, idTabelaDeCustos);
                 var db = new OrcamentoDb();
                 int id = db.Incluir(orc);
                 nOrcTextBox.Text = id.ToString();
@@ -152,6 +137,37 @@ namespace Queme.UI.Windows
             servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora (R$)";
             servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total (R$)";
 
+        }
+
+        public void PreenchimentoDeCamposDoCliente(Cliente cliente)
+        {
+            NomeTextBox.Text = cliente.Name.ToString();
+            EmailTextBox.Text = cliente.Email.ToString();
+            TelTextBox.Text = cliente.Tel.ToString();
+            id_clienteLabel.Text = cliente.ID.ToString();
+            id_clienteLabel.Visible = false;
+
+            if (cliente.CNPJ != "")
+            {
+                RazaoTextBox.Text = cliente.razaoSocial.ToString();
+                CnpjTextBox.Text = cliente.CNPJ.ToString();
+                CnpjPanel.Visible = true;
+                RazaoPanel.Visible = true;
+                CpfPanel.Visible = false;
+            }
+            else if (cliente.CPF != "")
+            {
+                CpfTextBox.Text = cliente.CPF.ToString();
+                CnpjPanel.Visible = false;
+                RazaoPanel.Visible = false;
+                CpfPanel.Visible = true;
+
+            }
+        }
+
+        public void PreenchimentoDeDadosDoOrc(ReadOrcamentoDto orcamento)
+        {
+            TabelaDePrecosComboBox.Text = TabelaDePrecoDb.CapturarDesc(orcamento.IdTabelaDeCustos);
         }
     }
 }
