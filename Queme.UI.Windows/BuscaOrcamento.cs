@@ -107,13 +107,23 @@ namespace Queme.UI.Windows
         {
             OrcamentosEncontradosDataGridView.DataSource = "";
             OrcamentosEncontradosDataGridView.DataSource = orcamentos;
+            OrcamentosEncontradosDataGridView.AutoGenerateColumns = false;
             OrcamentosEncontradosDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             OrcamentosEncontradosDataGridView.ReadOnly = false;
             OrcamentosEncontradosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             OrcamentosEncontradosDataGridView.RowHeadersVisible = false;
             OrcamentosEncontradosDataGridView.EnableHeadersVisualStyles = false;
+            OrcamentosEncontradosDataGridView.Columns["ID"].Visible = true;
             OrcamentosEncontradosDataGridView.Columns["ID"].Width = 20;
+            OrcamentosEncontradosDataGridView.Columns["Status"].Visible = true;
+            OrcamentosEncontradosDataGridView.Columns["DataCriacao"].Visible = true;
+            OrcamentosEncontradosDataGridView.Columns["Nome"].Visible = true;
+            OrcamentosEncontradosDataGridView.Columns["RazaoSocial"].Visible = true;
 
+            OrcamentosEncontradosDataGridView.Columns["TaxaImposto"].Visible = false;
+            OrcamentosEncontradosDataGridView.Columns["cliente"].Visible = false;
+
+            //OrcamentosEncontradosDataGridView.Columns["IdTabelaDeCustos"].Visible = false;
 
         }
 

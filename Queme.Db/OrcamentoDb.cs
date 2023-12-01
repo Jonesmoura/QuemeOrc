@@ -38,7 +38,7 @@ namespace Queme.Db
 
             parte2StringSql += " AND orcamentos.data_criacao BETWEEN " + "'"+apartir.ToString("yyyy-MM-dd") + "'" + " AND " + "'" + ate.ToString("yyyy-MM-dd")+ "'" + ";";
 
-            string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSql;
+            string sql = @"SELECT orcamentos.id_orcamento, orcamentos.status, orcamentos.data_criacao, clientes.razaoSocial, clientes.name,orcamentos.IdTabelaDeCustos FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE " + parte2StringSql;
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cn.Open();
@@ -54,6 +54,7 @@ namespace Queme.Db
                 orcamento.DataCriacao = DateTime.Parse(reader["data_criacao"].ToString());
                 orcamento.RazaoSocial = reader["razaoSocial"].ToString();
                 orcamento.Nome = reader["name"].ToString();
+                orcamento.IdTabelaDeCustos = int.Parse(reader["IdTabelaDeCustos"].ToString());
 
                 orcamentos.Add(orcamento);
 
