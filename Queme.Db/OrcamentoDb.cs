@@ -156,7 +156,10 @@ namespace Queme.Db
         {
             //Capturando informações do orçamento
             ReadOrcamentoDto orcamento = new ReadOrcamentoDto();
-            string sql = @"SELECT * FROM orcamentos INNER JOIN clientes ON orcamentos.id_cliente = clientes.id WHERE id_orcamento = @idOrcamento";
+            string sql = @"SELECT * FROM orcamentos 
+                            INNER JOIN clientes ON orcamentos.id_cliente = clientes.id
+                            INNER JOIN enderecoObras ON enderecoObras.id_orcamento = orcamentos.id_orcamento
+                            WHERE orcamentos.id_orcamento= @idOrcamento";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@idOrcamento", idOrcamento);
@@ -173,6 +176,11 @@ namespace Queme.Db
                     orcamento.Nome = reader["name"].ToString();
                     orcamento.TaxaImposto = double.Parse(reader["taxaImposto"].ToString(), CultureInfo.InvariantCulture);
                     orcamento.IdTabelaDeCustos = int.Parse(reader["IdTabelaDeCustos"].ToString());
+                    string cep = reader["CEP"].ToString();
+                    int numero = int.Parse(reader["numero"].ToString());
+                    string complemento = reader["complemento"].ToString();
+
+                    orcamento.EnderecoObra = new EnderecoServico(idOrcamento,cep,numero,complemento);
                 }
             }
 

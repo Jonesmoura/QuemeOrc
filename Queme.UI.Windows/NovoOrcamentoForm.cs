@@ -103,6 +103,7 @@ namespace Queme.UI.Windows
                 Orcamento orc = new Orcamento(id_cliente, idTabelaDeCustos);
                 var db = new OrcamentoDb();
                 int id = db.Incluir(orc);
+                orc.Endereco = EnderecoObraDb.IncluirEndereco(id, CepTextBox.Text, ComplementoTextBox.Text, int.Parse(numeroTextBox.Text));
                 nOrcTextBox.Text = id.ToString();
             }
             ServicosDb servicoDb = new ServicosDb();
@@ -168,6 +169,10 @@ namespace Queme.UI.Windows
         public void PreenchimentoDeDadosDoOrc(ReadOrcamentoDto orcamento)
         {
             TabelaDePrecosComboBox.Text = TabelaDePrecoDb.CapturarDesc(orcamento.IdTabelaDeCustos);
+            CepTextBox.Text = orcamento.EnderecoObra.CEP;
+            numeroTextBox.Text = orcamento.EnderecoObra.Numero.ToString();
+            ComplementoTextBox.Text = orcamento.EnderecoObra.Complemento;
+
         }
     }
 }

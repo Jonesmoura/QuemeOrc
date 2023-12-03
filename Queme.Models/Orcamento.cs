@@ -15,7 +15,7 @@ namespace Queme.Models
         public DateTime Data { get; set; }
         public double TaxaImposto { get; set; }
         public List<Servico> Servicos = new List<Servico>();
-        public EnderecoServico Endereco { get; set; } = new EnderecoServico();
+        public EnderecoServico Endereco { get; set; }
         public int IdTabelaDeCustos { get; set; }
 
         public Orcamento()

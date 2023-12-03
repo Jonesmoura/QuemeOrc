@@ -67,7 +67,7 @@
             CepTextBox = new TextBox();
             CepLabel = new Label();
             NumeroPanel = new Panel();
-            textBox3 = new TextBox();
+            numeroTextBox = new TextBox();
             NumeroLabel = new Label();
             ComplementoPanel = new Panel();
             ComplementoTextBox = new TextBox();
@@ -497,19 +497,19 @@
             // 
             // NumeroPanel
             // 
-            NumeroPanel.Controls.Add(textBox3);
+            NumeroPanel.Controls.Add(numeroTextBox);
             NumeroPanel.Controls.Add(NumeroLabel);
             NumeroPanel.Location = new Point(3, 37);
             NumeroPanel.Name = "NumeroPanel";
             NumeroPanel.Size = new Size(293, 28);
             NumeroPanel.TabIndex = 2;
             // 
-            // textBox3
+            // numeroTextBox
             // 
-            textBox3.Location = new Point(101, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(189, 23);
-            textBox3.TabIndex = 1;
+            numeroTextBox.Location = new Point(101, 3);
+            numeroTextBox.Name = "numeroTextBox";
+            numeroTextBox.Size = new Size(189, 23);
+            numeroTextBox.TabIndex = 1;
             // 
             // NumeroLabel
             // 
@@ -813,7 +813,7 @@
         private TextBox CepTextBox;
         private Label CepLabel;
         private Panel NumeroPanel;
-        private TextBox textBox3;
+        private TextBox numeroTextBox;
         private Label NumeroLabel;
         private Panel ComplementoPanel;
         private TextBox ComplementoTextBox;
