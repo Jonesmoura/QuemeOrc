@@ -96,7 +96,9 @@ namespace Queme.Db
                 }
             }
 
+
             cn.Close();
+
             return id;
         }
 
