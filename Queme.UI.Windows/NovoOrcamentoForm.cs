@@ -43,12 +43,18 @@ namespace Queme.UI.Windows
         private void NovoOrcamentoForm_Load(object sender, EventArgs e)
         {
             // carregar tabelas de preços
+
             TabelaDePrecosComboBox.Items.Clear();
             List<string> tabelas = TabelaDePrecoDb.getTabelas();
             foreach (string tabela in tabelas)
             {
                 TabelaDePrecosComboBox.Items.Add(tabela);
             }
+
+            inclusoRadioButton.Checked = true;
+            naoComissaoRadioButton.Checked = true;
+            simArtRadioButton.Checked = true;
+
 
         }
 
@@ -173,6 +179,16 @@ namespace Queme.UI.Windows
             numeroTextBox.Text = orcamento.EnderecoObra.Numero.ToString();
             ComplementoTextBox.Text = orcamento.EnderecoObra.Complemento;
 
+        }
+
+        private void recolherRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            percentImpstoMaskedTextBox.ReadOnly = true;
+        }
+
+        private void inclusoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            percentImpstoMaskedTextBox.ReadOnly = false;
         }
     }
 }
