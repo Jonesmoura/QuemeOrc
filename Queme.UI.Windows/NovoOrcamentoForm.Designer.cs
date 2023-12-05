@@ -36,6 +36,55 @@
             panel1 = new Panel();
             id_clienteLabel = new Label();
             DadosOrcamentoLabel = new Label();
+            tabControl1 = new TabControl();
+            ServicosTabPage = new TabPage();
+            servicosPanel = new Panel();
+            servicosDataGridView = new DataGridView();
+            infoServicoGroupBox = new GroupBox();
+            panel2 = new Panel();
+            adicionarServicoButton = new Button();
+            valorTotalEtapaTextBox = new TextBox();
+            custoPorHoraTextBox = new TextBox();
+            estimativaHorasTextBox = new TextBox();
+            etapaComboBox = new ComboBox();
+            disciplinaComboBox = new ComboBox();
+            totalEtapaLabel = new Label();
+            valorPorHoraLabel = new Label();
+            qtdHorasLabel = new Label();
+            etapaLabel = new Label();
+            disciplinaLabel = new Label();
+            TituloPainelServicosLabel = new Label();
+            CustosAddTabPage = new TabPage();
+            CustosAddLabel = new Label();
+            tabPage1 = new TabPage();
+            panel4 = new Panel();
+            condicoesPagamentoGroupBox = new GroupBox();
+            label1 = new Label();
+            comboBox2 = new ComboBox();
+            parcelasLabel = new Label();
+            comboBox1 = new ComboBox();
+            plusLabel = new Label();
+            maskedTextBox2 = new MaskedTextBox();
+            entradaLabel = new Label();
+            artPanel = new Panel();
+            naoArtRadioButton = new RadioButton();
+            simArtRadioButton = new RadioButton();
+            artLabel = new Label();
+            comissaoPanel = new Panel();
+            naoComissaoRadioButton = new RadioButton();
+            simComissaoRadioButton = new RadioButton();
+            percentComissaoMaskedTextBox = new MaskedTextBox();
+            label2 = new Label();
+            comissaoLabel = new Label();
+            panel3 = new Panel();
+            obsLabel = new Label();
+            textBox1 = new TextBox();
+            impostosPanel = new Panel();
+            inclusoRadioButton = new RadioButton();
+            recolherRadioButton = new RadioButton();
+            percentImpstoMaskedTextBox = new MaskedTextBox();
+            porcentualLabel = new Label();
+            impostoLabel = new Label();
             AlterarCliente = new Button();
             ClientePanel = new Panel();
             EnderecoFlowLayoutPanel = new FlowLayoutPanel();
@@ -69,52 +118,36 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            tabPage1 = new TabPage();
-            impostosPanel = new Panel();
-            impostoLabel = new Label();
-            porcentualLabel = new Label();
-            percentImpstoMaskedTextBox = new MaskedTextBox();
-            recolherRadioButton = new RadioButton();
-            inclusoRadioButton = new RadioButton();
-            panel3 = new Panel();
-            textBox1 = new TextBox();
-            obsLabel = new Label();
-            comissaoPanel = new Panel();
-            comissaoLabel = new Label();
-            label2 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            simComissaoRadioButton = new RadioButton();
-            naoComissaoRadioButton = new RadioButton();
-            artPanel = new Panel();
-            artLabel = new Label();
-            simArtRadioButton = new RadioButton();
-            naoArtRadioButton = new RadioButton();
-            panel4 = new Panel();
-            condicoesPagamentoGroupBox = new GroupBox();
-            CustosAddTabPage = new TabPage();
-            CustosAddLabel = new Label();
-            ServicosTabPage = new TabPage();
-            TituloPainelServicosLabel = new Label();
-            infoServicoGroupBox = new GroupBox();
-            panel2 = new Panel();
-            disciplinaLabel = new Label();
-            etapaLabel = new Label();
-            qtdHorasLabel = new Label();
-            valorPorHoraLabel = new Label();
-            totalEtapaLabel = new Label();
-            disciplinaComboBox = new ComboBox();
-            etapaComboBox = new ComboBox();
-            estimativaHorasTextBox = new TextBox();
-            custoPorHoraTextBox = new TextBox();
-            valorTotalEtapaTextBox = new TextBox();
-            adicionarServicoButton = new Button();
-            servicosPanel = new Panel();
-            servicosDataGridView = new DataGridView();
-            tabControl1 = new TabControl();
-            entradaLabel = new Label();
-            maskedTextBox2 = new MaskedTextBox();
+            CalcularButton = new Button();
+            panel5 = new Panel();
+            button1 = new Button();
+            textBox2 = new TextBox();
+            textBox4 = new TextBox();
+            categoriaComboBox = new ComboBox();
+            label3 = new Label();
+            quantidadeLabel = new Label();
+            categoriaLabel = new Label();
+            dataGridView1 = new DataGridView();
+            textBox3 = new TextBox();
+            descricaoLabel = new Label();
+            valorUnLabel = new Label();
+            textBox5 = new TextBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            ServicosTabPage.SuspendLayout();
+            servicosPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).BeginInit();
+            infoServicoGroupBox.SuspendLayout();
+            panel2.SuspendLayout();
+            CustosAddTabPage.SuspendLayout();
+            tabPage1.SuspendLayout();
+            panel4.SuspendLayout();
+            condicoesPagamentoGroupBox.SuspendLayout();
+            artPanel.SuspendLayout();
+            comissaoPanel.SuspendLayout();
+            panel3.SuspendLayout();
+            impostosPanel.SuspendLayout();
             ClientePanel.SuspendLayout();
             EnderecoFlowLayoutPanel.SuspendLayout();
             CepPanel.SuspendLayout();
@@ -127,20 +160,8 @@
             CnpjPanel.SuspendLayout();
             CpfPanel.SuspendLayout();
             TelPanel.SuspendLayout();
-            tabPage1.SuspendLayout();
-            impostosPanel.SuspendLayout();
-            panel3.SuspendLayout();
-            comissaoPanel.SuspendLayout();
-            artPanel.SuspendLayout();
-            panel4.SuspendLayout();
-            condicoesPagamentoGroupBox.SuspendLayout();
-            CustosAddTabPage.SuspendLayout();
-            ServicosTabPage.SuspendLayout();
-            infoServicoGroupBox.SuspendLayout();
-            panel2.SuspendLayout();
-            servicosPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).BeginInit();
-            tabControl1.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // ConteudoOrcPanel
@@ -221,6 +242,505 @@
             DadosOrcamentoLabel.Size = new Size(158, 21);
             DadosOrcamentoLabel.TabIndex = 2;
             DadosOrcamentoLabel.Text = "Dados do Orçamento";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(ServicosTabPage);
+            tabControl1.Controls.Add(CustosAddTabPage);
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Location = new Point(9, 43);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1098, 506);
+            tabControl1.TabIndex = 0;
+            // 
+            // ServicosTabPage
+            // 
+            ServicosTabPage.Controls.Add(servicosPanel);
+            ServicosTabPage.Controls.Add(infoServicoGroupBox);
+            ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
+            ServicosTabPage.Location = new Point(4, 24);
+            ServicosTabPage.Name = "ServicosTabPage";
+            ServicosTabPage.Padding = new Padding(3);
+            ServicosTabPage.Size = new Size(1090, 478);
+            ServicosTabPage.TabIndex = 0;
+            ServicosTabPage.Text = "Serviços";
+            ServicosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // servicosPanel
+            // 
+            servicosPanel.Controls.Add(servicosDataGridView);
+            servicosPanel.Location = new Point(0, 125);
+            servicosPanel.Name = "servicosPanel";
+            servicosPanel.Size = new Size(1090, 350);
+            servicosPanel.TabIndex = 7;
+            // 
+            // servicosDataGridView
+            // 
+            servicosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            servicosDataGridView.Location = new Point(3, 4);
+            servicosDataGridView.Name = "servicosDataGridView";
+            servicosDataGridView.RowTemplate.Height = 25;
+            servicosDataGridView.Size = new Size(1084, 343);
+            servicosDataGridView.TabIndex = 0;
+            // 
+            // infoServicoGroupBox
+            // 
+            infoServicoGroupBox.Controls.Add(panel2);
+            infoServicoGroupBox.Location = new Point(3, 40);
+            infoServicoGroupBox.Name = "infoServicoGroupBox";
+            infoServicoGroupBox.Size = new Size(1084, 83);
+            infoServicoGroupBox.TabIndex = 6;
+            infoServicoGroupBox.TabStop = false;
+            infoServicoGroupBox.Text = "Informações do Serviço";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(adicionarServicoButton);
+            panel2.Controls.Add(valorTotalEtapaTextBox);
+            panel2.Controls.Add(custoPorHoraTextBox);
+            panel2.Controls.Add(estimativaHorasTextBox);
+            panel2.Controls.Add(etapaComboBox);
+            panel2.Controls.Add(disciplinaComboBox);
+            panel2.Controls.Add(totalEtapaLabel);
+            panel2.Controls.Add(valorPorHoraLabel);
+            panel2.Controls.Add(qtdHorasLabel);
+            panel2.Controls.Add(etapaLabel);
+            panel2.Controls.Add(disciplinaLabel);
+            panel2.Location = new Point(3, 22);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1078, 53);
+            panel2.TabIndex = 2;
+            // 
+            // adicionarServicoButton
+            // 
+            adicionarServicoButton.Location = new Point(994, 15);
+            adicionarServicoButton.Name = "adicionarServicoButton";
+            adicionarServicoButton.Size = new Size(75, 23);
+            adicionarServicoButton.TabIndex = 7;
+            adicionarServicoButton.Text = "Adicionar";
+            adicionarServicoButton.UseVisualStyleBackColor = true;
+            adicionarServicoButton.Click += adicionarServicoButton_Click;
+            // 
+            // valorTotalEtapaTextBox
+            // 
+            valorTotalEtapaTextBox.Location = new Point(883, 15);
+            valorTotalEtapaTextBox.Name = "valorTotalEtapaTextBox";
+            valorTotalEtapaTextBox.ReadOnly = true;
+            valorTotalEtapaTextBox.Size = new Size(103, 23);
+            valorTotalEtapaTextBox.TabIndex = 6;
+            // 
+            // custoPorHoraTextBox
+            // 
+            custoPorHoraTextBox.Location = new Point(683, 15);
+            custoPorHoraTextBox.Name = "custoPorHoraTextBox";
+            custoPorHoraTextBox.ReadOnly = true;
+            custoPorHoraTextBox.Size = new Size(85, 23);
+            custoPorHoraTextBox.TabIndex = 4;
+            // 
+            // estimativaHorasTextBox
+            // 
+            estimativaHorasTextBox.Location = new Point(479, 15);
+            estimativaHorasTextBox.Name = "estimativaHorasTextBox";
+            estimativaHorasTextBox.Size = new Size(85, 23);
+            estimativaHorasTextBox.TabIndex = 3;
+            estimativaHorasTextBox.TextChanged += estimativaHorasTextBox_TextChanged;
+            // 
+            // etapaComboBox
+            // 
+            etapaComboBox.FormattingEnabled = true;
+            etapaComboBox.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
+            etapaComboBox.Location = new Point(233, 15);
+            etapaComboBox.Name = "etapaComboBox";
+            etapaComboBox.Size = new Size(121, 23);
+            etapaComboBox.TabIndex = 2;
+            // 
+            // disciplinaComboBox
+            // 
+            disciplinaComboBox.FormattingEnabled = true;
+            disciplinaComboBox.Items.AddRange(new object[] { "Consultoria", "Estrutural", "Arquitetura", "Elétrico", "Hidrossanitário", "HVAC" });
+            disciplinaComboBox.Location = new Point(67, 15);
+            disciplinaComboBox.Name = "disciplinaComboBox";
+            disciplinaComboBox.Size = new Size(121, 23);
+            disciplinaComboBox.TabIndex = 1;
+            disciplinaComboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            disciplinaComboBox.SelectedValueChanged += comboBox1_SelectedValueChanged;
+            // 
+            // totalEtapaLabel
+            // 
+            totalEtapaLabel.AutoSize = true;
+            totalEtapaLabel.Location = new Point(771, 18);
+            totalEtapaLabel.Name = "totalEtapaLabel";
+            totalEtapaLabel.Size = new Size(111, 15);
+            totalEtapaLabel.TabIndex = 0;
+            totalEtapaLabel.Text = "Valor da Etapa (R$): ";
+            // 
+            // valorPorHoraLabel
+            // 
+            valorPorHoraLabel.AutoSize = true;
+            valorPorHoraLabel.Location = new Point(568, 18);
+            valorPorHoraLabel.Name = "valorPorHoraLabel";
+            valorPorHoraLabel.Size = new Size(113, 15);
+            valorPorHoraLabel.TabIndex = 0;
+            valorPorHoraLabel.Text = "Valor por Hora (R$): ";
+            // 
+            // qtdHorasLabel
+            // 
+            qtdHorasLabel.AutoSize = true;
+            qtdHorasLabel.Location = new Point(361, 18);
+            qtdHorasLabel.Name = "qtdHorasLabel";
+            qtdHorasLabel.Size = new Size(117, 15);
+            qtdHorasLabel.TabIndex = 0;
+            qtdHorasLabel.Text = "Estimativa de Horas: ";
+            // 
+            // etapaLabel
+            // 
+            etapaLabel.AutoSize = true;
+            etapaLabel.Location = new Point(192, 18);
+            etapaLabel.Name = "etapaLabel";
+            etapaLabel.Size = new Size(42, 15);
+            etapaLabel.TabIndex = 0;
+            etapaLabel.Text = "Etapa: ";
+            // 
+            // disciplinaLabel
+            // 
+            disciplinaLabel.AutoSize = true;
+            disciplinaLabel.Location = new Point(5, 18);
+            disciplinaLabel.Name = "disciplinaLabel";
+            disciplinaLabel.Size = new Size(64, 15);
+            disciplinaLabel.TabIndex = 0;
+            disciplinaLabel.Text = "Disciplina: ";
+            // 
+            // TituloPainelServicosLabel
+            // 
+            TituloPainelServicosLabel.AutoSize = true;
+            TituloPainelServicosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TituloPainelServicosLabel.Location = new Point(411, 3);
+            TituloPainelServicosLabel.Name = "TituloPainelServicosLabel";
+            TituloPainelServicosLabel.Size = new Size(241, 21);
+            TituloPainelServicosLabel.TabIndex = 1;
+            TituloPainelServicosLabel.Text = "Adicionar Serviços ao Orçamento";
+            // 
+            // CustosAddTabPage
+            // 
+            CustosAddTabPage.Controls.Add(dataGridView1);
+            CustosAddTabPage.Controls.Add(panel5);
+            CustosAddTabPage.Controls.Add(CustosAddLabel);
+            CustosAddTabPage.Location = new Point(4, 24);
+            CustosAddTabPage.Name = "CustosAddTabPage";
+            CustosAddTabPage.Padding = new Padding(3);
+            CustosAddTabPage.Size = new Size(1090, 478);
+            CustosAddTabPage.TabIndex = 1;
+            CustosAddTabPage.Text = "Custos Adicionais";
+            CustosAddTabPage.UseVisualStyleBackColor = true;
+            // 
+            // CustosAddLabel
+            // 
+            CustosAddLabel.AutoSize = true;
+            CustosAddLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CustosAddLabel.Location = new Point(484, 3);
+            CustosAddLabel.Name = "CustosAddLabel";
+            CustosAddLabel.Size = new Size(132, 21);
+            CustosAddLabel.TabIndex = 0;
+            CustosAddLabel.Text = "Custos Adicionais";
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(panel4);
+            tabPage1.Controls.Add(artPanel);
+            tabPage1.Controls.Add(comissaoPanel);
+            tabPage1.Controls.Add(panel3);
+            tabPage1.Controls.Add(impostosPanel);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1090, 478);
+            tabPage1.TabIndex = 5;
+            tabPage1.Text = "Resumo";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(condicoesPagamentoGroupBox);
+            panel4.Location = new Point(6, 240);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1081, 61);
+            panel4.TabIndex = 6;
+            // 
+            // condicoesPagamentoGroupBox
+            // 
+            condicoesPagamentoGroupBox.Controls.Add(CalcularButton);
+            condicoesPagamentoGroupBox.Controls.Add(label1);
+            condicoesPagamentoGroupBox.Controls.Add(comboBox2);
+            condicoesPagamentoGroupBox.Controls.Add(parcelasLabel);
+            condicoesPagamentoGroupBox.Controls.Add(comboBox1);
+            condicoesPagamentoGroupBox.Controls.Add(plusLabel);
+            condicoesPagamentoGroupBox.Controls.Add(maskedTextBox2);
+            condicoesPagamentoGroupBox.Controls.Add(entradaLabel);
+            condicoesPagamentoGroupBox.Location = new Point(3, 3);
+            condicoesPagamentoGroupBox.Name = "condicoesPagamentoGroupBox";
+            condicoesPagamentoGroupBox.Size = new Size(570, 53);
+            condicoesPagamentoGroupBox.TabIndex = 0;
+            condicoesPagamentoGroupBox.TabStop = false;
+            condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(437, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(32, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Dias.";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "15", "20", "30" });
+            comboBox2.Location = new Point(394, 16);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(37, 23);
+            comboBox2.TabIndex = 5;
+            // 
+            // parcelasLabel
+            // 
+            parcelasLabel.AutoSize = true;
+            parcelasLabel.Location = new Point(182, 21);
+            parcelasLabel.Name = "parcelasLabel";
+            parcelasLabel.Size = new Size(206, 15);
+            parcelasLabel.TabIndex = 4;
+            parcelasLabel.Text = "Parcela(s), periodicidade das parcelas:";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            comboBox1.Location = new Point(139, 16);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(37, 23);
+            comboBox1.TabIndex = 3;
+            // 
+            // plusLabel
+            // 
+            plusLabel.AutoSize = true;
+            plusLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            plusLabel.Location = new Point(116, 17);
+            plusLabel.Name = "plusLabel";
+            plusLabel.Size = new Size(19, 20);
+            plusLabel.TabIndex = 2;
+            plusLabel.Text = "+";
+            // 
+            // maskedTextBox2
+            // 
+            maskedTextBox2.Location = new Point(76, 16);
+            maskedTextBox2.Mask = "00,00";
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.Size = new Size(36, 23);
+            maskedTextBox2.TabIndex = 1;
+            maskedTextBox2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // entradaLabel
+            // 
+            entradaLabel.AutoSize = true;
+            entradaLabel.Location = new Point(2, 19);
+            entradaLabel.Name = "entradaLabel";
+            entradaLabel.Size = new Size(71, 15);
+            entradaLabel.TabIndex = 0;
+            entradaLabel.Text = "Entrada (%):";
+            // 
+            // artPanel
+            // 
+            artPanel.Controls.Add(naoArtRadioButton);
+            artPanel.Controls.Add(simArtRadioButton);
+            artPanel.Controls.Add(artLabel);
+            artPanel.Location = new Point(629, 201);
+            artPanel.Name = "artPanel";
+            artPanel.Size = new Size(183, 33);
+            artPanel.TabIndex = 5;
+            // 
+            // naoArtRadioButton
+            // 
+            naoArtRadioButton.AutoSize = true;
+            naoArtRadioButton.Location = new Point(126, 3);
+            naoArtRadioButton.Name = "naoArtRadioButton";
+            naoArtRadioButton.Size = new Size(47, 19);
+            naoArtRadioButton.TabIndex = 1;
+            naoArtRadioButton.TabStop = true;
+            naoArtRadioButton.Text = "Não";
+            naoArtRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // simArtRadioButton
+            // 
+            simArtRadioButton.AutoSize = true;
+            simArtRadioButton.Location = new Point(75, 3);
+            simArtRadioButton.Name = "simArtRadioButton";
+            simArtRadioButton.Size = new Size(45, 19);
+            simArtRadioButton.TabIndex = 1;
+            simArtRadioButton.TabStop = true;
+            simArtRadioButton.Text = "Sim";
+            simArtRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // artLabel
+            // 
+            artLabel.AutoSize = true;
+            artLabel.Location = new Point(2, 6);
+            artLabel.Name = "artLabel";
+            artLabel.Size = new Size(68, 15);
+            artLabel.TabIndex = 0;
+            artLabel.Text = "Incluir ART?";
+            // 
+            // comissaoPanel
+            // 
+            comissaoPanel.Controls.Add(naoComissaoRadioButton);
+            comissaoPanel.Controls.Add(simComissaoRadioButton);
+            comissaoPanel.Controls.Add(percentComissaoMaskedTextBox);
+            comissaoPanel.Controls.Add(label2);
+            comissaoPanel.Controls.Add(comissaoLabel);
+            comissaoPanel.Location = new Point(330, 201);
+            comissaoPanel.Name = "comissaoPanel";
+            comissaoPanel.Size = new Size(291, 33);
+            comissaoPanel.TabIndex = 4;
+            // 
+            // naoComissaoRadioButton
+            // 
+            naoComissaoRadioButton.AutoSize = true;
+            naoComissaoRadioButton.Location = new Point(160, 3);
+            naoComissaoRadioButton.Name = "naoComissaoRadioButton";
+            naoComissaoRadioButton.Size = new Size(47, 19);
+            naoComissaoRadioButton.TabIndex = 1;
+            naoComissaoRadioButton.TabStop = true;
+            naoComissaoRadioButton.Text = "Não";
+            naoComissaoRadioButton.UseVisualStyleBackColor = true;
+            naoComissaoRadioButton.CheckedChanged += naoComissaoRadioButton_CheckedChanged;
+            // 
+            // simComissaoRadioButton
+            // 
+            simComissaoRadioButton.AutoSize = true;
+            simComissaoRadioButton.Location = new Point(109, 3);
+            simComissaoRadioButton.Name = "simComissaoRadioButton";
+            simComissaoRadioButton.Size = new Size(45, 19);
+            simComissaoRadioButton.TabIndex = 1;
+            simComissaoRadioButton.TabStop = true;
+            simComissaoRadioButton.Text = "Sim";
+            simComissaoRadioButton.UseVisualStyleBackColor = true;
+            simComissaoRadioButton.CheckedChanged += simComissaoRadioButton_CheckedChanged;
+            // 
+            // percentComissaoMaskedTextBox
+            // 
+            percentComissaoMaskedTextBox.Location = new Point(244, 2);
+            percentComissaoMaskedTextBox.Mask = "00,00";
+            percentComissaoMaskedTextBox.Name = "percentComissaoMaskedTextBox";
+            percentComissaoMaskedTextBox.Size = new Size(41, 23);
+            percentComissaoMaskedTextBox.TabIndex = 1;
+            percentComissaoMaskedTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(213, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(25, 15);
+            label2.TabIndex = 3;
+            label2.Text = "(%)";
+            // 
+            // comissaoLabel
+            // 
+            comissaoLabel.AutoSize = true;
+            comissaoLabel.Location = new Point(3, 4);
+            comissaoLabel.Name = "comissaoLabel";
+            comissaoLabel.Size = new Size(100, 15);
+            comissaoLabel.TabIndex = 0;
+            comissaoLabel.Text = "Incluir Comissão?";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(obsLabel);
+            panel3.Controls.Add(textBox1);
+            panel3.Location = new Point(6, 6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1081, 189);
+            panel3.TabIndex = 2;
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            obsLabel.Location = new Point(5, 7);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new Size(174, 17);
+            obsLabel.TabIndex = 2;
+            obsLabel.Text = "Observações do orçamento:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(3, 30);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(1073, 156);
+            textBox1.TabIndex = 1;
+            // 
+            // impostosPanel
+            // 
+            impostosPanel.Controls.Add(inclusoRadioButton);
+            impostosPanel.Controls.Add(recolherRadioButton);
+            impostosPanel.Controls.Add(percentImpstoMaskedTextBox);
+            impostosPanel.Controls.Add(porcentualLabel);
+            impostosPanel.Controls.Add(impostoLabel);
+            impostosPanel.Location = new Point(6, 201);
+            impostosPanel.Name = "impostosPanel";
+            impostosPanel.Size = new Size(318, 33);
+            impostosPanel.TabIndex = 0;
+            // 
+            // inclusoRadioButton
+            // 
+            inclusoRadioButton.AutoSize = true;
+            inclusoRadioButton.Location = new Point(167, 2);
+            inclusoRadioButton.Name = "inclusoRadioButton";
+            inclusoRadioButton.Size = new Size(63, 19);
+            inclusoRadioButton.TabIndex = 1;
+            inclusoRadioButton.TabStop = true;
+            inclusoRadioButton.Text = "Incluso";
+            inclusoRadioButton.UseVisualStyleBackColor = true;
+            inclusoRadioButton.CheckedChanged += inclusoRadioButton_CheckedChanged;
+            // 
+            // recolherRadioButton
+            // 
+            recolherRadioButton.AutoSize = true;
+            recolherRadioButton.Location = new Point(68, 2);
+            recolherRadioButton.Name = "recolherRadioButton";
+            recolherRadioButton.Size = new Size(79, 19);
+            recolherRadioButton.TabIndex = 1;
+            recolherRadioButton.TabStop = true;
+            recolherRadioButton.Text = "A recolher";
+            recolherRadioButton.UseVisualStyleBackColor = true;
+            recolherRadioButton.CheckedChanged += recolherRadioButton_CheckedChanged;
+            // 
+            // percentImpstoMaskedTextBox
+            // 
+            percentImpstoMaskedTextBox.Location = new Point(267, 1);
+            percentImpstoMaskedTextBox.Mask = "00,00";
+            percentImpstoMaskedTextBox.Name = "percentImpstoMaskedTextBox";
+            percentImpstoMaskedTextBox.Size = new Size(41, 23);
+            percentImpstoMaskedTextBox.TabIndex = 1;
+            percentImpstoMaskedTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // porcentualLabel
+            // 
+            porcentualLabel.AutoSize = true;
+            porcentualLabel.Location = new Point(236, 4);
+            porcentualLabel.Name = "porcentualLabel";
+            porcentualLabel.Size = new Size(25, 15);
+            porcentualLabel.TabIndex = 3;
+            porcentualLabel.Text = "(%)";
+            // 
+            // impostoLabel
+            // 
+            impostoLabel.AutoSize = true;
+            impostoLabel.Location = new Point(3, 4);
+            impostoLabel.Name = "impostoLabel";
+            impostoLabel.Size = new Size(59, 15);
+            impostoLabel.TabIndex = 0;
+            impostoLabel.Text = "Impostos:";
             // 
             // AlterarCliente
             // 
@@ -513,448 +1033,133 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(panel4);
-            tabPage1.Controls.Add(artPanel);
-            tabPage1.Controls.Add(comissaoPanel);
-            tabPage1.Controls.Add(panel3);
-            tabPage1.Controls.Add(impostosPanel);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1090, 478);
-            tabPage1.TabIndex = 5;
-            tabPage1.Text = "Resumo";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // impostosPanel
-            // 
-            impostosPanel.Controls.Add(inclusoRadioButton);
-            impostosPanel.Controls.Add(recolherRadioButton);
-            impostosPanel.Controls.Add(percentImpstoMaskedTextBox);
-            impostosPanel.Controls.Add(porcentualLabel);
-            impostosPanel.Controls.Add(impostoLabel);
-            impostosPanel.Location = new Point(6, 201);
-            impostosPanel.Name = "impostosPanel";
-            impostosPanel.Size = new Size(318, 33);
-            impostosPanel.TabIndex = 0;
-            // 
-            // impostoLabel
-            // 
-            impostoLabel.AutoSize = true;
-            impostoLabel.Location = new Point(3, 4);
-            impostoLabel.Name = "impostoLabel";
-            impostoLabel.Size = new Size(59, 15);
-            impostoLabel.TabIndex = 0;
-            impostoLabel.Text = "Impostos:";
-            // 
-            // porcentualLabel
-            // 
-            porcentualLabel.AutoSize = true;
-            porcentualLabel.Location = new Point(236, 4);
-            porcentualLabel.Name = "porcentualLabel";
-            porcentualLabel.Size = new Size(25, 15);
-            porcentualLabel.TabIndex = 3;
-            porcentualLabel.Text = "(%)";
-            // 
-            // percentImpstoMaskedTextBox
-            // 
-            percentImpstoMaskedTextBox.Location = new Point(267, 1);
-            percentImpstoMaskedTextBox.Mask = "00,00";
-            percentImpstoMaskedTextBox.Name = "percentImpstoMaskedTextBox";
-            percentImpstoMaskedTextBox.Size = new Size(41, 23);
-            percentImpstoMaskedTextBox.TabIndex = 1;
-            percentImpstoMaskedTextBox.TextAlign = HorizontalAlignment.Center;
-            // 
-            // recolherRadioButton
-            // 
-            recolherRadioButton.AutoSize = true;
-            recolherRadioButton.Location = new Point(68, 2);
-            recolherRadioButton.Name = "recolherRadioButton";
-            recolherRadioButton.Size = new Size(79, 19);
-            recolherRadioButton.TabIndex = 1;
-            recolherRadioButton.TabStop = true;
-            recolherRadioButton.Text = "A recolher";
-            recolherRadioButton.UseVisualStyleBackColor = true;
-            recolherRadioButton.CheckedChanged += recolherRadioButton_CheckedChanged;
-            // 
-            // inclusoRadioButton
-            // 
-            inclusoRadioButton.AutoSize = true;
-            inclusoRadioButton.Location = new Point(167, 2);
-            inclusoRadioButton.Name = "inclusoRadioButton";
-            inclusoRadioButton.Size = new Size(63, 19);
-            inclusoRadioButton.TabIndex = 1;
-            inclusoRadioButton.TabStop = true;
-            inclusoRadioButton.Text = "Incluso";
-            inclusoRadioButton.UseVisualStyleBackColor = true;
-            inclusoRadioButton.CheckedChanged += inclusoRadioButton_CheckedChanged;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(obsLabel);
-            panel3.Controls.Add(textBox1);
-            panel3.Location = new Point(6, 6);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1081, 189);
-            panel3.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(3, 30);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1073, 156);
-            textBox1.TabIndex = 1;
-            // 
-            // obsLabel
-            // 
-            obsLabel.AutoSize = true;
-            obsLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            obsLabel.Location = new Point(5, 7);
-            obsLabel.Name = "obsLabel";
-            obsLabel.Size = new Size(174, 17);
-            obsLabel.TabIndex = 2;
-            obsLabel.Text = "Observações do orçamento:";
-            // 
-            // comissaoPanel
-            // 
-            comissaoPanel.Controls.Add(naoComissaoRadioButton);
-            comissaoPanel.Controls.Add(simComissaoRadioButton);
-            comissaoPanel.Controls.Add(maskedTextBox1);
-            comissaoPanel.Controls.Add(label2);
-            comissaoPanel.Controls.Add(comissaoLabel);
-            comissaoPanel.Location = new Point(330, 201);
-            comissaoPanel.Name = "comissaoPanel";
-            comissaoPanel.Size = new Size(291, 33);
-            comissaoPanel.TabIndex = 4;
-            // 
-            // comissaoLabel
-            // 
-            comissaoLabel.AutoSize = true;
-            comissaoLabel.Location = new Point(3, 4);
-            comissaoLabel.Name = "comissaoLabel";
-            comissaoLabel.Size = new Size(100, 15);
-            comissaoLabel.TabIndex = 0;
-            comissaoLabel.Text = "Incluir Comissão?";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(213, 5);
-            label2.Name = "label2";
-            label2.Size = new Size(25, 15);
-            label2.TabIndex = 3;
-            label2.Text = "(%)";
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(244, 2);
-            maskedTextBox1.Mask = "00,00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(41, 23);
-            maskedTextBox1.TabIndex = 1;
-            maskedTextBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // simComissaoRadioButton
-            // 
-            simComissaoRadioButton.AutoSize = true;
-            simComissaoRadioButton.Location = new Point(109, 3);
-            simComissaoRadioButton.Name = "simComissaoRadioButton";
-            simComissaoRadioButton.Size = new Size(45, 19);
-            simComissaoRadioButton.TabIndex = 1;
-            simComissaoRadioButton.TabStop = true;
-            simComissaoRadioButton.Text = "Sim";
-            simComissaoRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // naoComissaoRadioButton
-            // 
-            naoComissaoRadioButton.AutoSize = true;
-            naoComissaoRadioButton.Location = new Point(160, 3);
-            naoComissaoRadioButton.Name = "naoComissaoRadioButton";
-            naoComissaoRadioButton.Size = new Size(47, 19);
-            naoComissaoRadioButton.TabIndex = 1;
-            naoComissaoRadioButton.TabStop = true;
-            naoComissaoRadioButton.Text = "Não";
-            naoComissaoRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // artPanel
-            // 
-            artPanel.Controls.Add(naoArtRadioButton);
-            artPanel.Controls.Add(simArtRadioButton);
-            artPanel.Controls.Add(artLabel);
-            artPanel.Location = new Point(629, 201);
-            artPanel.Name = "artPanel";
-            artPanel.Size = new Size(183, 33);
-            artPanel.TabIndex = 5;
-            // 
-            // artLabel
-            // 
-            artLabel.AutoSize = true;
-            artLabel.Location = new Point(2, 6);
-            artLabel.Name = "artLabel";
-            artLabel.Size = new Size(68, 15);
-            artLabel.TabIndex = 0;
-            artLabel.Text = "Incluir ART?";
-            // 
-            // simArtRadioButton
-            // 
-            simArtRadioButton.AutoSize = true;
-            simArtRadioButton.Location = new Point(75, 3);
-            simArtRadioButton.Name = "simArtRadioButton";
-            simArtRadioButton.Size = new Size(45, 19);
-            simArtRadioButton.TabIndex = 1;
-            simArtRadioButton.TabStop = true;
-            simArtRadioButton.Text = "Sim";
-            simArtRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // naoArtRadioButton
-            // 
-            naoArtRadioButton.AutoSize = true;
-            naoArtRadioButton.Location = new Point(126, 3);
-            naoArtRadioButton.Name = "naoArtRadioButton";
-            naoArtRadioButton.Size = new Size(47, 19);
-            naoArtRadioButton.TabIndex = 1;
-            naoArtRadioButton.TabStop = true;
-            naoArtRadioButton.Text = "Não";
-            naoArtRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(condicoesPagamentoGroupBox);
-            panel4.Location = new Point(6, 240);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1081, 120);
-            panel4.TabIndex = 6;
-            // 
-            // condicoesPagamentoGroupBox
-            // 
-            condicoesPagamentoGroupBox.Controls.Add(maskedTextBox2);
-            condicoesPagamentoGroupBox.Controls.Add(entradaLabel);
-            condicoesPagamentoGroupBox.Location = new Point(3, 3);
-            condicoesPagamentoGroupBox.Name = "condicoesPagamentoGroupBox";
-            condicoesPagamentoGroupBox.Size = new Size(640, 64);
-            condicoesPagamentoGroupBox.TabIndex = 0;
-            condicoesPagamentoGroupBox.TabStop = false;
-            condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
-            // 
-            // CustosAddTabPage
-            // 
-            CustosAddTabPage.Controls.Add(CustosAddLabel);
-            CustosAddTabPage.Location = new Point(4, 24);
-            CustosAddTabPage.Name = "CustosAddTabPage";
-            CustosAddTabPage.Padding = new Padding(3);
-            CustosAddTabPage.Size = new Size(1090, 478);
-            CustosAddTabPage.TabIndex = 1;
-            CustosAddTabPage.Text = "Custos Adicionais";
-            CustosAddTabPage.UseVisualStyleBackColor = true;
-            // 
-            // CustosAddLabel
-            // 
-            CustosAddLabel.AutoSize = true;
-            CustosAddLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CustosAddLabel.Location = new Point(484, 3);
-            CustosAddLabel.Name = "CustosAddLabel";
-            CustosAddLabel.Size = new Size(132, 21);
-            CustosAddLabel.TabIndex = 0;
-            CustosAddLabel.Text = "Custos Adicionais";
-            // 
-            // ServicosTabPage
-            // 
-            ServicosTabPage.Controls.Add(servicosPanel);
-            ServicosTabPage.Controls.Add(infoServicoGroupBox);
-            ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
-            ServicosTabPage.Location = new Point(4, 24);
-            ServicosTabPage.Name = "ServicosTabPage";
-            ServicosTabPage.Padding = new Padding(3);
-            ServicosTabPage.Size = new Size(1090, 478);
-            ServicosTabPage.TabIndex = 0;
-            ServicosTabPage.Text = "Serviços";
-            ServicosTabPage.UseVisualStyleBackColor = true;
-            // 
-            // TituloPainelServicosLabel
-            // 
-            TituloPainelServicosLabel.AutoSize = true;
-            TituloPainelServicosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TituloPainelServicosLabel.Location = new Point(411, 3);
-            TituloPainelServicosLabel.Name = "TituloPainelServicosLabel";
-            TituloPainelServicosLabel.Size = new Size(241, 21);
-            TituloPainelServicosLabel.TabIndex = 1;
-            TituloPainelServicosLabel.Text = "Adicionar Serviços ao Orçamento";
-            // 
-            // infoServicoGroupBox
-            // 
-            infoServicoGroupBox.Controls.Add(panel2);
-            infoServicoGroupBox.Location = new Point(3, 40);
-            infoServicoGroupBox.Name = "infoServicoGroupBox";
-            infoServicoGroupBox.Size = new Size(1084, 83);
-            infoServicoGroupBox.TabIndex = 6;
-            infoServicoGroupBox.TabStop = false;
-            infoServicoGroupBox.Text = "Informações do Serviço";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(adicionarServicoButton);
-            panel2.Controls.Add(valorTotalEtapaTextBox);
-            panel2.Controls.Add(custoPorHoraTextBox);
-            panel2.Controls.Add(estimativaHorasTextBox);
-            panel2.Controls.Add(etapaComboBox);
-            panel2.Controls.Add(disciplinaComboBox);
-            panel2.Controls.Add(totalEtapaLabel);
-            panel2.Controls.Add(valorPorHoraLabel);
-            panel2.Controls.Add(qtdHorasLabel);
-            panel2.Controls.Add(etapaLabel);
-            panel2.Controls.Add(disciplinaLabel);
-            panel2.Location = new Point(3, 22);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1078, 53);
-            panel2.TabIndex = 2;
-            // 
-            // disciplinaLabel
-            // 
-            disciplinaLabel.AutoSize = true;
-            disciplinaLabel.Location = new Point(5, 18);
-            disciplinaLabel.Name = "disciplinaLabel";
-            disciplinaLabel.Size = new Size(64, 15);
-            disciplinaLabel.TabIndex = 0;
-            disciplinaLabel.Text = "Disciplina: ";
-            // 
-            // etapaLabel
-            // 
-            etapaLabel.AutoSize = true;
-            etapaLabel.Location = new Point(192, 18);
-            etapaLabel.Name = "etapaLabel";
-            etapaLabel.Size = new Size(42, 15);
-            etapaLabel.TabIndex = 0;
-            etapaLabel.Text = "Etapa: ";
-            // 
-            // qtdHorasLabel
-            // 
-            qtdHorasLabel.AutoSize = true;
-            qtdHorasLabel.Location = new Point(361, 18);
-            qtdHorasLabel.Name = "qtdHorasLabel";
-            qtdHorasLabel.Size = new Size(117, 15);
-            qtdHorasLabel.TabIndex = 0;
-            qtdHorasLabel.Text = "Estimativa de Horas: ";
-            // 
-            // valorPorHoraLabel
-            // 
-            valorPorHoraLabel.AutoSize = true;
-            valorPorHoraLabel.Location = new Point(568, 18);
-            valorPorHoraLabel.Name = "valorPorHoraLabel";
-            valorPorHoraLabel.Size = new Size(113, 15);
-            valorPorHoraLabel.TabIndex = 0;
-            valorPorHoraLabel.Text = "Valor por Hora (R$): ";
-            // 
-            // totalEtapaLabel
-            // 
-            totalEtapaLabel.AutoSize = true;
-            totalEtapaLabel.Location = new Point(771, 18);
-            totalEtapaLabel.Name = "totalEtapaLabel";
-            totalEtapaLabel.Size = new Size(111, 15);
-            totalEtapaLabel.TabIndex = 0;
-            totalEtapaLabel.Text = "Valor da Etapa (R$): ";
-            // 
-            // disciplinaComboBox
-            // 
-            disciplinaComboBox.FormattingEnabled = true;
-            disciplinaComboBox.Items.AddRange(new object[] { "Consultoria", "Estrutural", "Arquitetura", "Elétrico", "Hidrossanitário", "HVAC" });
-            disciplinaComboBox.Location = new Point(67, 15);
-            disciplinaComboBox.Name = "disciplinaComboBox";
-            disciplinaComboBox.Size = new Size(121, 23);
-            disciplinaComboBox.TabIndex = 1;
-            disciplinaComboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            disciplinaComboBox.SelectedValueChanged += comboBox1_SelectedValueChanged;
-            // 
-            // etapaComboBox
-            // 
-            etapaComboBox.FormattingEnabled = true;
-            etapaComboBox.Items.AddRange(new object[] { "Planejamento", "Visita", "Desenvolvimento", "Detalhamento" });
-            etapaComboBox.Location = new Point(233, 15);
-            etapaComboBox.Name = "etapaComboBox";
-            etapaComboBox.Size = new Size(121, 23);
-            etapaComboBox.TabIndex = 2;
-            // 
-            // estimativaHorasTextBox
-            // 
-            estimativaHorasTextBox.Location = new Point(479, 15);
-            estimativaHorasTextBox.Name = "estimativaHorasTextBox";
-            estimativaHorasTextBox.Size = new Size(85, 23);
-            estimativaHorasTextBox.TabIndex = 3;
-            estimativaHorasTextBox.TextChanged += estimativaHorasTextBox_TextChanged;
-            // 
-            // custoPorHoraTextBox
-            // 
-            custoPorHoraTextBox.Location = new Point(683, 15);
-            custoPorHoraTextBox.Name = "custoPorHoraTextBox";
-            custoPorHoraTextBox.ReadOnly = true;
-            custoPorHoraTextBox.Size = new Size(85, 23);
-            custoPorHoraTextBox.TabIndex = 4;
-            // 
-            // valorTotalEtapaTextBox
-            // 
-            valorTotalEtapaTextBox.Location = new Point(883, 15);
-            valorTotalEtapaTextBox.Name = "valorTotalEtapaTextBox";
-            valorTotalEtapaTextBox.ReadOnly = true;
-            valorTotalEtapaTextBox.Size = new Size(103, 23);
-            valorTotalEtapaTextBox.TabIndex = 6;
-            // 
-            // adicionarServicoButton
-            // 
-            adicionarServicoButton.Location = new Point(994, 15);
-            adicionarServicoButton.Name = "adicionarServicoButton";
-            adicionarServicoButton.Size = new Size(75, 23);
-            adicionarServicoButton.TabIndex = 7;
-            adicionarServicoButton.Text = "Adicionar";
-            adicionarServicoButton.UseVisualStyleBackColor = true;
-            adicionarServicoButton.Click += adicionarServicoButton_Click;
-            // 
-            // servicosPanel
-            // 
-            servicosPanel.Controls.Add(servicosDataGridView);
-            servicosPanel.Location = new Point(0, 125);
-            servicosPanel.Name = "servicosPanel";
-            servicosPanel.Size = new Size(1090, 350);
-            servicosPanel.TabIndex = 7;
-            // 
-            // servicosDataGridView
-            // 
-            servicosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            servicosDataGridView.Location = new Point(3, 4);
-            servicosDataGridView.Name = "servicosDataGridView";
-            servicosDataGridView.RowTemplate.Height = 25;
-            servicosDataGridView.Size = new Size(1084, 343);
-            servicosDataGridView.TabIndex = 0;
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(ServicosTabPage);
-            tabControl1.Controls.Add(CustosAddTabPage);
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Location = new Point(9, 43);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1098, 506);
-            tabControl1.TabIndex = 0;
-            // 
-            // entradaLabel
-            // 
-            entradaLabel.AutoSize = true;
-            entradaLabel.Location = new Point(2, 19);
-            entradaLabel.Name = "entradaLabel";
-            entradaLabel.Size = new Size(71, 15);
-            entradaLabel.TabIndex = 0;
-            entradaLabel.Text = "Entrada (%):";
-            // 
-            // maskedTextBox2
-            // 
-            maskedTextBox2.Location = new Point(76, 16);
-            maskedTextBox2.Mask = "00,00";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(36, 23);
-            maskedTextBox2.TabIndex = 1;
-            maskedTextBox2.TextAlign = HorizontalAlignment.Center;
+            // CalcularButton
+            // 
+            CalcularButton.Location = new Point(483, 16);
+            CalcularButton.Name = "CalcularButton";
+            CalcularButton.Size = new Size(75, 23);
+            CalcularButton.TabIndex = 7;
+            CalcularButton.Text = "Calcular";
+            CalcularButton.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(descricaoLabel);
+            panel5.Controls.Add(button1);
+            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(textBox5);
+            panel5.Controls.Add(textBox4);
+            panel5.Controls.Add(categoriaComboBox);
+            panel5.Controls.Add(valorUnLabel);
+            panel5.Controls.Add(label3);
+            panel5.Controls.Add(quantidadeLabel);
+            panel5.Controls.Add(categoriaLabel);
+            panel5.Location = new Point(6, 48);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1078, 53);
+            panel5.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(987, 15);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 7;
+            button1.Text = "Adicionar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(872, 15);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(103, 23);
+            textBox2.TabIndex = 6;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(711, 15);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(85, 23);
+            textBox4.TabIndex = 3;
+            // 
+            // categoriaComboBox
+            // 
+            categoriaComboBox.FormattingEnabled = true;
+            categoriaComboBox.Items.AddRange(new object[] { "Combustível", "Transporte", "Ferrramentas", "Equipamentos", "Insumos", "Outros" });
+            categoriaComboBox.Location = new Point(85, 15);
+            categoriaComboBox.Name = "categoriaComboBox";
+            categoriaComboBox.Size = new Size(121, 23);
+            categoriaComboBox.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(807, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Total (R$):";
+            // 
+            // quantidadeLabel
+            // 
+            quantidadeLabel.AutoSize = true;
+            quantidadeLabel.Location = new Point(633, 19);
+            quantidadeLabel.Name = "quantidadeLabel";
+            quantidadeLabel.Size = new Size(72, 15);
+            quantidadeLabel.TabIndex = 0;
+            quantidadeLabel.Text = "Quantidade:";
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new Point(18, 19);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new Size(61, 15);
+            categoriaLabel.TabIndex = 0;
+            categoriaLabel.Text = "Categoria:";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 107);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1084, 134);
+            dataGridView1.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(283, 15);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(148, 23);
+            textBox3.TabIndex = 9;
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new Point(216, 18);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new Size(61, 15);
+            descricaoLabel.TabIndex = 8;
+            descricaoLabel.Text = "Descrição:";
+            // 
+            // valorUnLabel
+            // 
+            valorUnLabel.AutoSize = true;
+            valorUnLabel.Location = new Point(441, 19);
+            valorUnLabel.Name = "valorUnLabel";
+            valorUnLabel.Size = new Size(102, 15);
+            valorUnLabel.TabIndex = 0;
+            valorUnLabel.Text = "Valor Unitário(R$):";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(540, 15);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(85, 23);
+            textBox5.TabIndex = 3;
             // 
             // NovoOrcamentoForm
             // 
@@ -970,6 +1175,28 @@
             ConteudoOrcPanel.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            ServicosTabPage.ResumeLayout(false);
+            ServicosTabPage.PerformLayout();
+            servicosPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).EndInit();
+            infoServicoGroupBox.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            CustosAddTabPage.ResumeLayout(false);
+            CustosAddTabPage.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            condicoesPagamentoGroupBox.ResumeLayout(false);
+            condicoesPagamentoGroupBox.PerformLayout();
+            artPanel.ResumeLayout(false);
+            artPanel.PerformLayout();
+            comissaoPanel.ResumeLayout(false);
+            comissaoPanel.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            impostosPanel.ResumeLayout(false);
+            impostosPanel.PerformLayout();
             ClientePanel.ResumeLayout(false);
             ClientePanel.PerformLayout();
             EnderecoFlowLayoutPanel.ResumeLayout(false);
@@ -992,28 +1219,9 @@
             CpfPanel.PerformLayout();
             TelPanel.ResumeLayout(false);
             TelPanel.PerformLayout();
-            tabPage1.ResumeLayout(false);
-            impostosPanel.ResumeLayout(false);
-            impostosPanel.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            comissaoPanel.ResumeLayout(false);
-            comissaoPanel.PerformLayout();
-            artPanel.ResumeLayout(false);
-            artPanel.PerformLayout();
-            panel4.ResumeLayout(false);
-            condicoesPagamentoGroupBox.ResumeLayout(false);
-            condicoesPagamentoGroupBox.PerformLayout();
-            CustosAddTabPage.ResumeLayout(false);
-            CustosAddTabPage.PerformLayout();
-            ServicosTabPage.ResumeLayout(false);
-            ServicosTabPage.PerformLayout();
-            infoServicoGroupBox.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            servicosPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)servicosDataGridView).EndInit();
-            tabControl1.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1091,7 +1299,7 @@
         private Panel comissaoPanel;
         private RadioButton naoComissaoRadioButton;
         private RadioButton simComissaoRadioButton;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox percentComissaoMaskedTextBox;
         private Label label2;
         private Label comissaoLabel;
         private Panel panel3;
@@ -1104,5 +1312,26 @@
         private Label porcentualLabel;
         private Label impostoLabel;
         private MaskedTextBox maskedTextBox2;
+        private ComboBox comboBox1;
+        private Label plusLabel;
+        private Label parcelasLabel;
+        private Label label1;
+        private ComboBox comboBox2;
+        private Button CalcularButton;
+        private DataGridView dataGridView1;
+        private Panel panel5;
+        private Button button1;
+        private TextBox textBox2;
+        private TextBox textBox4;
+        private ComboBox comboBox3;
+        private ComboBox categoriaComboBox;
+        private Label label3;
+        private Label quantidadeLabel;
+        private Label label6;
+        private Label categoriaLabel;
+        private TextBox textBox3;
+        private Label descricaoLabel;
+        private TextBox textBox5;
+        private Label valorUnLabel;
     }
 }

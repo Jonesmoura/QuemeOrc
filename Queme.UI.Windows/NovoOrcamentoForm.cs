@@ -52,7 +52,7 @@ namespace Queme.UI.Windows
             }
 
             inclusoRadioButton.Checked = true;
-            naoComissaoRadioButton.Checked = true;
+            simComissaoRadioButton.Checked = true;
             simArtRadioButton.Checked = true;
 
 
@@ -189,6 +189,16 @@ namespace Queme.UI.Windows
         private void inclusoRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             percentImpstoMaskedTextBox.ReadOnly = false;
+        }
+
+        private void naoComissaoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            percentComissaoMaskedTextBox.ReadOnly = true;
+        }
+
+        private void simComissaoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            percentComissaoMaskedTextBox.ReadOnly = false;
         }
     }
 }
