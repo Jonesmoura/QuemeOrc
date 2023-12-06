@@ -15,6 +15,11 @@ namespace Queme.Db
     {
         public static List<ReadOrcamentoDto> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
         {
+            if (!ValidacaoDeDados.validacaoInputQuery(textoPesquisa))
+            {
+                throw new FormatException("Caracteres inválidos foram informados");
+            }
+
             List<ReadOrcamentoDto> orcamentos = new List<ReadOrcamentoDto>();
             string parte2StringSql= "";
             switch (parametroDePesquisa)
@@ -69,7 +74,9 @@ namespace Queme.Db
         public int Incluir(Orcamento orcamento)
         {
             int id=0;
-            string sql = @"INSERT INTO orcamentos(status,id_cliente, data_criacao, IdTabelaDeCustos) values(@status,@id_cliente, @data_criacao, @idTabelaDeCustos)";
+            string sql = @"INSERT INTO orcamentos(status,id_cliente, data_criacao, IdTabelaDeCustos) values (@status,@id_cliente, @data_criacao, @idTabelaDeCustos);
+                            SELECT LAST_INSERT_ID() as id_orcamento;";
+
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@status", orcamento.Status.ToString());
@@ -77,11 +84,11 @@ namespace Queme.Db
             cmd.Parameters.AddWithValue("@data_criacao", orcamento.Data.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@idTabelaDeCustos", orcamento.IdTabelaDeCustos);
             cn.Open();
-            cmd.ExecuteNonQuery();
+            //cmd.ExecuteNonQuery();
             //capturar id salvo
-            var cmdId = new MySqlCommand(@"SELECT LAST_INSERT_ID() as id_orcamento FROM orcamentos", cn);
+            //var cmdId = new MySqlCommand(@"SELECT LAST_INSERT_ID() as id_orcamento FROM orcamentos", cn);
 
-            using (MySqlDataReader reader = cmdId.ExecuteReader())
+            using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 try
                 {
