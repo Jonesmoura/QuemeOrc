@@ -55,10 +55,24 @@
             disciplinaLabel = new Label();
             TituloPainelServicosLabel = new Label();
             CustosAddTabPage = new TabPage();
+            dataGridView1 = new DataGridView();
+            panel5 = new Panel();
+            descricaoTextBox = new TextBox();
+            descricaoLabel = new Label();
+            AddCustoAdicionalButton = new Button();
+            totalTextBox = new TextBox();
+            valorUnTextBox = new TextBox();
+            qtdTextBox = new TextBox();
+            categoriaComboBox = new ComboBox();
+            valorUnLabel = new Label();
+            label3 = new Label();
+            quantidadeLabel = new Label();
+            categoriaLabel = new Label();
             CustosAddLabel = new Label();
             tabPage1 = new TabPage();
             panel4 = new Panel();
             condicoesPagamentoGroupBox = new GroupBox();
+            CalcularButton = new Button();
             label1 = new Label();
             comboBox2 = new ComboBox();
             parcelasLabel = new Label();
@@ -118,20 +132,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            CalcularButton = new Button();
-            panel5 = new Panel();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            categoriaComboBox = new ComboBox();
-            label3 = new Label();
-            quantidadeLabel = new Label();
-            categoriaLabel = new Label();
-            dataGridView1 = new DataGridView();
-            textBox3 = new TextBox();
-            descricaoLabel = new Label();
-            valorUnLabel = new Label();
-            textBox5 = new TextBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -141,6 +141,8 @@
             infoServicoGroupBox.SuspendLayout();
             panel2.SuspendLayout();
             CustosAddTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel5.SuspendLayout();
             tabPage1.SuspendLayout();
             panel4.SuspendLayout();
             condicoesPagamentoGroupBox.SuspendLayout();
@@ -160,8 +162,6 @@
             CnpjPanel.SuspendLayout();
             CpfPanel.SuspendLayout();
             TelPanel.SuspendLayout();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // ConteudoOrcPanel
@@ -329,6 +329,7 @@
             valorTotalEtapaTextBox.ReadOnly = true;
             valorTotalEtapaTextBox.Size = new Size(103, 23);
             valorTotalEtapaTextBox.TabIndex = 6;
+            valorTotalEtapaTextBox.TextChanged += valorTotalEtapaTextBox_TextChanged;
             // 
             // custoPorHoraTextBox
             // 
@@ -434,6 +435,127 @@
             CustosAddTabPage.Text = "Custos Adicionais";
             CustosAddTabPage.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 107);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1084, 134);
+            dataGridView1.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(descricaoTextBox);
+            panel5.Controls.Add(descricaoLabel);
+            panel5.Controls.Add(AddCustoAdicionalButton);
+            panel5.Controls.Add(totalTextBox);
+            panel5.Controls.Add(valorUnTextBox);
+            panel5.Controls.Add(qtdTextBox);
+            panel5.Controls.Add(categoriaComboBox);
+            panel5.Controls.Add(valorUnLabel);
+            panel5.Controls.Add(label3);
+            panel5.Controls.Add(quantidadeLabel);
+            panel5.Controls.Add(categoriaLabel);
+            panel5.Location = new Point(6, 48);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1078, 53);
+            panel5.TabIndex = 3;
+            // 
+            // descricaoTextBox
+            // 
+            descricaoTextBox.Location = new Point(283, 15);
+            descricaoTextBox.Name = "descricaoTextBox";
+            descricaoTextBox.Size = new Size(148, 23);
+            descricaoTextBox.TabIndex = 9;
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new Point(216, 18);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new Size(61, 15);
+            descricaoLabel.TabIndex = 8;
+            descricaoLabel.Text = "Descrição:";
+            // 
+            // AddCustoAdicionalButton
+            // 
+            AddCustoAdicionalButton.Location = new Point(987, 15);
+            AddCustoAdicionalButton.Name = "AddCustoAdicionalButton";
+            AddCustoAdicionalButton.Size = new Size(75, 23);
+            AddCustoAdicionalButton.TabIndex = 7;
+            AddCustoAdicionalButton.Text = "Adicionar";
+            AddCustoAdicionalButton.UseVisualStyleBackColor = true;
+            AddCustoAdicionalButton.Click += button1_Click;
+            // 
+            // totalTextBox
+            // 
+            totalTextBox.Location = new Point(872, 15);
+            totalTextBox.Name = "totalTextBox";
+            totalTextBox.ReadOnly = true;
+            totalTextBox.Size = new Size(103, 23);
+            totalTextBox.TabIndex = 6;
+            // 
+            // valorUnTextBox
+            // 
+            valorUnTextBox.Location = new Point(540, 15);
+            valorUnTextBox.Name = "valorUnTextBox";
+            valorUnTextBox.Size = new Size(85, 23);
+            valorUnTextBox.TabIndex = 3;
+            // 
+            // qtdTextBox
+            // 
+            qtdTextBox.Location = new Point(711, 15);
+            qtdTextBox.Name = "qtdTextBox";
+            qtdTextBox.Size = new Size(85, 23);
+            qtdTextBox.TabIndex = 3;
+            qtdTextBox.TextChanged += qtdTextBox_TextChanged;
+            // 
+            // categoriaComboBox
+            // 
+            categoriaComboBox.FormattingEnabled = true;
+            categoriaComboBox.Items.AddRange(new object[] { "Combustível", "Transporte", "Ferrramentas", "Equipamentos", "Insumos", "Outros" });
+            categoriaComboBox.Location = new Point(85, 15);
+            categoriaComboBox.Name = "categoriaComboBox";
+            categoriaComboBox.Size = new Size(121, 23);
+            categoriaComboBox.TabIndex = 1;
+            // 
+            // valorUnLabel
+            // 
+            valorUnLabel.AutoSize = true;
+            valorUnLabel.Location = new Point(441, 19);
+            valorUnLabel.Name = "valorUnLabel";
+            valorUnLabel.Size = new Size(102, 15);
+            valorUnLabel.TabIndex = 0;
+            valorUnLabel.Text = "Valor Unitário(R$):";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(807, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Total (R$):";
+            // 
+            // quantidadeLabel
+            // 
+            quantidadeLabel.AutoSize = true;
+            quantidadeLabel.Location = new Point(633, 19);
+            quantidadeLabel.Name = "quantidadeLabel";
+            quantidadeLabel.Size = new Size(72, 15);
+            quantidadeLabel.TabIndex = 0;
+            quantidadeLabel.Text = "Quantidade:";
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new Point(18, 19);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new Size(61, 15);
+            categoriaLabel.TabIndex = 0;
+            categoriaLabel.Text = "Categoria:";
+            // 
             // CustosAddLabel
             // 
             CustosAddLabel.AutoSize = true;
@@ -483,6 +605,15 @@
             condicoesPagamentoGroupBox.TabIndex = 0;
             condicoesPagamentoGroupBox.TabStop = false;
             condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
+            // 
+            // CalcularButton
+            // 
+            CalcularButton.Location = new Point(483, 16);
+            CalcularButton.Name = "CalcularButton";
+            CalcularButton.Size = new Size(75, 23);
+            CalcularButton.TabIndex = 7;
+            CalcularButton.Text = "Calcular";
+            CalcularButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -1033,134 +1164,6 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // CalcularButton
-            // 
-            CalcularButton.Location = new Point(483, 16);
-            CalcularButton.Name = "CalcularButton";
-            CalcularButton.Size = new Size(75, 23);
-            CalcularButton.TabIndex = 7;
-            CalcularButton.Text = "Calcular";
-            CalcularButton.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(textBox3);
-            panel5.Controls.Add(descricaoLabel);
-            panel5.Controls.Add(button1);
-            panel5.Controls.Add(textBox2);
-            panel5.Controls.Add(textBox5);
-            panel5.Controls.Add(textBox4);
-            panel5.Controls.Add(categoriaComboBox);
-            panel5.Controls.Add(valorUnLabel);
-            panel5.Controls.Add(label3);
-            panel5.Controls.Add(quantidadeLabel);
-            panel5.Controls.Add(categoriaLabel);
-            panel5.Location = new Point(6, 48);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1078, 53);
-            panel5.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(987, 15);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 7;
-            button1.Text = "Adicionar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(872, 15);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(103, 23);
-            textBox2.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(711, 15);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(85, 23);
-            textBox4.TabIndex = 3;
-            // 
-            // categoriaComboBox
-            // 
-            categoriaComboBox.FormattingEnabled = true;
-            categoriaComboBox.Items.AddRange(new object[] { "Combustível", "Transporte", "Ferrramentas", "Equipamentos", "Insumos", "Outros" });
-            categoriaComboBox.Location = new Point(85, 15);
-            categoriaComboBox.Name = "categoriaComboBox";
-            categoriaComboBox.Size = new Size(121, 23);
-            categoriaComboBox.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(807, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Total (R$):";
-            // 
-            // quantidadeLabel
-            // 
-            quantidadeLabel.AutoSize = true;
-            quantidadeLabel.Location = new Point(633, 19);
-            quantidadeLabel.Name = "quantidadeLabel";
-            quantidadeLabel.Size = new Size(72, 15);
-            quantidadeLabel.TabIndex = 0;
-            quantidadeLabel.Text = "Quantidade:";
-            // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new Point(18, 19);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new Size(61, 15);
-            categoriaLabel.TabIndex = 0;
-            categoriaLabel.Text = "Categoria:";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 107);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1084, 134);
-            dataGridView1.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(283, 15);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(148, 23);
-            textBox3.TabIndex = 9;
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new Point(216, 18);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new Size(61, 15);
-            descricaoLabel.TabIndex = 8;
-            descricaoLabel.Text = "Descrição:";
-            // 
-            // valorUnLabel
-            // 
-            valorUnLabel.AutoSize = true;
-            valorUnLabel.Location = new Point(441, 19);
-            valorUnLabel.Name = "valorUnLabel";
-            valorUnLabel.Size = new Size(102, 15);
-            valorUnLabel.TabIndex = 0;
-            valorUnLabel.Text = "Valor Unitário(R$):";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(540, 15);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(85, 23);
-            textBox5.TabIndex = 3;
-            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1185,6 +1188,9 @@
             panel2.PerformLayout();
             CustosAddTabPage.ResumeLayout(false);
             CustosAddTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             tabPage1.ResumeLayout(false);
             panel4.ResumeLayout(false);
             condicoesPagamentoGroupBox.ResumeLayout(false);
@@ -1219,9 +1225,6 @@
             CpfPanel.PerformLayout();
             TelPanel.ResumeLayout(false);
             TelPanel.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1320,18 +1323,18 @@
         private Button CalcularButton;
         private DataGridView dataGridView1;
         private Panel panel5;
-        private Button button1;
-        private TextBox textBox2;
-        private TextBox textBox4;
+        private Button AddCustoAdicionalButton;
+        private TextBox totalTextBox;
+        private TextBox qtdTextBox;
         private ComboBox comboBox3;
         private ComboBox categoriaComboBox;
         private Label label3;
         private Label quantidadeLabel;
         private Label label6;
         private Label categoriaLabel;
-        private TextBox textBox3;
+        private TextBox descricaoTextBox;
         private Label descricaoLabel;
-        private TextBox textBox5;
+        private TextBox valorUnTextBox;
         private Label valorUnLabel;
     }
 }

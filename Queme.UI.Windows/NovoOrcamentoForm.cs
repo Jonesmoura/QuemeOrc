@@ -178,6 +178,7 @@ namespace Queme.UI.Windows
             CepTextBox.Text = orcamento.EnderecoObra.CEP;
             numeroTextBox.Text = orcamento.EnderecoObra.Numero.ToString();
             ComplementoTextBox.Text = orcamento.EnderecoObra.Complemento;
+            nOrcTextBox.Text = orcamento.Id.ToString();
 
         }
 
@@ -199,6 +200,28 @@ namespace Queme.UI.Windows
         private void simComissaoRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             percentComissaoMaskedTextBox.ReadOnly = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CategoriaDeCustoAdicional categoria = Enum.Parse<CategoriaDeCustoAdicional>(categoriaComboBox.Text);
+            CustoAdicional custoAdicional = new CustoAdicional(int.Parse(nOrcTextBox.Text), categoria, descricaoTextBox.Text, decimal.Parse(valorUnTextBox.Text), int.Parse(qtdTextBox.Text), decimal.Parse(totalTextBox.Text));
+            CustosAdicionaisDb.IncluirCustoAdicional(custoAdicional);
+        }
+
+        private void valorTotalEtapaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qtdTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (qtdTextBox.Text != string.Empty)
+            {
+                decimal totalCustoAdicional = Convert.ToInt32(qtdTextBox.Text) * Convert.ToDecimal(valorUnTextBox.Text);
+                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.InvariantCulture);
+            }
         }
     }
 }

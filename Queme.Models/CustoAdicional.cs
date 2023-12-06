@@ -15,6 +15,21 @@ namespace Queme.Models
         public decimal ValorUN { get; set; }
         public int Quantidade { get; set; }
         public decimal ValorTotal { get; set; }
+        public CustoAdicional()
+        {
+
+        }
+
+        public CustoAdicional(int id_orcamento, CategoriaDeCustoAdicional categoria, string descricao, decimal valorUN, int quantidade, decimal valorTotal)
+        {
+            Id_orcamento = id_orcamento;
+            Categoria = categoria;
+            Descricao = descricao;
+            ValorUN = valorUN;
+            Quantidade = quantidade;
+            ValorTotal = valorTotal;
+        }
+
 
     }
 }
