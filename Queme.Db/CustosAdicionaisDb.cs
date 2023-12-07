@@ -1,8 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using Queme.Models;
+using Queme.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +27,37 @@ namespace Queme.Db
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public static List<CustoAdicional> GetCustosAdicionaisList(int id_orcamento)
+        {
+            List<CustoAdicional> custosAdicionais = new List<CustoAdicional> ();
+            string sql = @"SELECT * FROM custosAdicionais WHERE id_orcamento = @idOrcamento";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@idOrcamento", id_orcamento);
+
+            cn.Open();
+
+            using(MySqlDataReader reader = cmd.ExecuteReader() )
+            {
+                while (reader.Read())
+                {
+                    CustoAdicional custoAdicional = new CustoAdicional();
+                    custoAdicional.Id_orcamento = int.Parse(reader["id_orcamento"].ToString());
+                    custoAdicional.Categoria = Enum.Parse<CategoriaDeCustoAdicional>(reader["Categoria"].ToString());
+                    custoAdicional.Descricao = reader["Descricao"].ToString();
+                    custoAdicional.ValorUN = decimal.Parse(reader["ValorUN"].ToString());
+                    custoAdicional.Quantidade = int.Parse(reader["Quantidade"].ToString());
+                    custoAdicional.ValorTotal = decimal.Parse(reader["ValorTotal"].ToString());
+
+                    custosAdicionais.Add(custoAdicional);
+
+                }
+
+                cn.Close();
+                return custosAdicionais;
+            }
         }
     }
 }

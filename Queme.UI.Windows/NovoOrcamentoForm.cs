@@ -35,6 +35,7 @@ namespace Queme.UI.Windows
             ReadOrcamentoDto orcamento = OrcamentoDb.GetOrcamentoById(idOrcamento);
             PreenchimentoDeCamposDoCliente(orcamento.Cliente);
             AtualizarViewServicos(orcamento.Id);
+            AtualizarViewCustosAdicionais(orcamento.Id);
             //to:do metodo para preencher informações referentes ao orçamento no form
             PreenchimentoDeDadosDoOrc(orcamento);
 
@@ -144,6 +145,9 @@ namespace Queme.UI.Windows
             servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora (R$)";
             servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total (R$)";
 
+            servicosDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
 
         public void PreenchimentoDeCamposDoCliente(Cliente cliente)
@@ -207,6 +211,25 @@ namespace Queme.UI.Windows
             CategoriaDeCustoAdicional categoria = Enum.Parse<CategoriaDeCustoAdicional>(categoriaComboBox.Text);
             CustoAdicional custoAdicional = new CustoAdicional(int.Parse(nOrcTextBox.Text), categoria, descricaoTextBox.Text, decimal.Parse(valorUnTextBox.Text), int.Parse(qtdTextBox.Text), decimal.Parse(totalTextBox.Text));
             CustosAdicionaisDb.IncluirCustoAdicional(custoAdicional);
+
+            AtualizarViewCustosAdicionais(custoAdicional.Id_orcamento);
+
+        }
+
+        private void AtualizarViewCustosAdicionais(int id_orcamento)
+        {
+            custosAdicionaisDataGridView.DataSource = CustosAdicionaisDb.GetCustosAdicionaisList(id_orcamento);
+            custosAdicionaisDataGridView.AutoGenerateColumns = true;
+            custosAdicionaisDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            custosAdicionaisDataGridView.ReadOnly = false;
+            custosAdicionaisDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            custosAdicionaisDataGridView.RowHeadersVisible = false;
+            custosAdicionaisDataGridView.EnableHeadersVisualStyles = false;
+            custosAdicionaisDataGridView.Columns["id_orcamento"].Visible = false;
+            custosAdicionaisDataGridView.Columns["ValorUN"].HeaderText = "Valor Unitário (R$)";
+            custosAdicionaisDataGridView.Columns["ValorTotal"].HeaderText = "Valor Total (R$)";
+            custosAdicionaisDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            custosAdicionaisDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void valorTotalEtapaTextBox_TextChanged(object sender, EventArgs e)

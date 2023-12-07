@@ -55,7 +55,7 @@
             disciplinaLabel = new Label();
             TituloPainelServicosLabel = new Label();
             CustosAddTabPage = new TabPage();
-            dataGridView1 = new DataGridView();
+            custosAdicionaisDataGridView = new DataGridView();
             panel5 = new Panel();
             descricaoTextBox = new TextBox();
             descricaoLabel = new Label();
@@ -141,7 +141,7 @@
             infoServicoGroupBox.SuspendLayout();
             panel2.SuspendLayout();
             CustosAddTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)custosAdicionaisDataGridView).BeginInit();
             panel5.SuspendLayout();
             tabPage1.SuspendLayout();
             panel4.SuspendLayout();
@@ -424,7 +424,7 @@
             // 
             // CustosAddTabPage
             // 
-            CustosAddTabPage.Controls.Add(dataGridView1);
+            CustosAddTabPage.Controls.Add(custosAdicionaisDataGridView);
             CustosAddTabPage.Controls.Add(panel5);
             CustosAddTabPage.Controls.Add(CustosAddLabel);
             CustosAddTabPage.Location = new Point(4, 24);
@@ -435,14 +435,14 @@
             CustosAddTabPage.Text = "Custos Adicionais";
             CustosAddTabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // custosAdicionaisDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 107);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1084, 134);
-            dataGridView1.TabIndex = 4;
+            custosAdicionaisDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            custosAdicionaisDataGridView.Location = new Point(3, 107);
+            custosAdicionaisDataGridView.Name = "custosAdicionaisDataGridView";
+            custosAdicionaisDataGridView.RowTemplate.Height = 25;
+            custosAdicionaisDataGridView.Size = new Size(1084, 134);
+            custosAdicionaisDataGridView.TabIndex = 4;
             // 
             // panel5
             // 
@@ -1188,7 +1188,7 @@
             panel2.PerformLayout();
             CustosAddTabPage.ResumeLayout(false);
             CustosAddTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)custosAdicionaisDataGridView).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             tabPage1.ResumeLayout(false);
@@ -1321,7 +1321,7 @@
         private Label label1;
         private ComboBox comboBox2;
         private Button CalcularButton;
-        private DataGridView dataGridView1;
+        private DataGridView custosAdicionaisDataGridView;
         private Panel panel5;
         private Button AddCustoAdicionalButton;
         private TextBox totalTextBox;
