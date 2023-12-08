@@ -15,6 +15,8 @@ namespace Queme.Models.DTOs
         public string? RazaoSocial { get; set; }
         public string? Nome { get; set; }
         public double TaxaImposto { get; set; }
+        public string? ObsOrcamento { get; set; }
+
         public List<Servico> Servicos { get; set; } = new List<Servico>();
         public List<CustoAdicional> CustosAdicionais { get; set; } = new List<CustoAdicional>();
         public Cliente? Cliente { get; set; }

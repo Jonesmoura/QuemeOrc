@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace Queme.Db
 {
@@ -200,6 +201,21 @@ namespace Queme.Db
 
             return orcamento;
 
+        }
+
+        public static void SetOrUpdateObsOrcamento(int idOrcamento, string obsOrcamento)
+        {
+            string sql = @"UPDATE orcamentos
+                          SET ObsOrcamento = @obsOrcamento 
+                          WHERE id_orcamento = @idOrcamento;";
+
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@obsOrcamento", obsOrcamento);
+            cmd.Parameters.AddWithValue("@idOrcamento", idOrcamento);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

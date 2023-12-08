@@ -17,6 +17,7 @@ namespace Queme.Models
         public List<Servico> Servicos = new List<Servico>();
         public EnderecoServico Endereco { get; set; }
         public int IdTabelaDeCustos { get; set; }
+        public string? ObsOrcamento { get; set; }
 
         public Orcamento()
         {
