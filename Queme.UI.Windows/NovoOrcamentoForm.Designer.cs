@@ -132,6 +132,9 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
+            AdicionarCondicaoButton = new Button();
+            previaPagamentoGroupBox = new GroupBox();
+            formasDePagamentoGroupBox = new GroupBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -583,14 +586,17 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(formasDePagamentoGroupBox);
+            panel4.Controls.Add(previaPagamentoGroupBox);
             panel4.Controls.Add(condicoesPagamentoGroupBox);
             panel4.Location = new Point(6, 240);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1081, 61);
+            panel4.Size = new Size(1081, 177);
             panel4.TabIndex = 6;
             // 
             // condicoesPagamentoGroupBox
             // 
+            condicoesPagamentoGroupBox.Controls.Add(AdicionarCondicaoButton);
             condicoesPagamentoGroupBox.Controls.Add(CalcularButton);
             condicoesPagamentoGroupBox.Controls.Add(label1);
             condicoesPagamentoGroupBox.Controls.Add(comboBox2);
@@ -601,14 +607,14 @@
             condicoesPagamentoGroupBox.Controls.Add(entradaLabel);
             condicoesPagamentoGroupBox.Location = new Point(3, 3);
             condicoesPagamentoGroupBox.Name = "condicoesPagamentoGroupBox";
-            condicoesPagamentoGroupBox.Size = new Size(570, 53);
+            condicoesPagamentoGroupBox.Size = new Size(641, 53);
             condicoesPagamentoGroupBox.TabIndex = 0;
             condicoesPagamentoGroupBox.TabStop = false;
             condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
             // 
             // CalcularButton
             // 
-            CalcularButton.Location = new Point(483, 16);
+            CalcularButton.Location = new Point(473, 16);
             CalcularButton.Name = "CalcularButton";
             CalcularButton.Size = new Size(75, 23);
             CalcularButton.TabIndex = 7;
@@ -1164,6 +1170,33 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
+            // AdicionarCondicaoButton
+            // 
+            AdicionarCondicaoButton.Location = new Point(557, 16);
+            AdicionarCondicaoButton.Name = "AdicionarCondicaoButton";
+            AdicionarCondicaoButton.Size = new Size(75, 23);
+            AdicionarCondicaoButton.TabIndex = 8;
+            AdicionarCondicaoButton.Text = "Adiconar";
+            AdicionarCondicaoButton.UseVisualStyleBackColor = true;
+            // 
+            // previaPagamentoGroupBox
+            // 
+            previaPagamentoGroupBox.Location = new Point(650, 3);
+            previaPagamentoGroupBox.Name = "previaPagamentoGroupBox";
+            previaPagamentoGroupBox.Size = new Size(426, 53);
+            previaPagamentoGroupBox.TabIndex = 1;
+            previaPagamentoGroupBox.TabStop = false;
+            previaPagamentoGroupBox.Text = "Prévia da Forma de Pagamento";
+            // 
+            // formasDePagamentoGroupBox
+            // 
+            formasDePagamentoGroupBox.Location = new Point(3, 62);
+            formasDePagamentoGroupBox.Name = "formasDePagamentoGroupBox";
+            formasDePagamentoGroupBox.Size = new Size(1073, 112);
+            formasDePagamentoGroupBox.TabIndex = 2;
+            formasDePagamentoGroupBox.TabStop = false;
+            formasDePagamentoGroupBox.Text = "Condições de Pagamento";
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1336,5 +1369,8 @@
         private Label descricaoLabel;
         private TextBox valorUnTextBox;
         private Label valorUnLabel;
+        private Button AdicionarCondicaoButton;
+        private GroupBox formasDePagamentoGroupBox;
+        private GroupBox previaPagamentoGroupBox;
     }
 }

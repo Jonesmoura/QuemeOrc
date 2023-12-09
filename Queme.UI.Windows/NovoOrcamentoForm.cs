@@ -105,11 +105,17 @@ namespace Queme.UI.Windows
         {
             if (nOrcTextBox.Text == string.Empty)
             {
+                if (!ValidacaoDeDados.ValidacaoInputCep(CepTextBox.Text)|| ComplementoTextBox.Text == string.Empty || int.Parse(numeroTextBox.Text) != 0)
+                {
+                    MessageBox.Show("Formato do Endereço inválido");
+                    return;
+                };
                 int id_cliente = int.Parse(id_clienteLabel.Text);
                 int idTabelaDeCustos = TabelaDePrecoDb.CapturarId(TabelaDePrecosComboBox.Text);
                 Orcamento orc = new Orcamento(id_cliente, idTabelaDeCustos);
                 var db = new OrcamentoDb();
                 int id = db.Incluir(orc);
+
                 orc.Endereco = EnderecoObraDb.IncluirEndereco(id, CepTextBox.Text, ComplementoTextBox.Text, int.Parse(numeroTextBox.Text));
                 nOrcTextBox.Text = id.ToString();
             }

@@ -16,7 +16,7 @@ namespace Queme.Db
     {
         public static List<ReadOrcamentoDto> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
         {
-            if (!ValidacaoDeDados.validacaoInputQuery(textoPesquisa))
+            if (!ValidacaoDeDados.ValidacaoInputQuery(textoPesquisa))
             {
                 throw new FormatException("Caracteres inválidos foram informados");
             }
