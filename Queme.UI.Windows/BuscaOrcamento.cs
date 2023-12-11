@@ -92,10 +92,20 @@ namespace Queme.UI.Windows
 
             MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
 
-            List<ReadOrcamentoDto> orcamentos = OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
-
-            AtualizarViewOrcamentos(orcamentos);
-
+            try
+            {
+                List<ReadOrcamentoDto> orcamentos = OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
+                if(orcamentos.Count == 0)
+                {
+                    MessageBox.Show("Nenhum orçamento localizado.");
+                    return;
+                }
+                AtualizarViewOrcamentos(orcamentos);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void apartirDateTimePicker_ValueChanged(object sender, EventArgs e)

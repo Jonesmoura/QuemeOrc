@@ -16,12 +16,16 @@ namespace Queme.Db
     {
         public static List<ReadOrcamentoDto> getOrcamentosList(DateTime apartir, DateTime ate, string parametroDePesquisa, string status, string textoPesquisa)
         {
-            if (!ValidacaoDeDados.ValidacaoInputQuery(textoPesquisa))
+            List<ReadOrcamentoDto> orcamentos = new List<ReadOrcamentoDto>();
+            if(textoPesquisa == string.Empty)
             {
-                throw new FormatException("Caracteres inválidos foram informados");
+                throw new ArgumentNullException("Digitar texto para busca");
+            }
+            else if(!ValidacaoDeDados.ValidacaoInputQuery(textoPesquisa))
+            {
+                throw new FormatException("A busca contem caracteres inválidos (Caracteres especiais)");
             }
 
-            List<ReadOrcamentoDto> orcamentos = new List<ReadOrcamentoDto>();
             string parte2StringSql= "";
             switch (parametroDePesquisa)
             {
