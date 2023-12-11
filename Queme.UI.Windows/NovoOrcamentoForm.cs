@@ -38,6 +38,7 @@ namespace Queme.UI.Windows
             AtualizarViewCustosAdicionais(orcamento.Id);
             //to:do metodo para preencher informações referentes ao orçamento no form
             PreenchimentoDeDadosDoOrc(orcamento);
+            AlterarCliente.Enabled = false;
 
         }
 
@@ -105,7 +106,7 @@ namespace Queme.UI.Windows
         {
             if (nOrcTextBox.Text == string.Empty)
             {
-                if (!ValidacaoDeDados.ValidacaoInputCep(CepTextBox.Text)|| ComplementoTextBox.Text == string.Empty || int.Parse(numeroTextBox.Text) != 0)
+                if (!ValidacaoDeDados.ValidacaoInputCep(CepTextBox.Text) || ComplementoTextBox.Text == string.Empty || int.Parse(numeroTextBox.Text) != 0)
                 {
                     MessageBox.Show("Formato do Endereço inválido");
                     return;
@@ -153,6 +154,8 @@ namespace Queme.UI.Windows
 
             servicosDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            decimal totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
+            totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
 
         }
 
@@ -236,6 +239,9 @@ namespace Queme.UI.Windows
             custosAdicionaisDataGridView.Columns["ValorTotal"].HeaderText = "Valor Total (R$)";
             custosAdicionaisDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             custosAdicionaisDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            decimal totalCustosAdicionais = OrcamentoDb.TotalCustosAdicionais(id_orcamento);
+            totalCustosAdicionaisTextBox.Text = totalCustosAdicionais.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
         }
 
         private void valorTotalEtapaTextBox_TextChanged(object sender, EventArgs e)

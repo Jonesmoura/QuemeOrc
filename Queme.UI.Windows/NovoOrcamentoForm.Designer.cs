@@ -38,8 +38,10 @@
             DadosOrcamentoLabel = new Label();
             tabControl1 = new TabControl();
             ServicosTabPage = new TabPage();
+            totalServicosTextBox = new TextBox();
             servicosPanel = new Panel();
             servicosDataGridView = new DataGridView();
+            TotalServicosLabel = new Label();
             infoServicoGroupBox = new GroupBox();
             panel2 = new Panel();
             adicionarServicoButton = new Button();
@@ -55,6 +57,8 @@
             disciplinaLabel = new Label();
             TituloPainelServicosLabel = new Label();
             CustosAddTabPage = new TabPage();
+            totalCustosAdicionaisTextBox = new TextBox();
+            totalCustosAdicionaisLabel = new Label();
             custosAdicionaisDataGridView = new DataGridView();
             panel5 = new Panel();
             descricaoTextBox = new TextBox();
@@ -71,7 +75,10 @@
             CustosAddLabel = new Label();
             tabPage1 = new TabPage();
             panel4 = new Panel();
+            formasDePagamentoGroupBox = new GroupBox();
+            previaPagamentoGroupBox = new GroupBox();
             condicoesPagamentoGroupBox = new GroupBox();
+            AdicionarCondicaoButton = new Button();
             CalcularButton = new Button();
             label1 = new Label();
             comboBox2 = new ComboBox();
@@ -132,9 +139,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            AdicionarCondicaoButton = new Button();
-            previaPagamentoGroupBox = new GroupBox();
-            formasDePagamentoGroupBox = new GroupBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -224,7 +228,7 @@
             panel1.Controls.Add(tabControl1);
             panel1.Location = new Point(6, 161);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1110, 552);
+            panel1.Size = new Size(1110, 590);
             panel1.TabIndex = 2;
             // 
             // id_clienteLabel
@@ -254,21 +258,32 @@
             tabControl1.Location = new Point(9, 43);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1098, 506);
+            tabControl1.Size = new Size(1098, 544);
             tabControl1.TabIndex = 0;
             // 
             // ServicosTabPage
             // 
+            ServicosTabPage.Controls.Add(totalServicosTextBox);
             ServicosTabPage.Controls.Add(servicosPanel);
+            ServicosTabPage.Controls.Add(TotalServicosLabel);
             ServicosTabPage.Controls.Add(infoServicoGroupBox);
             ServicosTabPage.Controls.Add(TituloPainelServicosLabel);
             ServicosTabPage.Location = new Point(4, 24);
             ServicosTabPage.Name = "ServicosTabPage";
             ServicosTabPage.Padding = new Padding(3);
-            ServicosTabPage.Size = new Size(1090, 478);
+            ServicosTabPage.Size = new Size(1090, 516);
             ServicosTabPage.TabIndex = 0;
             ServicosTabPage.Text = "Serviços";
             ServicosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // totalServicosTextBox
+            // 
+            totalServicosTextBox.Location = new Point(980, 483);
+            totalServicosTextBox.Name = "totalServicosTextBox";
+            totalServicosTextBox.ReadOnly = true;
+            totalServicosTextBox.Size = new Size(100, 23);
+            totalServicosTextBox.TabIndex = 7;
+            totalServicosTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // servicosPanel
             // 
@@ -286,6 +301,15 @@
             servicosDataGridView.RowTemplate.Height = 25;
             servicosDataGridView.Size = new Size(1084, 343);
             servicosDataGridView.TabIndex = 0;
+            // 
+            // TotalServicosLabel
+            // 
+            TotalServicosLabel.AutoSize = true;
+            TotalServicosLabel.Location = new Point(889, 486);
+            TotalServicosLabel.Name = "TotalServicosLabel";
+            TotalServicosLabel.Size = new Size(84, 15);
+            TotalServicosLabel.TabIndex = 6;
+            TotalServicosLabel.Text = "Total Serviços :";
             // 
             // infoServicoGroupBox
             // 
@@ -427,16 +451,36 @@
             // 
             // CustosAddTabPage
             // 
+            CustosAddTabPage.Controls.Add(totalCustosAdicionaisTextBox);
+            CustosAddTabPage.Controls.Add(totalCustosAdicionaisLabel);
             CustosAddTabPage.Controls.Add(custosAdicionaisDataGridView);
             CustosAddTabPage.Controls.Add(panel5);
             CustosAddTabPage.Controls.Add(CustosAddLabel);
             CustosAddTabPage.Location = new Point(4, 24);
             CustosAddTabPage.Name = "CustosAddTabPage";
             CustosAddTabPage.Padding = new Padding(3);
-            CustosAddTabPage.Size = new Size(1090, 478);
+            CustosAddTabPage.Size = new Size(1090, 516);
             CustosAddTabPage.TabIndex = 1;
             CustosAddTabPage.Text = "Custos Adicionais";
             CustosAddTabPage.UseVisualStyleBackColor = true;
+            // 
+            // totalCustosAdicionaisTextBox
+            // 
+            totalCustosAdicionaisTextBox.Location = new Point(981, 483);
+            totalCustosAdicionaisTextBox.Name = "totalCustosAdicionaisTextBox";
+            totalCustosAdicionaisTextBox.ReadOnly = true;
+            totalCustosAdicionaisTextBox.Size = new Size(100, 23);
+            totalCustosAdicionaisTextBox.TabIndex = 9;
+            totalCustosAdicionaisTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // totalCustosAdicionaisLabel
+            // 
+            totalCustosAdicionaisLabel.AutoSize = true;
+            totalCustosAdicionaisLabel.Location = new Point(843, 486);
+            totalCustosAdicionaisLabel.Name = "totalCustosAdicionaisLabel";
+            totalCustosAdicionaisLabel.Size = new Size(135, 15);
+            totalCustosAdicionaisLabel.TabIndex = 8;
+            totalCustosAdicionaisLabel.Text = "Total Custos Adicionais :";
             // 
             // custosAdicionaisDataGridView
             // 
@@ -579,7 +623,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1090, 478);
+            tabPage1.Size = new Size(1090, 516);
             tabPage1.TabIndex = 5;
             tabPage1.Text = "Resumo";
             tabPage1.UseVisualStyleBackColor = true;
@@ -593,6 +637,24 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1081, 177);
             panel4.TabIndex = 6;
+            // 
+            // formasDePagamentoGroupBox
+            // 
+            formasDePagamentoGroupBox.Location = new Point(3, 62);
+            formasDePagamentoGroupBox.Name = "formasDePagamentoGroupBox";
+            formasDePagamentoGroupBox.Size = new Size(1073, 112);
+            formasDePagamentoGroupBox.TabIndex = 2;
+            formasDePagamentoGroupBox.TabStop = false;
+            formasDePagamentoGroupBox.Text = "Condições de Pagamento";
+            // 
+            // previaPagamentoGroupBox
+            // 
+            previaPagamentoGroupBox.Location = new Point(650, 3);
+            previaPagamentoGroupBox.Name = "previaPagamentoGroupBox";
+            previaPagamentoGroupBox.Size = new Size(426, 53);
+            previaPagamentoGroupBox.TabIndex = 1;
+            previaPagamentoGroupBox.TabStop = false;
+            previaPagamentoGroupBox.Text = "Prévia da Forma de Pagamento";
             // 
             // condicoesPagamentoGroupBox
             // 
@@ -611,6 +673,15 @@
             condicoesPagamentoGroupBox.TabIndex = 0;
             condicoesPagamentoGroupBox.TabStop = false;
             condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
+            // 
+            // AdicionarCondicaoButton
+            // 
+            AdicionarCondicaoButton.Location = new Point(557, 16);
+            AdicionarCondicaoButton.Name = "AdicionarCondicaoButton";
+            AdicionarCondicaoButton.Size = new Size(75, 23);
+            AdicionarCondicaoButton.TabIndex = 8;
+            AdicionarCondicaoButton.Text = "Adiconar";
+            AdicionarCondicaoButton.UseVisualStyleBackColor = true;
             // 
             // CalcularButton
             // 
@@ -1170,33 +1241,6 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // AdicionarCondicaoButton
-            // 
-            AdicionarCondicaoButton.Location = new Point(557, 16);
-            AdicionarCondicaoButton.Name = "AdicionarCondicaoButton";
-            AdicionarCondicaoButton.Size = new Size(75, 23);
-            AdicionarCondicaoButton.TabIndex = 8;
-            AdicionarCondicaoButton.Text = "Adiconar";
-            AdicionarCondicaoButton.UseVisualStyleBackColor = true;
-            // 
-            // previaPagamentoGroupBox
-            // 
-            previaPagamentoGroupBox.Location = new Point(650, 3);
-            previaPagamentoGroupBox.Name = "previaPagamentoGroupBox";
-            previaPagamentoGroupBox.Size = new Size(426, 53);
-            previaPagamentoGroupBox.TabIndex = 1;
-            previaPagamentoGroupBox.TabStop = false;
-            previaPagamentoGroupBox.Text = "Prévia da Forma de Pagamento";
-            // 
-            // formasDePagamentoGroupBox
-            // 
-            formasDePagamentoGroupBox.Location = new Point(3, 62);
-            formasDePagamentoGroupBox.Name = "formasDePagamentoGroupBox";
-            formasDePagamentoGroupBox.Size = new Size(1073, 112);
-            formasDePagamentoGroupBox.TabIndex = 2;
-            formasDePagamentoGroupBox.TabStop = false;
-            formasDePagamentoGroupBox.Text = "Condições de Pagamento";
-            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1372,5 +1416,9 @@
         private Button AdicionarCondicaoButton;
         private GroupBox formasDePagamentoGroupBox;
         private GroupBox previaPagamentoGroupBox;
+        private TextBox totalServicosTextBox;
+        private Label TotalServicosLabel;
+        private TextBox totalCustosAdicionaisTextBox;
+        private Label totalCustosAdicionaisLabel;
     }
 }

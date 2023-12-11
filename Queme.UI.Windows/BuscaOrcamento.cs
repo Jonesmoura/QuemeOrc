@@ -133,6 +133,8 @@ namespace Queme.UI.Windows
             OrcamentosEncontradosDataGridView.Columns["TaxaImposto"].Visible = false;
             OrcamentosEncontradosDataGridView.Columns["cliente"].Visible = false;
             OrcamentosEncontradosDataGridView.Columns["IdTabelaDeCustos"].Visible = false;
+            OrcamentosEncontradosDataGridView.Columns["ObsOrcamento"].Visible = false;
+            OrcamentosEncontradosDataGridView.Columns["EnderecoObra"].Visible = false;
 
         }
 

@@ -221,5 +221,47 @@ namespace Queme.Db
             cmd.ExecuteNonQuery();
             cn.Close();
         }
+
+        public static decimal TotalServicos(int id_orcamento)
+        {
+            decimal total = 0;
+            string sql = @"SELECT SUM(totalServico) AS ValorTotalServicos FROM servicos WHERE id_orcamento=@idOrcamento GROUP BY id_orcamento";
+            var cn = new MySqlConnection (Db.connect);
+            var cmd = new MySqlCommand (sql, cn);
+            cmd.Parameters.AddWithValue("@idOrcamento", id_orcamento);
+            cn.Open();
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if(reader.Read())
+                {
+                    total = Convert.ToDecimal(reader["ValorTotalServicos"]);
+                    
+                }
+            }
+
+            return total;
+        }
+
+        public static decimal TotalCustosAdicionais(int id_orcamento)
+        {
+            decimal total = 0;
+            string sql = @"SELECT SUM(ValorTotal) AS ValorTotalCustosAdicionais FROM custosAdicionais WHERE id_orcamento=@idOrcamento GROUP BY id_orcamento";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@idOrcamento", id_orcamento);
+            cn.Open();
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    total = Convert.ToDecimal(reader["ValorTotalCustosAdicionais"]);
+
+                }
+            }
+
+            return total;
+        }
     }
 }
