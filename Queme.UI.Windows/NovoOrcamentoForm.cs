@@ -258,5 +258,11 @@ namespace Queme.UI.Windows
                 totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.InvariantCulture);
             }
         }
+
+        private void CalcularButton_Click(object sender, EventArgs e)
+        {
+            //decimal total = CalculosDeOrcamento.ValorTotalOrcamento(1000m, 200m, true, 10, 10);
+            //MessageBox.Show(total.ToString());
+        }
     }
 }

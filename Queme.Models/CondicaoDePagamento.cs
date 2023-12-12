@@ -12,6 +12,7 @@ namespace Queme.Models
         public int QuantidadeDeParcelas { get; set; }
         public int PeriodicidadeDeParcela { get; set; }
         public decimal ValorTotalOrcamento { get; set; }
+        public double Desconto { get; set; }
 
         //Override no toString para retornar a forma de pagamento a ser exibida no Form
     }
