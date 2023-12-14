@@ -13,6 +13,28 @@ namespace Queme.Models
         public int PeriodicidadeDeParcela { get; set; }
         public decimal ValorTotalOrcamento { get; set; }
         public double Desconto { get; set; }
+        public decimal ValorParcela { get
+            {
+                return ValorParcela = CalculosDeOrcamento.CalcularValorDaParcela(PercentualDeEntrada, ValorTotalOrcamento, Desconto, QuantidadeDeParcelas);
+            }
+            private set {} 
+        }
+
+        public CondicaoDePagamento(double percentualDeEntrada, int quantidadeDeParcelas, int periodicidadeDeParcela, decimal valorTotalOrcamento, double desconto)
+        {
+            PercentualDeEntrada = percentualDeEntrada;
+            QuantidadeDeParcelas = quantidadeDeParcelas;
+            PeriodicidadeDeParcela = periodicidadeDeParcela;
+            ValorTotalOrcamento = valorTotalOrcamento;
+            Desconto = desconto;
+        }
+
+        public CondicaoDePagamento()
+        {
+            
+        }
+
+
 
         //Override no toString para retornar a forma de pagamento a ser exibida no Form
     }

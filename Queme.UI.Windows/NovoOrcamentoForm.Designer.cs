@@ -78,14 +78,16 @@
             formasDePagamentoGroupBox = new GroupBox();
             previaPagamentoGroupBox = new GroupBox();
             condicoesPagamentoGroupBox = new GroupBox();
+            descontoMaskedTextBox = new MaskedTextBox();
+            descontoLabel = new Label();
             AdicionarCondicaoButton = new Button();
             CalcularButton = new Button();
             label1 = new Label();
-            comboBox2 = new ComboBox();
+            periodicidadeComboBox = new ComboBox();
             parcelasLabel = new Label();
-            comboBox1 = new ComboBox();
+            parcelasComboBox = new ComboBox();
             plusLabel = new Label();
-            maskedTextBox2 = new MaskedTextBox();
+            percentualEntradaMaskedTextBox = new MaskedTextBox();
             entradaLabel = new Label();
             artPanel = new Panel();
             naoArtRadioButton = new RadioButton();
@@ -139,8 +141,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            descontoLabel = new Label();
-            descontoMaskedTextBox = new MaskedTextBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -665,11 +665,11 @@
             condicoesPagamentoGroupBox.Controls.Add(AdicionarCondicaoButton);
             condicoesPagamentoGroupBox.Controls.Add(CalcularButton);
             condicoesPagamentoGroupBox.Controls.Add(label1);
-            condicoesPagamentoGroupBox.Controls.Add(comboBox2);
+            condicoesPagamentoGroupBox.Controls.Add(periodicidadeComboBox);
             condicoesPagamentoGroupBox.Controls.Add(parcelasLabel);
-            condicoesPagamentoGroupBox.Controls.Add(comboBox1);
+            condicoesPagamentoGroupBox.Controls.Add(parcelasComboBox);
             condicoesPagamentoGroupBox.Controls.Add(plusLabel);
-            condicoesPagamentoGroupBox.Controls.Add(maskedTextBox2);
+            condicoesPagamentoGroupBox.Controls.Add(percentualEntradaMaskedTextBox);
             condicoesPagamentoGroupBox.Controls.Add(entradaLabel);
             condicoesPagamentoGroupBox.Location = new Point(3, 3);
             condicoesPagamentoGroupBox.Name = "condicoesPagamentoGroupBox";
@@ -677,6 +677,25 @@
             condicoesPagamentoGroupBox.TabIndex = 0;
             condicoesPagamentoGroupBox.TabStop = false;
             condicoesPagamentoGroupBox.Text = "Condição de Pagamento:";
+            // 
+            // descontoMaskedTextBox
+            // 
+            descontoMaskedTextBox.Location = new Point(559, 16);
+            descontoMaskedTextBox.Mask = "00,00";
+            descontoMaskedTextBox.Name = "descontoMaskedTextBox";
+            descontoMaskedTextBox.Size = new Size(36, 23);
+            descontoMaskedTextBox.TabIndex = 10;
+            descontoMaskedTextBox.Text = "0000";
+            descontoMaskedTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // descontoLabel
+            // 
+            descontoLabel.AutoSize = true;
+            descontoLabel.Location = new Point(476, 21);
+            descontoLabel.Name = "descontoLabel";
+            descontoLabel.Size = new Size(84, 15);
+            descontoLabel.TabIndex = 9;
+            descontoLabel.Text = "Desconto (%): ";
             // 
             // AdicionarCondicaoButton
             // 
@@ -706,14 +725,14 @@
             label1.TabIndex = 6;
             label1.Text = "Dias.";
             // 
-            // comboBox2
+            // periodicidadeComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "15", "20", "30" });
-            comboBox2.Location = new Point(394, 16);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(37, 23);
-            comboBox2.TabIndex = 5;
+            periodicidadeComboBox.FormattingEnabled = true;
+            periodicidadeComboBox.Items.AddRange(new object[] { "15", "20", "30" });
+            periodicidadeComboBox.Location = new Point(394, 16);
+            periodicidadeComboBox.Name = "periodicidadeComboBox";
+            periodicidadeComboBox.Size = new Size(37, 23);
+            periodicidadeComboBox.TabIndex = 5;
             // 
             // parcelasLabel
             // 
@@ -724,14 +743,14 @@
             parcelasLabel.TabIndex = 4;
             parcelasLabel.Text = "Parcela(s), periodicidade das parcelas:";
             // 
-            // comboBox1
+            // parcelasComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
-            comboBox1.Location = new Point(139, 16);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(37, 23);
-            comboBox1.TabIndex = 3;
+            parcelasComboBox.FormattingEnabled = true;
+            parcelasComboBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            parcelasComboBox.Location = new Point(139, 16);
+            parcelasComboBox.Name = "parcelasComboBox";
+            parcelasComboBox.Size = new Size(37, 23);
+            parcelasComboBox.TabIndex = 3;
             // 
             // plusLabel
             // 
@@ -743,14 +762,14 @@
             plusLabel.TabIndex = 2;
             plusLabel.Text = "+";
             // 
-            // maskedTextBox2
+            // percentualEntradaMaskedTextBox
             // 
-            maskedTextBox2.Location = new Point(76, 16);
-            maskedTextBox2.Mask = "00,00";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(36, 23);
-            maskedTextBox2.TabIndex = 1;
-            maskedTextBox2.TextAlign = HorizontalAlignment.Center;
+            percentualEntradaMaskedTextBox.Location = new Point(76, 16);
+            percentualEntradaMaskedTextBox.Mask = "00,00";
+            percentualEntradaMaskedTextBox.Name = "percentualEntradaMaskedTextBox";
+            percentualEntradaMaskedTextBox.Size = new Size(36, 23);
+            percentualEntradaMaskedTextBox.TabIndex = 1;
+            percentualEntradaMaskedTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // entradaLabel
             // 
@@ -1246,25 +1265,6 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // descontoLabel
-            // 
-            descontoLabel.AutoSize = true;
-            descontoLabel.Location = new Point(476, 21);
-            descontoLabel.Name = "descontoLabel";
-            descontoLabel.Size = new Size(84, 15);
-            descontoLabel.TabIndex = 9;
-            descontoLabel.Text = "Desconto (%): ";
-            // 
-            // descontoMaskedTextBox
-            // 
-            descontoMaskedTextBox.Location = new Point(559, 16);
-            descontoMaskedTextBox.Mask = "00,00";
-            descontoMaskedTextBox.Name = "descontoMaskedTextBox";
-            descontoMaskedTextBox.Size = new Size(36, 23);
-            descontoMaskedTextBox.TabIndex = 10;
-            descontoMaskedTextBox.Text = "0000";
-            descontoMaskedTextBox.TextAlign = HorizontalAlignment.Center;
-            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1415,12 +1415,12 @@
         private MaskedTextBox percentImpstoMaskedTextBox;
         private Label porcentualLabel;
         private Label impostoLabel;
-        private MaskedTextBox maskedTextBox2;
-        private ComboBox comboBox1;
+        private MaskedTextBox percentualEntradaMaskedTextBox;
+        private ComboBox parcelasComboBox;
         private Label plusLabel;
         private Label parcelasLabel;
         private Label label1;
-        private ComboBox comboBox2;
+        private ComboBox periodicidadeComboBox;
         private Button CalcularButton;
         private DataGridView custosAdicionaisDataGridView;
         private Panel panel5;

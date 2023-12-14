@@ -261,8 +261,31 @@ namespace Queme.UI.Windows
 
         private void CalcularButton_Click(object sender, EventArgs e)
         {
-            //decimal total = CalculosDeOrcamento.ValorTotalOrcamento(1000m, 200m, true, 10, 10);
-            //MessageBox.Show(total.ToString());
+            double imposto = 0;
+            double comissao = 0;
+            bool incluirArt = true;
+            if (inclusoRadioButton.Checked)
+            {
+                double.TryParse(percentImpstoMaskedTextBox.Text.Replace(",", "."), out imposto);
+            }
+
+            if (simComissaoRadioButton.Checked)
+            {
+                double.TryParse(percentComissaoMaskedTextBox.Text.Replace(",", "."), out comissao);
+            }
+
+            if (naoArtRadioButton.Checked)
+            {
+                incluirArt = false;
+            }
+
+            decimal total = CalculosDeOrcamento.ValorTotalOrcamento(1000m, 200m, incluirArt, imposto, comissao);
+            //teste parcela:
+            CondicaoDePagamento condicaoDePagamento = new CondicaoDePagamento(double.Parse(percentualEntradaMaskedTextBox.Text.Replace(',', '.')), int.Parse(parcelasComboBox.Text), int.Parse(periodicidadeComboBox.Text),total,double.Parse(descontoMaskedTextBox.Text.Replace(',', '.')));
+            decimal parcela = condicaoDePagamento.ValorParcela;
+
+            MessageBox.Show($"Valor total {total}, Quantidade de parcelas: {int.Parse(parcelasComboBox.Text)}, valor da parcela: {parcela}");
+
         }
     }
 }
