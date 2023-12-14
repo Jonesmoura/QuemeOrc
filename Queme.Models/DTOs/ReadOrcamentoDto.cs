@@ -17,8 +17,11 @@ namespace Queme.Models.DTOs
         public double TaxaImposto { get; set; }
         public string? ObsOrcamento { get; set; }
 
+        public decimal ValorTotal { get; set; }
+
         public List<Servico> Servicos { get; set; } = new List<Servico>();
         public List<CustoAdicional> CustosAdicionais { get; set; } = new List<CustoAdicional>();
+        public List<CondicaoDePagamento> CondicaoDePagamentos { get; set; } = new List<CondicaoDePagamento>();
         public Cliente? Cliente { get; set; }
         public int IdTabelaDeCustos { get; set; }
         public EnderecoServico? EnderecoObra { get; set; }

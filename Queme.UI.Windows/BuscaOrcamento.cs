@@ -90,7 +90,7 @@ namespace Queme.UI.Windows
 
             }
 
-            MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
+            //MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
 
             try
             {

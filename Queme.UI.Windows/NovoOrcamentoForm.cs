@@ -17,6 +17,10 @@ namespace Queme.UI.Windows
 {
     public partial class NovoOrcamentoForm : Form
     {
+        private static ReadOrcamentoDto orcamento;
+        private static CondicaoDePagamento condicaoDePagamento;
+        private static decimal totalCustosAdicionais;
+        private static decimal totalServicos;
         public NovoOrcamentoForm()
         {
             InitializeComponent();
@@ -32,7 +36,7 @@ namespace Queme.UI.Windows
         public NovoOrcamentoForm(int idOrcamento)
         {
             InitializeComponent();
-            ReadOrcamentoDto orcamento = OrcamentoDb.GetOrcamentoById(idOrcamento);
+            orcamento = OrcamentoDb.GetOrcamentoById(idOrcamento);
             PreenchimentoDeCamposDoCliente(orcamento.Cliente);
             AtualizarViewServicos(orcamento.Id);
             AtualizarViewCustosAdicionais(orcamento.Id);
@@ -154,7 +158,7 @@ namespace Queme.UI.Windows
 
             servicosDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            decimal totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
+            totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
             totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
 
         }
@@ -240,7 +244,7 @@ namespace Queme.UI.Windows
             custosAdicionaisDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             custosAdicionaisDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            decimal totalCustosAdicionais = OrcamentoDb.TotalCustosAdicionais(id_orcamento);
+            totalCustosAdicionais = OrcamentoDb.TotalCustosAdicionais(id_orcamento);
             totalCustosAdicionaisTextBox.Text = totalCustosAdicionais.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
         }
 
@@ -279,13 +283,31 @@ namespace Queme.UI.Windows
                 incluirArt = false;
             }
 
-            decimal total = CalculosDeOrcamento.ValorTotalOrcamento(1000m, 200m, incluirArt, imposto, comissao);
-            //teste parcela:
-            CondicaoDePagamento condicaoDePagamento = new CondicaoDePagamento(double.Parse(percentualEntradaMaskedTextBox.Text.Replace(',', '.')), int.Parse(parcelasComboBox.Text), int.Parse(periodicidadeComboBox.Text),total,double.Parse(descontoMaskedTextBox.Text.Replace(',', '.')));
-            decimal parcela = condicaoDePagamento.ValorParcela;
+            decimal total = CalculosDeOrcamento.ValorTotalOrcamento(totalServicos, totalCustosAdicionais, incluirArt, imposto, comissao);
+            orcamento.ValorTotal = total;
+            condicaoDePagamento = new CondicaoDePagamento(double.Parse(percentualEntradaMaskedTextBox.Text.Replace(',', '.')), int.Parse(parcelasComboBox.Text), int.Parse(periodicidadeComboBox.Text), total, double.Parse(descontoMaskedTextBox.Text.Replace(',', '.')), int.Parse(nOrcTextBox.Text));
 
-            MessageBox.Show($"Valor total {total}, Quantidade de parcelas: {int.Parse(parcelasComboBox.Text)}, valor da parcela: {parcela}");
+            condicaoDePagamentoLabel.Text = condicaoDePagamento.ToString();
 
+        }
+
+        private void AdicionarCondicaoButton_Click(object sender, EventArgs e)
+        {
+            int idOrcamento = int.Parse(nOrcTextBox.Text);
+            CondicoesDePagamentoDb.Incluir(idOrcamento, condicaoDePagamento);
+            //orcamento.CondicaoDePagamentos.Add(condicaoDePagamento);
+            AtualizarViewCondicoesDePagamento();
+
+        }
+
+        public void AtualizarViewCondicoesDePagamento()
+        {
+            orcamento.CondicaoDePagamentos = CondicoesDePagamentoDb.GetListCondicoes(int.Parse(nOrcTextBox.Text));
+            CondicoesDePagamentoLabel.Text = "";
+            for(int i = 0;i< orcamento.CondicaoDePagamentos.Count;i++)
+            {
+                CondicoesDePagamentoLabel.Text += $"{i + 1} - {orcamento.CondicaoDePagamentos[i]} \r\n";
+            }
         }
     }
 }

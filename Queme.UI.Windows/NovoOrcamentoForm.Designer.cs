@@ -76,7 +76,9 @@
             tabPage1 = new TabPage();
             panel4 = new Panel();
             formasDePagamentoGroupBox = new GroupBox();
+            CondicoesDePagamentoLabel = new Label();
             previaPagamentoGroupBox = new GroupBox();
+            condicaoDePagamentoLabel = new Label();
             condicoesPagamentoGroupBox = new GroupBox();
             descontoMaskedTextBox = new MaskedTextBox();
             descontoLabel = new Label();
@@ -154,6 +156,8 @@
             panel5.SuspendLayout();
             tabPage1.SuspendLayout();
             panel4.SuspendLayout();
+            formasDePagamentoGroupBox.SuspendLayout();
+            previaPagamentoGroupBox.SuspendLayout();
             condicoesPagamentoGroupBox.SuspendLayout();
             artPanel.SuspendLayout();
             comissaoPanel.SuspendLayout();
@@ -642,6 +646,7 @@
             // 
             // formasDePagamentoGroupBox
             // 
+            formasDePagamentoGroupBox.Controls.Add(CondicoesDePagamentoLabel);
             formasDePagamentoGroupBox.Location = new Point(3, 111);
             formasDePagamentoGroupBox.Name = "formasDePagamentoGroupBox";
             formasDePagamentoGroupBox.Size = new Size(1073, 112);
@@ -649,14 +654,33 @@
             formasDePagamentoGroupBox.TabStop = false;
             formasDePagamentoGroupBox.Text = "Condições de Pagamento";
             // 
+            // CondicoesDePagamentoLabel
+            // 
+            CondicoesDePagamentoLabel.AutoSize = true;
+            CondicoesDePagamentoLabel.Location = new Point(19, 31);
+            CondicoesDePagamentoLabel.Name = "CondicoesDePagamentoLabel";
+            CondicoesDePagamentoLabel.Size = new Size(45, 15);
+            CondicoesDePagamentoLabel.TabIndex = 0;
+            CondicoesDePagamentoLabel.Text = "dewwd";
+            // 
             // previaPagamentoGroupBox
             // 
+            previaPagamentoGroupBox.Controls.Add(condicaoDePagamentoLabel);
             previaPagamentoGroupBox.Location = new Point(3, 57);
             previaPagamentoGroupBox.Name = "previaPagamentoGroupBox";
             previaPagamentoGroupBox.Size = new Size(1073, 53);
             previaPagamentoGroupBox.TabIndex = 1;
             previaPagamentoGroupBox.TabStop = false;
             previaPagamentoGroupBox.Text = "Prévia da Forma de Pagamento";
+            // 
+            // condicaoDePagamentoLabel
+            // 
+            condicaoDePagamentoLabel.AutoSize = true;
+            condicaoDePagamentoLabel.Location = new Point(19, 23);
+            condicaoDePagamentoLabel.Name = "condicaoDePagamentoLabel";
+            condicaoDePagamentoLabel.Size = new Size(131, 15);
+            condicaoDePagamentoLabel.TabIndex = 0;
+            condicaoDePagamentoLabel.Text = "CALCULAR CONDIÇÃO";
             // 
             // condicoesPagamentoGroupBox
             // 
@@ -705,6 +729,7 @@
             AdicionarCondicaoButton.TabIndex = 8;
             AdicionarCondicaoButton.Text = "Adiconar";
             AdicionarCondicaoButton.UseVisualStyleBackColor = true;
+            AdicionarCondicaoButton.Click += AdicionarCondicaoButton_Click;
             // 
             // CalcularButton
             // 
@@ -746,7 +771,7 @@
             // parcelasComboBox
             // 
             parcelasComboBox.FormattingEnabled = true;
-            parcelasComboBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            parcelasComboBox.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5" });
             parcelasComboBox.Location = new Point(139, 16);
             parcelasComboBox.Name = "parcelasComboBox";
             parcelasComboBox.Size = new Size(37, 23);
@@ -769,6 +794,7 @@
             percentualEntradaMaskedTextBox.Name = "percentualEntradaMaskedTextBox";
             percentualEntradaMaskedTextBox.Size = new Size(36, 23);
             percentualEntradaMaskedTextBox.TabIndex = 1;
+            percentualEntradaMaskedTextBox.Text = "0000";
             percentualEntradaMaskedTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // entradaLabel
@@ -1294,6 +1320,10 @@
             panel5.PerformLayout();
             tabPage1.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            formasDePagamentoGroupBox.ResumeLayout(false);
+            formasDePagamentoGroupBox.PerformLayout();
+            previaPagamentoGroupBox.ResumeLayout(false);
+            previaPagamentoGroupBox.PerformLayout();
             condicoesPagamentoGroupBox.ResumeLayout(false);
             condicoesPagamentoGroupBox.PerformLayout();
             artPanel.ResumeLayout(false);
@@ -1446,5 +1476,7 @@
         private Label totalCustosAdicionaisLabel;
         private MaskedTextBox descontoMaskedTextBox;
         private Label descontoLabel;
+        private Label condicaoDePagamentoLabel;
+        private Label CondicoesDePagamentoLabel;
     }
 }
