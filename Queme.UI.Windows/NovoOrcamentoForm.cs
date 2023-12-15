@@ -21,6 +21,7 @@ namespace Queme.UI.Windows
         private static CondicaoDePagamento condicaoDePagamento;
         private static decimal totalCustosAdicionais;
         private static decimal totalServicos;
+
         public NovoOrcamentoForm()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace Queme.UI.Windows
             AtualizarViewCustosAdicionais(orcamento.Id);
             //to:do metodo para preencher informações referentes ao orçamento no form
             PreenchimentoDeDadosDoOrc(orcamento);
+            AtualizarViewCondicoesDePagamento();
+
             AlterarCliente.Enabled = false;
 
         }
@@ -60,6 +63,7 @@ namespace Queme.UI.Windows
             inclusoRadioButton.Checked = true;
             simComissaoRadioButton.Checked = true;
             simArtRadioButton.Checked = true;
+            excluirServicoButton.Enabled = false;
 
 
         }
@@ -150,11 +154,13 @@ namespace Queme.UI.Windows
             servicosDataGridView.RowHeadersVisible = false;
             servicosDataGridView.EnableHeadersVisualStyles = false;
             servicosDataGridView.Columns["id_orcamento"].Visible = false;
+            servicosDataGridView.Columns["Id"].Visible = false;
 
             servicosDataGridView.Columns["TipoServico"].HeaderText = "Disciplina";
             servicosDataGridView.Columns["Qtd_horas"].HeaderText = "Quantidade Horas";
             servicosDataGridView.Columns["ValorHora"].HeaderText = "Valor/Hora (R$)";
             servicosDataGridView.Columns["TotalServico"].HeaderText = "Valor Total (R$)";
+
 
             servicosDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -304,9 +310,43 @@ namespace Queme.UI.Windows
         {
             orcamento.CondicaoDePagamentos = CondicoesDePagamentoDb.GetListCondicoes(int.Parse(nOrcTextBox.Text));
             CondicoesDePagamentoLabel.Text = "";
-            for(int i = 0;i< orcamento.CondicaoDePagamentos.Count;i++)
+            for (int i = 0; i < orcamento.CondicaoDePagamentos.Count; i++)
             {
                 CondicoesDePagamentoLabel.Text += $"{i + 1} - {orcamento.CondicaoDePagamentos[i]} \r\n";
+            }
+        }
+
+        private void servicosDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (servicosDataGridView.SelectedRows.Count > 0)
+            {
+                excluirServicoButton.Enabled = true;
+            }
+            else
+            {
+                excluirServicoButton.Enabled = false;
+            }
+        }
+
+        private void excluirServicoButton_Click(object sender, EventArgs e)
+        {
+            //int indiceSelecionado = dataGridView1.SelectedRows[0].Index;
+            //SeuObjeto objetoSelecionado = listaDeObjetos[indiceSelecionado];
+            ServicosDb servicoDb = new ServicosDb();
+            List<Servico> listaServicos = servicoDb.GetServicoList(orcamento.Id);
+            int indiceNoDataGrid = servicosDataGridView.SelectedRows[0].Index;
+            Servico servicoExluir = listaServicos[indiceNoDataGrid];
+
+            try
+            {
+                servicoDb.Excluir(servicoExluir);
+                AtualizarViewServicos(orcamento.Id);
+                MessageBox.Show("Serviço excluido.");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Falha ao excluir Serviço." +  ex.Message); 
             }
         }
     }

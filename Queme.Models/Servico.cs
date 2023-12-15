@@ -9,6 +9,7 @@ namespace Queme.Models
 {
     public class Servico
     {
+        public int Id { get; set; }
         public int Id_orcamento { get; set; }
         public TipoServico TipoServico { get; set; }
         public EtapasServico Etapa { get; set; }

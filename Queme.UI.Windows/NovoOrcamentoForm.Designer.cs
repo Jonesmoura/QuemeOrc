@@ -38,6 +38,7 @@
             DadosOrcamentoLabel = new Label();
             tabControl1 = new TabControl();
             ServicosTabPage = new TabPage();
+            excluirServicoButton = new Button();
             totalServicosTextBox = new TextBox();
             servicosPanel = new Panel();
             servicosDataGridView = new DataGridView();
@@ -269,6 +270,7 @@
             // 
             // ServicosTabPage
             // 
+            ServicosTabPage.Controls.Add(excluirServicoButton);
             ServicosTabPage.Controls.Add(totalServicosTextBox);
             ServicosTabPage.Controls.Add(servicosPanel);
             ServicosTabPage.Controls.Add(TotalServicosLabel);
@@ -281,6 +283,16 @@
             ServicosTabPage.TabIndex = 0;
             ServicosTabPage.Text = "Serviços";
             ServicosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // excluirServicoButton
+            // 
+            excluirServicoButton.Location = new Point(6, 483);
+            excluirServicoButton.Name = "excluirServicoButton";
+            excluirServicoButton.Size = new Size(97, 23);
+            excluirServicoButton.TabIndex = 8;
+            excluirServicoButton.Text = "Excluir Serviço";
+            excluirServicoButton.UseVisualStyleBackColor = true;
+            excluirServicoButton.Click += excluirServicoButton_Click;
             // 
             // totalServicosTextBox
             // 
@@ -307,6 +319,7 @@
             servicosDataGridView.RowTemplate.Height = 25;
             servicosDataGridView.Size = new Size(1084, 343);
             servicosDataGridView.TabIndex = 0;
+            servicosDataGridView.SelectionChanged += servicosDataGridView_SelectionChanged;
             // 
             // TotalServicosLabel
             // 
@@ -1478,5 +1491,6 @@
         private Label descontoLabel;
         private Label condicaoDePagamentoLabel;
         private Label CondicoesDePagamentoLabel;
+        private Button excluirServicoButton;
     }
 }
