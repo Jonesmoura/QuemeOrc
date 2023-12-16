@@ -144,6 +144,7 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
+            excluirCustoAddButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -470,6 +471,7 @@
             // 
             // CustosAddTabPage
             // 
+            CustosAddTabPage.Controls.Add(excluirCustoAddButton);
             CustosAddTabPage.Controls.Add(totalCustosAdicionaisTextBox);
             CustosAddTabPage.Controls.Add(totalCustosAdicionaisLabel);
             CustosAddTabPage.Controls.Add(custosAdicionaisDataGridView);
@@ -509,6 +511,7 @@
             custosAdicionaisDataGridView.RowTemplate.Height = 25;
             custosAdicionaisDataGridView.Size = new Size(1084, 134);
             custosAdicionaisDataGridView.TabIndex = 4;
+            custosAdicionaisDataGridView.SelectionChanged += custosAdicionaisDataGridView_SelectionChanged;
             // 
             // panel5
             // 
@@ -1304,6 +1307,15 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
+            // excluirCustoAddButton
+            // 
+            excluirCustoAddButton.Location = new Point(6, 483);
+            excluirCustoAddButton.Name = "excluirCustoAddButton";
+            excluirCustoAddButton.Size = new Size(144, 23);
+            excluirCustoAddButton.TabIndex = 10;
+            excluirCustoAddButton.Text = "Excluir Custo Adicional";
+            excluirCustoAddButton.UseVisualStyleBackColor = true;
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1492,5 +1504,6 @@
         private Label condicaoDePagamentoLabel;
         private Label CondicoesDePagamentoLabel;
         private Button excluirServicoButton;
+        private Button excluirCustoAddButton;
     }
 }

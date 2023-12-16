@@ -46,6 +46,9 @@ namespace Queme.UI.Windows
             AtualizarViewCondicoesDePagamento();
 
             AlterarCliente.Enabled = false;
+            excluirCustoAddButton.Enabled = false;
+            excluirServicoButton.Enabled = false;
+
 
         }
 
@@ -64,6 +67,7 @@ namespace Queme.UI.Windows
             simComissaoRadioButton.Checked = true;
             simArtRadioButton.Checked = true;
             excluirServicoButton.Enabled = false;
+            excluirCustoAddButton.Enabled = false;
 
 
         }
@@ -344,9 +348,22 @@ namespace Queme.UI.Windows
                 MessageBox.Show("Serviço excluido.");
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Falha ao excluir Serviço." +  ex.Message); 
+                MessageBox.Show("Falha ao excluir Serviço." + ex.Message);
+            }
+        }
+
+        private void custosAdicionaisDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (custosAdicionaisDataGridView.SelectedRows.Count > 0)
+            {
+                excluirCustoAddButton.Enabled = true;
+
+            }
+            else
+            {
+                excluirCustoAddButton.Enabled = false;
             }
         }
     }
