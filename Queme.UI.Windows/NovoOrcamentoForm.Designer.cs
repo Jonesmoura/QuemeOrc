@@ -58,6 +58,7 @@
             disciplinaLabel = new Label();
             TituloPainelServicosLabel = new Label();
             CustosAddTabPage = new TabPage();
+            excluirCustoAddButton = new Button();
             totalCustosAdicionaisTextBox = new TextBox();
             totalCustosAdicionaisLabel = new Label();
             custosAdicionaisDataGridView = new DataGridView();
@@ -144,7 +145,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            excluirCustoAddButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -484,6 +484,16 @@
             CustosAddTabPage.TabIndex = 1;
             CustosAddTabPage.Text = "Custos Adicionais";
             CustosAddTabPage.UseVisualStyleBackColor = true;
+            // 
+            // excluirCustoAddButton
+            // 
+            excluirCustoAddButton.Location = new Point(6, 483);
+            excluirCustoAddButton.Name = "excluirCustoAddButton";
+            excluirCustoAddButton.Size = new Size(144, 23);
+            excluirCustoAddButton.TabIndex = 10;
+            excluirCustoAddButton.Text = "Excluir Custo Adicional";
+            excluirCustoAddButton.UseVisualStyleBackColor = true;
+            excluirCustoAddButton.Click += excluirCustoAddButton_Click;
             // 
             // totalCustosAdicionaisTextBox
             // 
@@ -1306,15 +1316,6 @@
             TelLabel.Size = new Size(31, 15);
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
-            // 
-            // excluirCustoAddButton
-            // 
-            excluirCustoAddButton.Location = new Point(6, 483);
-            excluirCustoAddButton.Name = "excluirCustoAddButton";
-            excluirCustoAddButton.Size = new Size(144, 23);
-            excluirCustoAddButton.TabIndex = 10;
-            excluirCustoAddButton.Text = "Excluir Custo Adicional";
-            excluirCustoAddButton.UseVisualStyleBackColor = true;
             // 
             // NovoOrcamentoForm
             // 

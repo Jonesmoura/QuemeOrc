@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using Queme.Models.Enums;
 using Queme.Models.DTOs;
+using Org.BouncyCastle.Crypto;
 
 namespace Queme.UI.Windows
 {
@@ -170,6 +171,16 @@ namespace Queme.UI.Windows
             servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
             totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
+
+            if(servicosDataGridView.Rows.Count != 0)
+            {
+                TabelaDePrecosComboBox.Enabled = false;
+            }
+            else
+            {
+                TabelaDePrecosComboBox.Enabled = true;
+
+            }
 
         }
 
@@ -365,6 +376,25 @@ namespace Queme.UI.Windows
             {
                 excluirCustoAddButton.Enabled = false;
             }
+        }
+
+        private void excluirCustoAddButton_Click(object sender, EventArgs e)
+        {
+            List<CustoAdicional> custosAdicionais = CustosAdicionaisDb.GetCustosAdicionaisList(orcamento.Id);
+            int indiceNoDataGrid = custosAdicionaisDataGridView.SelectedRows[0].Index;
+            CustoAdicional custoExcluir = custosAdicionais[indiceNoDataGrid];
+
+            try
+            {
+                CustosAdicionaisDb.Excluir(custoExcluir);
+                AtualizarViewCustosAdicionais(orcamento.Id);
+                MessageBox.Show("Custo adicional excluido.");
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Falha ao excluir o custo adicinal. "+ex.Message);
+            }
+
         }
     }
 }

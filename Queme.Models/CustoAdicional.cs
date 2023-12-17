@@ -9,6 +9,7 @@ namespace Queme.Models
 {
     public class CustoAdicional
     {
+        public int IdCustoAdicional { get; set; }
         public int Id_orcamento { get; set; }
         public CategoriaDeCustoAdicional Categoria { get; set; }
         public string Descricao { get; set; }

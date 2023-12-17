@@ -44,6 +44,7 @@ namespace Queme.Db
                 while (reader.Read())
                 {
                     CustoAdicional custoAdicional = new CustoAdicional();
+                    custoAdicional.IdCustoAdicional = int.Parse(reader["Id"].ToString());
                     custoAdicional.Id_orcamento = int.Parse(reader["id_orcamento"].ToString());
                     custoAdicional.Categoria = Enum.Parse<CategoriaDeCustoAdicional>(reader["Categoria"].ToString());
                     custoAdicional.Descricao = reader["Descricao"].ToString();
@@ -58,6 +59,18 @@ namespace Queme.Db
                 cn.Close();
                 return custosAdicionais;
             }
+        }
+
+        public static void Excluir(CustoAdicional custoExcluir)
+        {
+            string sql = @"DELETE FROM custosAdicionais WHERE Id=@IdCustoAdicional";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@IdCustoAdicional", custoExcluir.IdCustoAdicional);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }
