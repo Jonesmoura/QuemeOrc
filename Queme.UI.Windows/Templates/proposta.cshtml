@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        #principal {
+            height: 27cm;
+            width: 20cm;
+            border: 3px solid black;
+            margin: auto;
+        }
+
+        #cabecalho {
+            width: 20cm;
+            height: 4cm;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid;
+            border-color: black;
+            margin: auto;
+        }
+
+        h1 {
+            margin: auto;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.4em;
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th:nth-child(1), td:nth-child(1) {
+            width: 20%;
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            width: 60%;
+        }
+
+        th:nth-child(3), td:nth-child(3) {
+            width: 20%;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="principal">
+        <div id="cabecalho">
+            <!--Teste rende razor-->
+            <p>Cliente: @Model.Cliente.Email </p>
+
+        </div>
+        <h1>Proposta Comercial</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrição do Projeto</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Projeto Arquitetônico</td>
+                    <td>Linha 1, Coluna 2</td>
+                    <td>Linha 1, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Prefeitura</td>
+                    <td>Linha 2, Coluna 2</td>
+                    <td>Linha 2, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>HVAC</td>
+                    <td>Linha 3, Coluna 2</td>
+                    <td>Linha 3, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Elétrico</td>
+                    <td>Linha 4, Coluna 2</td>
+                    <td>Linha 4, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Hidráulico</td>
+                    <td>Linha 5, Coluna 2</td>
+                    <td>Linha 5, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Estrutural</td>
+                    <td>Linha 6, Coluna 2</td>
+                    <td>Linha 6, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Consultoria</td>
+                    <td>Linha 7, Coluna 2</td>
+                    <td>Linha 7, Coluna 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

@@ -13,6 +13,7 @@ using System.Globalization;
 using Queme.Models.Enums;
 using Queme.Models.DTOs;
 using Org.BouncyCastle.Crypto;
+using Queme.Services;
 
 namespace Queme.UI.Windows
 {
@@ -172,7 +173,7 @@ namespace Queme.UI.Windows
             totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
             totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
 
-            if(servicosDataGridView.Rows.Count != 0)
+            if (servicosDataGridView.Rows.Count != 0)
             {
                 TabelaDePrecosComboBox.Enabled = false;
             }
@@ -390,11 +391,38 @@ namespace Queme.UI.Windows
                 AtualizarViewCustosAdicionais(orcamento.Id);
                 MessageBox.Show("Custo adicional excluido.");
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Falha ao excluir o custo adicinal. "+ex.Message);
+                MessageBox.Show("Falha ao excluir o custo adicinal. " + ex.Message);
             }
 
+        }
+
+        private void gerarPropostaButton_Click(object sender, EventArgs e)
+        {
+            PropostaComercial propostaComercial = new PropostaComercial();
+            propostaComercial.Cliente = orcamento.Cliente;
+            string html = PropostaService.GerarProposta(propostaComercial);
+            ExibirHTML(html);
+
+        }
+
+        private static void ExibirHTML(string htmlContent)
+        {
+            // Criação de um arquivo temporário para exibição no WebBrowser
+            string tempFilePath = Path.Combine(Path.GetTempPath(), "temp.html");
+            File.WriteAllText(tempFilePath, htmlContent);
+
+            // Abre o arquivo temporário no WebBrowser
+            WebBrowser webBrowser = new WebBrowser();
+            webBrowser.Size = new Size(900, 2970);
+            webBrowser.Navigate(tempFilePath);
+            Form form = new Form();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Size = new Size(900, 2970);
+            form.Controls.Add(webBrowser);
+            form.ShowDialog();
         }
     }
 }

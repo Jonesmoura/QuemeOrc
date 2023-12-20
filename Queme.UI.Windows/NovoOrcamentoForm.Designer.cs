@@ -145,6 +145,7 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
+            gerarPropostaButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -647,6 +648,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(gerarPropostaButton);
             tabPage1.Controls.Add(panel4);
             tabPage1.Controls.Add(artPanel);
             tabPage1.Controls.Add(comissaoPanel);
@@ -1317,6 +1319,16 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
+            // gerarPropostaButton
+            // 
+            gerarPropostaButton.Location = new Point(962, 477);
+            gerarPropostaButton.Name = "gerarPropostaButton";
+            gerarPropostaButton.Size = new Size(120, 23);
+            gerarPropostaButton.TabIndex = 7;
+            gerarPropostaButton.Text = "Gerar Proposta";
+            gerarPropostaButton.UseVisualStyleBackColor = true;
+            gerarPropostaButton.Click += gerarPropostaButton_Click;
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1506,5 +1518,6 @@
         private Label CondicoesDePagamentoLabel;
         private Button excluirServicoButton;
         private Button excluirCustoAddButton;
+        private Button gerarPropostaButton;
     }
 }

@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Queme.Db\Queme.Db.csproj" />
     <ProjectReference Include="..\Queme.Models\Queme.Models.csproj" />
+    <ProjectReference Include="..\Queme.Services\Queme.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
 
   <ItemGroup>
     <Folder Include="Controls\" />
+    <Folder Include="Templates\" />
   </ItemGroup>
 
   <ItemGroup>
