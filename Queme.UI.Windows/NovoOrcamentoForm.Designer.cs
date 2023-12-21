@@ -76,6 +76,7 @@
             categoriaLabel = new Label();
             CustosAddLabel = new Label();
             tabPage1 = new TabPage();
+            gerarPropostaButton = new Button();
             panel4 = new Panel();
             formasDePagamentoGroupBox = new GroupBox();
             CondicoesDePagamentoLabel = new Label();
@@ -145,7 +146,6 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            gerarPropostaButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -582,6 +582,7 @@
             valorUnTextBox.Name = "valorUnTextBox";
             valorUnTextBox.Size = new Size(85, 23);
             valorUnTextBox.TabIndex = 3;
+            valorUnTextBox.TextChanged += valorUnTextBox_TextChanged;
             // 
             // qtdTextBox
             // 
@@ -661,6 +662,16 @@
             tabPage1.TabIndex = 5;
             tabPage1.Text = "Resumo";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gerarPropostaButton
+            // 
+            gerarPropostaButton.Location = new Point(962, 477);
+            gerarPropostaButton.Name = "gerarPropostaButton";
+            gerarPropostaButton.Size = new Size(120, 23);
+            gerarPropostaButton.TabIndex = 7;
+            gerarPropostaButton.Text = "Gerar Proposta";
+            gerarPropostaButton.UseVisualStyleBackColor = true;
+            gerarPropostaButton.Click += gerarPropostaButton_Click;
             // 
             // panel4
             // 
@@ -1319,21 +1330,11 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // gerarPropostaButton
-            // 
-            gerarPropostaButton.Location = new Point(962, 477);
-            gerarPropostaButton.Name = "gerarPropostaButton";
-            gerarPropostaButton.Size = new Size(120, 23);
-            gerarPropostaButton.TabIndex = 7;
-            gerarPropostaButton.Text = "Gerar Proposta";
-            gerarPropostaButton.UseVisualStyleBackColor = true;
-            gerarPropostaButton.Click += gerarPropostaButton_Click;
-            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1117, 772);
+            ClientSize = new Size(1117, 749);
             Controls.Add(ConteudoOrcPanel);
             Name = "NovoOrcamentoForm";
             StartPosition = FormStartPosition.CenterScreen;

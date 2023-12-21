@@ -278,10 +278,14 @@ namespace Queme.UI.Windows
         private void qtdTextBox_TextChanged(object sender, EventArgs e)
         {
 
-            if (qtdTextBox.Text != string.Empty)
+            if (qtdTextBox.Text != string.Empty && valorUnTextBox.Text != string.Empty)
             {
-                decimal totalCustoAdicional = Convert.ToInt32(qtdTextBox.Text) * Convert.ToDecimal(valorUnTextBox.Text);
-                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.InvariantCulture);
+                int.TryParse(qtdTextBox.Text, out int qtd);
+                decimal.TryParse(valorUnTextBox.Text, out decimal valorUn);
+
+                decimal totalCustoAdicional = qtd * valorUn;
+
+                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
             }
         }
 
@@ -423,6 +427,19 @@ namespace Queme.UI.Windows
             form.Size = new Size(900, 2970);
             form.Controls.Add(webBrowser);
             form.ShowDialog();
+        }
+
+        private void valorUnTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (qtdTextBox.Text != string.Empty && valorUnTextBox.Text != string.Empty)
+            {
+                int.TryParse(qtdTextBox.Text, out int qtd);
+                decimal.TryParse(valorUnTextBox.Text, out decimal valorUn);
+                
+                decimal totalCustoAdicional = qtd * valorUn;
+
+                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
+            }
         }
     }
 }
