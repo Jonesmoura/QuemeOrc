@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queme.UI.Windows", "Queme.U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queme.Db", "Queme.Db\Queme.Db.csproj", "{DA218CEA-C772-4652-B391-41887C84DCA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queme.Services", "Queme.Services\Queme.Services.csproj", "{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queme.Services", "Queme.Services\Queme.Services.csproj", "{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuemeOrcTests", "QuemeOrcTests\QuemeOrcTests.csproj", "{B8A64822-9D49-4430-914E-3A000C8DA29C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A7074E0-06C8-4776-9CF5-E3146926526F} = {5A7074E0-06C8-4776-9CF5-E3146926526F}
+		{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF} = {D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}
+		{DA218CEA-C772-4652-B391-41887C84DCA3} = {DA218CEA-C772-4652-B391-41887C84DCA3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +40,10 @@ Global
 		{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D701B6B1-AF2E-4CEE-B211-1EBFB421EDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A64822-9D49-4430-914E-3A000C8DA29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A64822-9D49-4430-914E-3A000C8DA29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A64822-9D49-4430-914E-3A000C8DA29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A64822-9D49-4430-914E-3A000C8DA29C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -54,6 +54,26 @@
         th:nth-child(3), td:nth-child(3) {
             width: 20%;
         }
+        
+        .containerCabecalho {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        .flex-item{
+            text-align: center;
+            flex: 1;
+            flex-basis: 33.33%; 
+
+            box-sizing: border-box;
+            border-right: solid;
+            border-color: black;
+        }
+        .flex-item-right{
+            border-right: none;
+        }
 
     </style>
     <title>Document</title>
@@ -61,8 +81,19 @@
 <body>
     <div id="principal">
         <div id="cabecalho">
-            <!--Teste rende razor-->
-            <p>Cliente: @Model.Cliente.Email </p>
+            <div class="containerCabecalho">
+                <!--Teste rende razor-->
+                <div class="flex-item">
+                    <p>Cliente: @Model.Cliente.Email </p>
+                </div>
+                <div class="flex-item">
+                    <p> Flex item 2 </p>
+                </div>
+                <div class="flex-item flex-item-right">
+                    <p>flex item 3 </p>
+                </div>
+
+            </div>
 
         </div>
         <h1>Proposta Comercial</h1>
