@@ -8,13 +8,13 @@
         #principal {
             height: 27cm;
             width: 20cm;
-            border: 3px solid black;
+            border: 2px solid black;
             margin: auto;
         }
 
         #cabecalho {
             width: 20cm;
-            height: 4cm;
+            height: 3cm;
             border-top: none;
             border-left: none;
             border-right: none;
@@ -27,20 +27,24 @@
             margin: auto;
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 1.4em;
+            font-size: 1.2em;
             padding: 10px;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            font-size: 0.95em;
+            font-size: 0.8em;
         }
 
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
+        }
+
+        td{
+            height: 1.60cm;
         }
 
         th:nth-child(1), td:nth-child(1) {
@@ -70,24 +74,56 @@
             box-sizing: border-box;
             border-right: solid;
             border-color: black;
+            border-width: 2px;
         }
         .flex-item-right{
             border-right: none;
+            flex-basis: 20%;
         }
 
+        .queme-info{
+            
+            text-align: left;
+            flex-basis: 50%;
+            font-size: 0.7em;
+        }
+
+        .queme-logo{
+
+            flex-basis: 30%;
+        }
+
+        .valor-total{
+
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        tr:last-child td {
+            height: 0.5cm;
+        }
+
+        .queme-info p{
+            margin: 3px;
+        }
+ 
     </style>
-    <title>Document</title>
+    <title>Proposta Comercial</title>
 </head>
 <body>
     <div id="principal">
         <div id="cabecalho">
             <div class="containerCabecalho">
                 <!--Teste rende razor-->
-                <div class="flex-item">
+                <div class="flex-item queme-logo">
                     <p>Cliente: @Model.Cliente.Email </p>
                 </div>
-                <div class="flex-item">
-                    <p> Flex item 2 </p>
+                <div class="flex-item queme-info">
+                    <p> Rua Carijós n° 826 - Sala 01 - Vila Alzira - Santo André-SP  </p>
+                    <p>CNPJ: 27.179.906.0001-71</p>
+                    <p>Telefone: 011 2324-4760    E-mail: fernando@queme.com.br</p>
+                    <p>N° registro CREA: 2389350</p>
                 </div>
                 <div class="flex-item flex-item-right">
                     <p>flex item 3 </p>
@@ -107,39 +143,44 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Projeto Arquitetônico</td>
+                    <td><strong>Projeto Arquitetônico</strong></td>
                     <td>Linha 1, Coluna 2</td>
                     <td>Linha 1, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>Prefeitura</td>
+                    <td><strong>Prefeitura</strong></td>
                     <td>Linha 2, Coluna 2</td>
                     <td>Linha 2, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>HVAC</td>
+                    <td><strong>HVAC</strong></td>
                     <td>Linha 3, Coluna 2</td>
                     <td>Linha 3, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>Elétrico</td>
+                    <td><strong>Elétrico</strong></td>
                     <td>Linha 4, Coluna 2</td>
                     <td>Linha 4, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>Hidráulico</td>
+                    <td><strong>Hidráulico</strong></td>
                     <td>Linha 5, Coluna 2</td>
                     <td>Linha 5, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>Estrutural</td>
+                    <td><strong>Estrutural</strong></td>
                     <td>Linha 6, Coluna 2</td>
                     <td>Linha 6, Coluna 3</td>
                 </tr>
                 <tr>
-                    <td>Consultoria</td>
+                    <td><strong>Consultoria</strong></td>
                     <td>Linha 7, Coluna 2</td>
                     <td>Linha 7, Coluna 3</td>
+                </tr>
+                <tr>
+                    <td colspan ="2" class="valor-total">Valor Total: </td>
+                    <td>R$ 10.000,00</td>
+
                 </tr>
             </tbody>
         </table>
