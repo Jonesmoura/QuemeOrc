@@ -53,7 +53,7 @@ namespace QuemeOrcTests
             Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
         }
         [Fact]
-        public void OrcamentoComImpostoEComissaoAbaixoDe15k()
+        public void OrcamentoComImpostoESemComissaoAbaixoDe15k()
         {
             //Arrange
             decimal servicos = 1777.33m;
@@ -69,5 +69,54 @@ namespace QuemeOrcTests
             Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
         }
 
+        [Fact]
+        public void OrcamentoComImpostoEcomissaoAcimaDe15kSemArt()
+        {
+            //Arrange
+            decimal servicos = 14000.22m;
+            decimal custosAdicionais = 1233.22m;
+            bool incluirArt = false;
+            double imposto = 16.00;
+            double comissao = 10;
+            decimal expectedResult = 21129.60534m;         
+            
+            //Act
+            decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto,comissao);
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+        }
+        [Fact]
+        public void OrcamentoComImpostoESemComissaoAcimaDe15kSemArt()
+        {
+            //Arrange
+            decimal servicos = 14000.22m;
+            decimal custosAdicionais = 1233.22m;
+            bool incluirArt = false;
+            double imposto = 16.00;
+            decimal expectedResult = 18135.04762m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos, custosAdicionais, incluirArt, imposto);
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+        }
+
+        [Fact]
+        public void OrcamentoSemImpostosEComissaoAbaixoDe15kSemArt()
+        {
+            //Arrange
+            decimal servicos = 2000m;
+            decimal custosAdicionais = 300m;
+            bool incluirArt = false;
+            decimal expectedResult = 2300m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos, custosAdicionais, incluirArt);
+
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+        }
+
     }
+
 }
