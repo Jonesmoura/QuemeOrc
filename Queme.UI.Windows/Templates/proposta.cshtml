@@ -18,7 +18,7 @@
             border-top: none;
             border-left: none;
             border-right: none;
-            border-bottom: solid;
+            border-bottom: 2px solid;
             border-color: black;
             margin: auto;
         }
@@ -107,6 +107,45 @@
         .queme-info p{
             margin: 3px;
         }
+
+        .cliente-info{
+            border-bottom: solid 2px;
+        }
+        .cliente-info table{
+            border: none;
+        }
+        .cliente-info table td{
+            height: 0.5px;
+            text-align: left;
+            padding: 1px;
+            width: auto;
+            border: none; 
+            
+        }
+        .cliente-info table tr td:first-child{
+            width: 70px;
+        }
+
+        .containerRodape {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        .containerRodape div{
+            border: none;
+            font-size: 0.9em;
+
+        }
+
+        .containerRodape div p {
+            padding: 2px;
+            margin: 2px;
+        }
+
+        .containerRodape .flex-item {
+            margin-top: 5px;
+        }
+
  
     </style>
     <title>Proposta Comercial</title>
@@ -128,9 +167,28 @@
                 <div class="flex-item flex-item-right">
                     <p>flex item 3 </p>
                 </div>
-
             </div>
-
+        </div>
+        <div class="cliente-info">
+            <table>
+                <tr>
+                    <td>Cliente: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Telefone: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Endereço: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>CPF/CNPJ: </td>
+                    <td></td>
+                </tr>
+                
+            </table>
         </div>
         <h1>Proposta Comercial</h1>
         <table border="1">
@@ -184,6 +242,15 @@
                 </tr>
             </tbody>
         </table>
+        <div class="containerRodape">
+            <div class="flex-item">
+                <p>Condições de Pagamentos</p>
+                <p>teste</p>
+            </div>
+            <div class="flex-item">
+                <p>Observações</p>
+            </div>
+        </div>
     </div>
     
 </body>
