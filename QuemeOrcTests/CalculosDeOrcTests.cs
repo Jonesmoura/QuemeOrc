@@ -1,3 +1,4 @@
+using MySqlX.XDevAPI.Common;
 using Queme.Models;
 using System.Globalization;
 
@@ -116,6 +117,43 @@ namespace QuemeOrcTests
             //Assert
             Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
         }
+
+        [Fact]
+        public void OrcamentoComImpostoComissaoArtAcimaDe15k()
+        {
+            //Arrange
+            decimal servicos = 13000.33m;
+            decimal custosAdicionais = 3200.44m;
+            bool incluirArt = true;
+            double imposto = 16;
+            double comissao = 10;
+            decimal expectedResult = 22774.42877m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto, comissao);
+            
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+
+        }
+
+        [Fact]
+
+        public void CalculoParcelaOrcamentoSemEntradaEm2x()
+        {
+            //Arrange
+            double percentualEntrada = 0;
+            decimal valorTotal = 12000m;
+            double desconto = 0;
+            int qtdParcelas = 2;
+            decimal expectedResult = 6000;
+            
+            //Act
+            decimal result = CalculosDeOrcamento.CalcularValorDaParcela(percentualEntrada, valorTotal, desconto, qtdParcelas);
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+        }
+
 
     }
 
