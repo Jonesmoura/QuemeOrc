@@ -10,10 +10,19 @@ namespace Queme.Models
     {
         public static decimal ValorTotalOrcamento( decimal servicos, decimal custosAdicionais, bool incluirArt, double imposto = 0, double comissao = 0)
         {
+            //Refatorar para melhorar a legibilidade (Muitos If's)
             decimal valorTotal = servicos+custosAdicionais;
             if(incluirArt && imposto > 0)
             {
                 decimal constanteImposto = (decimal)(1 - imposto / 100);
+                if (valorTotal + ValoresArt.TarifaFaixa1 <= ValoresArt.valorMaximoFaixa1)
+                {
+                    valorTotal += ValoresArt.TarifaFaixa1;
+                }
+                else
+                {
+                    valorTotal += ValoresArt.TarifaFaixa2;
+                }
                 if (comissao > 0)
                 {
                     decimal constanteComissaoComImposto = (decimal)(comissao / 100) / constanteImposto;
@@ -23,14 +32,13 @@ namespace Queme.Models
                 {
                     valorTotal /= constanteImposto;
                 }
-                if (valorTotal + ValoresArt.TarifaFaixa1/constanteImposto <= ValoresArt.valorMaximoFaixa1)
+                //Verifica se após a inserção do imposto/comissão o orçamento passou da faixa 1 para a faixa 2 da ART
+                if(servicos + custosAdicionais+ ValoresArt.TarifaFaixa1 <= 15000 && valorTotal >15000)
                 {
-                    valorTotal += ValoresArt.TarifaFaixa1 / constanteImposto;
+                    // adiciona a diferença do valor da ART
+                    valorTotal += ((ValoresArt.TarifaFaixa2-ValoresArt.TarifaFaixa1) / constanteImposto);
                 }
-                else
-                {
-                    valorTotal += ValoresArt.TarifaFaixa2 / constanteImposto;
-                }
+
             }else if (imposto > 0)
             {
                 //Constante utilizada para dividir o valor total por ela e chegar no custo com imposto embutido
@@ -46,11 +54,6 @@ namespace Queme.Models
                 }
             }else if (incluirArt)
             {
-                if (comissao > 0)
-                {
-                    decimal constanteComissao = (decimal)(comissao / 100);
-                    valorTotal = valorTotal / constanteComissao;
-                }
                 if (valorTotal + ValoresArt.TarifaFaixa1 <= ValoresArt.valorMaximoFaixa1)
                 {
                     valorTotal += ValoresArt.TarifaFaixa1;
@@ -59,13 +62,24 @@ namespace Queme.Models
                 {
                     valorTotal += ValoresArt.TarifaFaixa2;
                 }
+                if (comissao > 0)
+                {
+                    decimal constanteComissao = (decimal)(comissao / 100);
+                    valorTotal = valorTotal / constanteComissao;
+                }
+                //Verifica se após a inserção da comissão o orçamento passou da faixa 1 para a faixa 2 da ART
+                if (servicos + custosAdicionais + ValoresArt.TarifaFaixa1 <= 15000 && valorTotal > 15000)
+                {
+                    // adiciona a diferença do valor da ART
+                    valorTotal += ValoresArt.TarifaFaixa2 - ValoresArt.TarifaFaixa1;
+                }
+
             }
             else if(comissao > 0)
             {
                 decimal constanteComissao = (decimal)(comissao / 100);
                 valorTotal = valorTotal / constanteComissao;
             }
-            
             return valorTotal;
         }
 

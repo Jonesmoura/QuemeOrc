@@ -45,7 +45,7 @@ namespace QuemeOrcTests
             decimal custosAdicionais = 723.44m;
             bool incluirArt = true;
             double imposto = 10.00;
-            decimal expectedResult = 15198.05556m;
+            decimal expectedResult = 15198.05556m;  
                         
             //Act
             decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto);
@@ -127,7 +127,8 @@ namespace QuemeOrcTests
             bool incluirArt = true;
             double imposto = 16;
             double comissao = 10;
-            decimal expectedResult = 22774.42877m;
+            decimal expectedResult = 22824.47556m;
+            //New value 21862.12114
 
             //Act
             decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto, comissao);
