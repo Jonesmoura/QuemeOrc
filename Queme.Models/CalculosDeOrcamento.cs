@@ -85,8 +85,14 @@ namespace Queme.Models
 
         public static decimal CalcularValorDaParcela(double percentualDeEntrada,decimal valorTotalOrcamento, double desconto, int QuantidadeDeParcelas)
         {
-            decimal valorTotalComDesconto = valorTotalOrcamento - valorTotalOrcamento * (decimal)(percentualDeEntrada / 100) - valorTotalOrcamento* (decimal)(desconto/100);
-            decimal valorParcela = valorTotalComDesconto / QuantidadeDeParcelas;
+            decimal valorTotalComDesconto = valorTotalOrcamento;
+            decimal montanteParaParcelas;
+            if (desconto > 0)
+            {
+                valorTotalComDesconto = valorTotalOrcamento - valorTotalOrcamento * (decimal)(desconto / 100);
+            }
+            montanteParaParcelas = valorTotalComDesconto - valorTotalComDesconto * (decimal)(percentualDeEntrada / 100);
+            decimal valorParcela = montanteParaParcelas / QuantidadeDeParcelas;
             return valorParcela;
         }
     }
