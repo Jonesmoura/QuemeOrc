@@ -155,6 +155,59 @@ namespace QuemeOrcTests
             Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
         }
 
+        [Fact]
+
+        public void CalculoParcelaOrcamento33dot33DeEntradaEm3x()
+        {
+            //Arrange
+            double percentualEntrada = 33.33;
+            decimal valorTotal = 10000m;
+            double desconto = 0;
+            int qtdParcelas = 3;
+            decimal expectedResult = 2222.333333m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.CalcularValorDaParcela(percentualEntrada,valorTotal,desconto, qtdParcelas);
+            
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")),result.ToString("C",CultureInfo.GetCultureInfo("pt-BR")));
+        }
+
+        [Fact]
+        public void CalculoParcelaSemEntrada7deDesconto1Parcela()
+        {
+            //Arrange
+            double percentualEntrada = 0;
+            decimal valorTotal = 11324.22m;
+            double desconto = 7;
+            int qtdParcelas = 1;
+            decimal expectedResult = 10531.5246m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.CalcularValorDaParcela(percentualEntrada,valorTotal,desconto, qtdParcelas);
+
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+
+        }
+
+        [Fact]
+        public void CalculoParcela25DeEntradaE10DescontoEm4x()
+        {
+            //Arrange
+            double percentualEntrada = 25;
+            decimal valorTotal = 11234.45m;
+            double desconto = 10;
+            int qtdParcelas = 4;
+            decimal expectedResult = 1895.813438m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.CalcularValorDaParcela(percentualEntrada,valorTotal,desconto,qtdParcelas);
+
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+        }
+
 
     }
 
