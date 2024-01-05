@@ -340,7 +340,7 @@ namespace Queme.UI.Windows
             flowLayoutPanel3.Visible = false;
             TelPanel.Visible = false;
 
-            if(cliente.CPF  != "")
+            if (cliente.CPF != "")
             {
                 CPFPanel.Visible = true;
                 CNPJPanel.Visible = false;

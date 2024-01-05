@@ -558,7 +558,7 @@
             // CNPJtextBox
             // 
             CNPJtextBox.Location = new Point(107, 4);
-            CNPJtextBox.Mask = "00,000,000/0000-00";
+            CNPJtextBox.Mask = "00.000.000/0000-00";
             CNPJtextBox.Name = "CNPJtextBox";
             CNPJtextBox.Size = new Size(179, 23);
             CNPJtextBox.TabIndex = 3;
@@ -585,7 +585,7 @@
             // CPFtextBox
             // 
             CPFtextBox.Location = new Point(107, 4);
-            CPFtextBox.Mask = "000,000,000-00";
+            CPFtextBox.Mask = "000.000.000-00";
             CPFtextBox.Name = "CPFtextBox";
             CPFtextBox.Size = new Size(179, 23);
             CPFtextBox.TabIndex = 3;
