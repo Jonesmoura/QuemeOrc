@@ -435,11 +435,16 @@ namespace Queme.UI.Windows
             {
                 int.TryParse(qtdTextBox.Text, out int qtd);
                 decimal.TryParse(valorUnTextBox.Text, out decimal valorUn);
-                
+
                 decimal totalCustoAdicional = qtd * valorUn;
 
-                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
+                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.InvariantCulture);
             }
+        }
+
+        private void totalTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

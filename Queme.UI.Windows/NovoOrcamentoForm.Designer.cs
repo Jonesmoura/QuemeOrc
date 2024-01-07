@@ -575,6 +575,7 @@
             totalTextBox.ReadOnly = true;
             totalTextBox.Size = new Size(103, 23);
             totalTextBox.TabIndex = 6;
+            totalTextBox.TextChanged += totalTextBox_TextChanged;
             // 
             // valorUnTextBox
             // 
