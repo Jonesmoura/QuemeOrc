@@ -146,6 +146,7 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
+            tabPage2 = new TabPage();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -263,6 +264,7 @@
             // 
             tabControl1.Controls.Add(ServicosTabPage);
             tabControl1.Controls.Add(CustosAddTabPage);
+            tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Location = new Point(9, 43);
             tabControl1.Name = "tabControl1";
@@ -1331,6 +1333,15 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Size = new Size(1090, 516);
+            tabPage2.TabIndex = 6;
+            tabPage2.Text = "Descrição dos Serviços";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1521,5 +1532,6 @@
         private Button excluirServicoButton;
         private Button excluirCustoAddButton;
         private Button gerarPropostaButton;
+        private TabPage tabPage2;
     }
 }
