@@ -112,7 +112,7 @@ namespace Queme.UI.Windows
             if (estimativaHorasTextBox.Text != string.Empty)
             {
                 double totalEtapa = Convert.ToDouble(estimativaHorasTextBox.Text) * Convert.ToDouble(custoPorHoraTextBox.Text);
-                valorTotalEtapaTextBox.Text = totalEtapa.ToString("F2", CultureInfo.InvariantCulture);
+                valorTotalEtapaTextBox.Text = totalEtapa.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
             }
         }
 
@@ -140,8 +140,8 @@ namespace Queme.UI.Windows
             servico.Etapa = Enum.Parse<EtapasServico>(etapaComboBox.Text);
             servico.TipoServico = Enum.Parse<TipoServico>(disciplinaComboBox.Text);
             servico.Qtd_horas = int.Parse(estimativaHorasTextBox.Text);
-            servico.ValorHora = double.Parse(custoPorHoraTextBox.Text, CultureInfo.InvariantCulture);
-            servico.TotalServico = double.Parse(valorTotalEtapaTextBox.Text, CultureInfo.InvariantCulture);
+            servico.ValorHora = double.Parse(custoPorHoraTextBox.Text, CultureInfo.GetCultureInfo("pt-br"));
+            servico.TotalServico = double.Parse(valorTotalEtapaTextBox.Text, CultureInfo.GetCultureInfo("pt-br"));
             servicoDb.IncluirServico(servico);
 
             // atualizar dataGridView a cada inserção
@@ -171,7 +171,7 @@ namespace Queme.UI.Windows
             servicosDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             servicosDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             totalServicos = OrcamentoDb.TotalServicos(id_orcamento);
-            totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.CreateSpecificCulture("pt-br"));
+            totalServicosTextBox.Text = totalServicos.ToString("c", CultureInfo.GetCultureInfo("pt-br"));
 
             if (servicosDataGridView.Rows.Count != 0)
             {
@@ -438,7 +438,7 @@ namespace Queme.UI.Windows
 
                 decimal totalCustoAdicional = qtd * valorUn;
 
-                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.InvariantCulture);
+                totalTextBox.Text = totalCustoAdicional.ToString("F2", CultureInfo.GetCultureInfo("pt-BR"));
             }
         }
 

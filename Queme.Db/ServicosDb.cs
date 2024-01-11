@@ -49,8 +49,8 @@ namespace Queme.Db
                 servico.TipoServico = Enum.Parse<TipoServico>(reader["tipo_servico"].ToString());
                 servico.Qtd_horas = int.Parse(reader["qtd_horas"].ToString());
                 servico.Id = int.Parse(reader["idServico"].ToString());
-                servico.ValorHora = double.Parse(reader["valor_hora"].ToString(), CultureInfo.InvariantCulture);
-                servico.TotalServico = double.Parse(reader["totalServico"].ToString(), CultureInfo.InvariantCulture);
+                servico.ValorHora = double.Parse(reader["valor_hora"].ToString());
+                servico.TotalServico = double.Parse(reader["totalServico"].ToString());
 
                 servicos.Add(servico);
 
