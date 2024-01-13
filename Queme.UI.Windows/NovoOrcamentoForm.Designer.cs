@@ -75,6 +75,7 @@
             quantidadeLabel = new Label();
             categoriaLabel = new Label();
             CustosAddLabel = new Label();
+            tabPage2 = new TabPage();
             tabPage1 = new TabPage();
             gerarPropostaButton = new Button();
             panel4 = new Panel();
@@ -146,7 +147,32 @@
             TelPanel = new Panel();
             TelTextBox = new TextBox();
             TelLabel = new Label();
-            tabPage2 = new TabPage();
+            descricaoDeServicosPanel = new Panel();
+            descricoesEstruturalPanel = new Panel();
+            descricaoEstruturalTextBox = new TextBox();
+            this.descricoesFlowLayoutPanel = new FlowLayoutPanel();
+            panel7 = new Panel();
+            textBox3 = new TextBox();
+            descricaoHidroPanel = new Panel();
+            panel9 = new Panel();
+            textBox4 = new TextBox();
+            descricaoHidroTextBox = new TextBox();
+            descricaoConsultoriaPanel = new Panel();
+            panel11 = new Panel();
+            textBox6 = new TextBox();
+            descricaoConsultoriaTextBox = new TextBox();
+            descricaoArquiteturaPanel = new Panel();
+            panel13 = new Panel();
+            textBox8 = new TextBox();
+            descricaoArquiteturaTextBox = new TextBox();
+            descricaoHVACPanel = new Panel();
+            panel15 = new Panel();
+            textBox10 = new TextBox();
+            descricaoHVACTextBox = new TextBox();
+            descricaoEletricoPanel = new Panel();
+            panel17 = new Panel();
+            textBox12 = new TextBox();
+            descricaoEletricoTextBox = new TextBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -158,6 +184,7 @@
             CustosAddTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)custosAdicionaisDataGridView).BeginInit();
             panel5.SuspendLayout();
+            tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
             panel4.SuspendLayout();
             formasDePagamentoGroupBox.SuspendLayout();
@@ -179,6 +206,20 @@
             CnpjPanel.SuspendLayout();
             CpfPanel.SuspendLayout();
             TelPanel.SuspendLayout();
+            descricaoDeServicosPanel.SuspendLayout();
+            descricoesEstruturalPanel.SuspendLayout();
+            this.descricoesFlowLayoutPanel.SuspendLayout();
+            panel7.SuspendLayout();
+            descricaoHidroPanel.SuspendLayout();
+            panel9.SuspendLayout();
+            descricaoConsultoriaPanel.SuspendLayout();
+            panel11.SuspendLayout();
+            descricaoArquiteturaPanel.SuspendLayout();
+            panel13.SuspendLayout();
+            descricaoHVACPanel.SuspendLayout();
+            panel15.SuspendLayout();
+            descricaoEletricoPanel.SuspendLayout();
+            panel17.SuspendLayout();
             SuspendLayout();
             // 
             // ConteudoOrcPanel
@@ -649,6 +690,16 @@
             CustosAddLabel.Size = new Size(132, 21);
             CustosAddLabel.TabIndex = 0;
             CustosAddLabel.Text = "Custos Adicionais";
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(descricaoDeServicosPanel);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Size = new Size(1090, 516);
+            tabPage2.TabIndex = 6;
+            tabPage2.Text = "Descrição dos Serviços";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -1333,14 +1384,236 @@
             TelLabel.TabIndex = 0;
             TelLabel.Text = "TEL: ";
             // 
-            // tabPage2
+            // descricaoDeServicosPanel
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(1090, 516);
-            tabPage2.TabIndex = 6;
-            tabPage2.Text = "Descrição dos Serviços";
-            tabPage2.UseVisualStyleBackColor = true;
+            descricaoDeServicosPanel.Controls.Add(this.descricoesFlowLayoutPanel);
+            descricaoDeServicosPanel.Location = new Point(3, 3);
+            descricaoDeServicosPanel.Name = "descricaoDeServicosPanel";
+            descricaoDeServicosPanel.Size = new Size(1084, 510);
+            descricaoDeServicosPanel.TabIndex = 0;
+            // 
+            // descricoesEstruturalPanel
+            // 
+            descricoesEstruturalPanel.Controls.Add(panel7);
+            descricoesEstruturalPanel.Controls.Add(descricaoEstruturalTextBox);
+            descricoesEstruturalPanel.Location = new Point(3, 3);
+            descricoesEstruturalPanel.Name = "descricoesEstruturalPanel";
+            descricoesEstruturalPanel.Size = new Size(503, 184);
+            descricoesEstruturalPanel.TabIndex = 4;
+            // 
+            // descricaoEstruturalTextBox
+            // 
+            descricaoEstruturalTextBox.Location = new Point(8, 3);
+            descricaoEstruturalTextBox.Multiline = true;
+            descricaoEstruturalTextBox.Name = "descricaoEstruturalTextBox";
+            descricaoEstruturalTextBox.Size = new Size(482, 178);
+            descricaoEstruturalTextBox.TabIndex = 1;
+            descricaoEstruturalTextBox.Text = "Descrição estrutural";
+            // 
+            // descricoesFlowLayoutPanel
+            // 
+            this.descricoesFlowLayoutPanel.Controls.Add(descricoesEstruturalPanel);
+            this.descricoesFlowLayoutPanel.Controls.Add(descricaoHidroPanel);
+            this.descricoesFlowLayoutPanel.Controls.Add(descricaoArquiteturaPanel);
+            this.descricoesFlowLayoutPanel.Controls.Add(descricaoConsultoriaPanel);
+            this.descricoesFlowLayoutPanel.Controls.Add(descricaoEletricoPanel);
+            this.descricoesFlowLayoutPanel.Controls.Add(descricaoHVACPanel);
+            this.descricoesFlowLayoutPanel.Location = new Point(38, 9);
+            this.descricoesFlowLayoutPanel.Name = "descricoesFlowLayoutPanel";
+            this.descricoesFlowLayoutPanel.Size = new Size(1023, 498);
+            this.descricoesFlowLayoutPanel.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(textBox3);
+            panel7.Location = new Point(3, 193);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1060, 184);
+            panel7.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(8, 3);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(1042, 178);
+            textBox3.TabIndex = 1;
+            textBox3.Text = "Descrição estrutural";
+            // 
+            // descricaoHidroPanel
+            // 
+            descricaoHidroPanel.Controls.Add(panel9);
+            descricaoHidroPanel.Controls.Add(descricaoHidroTextBox);
+            descricaoHidroPanel.Location = new Point(512, 3);
+            descricaoHidroPanel.Name = "descricaoHidroPanel";
+            descricaoHidroPanel.Size = new Size(503, 184);
+            descricaoHidroPanel.TabIndex = 6;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(textBox4);
+            panel9.Location = new Point(3, 193);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1060, 184);
+            panel9.TabIndex = 5;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(8, 3);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(1042, 178);
+            textBox4.TabIndex = 1;
+            textBox4.Text = "Descrição estrutural";
+            // 
+            // descricaoHidroTextBox
+            // 
+            descricaoHidroTextBox.Location = new Point(8, 3);
+            descricaoHidroTextBox.Multiline = true;
+            descricaoHidroTextBox.Name = "descricaoHidroTextBox";
+            descricaoHidroTextBox.Size = new Size(482, 178);
+            descricaoHidroTextBox.TabIndex = 1;
+            descricaoHidroTextBox.Text = "Descrição hidrossanitário";
+            // 
+            // descricaoConsultoriaPanel
+            // 
+            descricaoConsultoriaPanel.Controls.Add(panel11);
+            descricaoConsultoriaPanel.Controls.Add(descricaoConsultoriaTextBox);
+            descricaoConsultoriaPanel.Location = new Point(512, 193);
+            descricaoConsultoriaPanel.Name = "descricaoConsultoriaPanel";
+            descricaoConsultoriaPanel.Size = new Size(503, 184);
+            descricaoConsultoriaPanel.TabIndex = 7;
+            // 
+            // panel11
+            // 
+            panel11.Controls.Add(textBox6);
+            panel11.Location = new Point(3, 193);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(1060, 184);
+            panel11.TabIndex = 5;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(8, 3);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(1042, 178);
+            textBox6.TabIndex = 1;
+            textBox6.Text = "Descrição estrutural";
+            // 
+            // descricaoConsultoriaTextBox
+            // 
+            descricaoConsultoriaTextBox.Location = new Point(8, 3);
+            descricaoConsultoriaTextBox.Multiline = true;
+            descricaoConsultoriaTextBox.Name = "descricaoConsultoriaTextBox";
+            descricaoConsultoriaTextBox.Size = new Size(482, 178);
+            descricaoConsultoriaTextBox.TabIndex = 1;
+            descricaoConsultoriaTextBox.Text = "Descrição consultoria";
+            // 
+            // descricaoArquiteturaPanel
+            // 
+            descricaoArquiteturaPanel.Controls.Add(panel13);
+            descricaoArquiteturaPanel.Controls.Add(descricaoArquiteturaTextBox);
+            descricaoArquiteturaPanel.Location = new Point(3, 193);
+            descricaoArquiteturaPanel.Name = "descricaoArquiteturaPanel";
+            descricaoArquiteturaPanel.Size = new Size(503, 184);
+            descricaoArquiteturaPanel.TabIndex = 8;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(textBox8);
+            panel13.Location = new Point(3, 193);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(1060, 184);
+            panel13.TabIndex = 5;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(8, 3);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(1042, 178);
+            textBox8.TabIndex = 1;
+            textBox8.Text = "Descrição estrutural";
+            // 
+            // descricaoArquiteturaTextBox
+            // 
+            descricaoArquiteturaTextBox.Location = new Point(8, 3);
+            descricaoArquiteturaTextBox.Multiline = true;
+            descricaoArquiteturaTextBox.Name = "descricaoArquiteturaTextBox";
+            descricaoArquiteturaTextBox.Size = new Size(482, 178);
+            descricaoArquiteturaTextBox.TabIndex = 1;
+            descricaoArquiteturaTextBox.Text = "Descrição arquitetura";
+            // 
+            // descricaoHVACPanel
+            // 
+            descricaoHVACPanel.Controls.Add(panel15);
+            descricaoHVACPanel.Controls.Add(descricaoHVACTextBox);
+            descricaoHVACPanel.Location = new Point(512, 383);
+            descricaoHVACPanel.Name = "descricaoHVACPanel";
+            descricaoHVACPanel.Size = new Size(503, 184);
+            descricaoHVACPanel.TabIndex = 10;
+            // 
+            // panel15
+            // 
+            panel15.Controls.Add(textBox10);
+            panel15.Location = new Point(3, 193);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1060, 184);
+            panel15.TabIndex = 5;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(8, 3);
+            textBox10.Multiline = true;
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(1042, 178);
+            textBox10.TabIndex = 1;
+            textBox10.Text = "Descrição estrutural";
+            // 
+            // descricaoHVACTextBox
+            // 
+            descricaoHVACTextBox.Location = new Point(8, 3);
+            descricaoHVACTextBox.Multiline = true;
+            descricaoHVACTextBox.Name = "descricaoHVACTextBox";
+            descricaoHVACTextBox.Size = new Size(482, 178);
+            descricaoHVACTextBox.TabIndex = 1;
+            descricaoHVACTextBox.Text = "Descrição HVAC";
+            // 
+            // descricaoEletricoPanel
+            // 
+            descricaoEletricoPanel.Controls.Add(panel17);
+            descricaoEletricoPanel.Controls.Add(descricaoEletricoTextBox);
+            descricaoEletricoPanel.Location = new Point(3, 383);
+            descricaoEletricoPanel.Name = "descricaoEletricoPanel";
+            descricaoEletricoPanel.Size = new Size(503, 184);
+            descricaoEletricoPanel.TabIndex = 9;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(textBox12);
+            panel17.Location = new Point(3, 193);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(1060, 184);
+            panel17.TabIndex = 5;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(8, 3);
+            textBox12.Multiline = true;
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(1042, 178);
+            textBox12.TabIndex = 1;
+            textBox12.Text = "Descrição estrutural";
+            // 
+            // descricaoEletricoTextBox
+            // 
+            descricaoEletricoTextBox.Location = new Point(8, 3);
+            descricaoEletricoTextBox.Multiline = true;
+            descricaoEletricoTextBox.Name = "descricaoEletricoTextBox";
+            descricaoEletricoTextBox.Size = new Size(482, 178);
+            descricaoEletricoTextBox.TabIndex = 1;
+            descricaoEletricoTextBox.Text = "Descrição elétrico";
             // 
             // NovoOrcamentoForm
             // 
@@ -1369,6 +1642,7 @@
             ((System.ComponentModel.ISupportInitialize)custosAdicionaisDataGridView).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            tabPage2.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             panel4.ResumeLayout(false);
             formasDePagamentoGroupBox.ResumeLayout(false);
@@ -1407,6 +1681,32 @@
             CpfPanel.PerformLayout();
             TelPanel.ResumeLayout(false);
             TelPanel.PerformLayout();
+            descricaoDeServicosPanel.ResumeLayout(false);
+            descricoesEstruturalPanel.ResumeLayout(false);
+            descricoesEstruturalPanel.PerformLayout();
+            this.descricoesFlowLayoutPanel.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            descricaoHidroPanel.ResumeLayout(false);
+            descricaoHidroPanel.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            descricaoConsultoriaPanel.ResumeLayout(false);
+            descricaoConsultoriaPanel.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            descricaoArquiteturaPanel.ResumeLayout(false);
+            descricaoArquiteturaPanel.PerformLayout();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            descricaoHVACPanel.ResumeLayout(false);
+            descricaoHVACPanel.PerformLayout();
+            panel15.ResumeLayout(false);
+            panel15.PerformLayout();
+            descricaoEletricoPanel.ResumeLayout(false);
+            descricaoEletricoPanel.PerformLayout();
+            panel17.ResumeLayout(false);
+            panel17.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1533,5 +1833,38 @@
         private Button excluirCustoAddButton;
         private Button gerarPropostaButton;
         private TabPage tabPage2;
+        private Panel descricaoDeServicosPanel;
+        private Panel opcoesDeServicosPanel;
+        private RadioButton radioButton6;
+        private RadioButton radioButton5;
+        private RadioButton radioButton4;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel descricoesEstruturalPanel;
+        private TextBox descricaoEstruturalTextBox;
+        private Panel panel7;
+        private TextBox textBox3;
+        private Panel descricaoHidroPanel;
+        private Panel panel9;
+        private TextBox textBox4;
+        private TextBox descricaoHidroTextBox;
+        private Panel descricaoArquiteturaPanel;
+        private Panel panel13;
+        private TextBox textBox8;
+        private TextBox descricaoArquiteturaTextBox;
+        private Panel descricaoConsultoriaPanel;
+        private Panel panel11;
+        private TextBox textBox6;
+        private TextBox descricaoConsultoriaTextBox;
+        private Panel descricaoEletricoPanel;
+        private Panel panel17;
+        private TextBox textBox12;
+        private TextBox descricaoEletricoTextBox;
+        private Panel descricaoHVACPanel;
+        private Panel panel15;
+        private TextBox textBox10;
+        private TextBox descricaoHVACTextBox;
     }
 }
