@@ -82,6 +82,7 @@
             estruturalTextBox = new TextBox();
             HVACTextBox = new TextBox();
             consultoriaTextBox = new TextBox();
+            arquiteturaTextBox = new TextBox();
             tabPage1 = new TabPage();
             gerarPropostaButton = new Button();
             panel4 = new Panel();
@@ -177,7 +178,6 @@
             panel17 = new Panel();
             textBox12 = new TextBox();
             descricaoEletricoTextBox = new TextBox();
-            arquiteturaTextBox = new TextBox();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -304,6 +304,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1098, 544);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // ServicosTabPage
             // 
@@ -752,6 +753,15 @@
             consultoriaTextBox.Size = new Size(1050, 272);
             consultoriaTextBox.TabIndex = 4;
             consultoriaTextBox.Text = "Descrição Serviços - Consultoria";
+            // 
+            // arquiteturaTextBox
+            // 
+            arquiteturaTextBox.Location = new Point(3, 1393);
+            arquiteturaTextBox.Multiline = true;
+            arquiteturaTextBox.Name = "arquiteturaTextBox";
+            arquiteturaTextBox.Size = new Size(1050, 272);
+            arquiteturaTextBox.TabIndex = 5;
+            arquiteturaTextBox.Text = "Descrição Serviços - Arquitetura";
             // 
             // tabPage1
             // 
@@ -1603,15 +1613,6 @@
             descricaoEletricoTextBox.Name = "descricaoEletricoTextBox";
             descricaoEletricoTextBox.Size = new Size(100, 23);
             descricaoEletricoTextBox.TabIndex = 0;
-            // 
-            // arquiteturaTextBox
-            // 
-            arquiteturaTextBox.Location = new Point(3, 1393);
-            arquiteturaTextBox.Multiline = true;
-            arquiteturaTextBox.Name = "arquiteturaTextBox";
-            arquiteturaTextBox.Size = new Size(1050, 272);
-            arquiteturaTextBox.TabIndex = 5;
-            arquiteturaTextBox.Text = "Descrição Serviços - Arquitetura";
             // 
             // NovoOrcamentoForm
             // 

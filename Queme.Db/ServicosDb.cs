@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Org.BouncyCastle.Crypto.IO;
 
 namespace Queme.Db
 {
@@ -72,6 +73,32 @@ namespace Queme.Db
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+        public List<string> DisciplinasDoOrcamento(int id_orcamento)
+        {
+            List<string> disciplinas = new List<string>();
+            string sql = @"SELECT tipo_servico FROM servicos WHERE id_orcamento = @id_orcamento;";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@id_orcamento", id_orcamento);
+            cn.Open();
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                if (!disciplinas.Contains(reader["tipo_servico"].ToString()))
+                {
+                    disciplinas.Add(reader["tipo_servico"].ToString());
+                }
+
+            }
+
+            reader.Close();
+            cn.Close();
+            return disciplinas;
+
         }
     }
 }

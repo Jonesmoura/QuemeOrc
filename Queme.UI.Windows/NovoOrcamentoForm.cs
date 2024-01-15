@@ -446,5 +446,16 @@ namespace Queme.UI.Windows
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //test
+            ServicosDb servicodb = new ServicosDb();
+            List<string> disciplinas = servicodb.DisciplinasDoOrcamento(orcamento.Id); //ok
+        }
+        public void ExibirDescricaoDisciplinas()
+        {
+            //to-do: lógica para verificação das disciplinas do orçamento e exibição da caixa para descrição
+        }
     }
 }
