@@ -463,37 +463,36 @@ namespace Queme.UI.Windows
                 textBox.Visible = false;
             }
 
-            if(disciplinas.Contains("Consultoria"))
+            if (disciplinas.Contains("Consultoria"))
             {
                 consultoriaTextBox.Visible = true;
             }
-            if(disciplinas.Contains("Estrutural"))
+            if (disciplinas.Contains("Estrutural"))
             {
                 estruturalTextBox.Visible = true;
             }
-            if(disciplinas.Contains("Arquitetura"))
+            if (disciplinas.Contains("Arquitetura"))
             {
                 arquiteturaTextBox.Visible = true;
             }
-            if(disciplinas.Contains("Elétrico"))
+            if (disciplinas.Contains("Elétrico"))
             {
                 eletricoTextBox.Visible = true;
             }
-            if(disciplinas.Contains("Hidrossanitário"))
+            if (disciplinas.Contains("Hidrossanitário"))
             {
                 hidroTextBox.Visible = true;
             }
-            if(disciplinas.Contains("HVAC"))
+            if (disciplinas.Contains("HVAC"))
             {
                 HVACTextBox.Visible = true;
             }
+        }
 
-            //Consultoria
-            //Estrutural
-            //Arquitetura
-            //Elétrico
-            //Hidrossanitário
-            //HVAC
+        private void excluirCondicoesButton_Click(object sender, EventArgs e)
+        {
+            ExcluirCondicaoDePagamento form = new ExcluirCondicaoDePagamento(orcamento.Id);
+            form.Show();
         }
     }
 }

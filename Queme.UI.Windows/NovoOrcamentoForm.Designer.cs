@@ -178,6 +178,7 @@
             panel17 = new Panel();
             textBox12 = new TextBox();
             descricaoEletricoTextBox = new TextBox();
+            excluirCondicoesButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -765,6 +766,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(excluirCondicoesButton);
             tabPage1.Controls.Add(gerarPropostaButton);
             tabPage1.Controls.Add(panel4);
             tabPage1.Controls.Add(artPanel);
@@ -1614,6 +1616,16 @@
             descricaoEletricoTextBox.Size = new Size(100, 23);
             descricaoEletricoTextBox.TabIndex = 0;
             // 
+            // excluirCondicoesButton
+            // 
+            excluirCondicoesButton.Location = new Point(6, 483);
+            excluirCondicoesButton.Name = "excluirCondicoesButton";
+            excluirCondicoesButton.Size = new Size(198, 23);
+            excluirCondicoesButton.TabIndex = 1;
+            excluirCondicoesButton.Text = "Excluir Condição de Pagamento";
+            excluirCondicoesButton.UseVisualStyleBackColor = true;
+            excluirCondicoesButton.Click += excluirCondicoesButton_Click;
+            // 
             // NovoOrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1847,5 +1859,6 @@
         private TextBox HVACTextBox;
         private TextBox consultoriaTextBox;
         private TextBox arquiteturaTextBox;
+        private Button excluirCondicoesButton;
     }
 }
