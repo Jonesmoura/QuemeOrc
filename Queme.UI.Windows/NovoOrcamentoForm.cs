@@ -449,13 +449,51 @@ namespace Queme.UI.Windows
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //test
-            ServicosDb servicodb = new ServicosDb();
-            List<string> disciplinas = servicodb.DisciplinasDoOrcamento(orcamento.Id); //ok
+            ExibirDescricaoDisciplinas();
         }
         public void ExibirDescricaoDisciplinas()
         {
+            //Refatorar esta função
+            //test
+            ServicosDb servicodb = new ServicosDb();
+            List<string> disciplinas = servicodb.DisciplinasDoOrcamento(orcamento.Id);
             //to-do: lógica para verificação das disciplinas do orçamento e exibição da caixa para descrição
+            foreach (TextBox textBox in descricoesServicosFlowLayoutPanel.Controls)
+            {
+                textBox.Visible = false;
+            }
+
+            if(disciplinas.Contains("Consultoria"))
+            {
+                consultoriaTextBox.Visible = true;
+            }
+            if(disciplinas.Contains("Estrutural"))
+            {
+                estruturalTextBox.Visible = true;
+            }
+            if(disciplinas.Contains("Arquitetura"))
+            {
+                arquiteturaTextBox.Visible = true;
+            }
+            if(disciplinas.Contains("Elétrico"))
+            {
+                eletricoTextBox.Visible = true;
+            }
+            if(disciplinas.Contains("Hidrossanitário"))
+            {
+                hidroTextBox.Visible = true;
+            }
+            if(disciplinas.Contains("HVAC"))
+            {
+                HVACTextBox.Visible = true;
+            }
+
+            //Consultoria
+            //Estrutural
+            //Arquitetura
+            //Elétrico
+            //Hidrossanitário
+            //HVAC
         }
     }
 }
