@@ -66,5 +66,17 @@ namespace Queme.Db
             cn.Close();
             
         }
+
+        public static void Excluir(int idCondicao)
+        {
+            string sql = @"DELETE FROM condicoesDePagamento WHERE Id = @idCondicao";
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql,cn);
+            cmd.Parameters.AddWithValue("idCondicao", idCondicao);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
     }
 }
