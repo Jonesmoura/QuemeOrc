@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Queme.Db;
+using Queme.Models;
 
 namespace Queme.UI.Windows
 {
@@ -21,6 +22,11 @@ namespace Queme.UI.Windows
         public ExcluirCondicaoDePagamento(int idOrcamento)
         {
             InitializeComponent();
+            ExibirCondicoesDepagamento(idOrcamento);
+        }
+
+        private void ExibirCondicoesDepagamento(int idOrcamento)
+        {
             condicoesDePagDataGridView.DataSource = CondicoesDePagamentoDb.GetListCondicoes(idOrcamento);
             //formatar layout
             condicoesDePagDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -36,13 +42,31 @@ namespace Queme.UI.Windows
             condicoesDePagDataGridView.Columns["PeriodicidadeDeParcela"].HeaderText = "Periodicidade";
             condicoesDePagDataGridView.Columns["ValorTotalOrcamento"].HeaderText = "Valor Total";
             condicoesDePagDataGridView.Columns["Desconto"].HeaderText = "Desconto (%)";
-
             //to-do: Formatação de dados
         }
 
         private void ExcluirCondicaoDePagamento_Load(object sender, EventArgs e)
         {
-            // to-do: Captura do id da condição e execução da função para exclusão, com mensagem de retorno positiva ou negativa
+            
+        }
+
+        private void excluirCondicaoSelecionadaButton_Click(object sender, EventArgs e)
+        {
+            int idCondicao = int.Parse(condicoesDePagDataGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+            int idOrcamento = int.Parse(condicoesDePagDataGridView.SelectedRows[0].Cells["OrcamentoId"].Value.ToString());
+
+            try
+            {
+                CondicoesDePagamentoDb.Excluir(idCondicao);
+                MessageBox.Show("Condição de Pagamento excluída");
+                ExibirCondicoesDepagamento(idOrcamento);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir condição, ERRO:" + ex.Message);
+            }
+                   
         }
     }
 }

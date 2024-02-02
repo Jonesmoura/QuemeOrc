@@ -50,6 +50,7 @@
             excluirCondicaoSelecionadaButton.TabIndex = 1;
             excluirCondicaoSelecionadaButton.Text = "Excluir";
             excluirCondicaoSelecionadaButton.UseVisualStyleBackColor = true;
+            excluirCondicaoSelecionadaButton.Click += excluirCondicaoSelecionadaButton_Click;
             // 
             // ExcluirCondicaoDePagamento
             // 
