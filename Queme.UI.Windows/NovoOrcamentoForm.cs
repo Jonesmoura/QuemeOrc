@@ -296,12 +296,12 @@ namespace Queme.UI.Windows
             bool incluirArt = true;
             if (inclusoRadioButton.Checked)
             {
-                double.TryParse(percentImpstoMaskedTextBox.Text.Replace(",", "."), out imposto);
+                double.TryParse(percentImpstoMaskedTextBox.Text.Replace(".", ","), out imposto);
             }
 
             if (simComissaoRadioButton.Checked)
             {
-                double.TryParse(percentComissaoMaskedTextBox.Text.Replace(",", "."), out comissao);
+                double.TryParse(percentComissaoMaskedTextBox.Text.Replace(".", ","), out comissao);
             }
 
             if (naoArtRadioButton.Checked)
@@ -311,7 +311,7 @@ namespace Queme.UI.Windows
 
             decimal total = CalculosDeOrcamento.ValorTotalOrcamento(totalServicos, totalCustosAdicionais, incluirArt, imposto, comissao);
             orcamento.ValorTotal = total;
-            condicaoDePagamento = new CondicaoDePagamento(double.Parse(percentualEntradaMaskedTextBox.Text.Replace(',', '.')), int.Parse(parcelasComboBox.Text), int.Parse(periodicidadeComboBox.Text), total, double.Parse(descontoMaskedTextBox.Text.Replace(',', '.')), int.Parse(nOrcTextBox.Text));
+            condicaoDePagamento = new CondicaoDePagamento(double.Parse(percentualEntradaMaskedTextBox.Text.Replace('.', ',')), int.Parse(parcelasComboBox.Text), int.Parse(periodicidadeComboBox.Text), total, double.Parse(descontoMaskedTextBox.Text.Replace('.', ',')), int.Parse(nOrcTextBox.Text));
 
             condicaoDePagamentoLabel.Text = condicaoDePagamento.ToString();
 
