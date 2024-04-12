@@ -14,6 +14,7 @@ using Queme.Models.Enums;
 using Queme.Models.DTOs;
 using Org.BouncyCastle.Crypto;
 using Queme.Services;
+using System.Diagnostics;
 
 namespace Queme.UI.Windows
 {
@@ -272,7 +273,7 @@ namespace Queme.UI.Windows
 
         private void valorTotalEtapaTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException("Função não implementada");
         }
 
         private void qtdTextBox_TextChanged(object sender, EventArgs e)
@@ -415,18 +416,29 @@ namespace Queme.UI.Windows
         private static void ExibirHTML(string htmlContent)
         {
             // Criação de um arquivo temporário para exibição no WebBrowser
-            string tempFilePath = Path.Combine(Path.GetTempPath(), "temp.html");
+            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+            string tempFilePath = Path.GetFullPath(Path.Combine("..", "..", "..", "Templates", "temp.html"));
             File.WriteAllText(tempFilePath, htmlContent);
 
             // Abre o arquivo temporário no WebBrowser
-            WebBrowser webBrowser = new WebBrowser();
-            webBrowser.Size = new Size(900, 2970);
-            webBrowser.Navigate(tempFilePath);
-            Form form = new Form();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Size = new Size(900, 2970);
-            form.Controls.Add(webBrowser);
-            form.ShowDialog();
+            //WebBrowser webBrowser = new WebBrowser();
+            //webBrowser.Size = new Size(900, 2970);
+            //webBrowser.Navigate(tempFilePath);
+            //Form form = new Form();
+            //form.StartPosition = FormStartPosition.CenterScreen;
+            //form.Size = new Size(900, 2970);
+            //form.Controls.Add(webBrowser);
+            //form.ShowDialog();
+
+            //Abrindo o browser padrão pelo cmd
+
+            var browserProcess = new Process();
+            browserProcess.StartInfo = new ProcessStartInfo(tempFilePath)
+            {
+                UseShellExecute = true
+            };
+            browserProcess.Start();
+
         }
 
         private void valorUnTextBox_TextChanged(object sender, EventArgs e)
