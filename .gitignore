@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # file to configure database connection
 /Queme.Db/Db.cs
+/Queme.UI.Windows/Templates/temp.html
