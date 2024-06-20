@@ -265,11 +265,11 @@
             <table>
                 <tr>
                     <td>Cliente: </td>
-                    <td></td>
+                    <td>@Model.Cliente.Name </td>
                 </tr>
                 <tr>
                     <td>Telefone: </td>
-                    <td></td>
+                    <td>@Model.Cliente.Tel</td>
                 </tr>
                 <tr>
                     <td>Endereço: </td>
@@ -277,7 +277,15 @@
                 </tr>
                 <tr>
                     <td>CPF/CNPJ: </td>
-                    <td></td>
+                    <td> 
+                        @if(Model.Cliente.CNPJ != "")
+                        {
+                            @Model.Cliente.CNPJ
+                        }else
+                        {
+                            @Model.Cliente.CPF
+                        }
+                    </td>
                 </tr>
                 
             </table>

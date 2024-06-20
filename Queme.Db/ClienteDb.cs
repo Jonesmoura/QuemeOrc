@@ -192,10 +192,68 @@ namespace Queme.Db
 
         }
 
-        public List <Cliente> BuscarClientesOrc(string razao, string nome) 
+        public List <Cliente> BuscarClientesOrc(string razao, string nome, bool pfChecked) 
         {
 
             List<Cliente> lista = new List<Cliente>();
+
+            if(razao == "" &&  nome == "")
+            {
+                if (pfChecked)
+                {
+                    string sql = @"SELECT id, name, CNPJ, CPF, email,tel FROM clientes WHERE CNPJ IS NULL;";
+                    var cn = new MySqlConnection(Db.connect);
+                    var cmd = new MySqlCommand(sql, cn);
+
+                    cn.Open();
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var cliente = new Cliente();
+                        cliente.ID = Convert.ToInt32(reader["ID"]);
+                        cliente.Name = reader["Name"].ToString();
+                        cliente.CPF = reader["CPF"].ToString();
+                        cliente.Tel = reader["Tel"].ToString();
+                        cliente.Email = reader["Email"].ToString();
+
+                        lista.Add(cliente);
+
+                    }
+
+                    reader.Close();
+                    cn.Close();
+                }
+                else
+                {
+                    string sql = @"SELECT id, razaoSocial,name, CNPJ, email,tel FROM clientes WHERE razaoSocial IS NOT NULL;";
+                    var cn = new MySqlConnection(Db.connect);
+                    var cmd = new MySqlCommand(sql, cn);
+                    cmd.Parameters.AddWithValue("@RazaoBusca", "%" + razao + "%");
+
+                    cn.Open();
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var cliente = new Cliente();
+                        cliente.ID = Convert.ToInt32(reader["ID"]);
+                        cliente.razaoSocial = reader["razaoSocial"].ToString();
+                        cliente.Name = reader["Name"].ToString();
+                        cliente.CNPJ = reader["CNPJ"].ToString();
+                        cliente.Tel = reader["Tel"].ToString();
+                        cliente.Email = reader["Email"].ToString();
+
+                        lista.Add(cliente);
+
+                    }
+
+                    reader.Close();
+                    cn.Close();
+                }
+            }
 
             if (razao != "")
             {

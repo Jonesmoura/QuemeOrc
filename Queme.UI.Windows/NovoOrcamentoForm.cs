@@ -121,7 +121,7 @@ namespace Queme.UI.Windows
         {
             if (nOrcTextBox.Text == string.Empty)
             {
-                if (!ValidacaoDeDados.ValidacaoInputCep(CepTextBox.Text) || ComplementoTextBox.Text == string.Empty || int.Parse(numeroTextBox.Text) != 0)
+                if (!ValidacaoDeDados.ValidacaoInputCep(CepTextBox.Text) || ComplementoTextBox.Text == string.Empty || int.Parse(numeroTextBox.Text) <= 0)
                 {
                     MessageBox.Show("Formato do Endereço inválido");
                     return;
@@ -273,7 +273,7 @@ namespace Queme.UI.Windows
 
         private void valorTotalEtapaTextBox_TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Função não implementada");
+            //throw new NotImplementedException("Função não implementada");
         }
 
         private void qtdTextBox_TextChanged(object sender, EventArgs e)
@@ -505,6 +505,11 @@ namespace Queme.UI.Windows
         {
             ExcluirCondicaoDePagamento form = new ExcluirCondicaoDePagamento(orcamento.Id);
             form.Show();
+        }
+
+        private void numeroTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

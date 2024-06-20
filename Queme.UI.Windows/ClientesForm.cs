@@ -23,6 +23,7 @@ namespace Queme.UI.Windows
         public ClientesForm()
         {
             InitializeComponent();
+            
         }
 
         private bool isEmail(string email)
@@ -517,6 +518,16 @@ namespace Queme.UI.Windows
         private void TelradioButton_CheckedChanged(object sender, EventArgs e)
         {
             TelTextBox.Mask = "(00) 0000-0000";
+        }
+
+        private void CNPJtextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void CPFtextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

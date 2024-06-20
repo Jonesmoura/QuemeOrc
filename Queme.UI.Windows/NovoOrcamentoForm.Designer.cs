@@ -84,6 +84,7 @@
             consultoriaTextBox = new TextBox();
             arquiteturaTextBox = new TextBox();
             tabPage1 = new TabPage();
+            excluirCondicoesButton = new Button();
             gerarPropostaButton = new Button();
             panel4 = new Panel();
             formasDePagamentoGroupBox = new GroupBox();
@@ -178,7 +179,6 @@
             panel17 = new Panel();
             textBox12 = new TextBox();
             descricaoEletricoTextBox = new TextBox();
-            excluirCondicoesButton = new Button();
             ConteudoOrcPanel.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -781,6 +781,16 @@
             tabPage1.Text = "Resumo";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // excluirCondicoesButton
+            // 
+            excluirCondicoesButton.Location = new Point(6, 483);
+            excluirCondicoesButton.Name = "excluirCondicoesButton";
+            excluirCondicoesButton.Size = new Size(198, 23);
+            excluirCondicoesButton.TabIndex = 1;
+            excluirCondicoesButton.Text = "Excluir Condição de Pagamento";
+            excluirCondicoesButton.UseVisualStyleBackColor = true;
+            excluirCondicoesButton.Click += excluirCondicoesButton_Click;
+            // 
             // gerarPropostaButton
             // 
             gerarPropostaButton.Location = new Point(962, 477);
@@ -1228,6 +1238,7 @@
             numeroTextBox.Name = "numeroTextBox";
             numeroTextBox.Size = new Size(189, 23);
             numeroTextBox.TabIndex = 1;
+            numeroTextBox.TextChanged += numeroTextBox_TextChanged;
             // 
             // NumeroLabel
             // 
@@ -1615,16 +1626,6 @@
             descricaoEletricoTextBox.Name = "descricaoEletricoTextBox";
             descricaoEletricoTextBox.Size = new Size(100, 23);
             descricaoEletricoTextBox.TabIndex = 0;
-            // 
-            // excluirCondicoesButton
-            // 
-            excluirCondicoesButton.Location = new Point(6, 483);
-            excluirCondicoesButton.Name = "excluirCondicoesButton";
-            excluirCondicoesButton.Size = new Size(198, 23);
-            excluirCondicoesButton.TabIndex = 1;
-            excluirCondicoesButton.Text = "Excluir Condição de Pagamento";
-            excluirCondicoesButton.UseVisualStyleBackColor = true;
-            excluirCondicoesButton.Click += excluirCondicoesButton_Click;
             // 
             // NovoOrcamentoForm
             // 

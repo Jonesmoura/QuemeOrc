@@ -47,7 +47,9 @@ namespace Queme.UI.Windows
         private void BuscarClienteButton_Click(object sender, EventArgs e)
         {
             var db = new Queme.Db.ClienteDb();
-            ClientesEncontradosDataGridView.DataSource = db.BuscarClientesOrc(RazaoTextBox.Text, NomeTextBox.Text);
+            bool pfChecked = PFRadioButton.Checked;
+
+            ClientesEncontradosDataGridView.DataSource = db.BuscarClientesOrc(RazaoTextBox.Text, NomeTextBox.Text, pfChecked);
             ClientesEncontradosDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             ClientesEncontradosDataGridView.ReadOnly = false;
             ClientesEncontradosDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -63,14 +65,14 @@ namespace Queme.UI.Windows
             ClientesEncontradosDataGridView.Columns["UF"].Visible = false;
             ClientesEncontradosDataGridView.Columns["localidade"].Visible = false;
 
-            if (NomeTextBox.Text == "")
+            if (!pfChecked)
             {
                 ClientesEncontradosDataGridView.Columns["CPF"].Visible = false;
                 ClientesEncontradosDataGridView.Columns["CNPJ"].Visible = true;
                 ClientesEncontradosDataGridView.Columns["razaoSocial"].Visible = true;
 
             }
-            else if (RazaoTextBox.Text == "")
+            else
             {
                 ClientesEncontradosDataGridView.Columns["razaoSocial"].Visible = false;
                 ClientesEncontradosDataGridView.Columns["CNPJ"].Visible = false;
