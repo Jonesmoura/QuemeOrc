@@ -110,11 +110,16 @@ namespace Queme.UI.Windows
 
         private void estimativaHorasTextBox_TextChanged(object sender, EventArgs e)
         {
+            bool EstimativaParse = double.TryParse(estimativaHorasTextBox.Text, out double estimativaDehoras);
             //método para calcular total do serviço
-            if (estimativaHorasTextBox.Text != string.Empty)
+            if (EstimativaParse)
             {
-                double totalEtapa = Convert.ToDouble(estimativaHorasTextBox.Text) * Convert.ToDouble(custoPorHoraTextBox.Text);
+                double totalEtapa = estimativaDehoras * Convert.ToDouble(custoPorHoraTextBox.Text);
                 valorTotalEtapaTextBox.Text = totalEtapa.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
+            }
+            else if(estimativaHorasTextBox.Text != string.Empty)
+            {
+                MessageBox.Show("Usar o formato \"0.000,00\" para a estimativa de horas.");
             }
         }
 
