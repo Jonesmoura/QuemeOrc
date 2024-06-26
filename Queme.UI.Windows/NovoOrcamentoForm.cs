@@ -34,6 +34,7 @@ namespace Queme.UI.Windows
             InitializeComponent();
             // Teste transferencia de dados do form de busca para o form de orçamentos
             PreenchimentoDeCamposDoCliente(cliente);
+            orcamento = new ReadOrcamentoDto();
 
         }
 
@@ -134,6 +135,7 @@ namespace Queme.UI.Windows
 
                 orc.Endereco = EnderecoObraDb.IncluirEndereco(id, CepTextBox.Text, ComplementoTextBox.Text, int.Parse(numeroTextBox.Text));
                 nOrcTextBox.Text = id.ToString();
+                orcamento.Id = id;
             }
             ServicosDb servicoDb = new ServicosDb();
             Servico servico = new Servico();
