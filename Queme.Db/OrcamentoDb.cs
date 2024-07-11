@@ -263,5 +263,22 @@ namespace Queme.Db
 
             return total;
         }
+
+
+        public static void SetOrUpdateTax(double taxaImposto, int idOrcamento)
+        {
+            string sql = @"UPDATE orcamentos
+                          SET taxaImposto = @taxaimposto 
+                          WHERE id_orcamento = @idOrcamento;";
+
+            var cn = new MySqlConnection(Db.connect);
+            var cmd = new MySqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@idOrcamento", idOrcamento);
+            cmd.Parameters.AddWithValue("@taxaimposto", taxaImposto);
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
     }
 }

@@ -117,7 +117,7 @@ namespace Queme.UI.Windows
                 double totalEtapa = estimativaDehoras * Convert.ToDouble(custoPorHoraTextBox.Text);
                 valorTotalEtapaTextBox.Text = totalEtapa.ToString("F2", CultureInfo.GetCultureInfo("pt-br"));
             }
-            else if(estimativaHorasTextBox.Text != string.Empty)
+            else if (estimativaHorasTextBox.Text != string.Empty)
             {
                 MessageBox.Show("Usar o formato \"0.000,00\" para a estimativa de horas.");
             }
@@ -328,6 +328,11 @@ namespace Queme.UI.Windows
         private void AdicionarCondicaoButton_Click(object sender, EventArgs e)
         {
             int idOrcamento = int.Parse(nOrcTextBox.Text);
+            if (inclusoRadioButton.Checked)
+            {
+                double imposto = double.Parse(percentImpstoMaskedTextBox.Text, CultureInfo.GetCultureInfo("pt-br"));
+                OrcamentoDb.SetOrUpdateTax(imposto, idOrcamento);
+            }
             CondicoesDePagamentoDb.Incluir(idOrcamento, condicaoDePagamento);
             //orcamento.CondicaoDePagamentos.Add(condicaoDePagamento);
             AtualizarViewCondicoesDePagamento();
@@ -515,6 +520,11 @@ namespace Queme.UI.Windows
         }
 
         private void numeroTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void custoPorHoraTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

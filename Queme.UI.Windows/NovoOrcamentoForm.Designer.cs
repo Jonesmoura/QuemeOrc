@@ -423,6 +423,7 @@
             custoPorHoraTextBox.ReadOnly = true;
             custoPorHoraTextBox.Size = new Size(85, 23);
             custoPorHoraTextBox.TabIndex = 4;
+            custoPorHoraTextBox.TextChanged += custoPorHoraTextBox_TextChanged;
             // 
             // estimativaHorasTextBox
             // 
@@ -872,7 +873,7 @@
             // descontoMaskedTextBox
             // 
             descontoMaskedTextBox.Location = new Point(559, 16);
-            descontoMaskedTextBox.Mask = "00,00";
+            descontoMaskedTextBox.Mask = "00.00";
             descontoMaskedTextBox.Name = "descontoMaskedTextBox";
             descontoMaskedTextBox.Size = new Size(36, 23);
             descontoMaskedTextBox.TabIndex = 10;
@@ -957,7 +958,7 @@
             // percentualEntradaMaskedTextBox
             // 
             percentualEntradaMaskedTextBox.Location = new Point(76, 16);
-            percentualEntradaMaskedTextBox.Mask = "00,00";
+            percentualEntradaMaskedTextBox.Mask = "00.00";
             percentualEntradaMaskedTextBox.Name = "percentualEntradaMaskedTextBox";
             percentualEntradaMaskedTextBox.Size = new Size(36, 23);
             percentualEntradaMaskedTextBox.TabIndex = 1;
@@ -1053,7 +1054,7 @@
             // percentComissaoMaskedTextBox
             // 
             percentComissaoMaskedTextBox.Location = new Point(244, 2);
-            percentComissaoMaskedTextBox.Mask = "00,00";
+            percentComissaoMaskedTextBox.Mask = "00.00";
             percentComissaoMaskedTextBox.Name = "percentComissaoMaskedTextBox";
             percentComissaoMaskedTextBox.Size = new Size(41, 23);
             percentComissaoMaskedTextBox.TabIndex = 1;
@@ -1143,7 +1144,7 @@
             // percentImpstoMaskedTextBox
             // 
             percentImpstoMaskedTextBox.Location = new Point(267, 1);
-            percentImpstoMaskedTextBox.Mask = "00,00";
+            percentImpstoMaskedTextBox.Mask = "00.00";
             percentImpstoMaskedTextBox.Name = "percentImpstoMaskedTextBox";
             percentImpstoMaskedTextBox.Size = new Size(41, 23);
             percentImpstoMaskedTextBox.TabIndex = 1;
