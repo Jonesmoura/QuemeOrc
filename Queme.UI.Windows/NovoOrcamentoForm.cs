@@ -304,12 +304,13 @@ namespace Queme.UI.Windows
             bool incluirArt = true;
             if (inclusoRadioButton.Checked)
             {
-                double.TryParse(percentImpstoMaskedTextBox.Text.Replace(".", ","), out imposto);
+
+                double.TryParse(percentImpstoMaskedTextBox.Text, out imposto);
             }
 
             if (simComissaoRadioButton.Checked)
             {
-                double.TryParse(percentComissaoMaskedTextBox.Text.Replace(".", ","), out comissao);
+                double.TryParse(percentComissaoMaskedTextBox.Text, out comissao);
             }
 
             if (naoArtRadioButton.Checked)

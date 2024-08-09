@@ -45,8 +45,8 @@ namespace Queme.Models
                 decimal constanteImposto = (decimal)(1 - imposto / 100);
                 if (comissao > 0)
                 {
-                    decimal constanteComissaoComImposto = (decimal)(comissao / 100) / constanteImposto;
-                    valorTotal = valorTotal / (constanteImposto - constanteComissaoComImposto);
+                    decimal PercentualComissao = (decimal)(comissao / 100);
+                    valorTotal = valorTotal / (constanteImposto - PercentualComissao);
                 }
                 else
                 {
@@ -65,7 +65,8 @@ namespace Queme.Models
                 if (comissao > 0)
                 {
                     decimal constanteComissao = (decimal)(comissao / 100);
-                    valorTotal = valorTotal / constanteComissao;
+                    //valorTotal += valorTotal * constanteComissao;
+                    valorTotal = valorTotal / (1 - constanteComissao);
                 }
                 //Verifica se após a inserção da comissão o orçamento passou da faixa 1 para a faixa 2 da ART
                 if (servicos + custosAdicionais + ValoresArt.TarifaFaixa1 <= 15000 && valorTotal > 15000)
@@ -78,7 +79,8 @@ namespace Queme.Models
             else if(comissao > 0)
             {
                 decimal constanteComissao = (decimal)(comissao / 100);
-                valorTotal = valorTotal / constanteComissao;
+                valorTotal = valorTotal / (1 - constanteComissao);  
+
             }
             return valorTotal;
         }

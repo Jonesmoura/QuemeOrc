@@ -31,6 +31,7 @@ namespace QuemeOrcTests
             double imposto = 10.00;
             decimal expectedResult = 2945.622222m;
 
+
             //Act
             decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos, custosAdicionais, incluirArt, imposto);
 
@@ -79,7 +80,7 @@ namespace QuemeOrcTests
             bool incluirArt = false;
             double imposto = 16.00;
             double comissao = 10;
-            decimal expectedResult = 21129.60534m;         
+            decimal expectedResult = 20585.73m;         
             
             //Act
             decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto,comissao);
@@ -129,10 +130,30 @@ namespace QuemeOrcTests
             double comissao = 10;
             decimal expectedResult = 22824.47556m;
             //New value 21862.12114
+            // expected = 21.892,93243243243;
 
             //Act
             decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos,custosAdicionais,incluirArt, imposto, comissao);
             
+            //Assert
+            Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
+
+        }
+
+        [Fact]
+        public void OrcamentoComImpostoComissaoSemArt()
+        {
+            //Arrange
+            decimal servicos = 1000m;
+            decimal custosAdicionais = 300m;
+            bool incluirArt = false;
+            double imposto = 10;
+            double comissao = 10;
+            decimal expectedResult = 1625m;
+
+            //Act
+            decimal result = CalculosDeOrcamento.ValorTotalOrcamento(servicos, custosAdicionais, incluirArt, imposto, comissao);
+
             //Assert
             Assert.Equal(expectedResult.ToString("C", CultureInfo.GetCultureInfo("pt-BR")), result.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
 
