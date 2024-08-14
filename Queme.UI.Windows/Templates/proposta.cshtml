@@ -241,7 +241,7 @@
                 <!--Teste rende razor-->
                 <div class="flex-item queme-logo">
 
-                    <p>Cliente: @Model.Cliente.Email </p>
+                    <p>Cliente: @Model.orcamento.Cliente.Email </p>
                     <div class="logo-orcamento">
                         <img src="../../../Queme.img/logoOrcamento.PNG" alt="Logo Queme" >
                     </div>
@@ -265,25 +265,25 @@
             <table>
                 <tr>
                     <td>Cliente: </td>
-                    <td>@Model.Cliente.Name </td>
+                    <td>@Model.orcamento.Cliente.Name </td>
                 </tr>
                 <tr>
                     <td>Telefone: </td>
-                    <td>@Model.Cliente.Tel</td>
+                    <td>@Model.orcamento.Cliente.Tel</td>
                 </tr>
                 <tr>
                     <td>Endereço: </td>
-                    <td></td>
+                    <td>CEP: @Model.orcamento.Cliente.CEP</td>
                 </tr>
                 <tr>
                     <td>CPF/CNPJ: </td>
                     <td> 
-                        @if(Model.Cliente.CNPJ != "")
+                        @if (Model.orcamento.Cliente.CNPJ != "")
                         {
-                            @Model.Cliente.CNPJ
+                            @Model.orcamento.Cliente.CNPJ
                         }else
                         {
-                            @Model.Cliente.CPF
+                            @Model.orcamento.Cliente.CPF
                         }
                     </td>
                 </tr>

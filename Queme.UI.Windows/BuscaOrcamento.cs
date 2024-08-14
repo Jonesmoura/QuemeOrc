@@ -90,8 +90,6 @@ namespace Queme.UI.Windows
 
             }
 
-            //MessageBox.Show(apartir.ToString() + " " + ate.ToString() + " " + parametroDePesquisa + " " + status + " " + textoPesquisa);
-
             try
             {
                 List<ReadOrcamentoDto> orcamentos = OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);

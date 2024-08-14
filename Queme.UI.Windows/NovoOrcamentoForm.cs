@@ -420,7 +420,7 @@ namespace Queme.UI.Windows
         private void gerarPropostaButton_Click(object sender, EventArgs e)
         {
             PropostaComercial propostaComercial = new PropostaComercial();
-            propostaComercial.Cliente = orcamento.Cliente;
+            propostaComercial.orcamento = orcamento;
             string html = PropostaService.GerarProposta(propostaComercial);
             ExibirHTML(html);
 

@@ -19,7 +19,11 @@ namespace Queme.Db
             List<ReadOrcamentoDto> orcamentos = new List<ReadOrcamentoDto>();
             if(textoPesquisa == string.Empty)
             {
-                throw new ArgumentNullException("Digitar texto para busca");
+                throw new ArgumentNullException(paramName: nameof(textoPesquisa), message:"Digite parte do texto ou use \"*\" para buscar todos.");
+            }
+            else if(textoPesquisa == "*")
+            {
+                textoPesquisa = string.Empty;
             }
             else if(!ValidacaoDeDados.ValidacaoInputQuery(textoPesquisa))
             {
