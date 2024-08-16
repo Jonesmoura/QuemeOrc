@@ -48,8 +48,8 @@ namespace Queme.Db
 
         public static void Incluir(int idOrcamento, CondicaoDePagamento condicaoDePagamento)
         {
-            string sql = @"INSERT INTO condicoesDePagamento(idOrcamento, PercentualDeEntrada, QuantidadeDeParcelas, PeriodicidadeDasParcelas, Desconto, ValorDaParcela, ValorDaEntrada, ValorTotal)                  
-                        VALUES(@IdOrcamento, @PercentualDeEntrada, @QuantidadeDeParcelas,@PeriodicidadeDeParcelas, @Desconto, @ValorDaParcela, @ValorDaEntrada, @ValorTotal)";
+            string sql = @"INSERT INTO condicoesDePagamento(idOrcamento, PercentualDeEntrada, QuantidadeDeParcelas, PeriodicidadeDasParcelas, Desconto, ValorDaParcela, ValorDaEntrada, ValorTotal, ValorTotalComDesconto)                  
+                        VALUES(@IdOrcamento, @PercentualDeEntrada, @QuantidadeDeParcelas,@PeriodicidadeDeParcelas, @Desconto, @ValorDaParcela, @ValorDaEntrada, @ValorTotal, @ValorTotalComDesconto)";
             var cn = new MySqlConnection(Db.connect);
             var cmd = new MySqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@idOrcamento", condicaoDePagamento.OrcamentoId);
@@ -60,6 +60,7 @@ namespace Queme.Db
             cmd.Parameters.AddWithValue("@ValorDaParcela", condicaoDePagamento.ValorParcela);
             cmd.Parameters.AddWithValue("@ValorDaEntrada", condicaoDePagamento.ValorEntrada);
             cmd.Parameters.AddWithValue("@ValorTotal", condicaoDePagamento.ValorTotalOrcamento);
+            cmd.Parameters.AddWithValue("@ValorTotalComDesconto", condicaoDePagamento.ValorTotalComDesconto);
 
             cn.Open();
             cmd.ExecuteNonQuery();

@@ -22,6 +22,24 @@ namespace Queme.Models
             }
             private set {} 
         }
+        //teste para persistencia do valor total com desconto no DB.
+        public decimal ValorTotalComDesconto {
+            get
+            {
+                if (Desconto > 0)
+                {
+                    return ValorTotalOrcamento * (1 - (decimal)Desconto / 100);
+                }
+                else
+                {
+                    return ValorTotalOrcamento;
+                }
+            }
+                
+            private set { } 
+        
+        
+        }
 
         public decimal ValorEntrada { get 
             {

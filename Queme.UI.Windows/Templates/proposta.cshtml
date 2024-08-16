@@ -241,7 +241,7 @@
                 <!--Teste rende razor-->
                 <div class="flex-item queme-logo">
 
-                    <p>Cliente: @Model.orcamento.Cliente.Email </p>
+                    @* <p>Cliente: @Model.orcamento.Cliente.Email </p> *@
                     <div class="logo-orcamento">
                         <img src="../../../Queme.img/logoOrcamento.PNG" alt="Logo Queme" >
                     </div>
@@ -338,7 +338,7 @@
                     </tr>
                     <tr>
                         <td colspan ="2" class="valor-total">Valor Total: </td>
-                        <td>R$ 10.000,00</td>
+                        <td>@Model.orcamento.ValorTotal</td>
 
                     </tr>
                 </tbody>
