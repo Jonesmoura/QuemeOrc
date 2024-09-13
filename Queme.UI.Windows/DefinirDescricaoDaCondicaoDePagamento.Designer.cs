@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textoDescricaoLabel = new Label();
-            DescricaoTextBox = new TextBox();
-            SalvarBtn = new Button();
             LimparBtn = new Button();
+            SalvarBtn = new Button();
+            DescricaoTextBox = new TextBox();
+            textoDescricaoLabel = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,22 +47,14 @@
             panel1.Size = new Size(522, 124);
             panel1.TabIndex = 0;
             // 
-            // textoDescricaoLabel
+            // LimparBtn
             // 
-            textoDescricaoLabel.AutoSize = true;
-            textoDescricaoLabel.Location = new Point(15, 10);
-            textoDescricaoLabel.Name = "textoDescricaoLabel";
-            textoDescricaoLabel.Size = new Size(278, 15);
-            textoDescricaoLabel.TabIndex = 0;
-            textoDescricaoLabel.Text = "Digite uma breve descrição da Condição/Proposta: ";
-            // 
-            // DescricaoTextBox
-            // 
-            DescricaoTextBox.Location = new Point(15, 37);
-            DescricaoTextBox.Multiline = true;
-            DescricaoTextBox.Name = "DescricaoTextBox";
-            DescricaoTextBox.Size = new Size(479, 39);
-            DescricaoTextBox.TabIndex = 1;
+            LimparBtn.Location = new Point(107, 86);
+            LimparBtn.Name = "LimparBtn";
+            LimparBtn.Size = new Size(98, 23);
+            LimparBtn.TabIndex = 2;
+            LimparBtn.Text = "Limpar Texto";
+            LimparBtn.UseVisualStyleBackColor = true;
             // 
             // SalvarBtn
             // 
@@ -73,15 +65,24 @@
             SalvarBtn.TabIndex = 2;
             SalvarBtn.Text = "Salvar";
             SalvarBtn.UseVisualStyleBackColor = false;
+            SalvarBtn.Click += SalvarBtn_Click;
             // 
-            // LimparBtn
+            // DescricaoTextBox
             // 
-            LimparBtn.Location = new Point(107, 86);
-            LimparBtn.Name = "LimparBtn";
-            LimparBtn.Size = new Size(98, 23);
-            LimparBtn.TabIndex = 2;
-            LimparBtn.Text = "Limpar Texto";
-            LimparBtn.UseVisualStyleBackColor = true;
+            DescricaoTextBox.Location = new Point(15, 37);
+            DescricaoTextBox.Multiline = true;
+            DescricaoTextBox.Name = "DescricaoTextBox";
+            DescricaoTextBox.Size = new Size(479, 39);
+            DescricaoTextBox.TabIndex = 1;
+            // 
+            // textoDescricaoLabel
+            // 
+            textoDescricaoLabel.AutoSize = true;
+            textoDescricaoLabel.Location = new Point(15, 10);
+            textoDescricaoLabel.Name = "textoDescricaoLabel";
+            textoDescricaoLabel.Size = new Size(278, 15);
+            textoDescricaoLabel.TabIndex = 0;
+            textoDescricaoLabel.Text = "Digite uma breve descrição da Condição/Proposta: ";
             // 
             // DefinirDescricaoDaCondicaoDePagamento
             // 

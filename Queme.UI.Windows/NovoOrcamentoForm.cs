@@ -334,6 +334,13 @@ namespace Queme.UI.Windows
                 double imposto = double.Parse(percentImpstoMaskedTextBox.Text, CultureInfo.GetCultureInfo("pt-br"));
                 OrcamentoDb.SetOrUpdateTax(imposto, idOrcamento);
             }
+            DefinirDescricaoDaCondicaoDePagamento definirDescricaoForm = new DefinirDescricaoDaCondicaoDePagamento();
+            if (definirDescricaoForm.ShowDialog() == DialogResult.OK)
+            {
+                string descricaoCondicao = definirDescricaoForm.ReturnDescription();
+                condicaoDePagamento.DescricaoCondicao = descricaoCondicao;
+            }
+
             CondicoesDePagamentoDb.Incluir(idOrcamento, condicaoDePagamento);
             //orcamento.CondicaoDePagamentos.Add(condicaoDePagamento);
             AtualizarViewCondicoesDePagamento();

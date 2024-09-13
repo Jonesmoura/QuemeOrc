@@ -16,6 +16,7 @@ namespace Queme.Models
         public int PeriodicidadeDeParcela { get; set; }
         public decimal ValorTotalOrcamento { get; set; }
         public double Desconto { get; set; }
+        public string DescricaoCondicao { get; set; }
         public decimal ValorParcela { get
             {
                 return CalculosDeOrcamento.CalcularValorDaParcela(PercentualDeEntrada, ValorTotalOrcamento, Desconto, QuantidadeDeParcelas);
