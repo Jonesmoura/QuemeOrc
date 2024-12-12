@@ -99,5 +99,22 @@ namespace Queme.Db
             return disciplinas;
 
         }
+        //A função abaixo precisa ser refeita
+        //public static Dictionary<string, decimal> CalcularSubtotais(int idOrcamento, PropostaComercial PropostaComercial)
+        //{
+        //    //refatorar essa solução 
+        //    decimal valorPreEmbargos = OrcamentoDb.TotalCustosAdicionais(idOrcamento) + OrcamentoDb.TotalServicos(idOrcamento);
+        //    Dictionary<string, decimal> indiceDisiplina = new Dictionary<string, decimal>();
+
+        //    Dictionary<string, decimal> subTotais = new Dictionary<string, decimal>();
+
+        //    foreach (string disciplina in Enum.GetNames(typeof(TipoServico)))
+        //    {
+        //        string sql = @"SELECT ";
+
+        //        //@"SELECT SUM(totalServico) AS ValorTotalServicos FROM servicos WHERE id_orcamento=@idOrcamento GROUP BY tipo_servico";
+        //    }
+
+        //} 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Queme.Models;
+using Queme.Models.DTOs;
 using Queme.Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -53,5 +54,7 @@ namespace Queme.Db
 
             }
         }
+
+
     }
 }

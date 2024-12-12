@@ -8,6 +8,7 @@ using RazorEngine;
 using RazorEngine.Templating;
 using Queme.Models;
 using System.Reflection.Metadata;
+using Queme.Models.DTOs;
 
 
 namespace Queme.Services
@@ -17,10 +18,10 @@ namespace Queme.Services
         public static string GerarProposta(PropostaComercial propostaComercial)
         {
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
-            string path = Path.GetFullPath(Path.Combine("..","..","..","Templates", "proposta.cshtml"));
+            string path = Path.GetFullPath(Path.Combine("..", "..", "..", "Templates", "proposta.cshtml"));
             string cshtmlFile = LerArquivoCSHTML(path);
             string htmlContent = Engine.Razor.RunCompile(cshtmlFile, "templateKey", null, propostaComercial);
-            
+
             return htmlContent;
 
         }
@@ -34,11 +35,11 @@ namespace Queme.Services
                     return reader.ReadToEnd();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao ler o arquivo {ex.Message}");
                 return null;
-            }           
+            }
         }
     }
 }
