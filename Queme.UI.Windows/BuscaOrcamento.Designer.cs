@@ -121,6 +121,7 @@
             excluirOrcBtn.TabIndex = 4;
             excluirOrcBtn.Text = "Excluir Orçamento";
             excluirOrcBtn.UseVisualStyleBackColor = true;
+            excluirOrcBtn.Click += excluirOrcBtn_Click;
             // 
             // editarFlowLayoutPanel
             // 
@@ -148,11 +149,11 @@
             ClientesEncontradosPanel.Size = new Size(749, 229);
             ClientesEncontradosPanel.TabIndex = 11;
             // 
-            // ClientesEncontradosDataGridView
+            // OrcamentosEncontradosDataGridView
             // 
             OrcamentosEncontradosDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrcamentosEncontradosDataGridView.Location = new Point(3, 0);
-            OrcamentosEncontradosDataGridView.Name = "ClientesEncontradosDataGridView";
+            OrcamentosEncontradosDataGridView.Name = "OrcamentosEncontradosDataGridView";
             OrcamentosEncontradosDataGridView.RowTemplate.Height = 25;
             OrcamentosEncontradosDataGridView.Size = new Size(743, 221);
             OrcamentosEncontradosDataGridView.TabIndex = 0;

@@ -93,14 +93,14 @@ namespace Queme.UI.Windows
             try
             {
                 List<ReadOrcamentoDto> orcamentos = OrcamentoDb.getOrcamentosList(apartir, ate, parametroDePesquisa, status, textoPesquisa);
-                if(orcamentos.Count == 0)
+                if (orcamentos.Count == 0)
                 {
                     MessageBox.Show("Nenhum orçamento localizado.");
                     return;
                 }
                 AtualizarViewOrcamentos(orcamentos);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -143,6 +143,11 @@ namespace Queme.UI.Windows
             int id = int.Parse(OrcamentosEncontradosDataGridView.SelectedRows[0].Cells["ID"].Value.ToString());
             var formOrc = new NovoOrcamentoForm(id);
             formOrc.ShowDialog();
+        }
+
+        private void excluirOrcBtn_Click(object sender, EventArgs e)
+        {
+            //Criar logica para excluir o orçamento selecionado, excluindo todos os itens relacionados a ele.
         }
     }
 }

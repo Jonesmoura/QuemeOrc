@@ -427,7 +427,9 @@ namespace Queme.UI.Windows
         private void gerarPropostaButton_Click(object sender, EventArgs e)
         {
             PropostaComercial propostaComercial = new PropostaComercial();
+            // Definir a condição de pagamento 
             propostaComercial.orcamento = orcamento;
+
             string html = PropostaService.GerarProposta(propostaComercial);
             ExibirHTML(html);
 
